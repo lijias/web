@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>查看留言</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <font color="pink" face="隶书" size="5">留言信息</font>
+    <hr/>
+    <a href="index.php">发表留言</a><br>
+    <table border="1" align="left" width="600" bordercolor="blue">
+      {foreach $wordInfo as $v}
+      <tr>
+        <td>昵称：{$v.userName}</td>
+        <td>留言时间：{$v.wordTime}</td>
+      </tr>
+      <tr>
+        <td colspan="2">留言内容：</td>
+      </tr>
+      <tr>
+        <td colspan="2" height="50" valign="top">{$v.content}</td>
+      </tr>
+      {/foreach}
+    </table>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+

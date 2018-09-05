@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>当前操作：管理分类</div>
+<table width="100%">
+	<tr>
+		<th>名称</th>
+		<th>管理</th>
+	</tr>
+	<foreach name="arr" item="v">
+	<tr>
+		<td>{$v.tname}</td>
+		<td><a href="__CONTROLLER__/update/id/{$v.id}">修改</a>&nbsp;|&nbsp;<a href="__URL__/delete/id/{$v.id}">删除</a></td>
+	</tr>
+	</foreach>
+</table>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>JavaScript BOM</title>
+
+</head>
+
+
+<body>
+<div id="one" style="position:absolute;width:100px;height:100px;
+background-color:yellow;left:0px;top:0px;"><img src="dog.gif">我是王盟
+</div>
+<script>
+//获取对称
+var dobj = document.getElementById("one");
+//定义div层的初始位置
+var x=0;
+var y=0;
+
+//定义每次移动的步长
+var sx = 10;
+var sy = 10;
+
+function move(){
+x = x+sx;
+y = y+sy;
+if(x>innerWidth-100 || x<0){
+	sx=-1*sx;
+}
+if(y>innerHeight-100 || y<0){
+	sy=-1*sy;
+}
+dobj.style.left = x;
+dobj.style.top = y;
+}
+
+var int = setInterval("move()",0.0000001);
+dobj.onmouseover = function(){
+	clearInterval(int);
+}
+dobj.onmouseout = function(){
+	int = setInterval("move()",0.0000000000000001);
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

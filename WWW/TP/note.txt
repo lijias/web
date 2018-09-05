@@ -1,0 +1,280 @@
+ ThinkPHP：MVC框架
+
+Model		模型(数据库操作)
+View		视图(页面显示)
+Controller	控制器(逻辑处理)
+
+优点
+1、代码分工更加明确
+2、便于网站的维护与管理(便于二次开发)
+
+特点
+1、国内程序员研发
+2、轻量级框架
+3、集成Smarty模板引擎
+4、封装类
+5、目录自动生成
+6、项目单一入口
+
+
+下载ThinkPHP资源包
+ThinkPHP_2.x.x_Full.zip
+ThinkPHP_3.1.x_Full.zip
+ThinkPHP_3.2.2_Full.zip
+
+
+
+命名空间namespace：从php5.3版本才加入进来
+
+命名空间：虚拟的文件夹
+
+作用：解决类名的重命名
+
+定义命名空间
+namespace 空间名;
+namespace 空间名\空间名\空间名;
+注意：namespace必须出现在整个页面的最顶端
+
+引用指定空间下的类
+use 空间名\类名;
+use 空间名\空间名\空间名\类名;
+$对象 = new 类名();
+$对象 = new 空间名\类名();
+$对象 = new 空间名\空间名\空间名\类名();
+$对象 = new \空间名\空间名\空间名\类名();
+注意：use一次只能引用一个类
+
+
+
+项目目录
+library----------------第三方资源包
+  ThinkPHP
+  jquery
+  kindeditor
+application------------应用程序
+  Common
+    Common-------------公用函数
+    Conf---------------配置文件
+      config.php
+  Home
+    Common-------------公用函数
+    Conf---------------配置文件
+      config.php
+    Controller---------控制器
+    Model--------------模型
+    View---------------视图
+  Runtime--------------运行时(临时文件)
+public-----------------公用文件
+  images
+  css
+index.php--------------入口文件
+
+
+
+控制器的命名规则
+1、必须采用大驼峰的命名规则
+2、必须以Controller.class.php来结尾
+IndexController.class.php
+LoginController.class.php
+
+
+控制器中方法的命名规则
+1、必须采用小驼峰的命名规则
+insert()
+add()
+delete()
+del()
+deleteBbs()
+delBbs()
+index()
+
+
+控制器定义的语法格式
+namespace 模块名\Controller;
+use Think\Controller;
+class XxxController extends Controller
+{
+  public function xxxxx()
+  {
+     逻辑代码;
+
+     $this->assign(key,value);
+     $this->assign(key,value);
+     $this->assign(key,value);
+     $this->display();
+  }
+}
+
+
+
+$this->display()方法的使用
+1、$this->display();
+   View
+     控制器
+       方法.html
+2、$this->display("hello");
+   View
+     控制器
+       hello.html
+
+Think标签特点
+1、标签定界符：{}、<>
+   只有输出值的标签是{}、其他标签都是<>
+2、所有的<>标签，必须都是双标签
+   <标签></标签>、<标签/>
+3、标签里的key名，有的加$，有的不加$
+   只有输出值的标签、if标签需要加$，其他标签都不加$
+
+
+Think标签
+1、显示变量值
+   {$key}
+2、显示数组中某一个值
+   {$key.下标}
+   {$key[下标]}
+3、if标签
+   <if condition="条件">
+     内容
+   <elseif condition="条件"/>
+     内容
+   <else/>
+     内容
+   </if>
+4、比较标签
+   <		lt
+   <=		elt
+   >		gt
+   >= 		egt
+   ==		eq
+   !=		neq
+   ===		heq
+   !==		nheq
+5、switch标签
+   <switch name="key">
+     <case value="值1">内容</case>
+     <case value="值2">内容</case>
+     <case value="值3">内容</case>
+     <default/>内容
+   </switch>
+6、for标签
+   <for start="起始值" end="结束值" step="2" name="i">
+     内容
+   </for>
+7、foreach标签
+   <foreach name="key" key="k" item="v">
+     下标:{$k}   值:{$v}
+   </forech>
+8、volist标签
+   <volist name="key" key="k" id="v">
+      序号:{$k}  值:{$v}
+   </volist>
+9、literal标签
+   <literal>
+     Think标签
+   </literal>
+10、php标签
+   <php>
+     php代码;
+   </php>
+11、运算标签
+    +  -  *  /  %  ++  --
+12、包含html文件
+    <include file="路径" />
+    <include file="文件夹:文件" />
+
+
+公用的html存储位置
+View
+  Public
+    header.html
+    footer.html
+    success.html
+<include file="Public:header" />
+
+
+
+ThinkPHP的配置文件
+1、只对当前的Home模块起作用
+   application/Home/Common/Conf/config.php
+2、对application下所有模块都起作用
+   application/Common/Conf/config.php
+3、全局配置文件(对整个项目都起作用)
+   library/ThinkPHP/Conf/convention.php
+注意：
+1、配置文件的优先级：1 > 2 > 3
+2、建议不要修改convention.php
+
+
+
+url路由
+1、url传参
+   http://localhost/项目/index.php
+   http://localhost/项目/index.php?c=控制器&a=方法
+   http://localhost/项目/index.php?c=控制器&a=方法&名=值
+   1)链接地址
+     <a href="index.php?c=控制器&a=方法"></a>
+   2)引入样式表
+     <link href="public/css/xxx.css">
+2、pathinfo
+   http://localhost/项目/index.php
+   http://localhost/项目/index.php/控制器/方法.html
+   http://localhost/项目/index.php/控制器/方法/名/值.html
+   1)超链接地址
+     <a href="__APP__/控制器/方法.html"></a>
+     <a href="__APP__/控制器/方法/名/值.html"></a>
+   2)引入样式表
+     <link href="__ROOT__/public/css/xxx.css">
+
+
+ThinkPHP中系统的常量
+__APP__：获得入口文件地址(链接地址、跳转地址)
+__ROOT__：获得项目根目录(引入css、images、library)
+注意：不仅控制器直接调用，而且html文件也可以直接调用
+
+
+ThinkPHP中U()函数：链接地址、跳转地址
+控制器中：U("控制器/方法")
+html文件中：{:U("控制器/方法")}
+
+
+
+
+ThinkPHP知识点
+1、介绍
+2、入口文件
+3、目录结构
+4、控制器(命名、定义、display、namespace)
+5、视图(存储位置、命名)
+6、Think标签
+7、配置文件
+8、url路由
+
+
+数据库操作
+1、查询多条记录，返回：二维数组
+   $result = M()->query("select语句");
+2、执行增、删、改操作，返回：受影响的行数
+   $result = M()->execute("insert|update|delete语句");
+注意：必须修改配置文件，设置数据库
+
+
+页面重定向
+1、跳转页面
+   $this->redirect("控制器/方法");
+   $this->redirect("控制器/方法",array(名=>值,名=>值));
+   $this->redirect("Login/index");
+   $this->redirect("Login/index",array("userId"=>10));
+2、跳转页面，并提示信息
+   $this->redirect("控制器/方法",array(),时间,"提示信息");
+   $this->redirect("控制器/方法",NULL,时间,"提示信息");
+   $this->redirect("Login/index",NULL,3,"删除记录成功！");
+
+
+
+
+
+
+
+
+
+

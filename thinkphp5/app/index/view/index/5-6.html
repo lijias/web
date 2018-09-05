@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-6</title>
+</head>
+<body>
+
+<!--相等-->
+{eq name="a" value="10"}
+<P>相等</P>
+{else/}
+<P>不相等</P>
+{/eq}
+
+<!--相等-->
+{equal name="a" value="10"}
+<P>相等</P>
+{else/}
+<P>不相等</P>
+{/equal}
+
+<!--不相等-->
+{neq name="a" value="$b"}
+<P>不相等</P>
+{else/}
+<P>相等</P>
+{/neq}
+
+<!--不相等-->
+{notequal name="a" value="10"}
+<P>不相等</P>
+{else/}
+<P>相等</P>
+{/notequal}
+
+<!--大于-->
+{gt name="a" value="8"}
+<P>a大于value</P>
+{else/}
+<P>错误</P>
+{/gt}
+
+<!--小于-->
+{lt name="a" value="8"}
+<P>a小于value</P>
+{else/}
+<P>错误</P>
+{/lt}
+
+<!--大于等于-->
+{egt name="a" value="8"}
+<P>a大于等于value</P>
+{else/}
+<P>错误</P>
+{/egt}
+
+<!--小于等于-->
+{elt name="a" value="8"}
+<P>a小于等于value</P>
+{else/}
+<P>错误</P>
+{/elt}
+
+</body>
+</html>

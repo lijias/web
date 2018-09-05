@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src='jquery-1.8.0.js'></script>
+<script>
+/*习题：
+7、应用ajax的load 向test.html文件发送请求，将请求的响应，写入到
+   当前页面。
+   test.html
+   的文件内容如下：
+   <span id="span0">这里的span标签</span>
+*/
+
+$(function(){
+	 $("input").click(function(){
+      $("div").load("test.html");
+     });
+});
+
+
+</script>
+</head>
+<body>
+
+<input type="button" value="tclick" />
+<br/>
+<div style="width:150px;height:150px;background-color:red;"></div>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+JQuery
+一.JQuery时间处理
+    click,dblclick,mouseover,mouseout,keypress,keydown,keyup,load,unload,submit,focus,blur,change
+    1、事件绑定
+       $(selector).bind(type[,data],fn)
+       功能：事件绑定
+       参数：
+       type 绑定的事件。事件以字符串形式体现。
+       data 绑定的数据
+       fn   事件的处理程序。事件处理程序可以是匿名函数。也可以是自定义函数的名称,写进去的时候不要写小括号。
+     
+       对两个不同的事件，有不同的处理程序
+       $(selector).bind({
+       type:fn,type:fn
+       });
+
+    2.简写事件
+      $(selector).type(fn)
+      参数
+      type 事件
+      fn     事件处理程序
+    
+    3.hover事件
+      $(selector).hover(fn1,fn2)
+       功能:鼠标划入划出进行封装
+       
+ 一.JQuery的特效
+    1、hide和show
+       $(selector).hide([speed])
+       功能：隐藏选择器
+       参数：
+       speed  速度。字符串格式：fast、slow
+                    数值类型，单位是毫秒：例如 1000
+  
+       $(selector).show([speed])
+       功能：显示选择器
+       参数：
+       speed  速度。字符串格式：fast、slow
+                    数值类型，单位是毫秒：例如 1000
+
+    2、淡入和淡出
+       $(selector).fadeIn([speed]) 
+       功能：淡入
+       参数：
+       speed  速度。字符串格式：fast、slow
+                    数值类型，单位是毫秒：例如 1000
+
+        $(selector).fadeOut([speed]) 
+       功能：淡出
+       参数：
+       speed  速度。字符串格式：fast、slow
+                    数值类型，单位是毫秒：例如 1000
+  
+       $(selector).fadeTo([speed],capicaty) 
+       功能：淡出到指定的透明度
+       speed  速度。字符串格式：fast、slow
+                    数值类型，单位是毫秒：例如 1000
+         
+       capicaty 淡出的透明度。0~1值越小透明度越高
+       
+       3.slideUp和slideDowm
+          $(selector).slideUp([speed])
+           功能:选择器向上滑
+         speed  速度。字符串格式：fast、slow
+                    数值类型，单位是毫秒：例如 1000          
+                    
+          $(selector).slideDowm([speed])
+           功能:选择器向下滑
+         speed  速度。字符串格式：fast、slow
+                    数值类型，单位是毫秒：例如 1000        
+                    
+       4、动画效果
+         $(selector).animate({属性名：属性值[,属性名：属性值]})
+           功能：对选择器产生动画效果
+           参数：
+           属性名 css样式的属性名称
+           属性值 css样式的属性值，要求是数值类型
+               left:150 
+               
+      5.$(selector).stop()
+         功能:停止选择器上的特效
+         
+         三、AJAX
+    Asynchronous JavaScript And Xml
+    JavaScript、xmlHttpRequest
+ 
+    优点：
+    1、提升用户体验
+    2、节约服务器资源
+
+    缺点：
+    1、对搜索引擎不友好。 
+    2、破坏前进后退按钮。
+    3、xmlHttpRequest 各种浏览器支持程度不一致。
+
+    异步：在发送请求时，可以接收到响应 例如：发短信
+    
+    同步：在发送请求时。不能接收响应。例如：打电话
+
+    $(selector).load(url[,data][,fn])
+    功能：load向url发送ajax请求
+    参数：
+    url ajax请求的地址
+         若后面有参数，则以get形式发送数据
+
+    data 发送请求的数据。
+         以字符串形式给出，则是以get形式发送数据 
+         例如：id=1&username=tom 
+
+         以POST形式请求数据：
+         {"id":10,"username":"tom"}
+
+    fn   匿名函数。
+         function(response,status,xhr){
+         }
+         response 请求收到的响应
+         status   请求响应的状态
+         xhr xmlHttpRequest对象
+             xhr 内置了response,status
+             xhr.responseText 响应的文本 
+             xhr.statusText   响应的状态
+         
+           $.get()和$.post()
+       $.get(url[,data][,fn])
+       功能：以异步形式发送ajax请求。请求的数据是以get形式发送。
+       参数：
+       url 请求的url地址
+       data 请求发送的数据，无论何种格式发送数据，
+            都是以get形式发送数据。
+       fn   请求的回调函数
+            匿名函数。
+         function(response,status,xhr){
+         }
+         response 请求收到的响应
+         status   请求响应的状态
+         xhr xmlHttpRequest对象
+             xhr 内置了response,status
+             xhr.responseText 响应的文本 
+             xhr.statusText   响应的状态
+        
+      $.post(url[,data][,fn])
+      功能：以异步形式发送ajax请求。请求的数据是以post形式发送。
+      参数：
+      url 异步请求的地址，若发送的请求数据以参数形式体现在url上。则是以get形式发送数据。
+      data 请求发送的数据,两种格式都叫以post形式发送数据。
+       fn   请求的回调函数
+            匿名函数。
+         function(response,status,xhr){
+         }
+         response 请求收到的响应
+         status   请求响应的状态
+         xhr xmlHttpRequest对象
+             xhr 内置了response,status
+             xhr.responseText 响应的文本 
+             xhr.statusText   响应的状态
+             
+                  $.ajax({
+         "url":"", //ajax发送请求的地址
+         "type":"post"/"get" //是以何种方式发送数据。若type没有                             给出默认是以get形式发送数据
+         "data": 发送请求的数据。
+         "success":function(response,status,xhr){                   
+                   }
+                   response 请求的响应
+                   status   请求的状态
+                   xhr      xmlHttpRequest对象
+                 
+     })
+     获取form表单的值
+     $(selector).val();
+     
+     $("form").serialize()
+     功能：将表单数据序列化
+    　　例如：username=tom&password=123 
+
+
+四、工具函数
+    $.trim(string str)
+    功能：去掉字符串str左右两边的空格
+
+    $.each(array,function(key,value){})
+    功能：遍历数组
+    参数：
+    array 准备遍历的数组
+    key   数组下标
+    value 数组的值
+             
+         

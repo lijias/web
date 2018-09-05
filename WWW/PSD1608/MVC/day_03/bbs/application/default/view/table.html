@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>多表查询</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="{$ROOT}/public/css/bbs.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    {include file="header.html"}
+    
+    <table border="1" align="center" width="600">
+      <tr>
+        <td>新闻ID</td>
+        <td>分类名称</td>
+        <td>新闻标题</td>
+        <td>发表时间</td>
+      </tr>
+      {foreach $newsInfo as $v}
+      <tr>
+        <td>{$v.articleId}</td>
+        <td>{$v.typeName}</td>
+        <td>{$v.title}</td>
+        <td>{$v.dateandtime}</td>
+      </tr>
+      {/foreach}
+    </table>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

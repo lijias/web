@@ -1,0 +1,1621 @@
+[ 2016-12-23T15:11:47+08:00 ] 127.0.0.1 /carshop/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.015625s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.015625s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.031250s ]
+SQL: SELECT `id`,`title`,`pic`,`rizu` FROM `cs_article` WHERE ( cateid=151 ) ORDER BY id desc LIMIT 3   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`pic`,`rizu` FROM `cs_article` WHERE ( cateid=149 ) ORDER BY id desc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`time` FROM `cs_article` WHERE ( cateid=150 ) ORDER BY id desc LIMIT 3   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Carlist%20%20%20%20%20%20%20%20%20%20%20%20/index/cateid/149
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.015625s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cs_article` WHERE ( cateid=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( cateid=149 ) ORDER BY time asc LIMIT 0,2   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 156 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 159 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 156 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 159 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 156 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 159 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 156 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 159 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/urlredirect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/style.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jbox.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/search.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jbox/jquery.jBox-2.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/validForm/FormValid.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jQselect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/menu.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jquery.touchSlider.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/slides.min.jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/js/jquery.lightbox-0.5.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:11:58+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/functions.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Carlist%20%20%20%20%20%20%20%20%20%20%20%20/index/cateid/151
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 151 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 151 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 151 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=151 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=152 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=152 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cs_article` WHERE ( cateid=151 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( cateid=151 ) ORDER BY time asc LIMIT 0,2   [ RunTime:0.015625s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 159 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 159 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 159 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 159 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/urlredirect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/style.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jbox.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/functions.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/validForm/FormValid.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jbox/jquery.jBox-2.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/menu.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jQselect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/search.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/slides.min.jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jquery.touchSlider.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:12:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/js/jquery.lightbox-0.5.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Arlist%20%20%20%20%20%20%20%20%20%20%20%20/index/cateid/150
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=150 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=150 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cs_article` WHERE ( cateid=150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( cateid=150 ) ORDER BY time asc LIMIT 0,2   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 149 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 152 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 149 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/urlredirect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jbox.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/validForm/FormValid.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/functions.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jbox/jquery.jBox-2.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/search.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/style.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jQselect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jquery.touchSlider.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/slides.min.jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:17:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/menu.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Arlist%20%20%20%20%20%20%20%20%20%20%20%20/index/cateid/150
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=150 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=150 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cs_article` WHERE ( cateid=150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( cateid=150 ) ORDER BY time asc LIMIT 0,2   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 149 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 152 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 149 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/style.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/urlredirect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/functions.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/validForm/FormValid.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jbox.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jbox/jquery.jBox-2.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/search.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/menu.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jQselect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/slides.min.jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:18:54+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jquery.touchSlider.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:01+08:00 ] 127.0.0.1 /carshop/index.php/Home/Arlist%20%20%20%20%20%20%20%20%20%20%20%20/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+ERR: 非法操作:Home
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Message%20%20%20%20%20%20%20%20%20%20%20%20/index/cateid/166
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 166 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 166 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 166 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=166 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=152 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=152 )  [ RunTime:0.015625s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_message` [ RunTime:0.031250s ]
+SQL: SHOW COLUMNS FROM `cs_reply` [ RunTime:0.015625s ]
+SQL: SELECT * FROM `cs_message` WHERE ( checked=1 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_reply`  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\455a6242d1c94ccc41106a388080363b.php 第 165 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\455a6242d1c94ccc41106a388080363b.php 第 165 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\455a6242d1c94ccc41106a388080363b.php 第 165 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\455a6242d1c94ccc41106a388080363b.php 第 165 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/urlredirect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/style.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/functions.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jbox/jquery.jBox-2.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/search.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/menu.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/validForm/FormValid.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jQselect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/ajax.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/slides.min.jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jquery.touchSlider.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jbox.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:12+08:00 ] 127.0.0.1 /carshop/index.php/Home/Message%20%20%20%20%20%20%20%20%20%20%20%20/Home/Message/code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.015625s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+ERR: 非法操作:Home
+
+[ 2016-12-23T15:19:13+08:00 ] 127.0.0.1 /carshop/index.php/Home/Message%20%20%20%20%20%20%20%20%20%20%20%20/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.015625s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+ERR: 非法操作:Home
+
+[ 2016-12-23T15:19:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/urlredirect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:19:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Message%20%20%20%20%20%20%20%20%20%20%20%20/Home/Message/code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+ERR: 非法操作:Home
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Arlist%20%20%20%20%20%20%20%20%20%20%20%20/index/cateid/150
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=150 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=150 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cs_article` WHERE ( cateid=150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( cateid=150 ) ORDER BY time asc LIMIT 0,2   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 149 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 152 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 149 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/style.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jbox.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/validForm/FormValid.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/functions.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/urlredirect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.031250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.031250s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jbox/jquery.jBox-2.3.min.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/search.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/menu.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jQselect.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/slides.min.jquery.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:20:15+08:00 ] 127.0.0.1 /carshop/index.php/Home/Public/pc/style/jquery.touchSlider.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Public
+
+[ 2016-12-23T15:21:46+08:00 ] 127.0.0.1 /carshop/index.php/Home/Article/index/arid/69
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( `id` = 69 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( `id` = 69 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( id<69 ) ORDER BY id desc LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( id>69 ) ORDER BY id asc LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\2ac6c1276904b87404ed678dbabb985c.php 第 149 行.
+NOTIC: [8] Undefined index: cateid D:\www\carshop\Application\Runtime\Cache\Home\2ac6c1276904b87404ed678dbabb985c.php 第 152 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\2ac6c1276904b87404ed678dbabb985c.php 第 152 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\2ac6c1276904b87404ed678dbabb985c.php 第 149 行.
+NOTIC: [8] Undefined index: cateid D:\www\carshop\Application\Runtime\Cache\Home\2ac6c1276904b87404ed678dbabb985c.php 第 152 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\2ac6c1276904b87404ed678dbabb985c.php 第 152 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\2ac6c1276904b87404ed678dbabb985c.php 第 149 行.
+NOTIC: [8] Undefined index: cateid D:\www\carshop\Application\Runtime\Cache\Home\2ac6c1276904b87404ed678dbabb985c.php 第 152 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\2ac6c1276904b87404ed678dbabb985c.php 第 152 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\2ac6c1276904b87404ed678dbabb985c.php 第 149 行.
+NOTIC: [8] Undefined index: cateid D:\www\carshop\Application\Runtime\Cache\Home\2ac6c1276904b87404ed678dbabb985c.php 第 152 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\2ac6c1276904b87404ed678dbabb985c.php 第 152 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:22:58+08:00 ] 127.0.0.1 /carshop/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`pic`,`rizu` FROM `cs_article` WHERE ( cateid=151 ) ORDER BY id desc LIMIT 3   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`pic`,`rizu` FROM `cs_article` WHERE ( cateid=149 ) ORDER BY id desc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`time` FROM `cs_article` WHERE ( cateid=150 ) ORDER BY id desc LIMIT 3   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:23:00+08:00 ] 127.0.0.1 /carshop/index.php/Home/Carlist/index/cateid/149
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cs_article` WHERE ( cateid=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( cateid=149 ) ORDER BY time asc LIMIT 0,2   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 150 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 150 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 150 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 150 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:23:02+08:00 ] 127.0.0.1 /carshop/index.php/Home/Arlist/index/cateid/150
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.015625s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=150 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=150 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cs_article` WHERE ( cateid=150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( cateid=150 ) ORDER BY time asc LIMIT 0,2   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 143 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 146 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 143 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 146 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:23:03+08:00 ] 127.0.0.1 /carshop/index.php/Home/Carlist/index/cateid/151
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 151 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 151 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 151 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=151 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=152 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=152 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cs_article` WHERE ( cateid=151 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( cateid=151 ) ORDER BY time asc LIMIT 0,2   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:23:03+08:00 ] 127.0.0.1 /carshop/index.php/Home/Rylist/index/cateid/161
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 161 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 161 ) LIMIT 1   [ RunTime:0.015625s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 161 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=161 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=152 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=152 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cs_article` WHERE ( cateid=161 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( cateid=161 ) ORDER BY time asc LIMIT 0,2   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\6efd4eec1f409d3ca56529e66e2a5bcb.php 第 147 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\6efd4eec1f409d3ca56529e66e2a5bcb.php 第 147 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\6efd4eec1f409d3ca56529e66e2a5bcb.php 第 147 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\6efd4eec1f409d3ca56529e66e2a5bcb.php 第 147 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:23:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Message/index/cateid/166
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 166 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 166 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 166 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=166 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=152 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=152 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_message` [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `cs_reply` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_message` WHERE ( checked=1 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_reply`  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\455a6242d1c94ccc41106a388080363b.php 第 159 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\455a6242d1c94ccc41106a388080363b.php 第 159 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\455a6242d1c94ccc41106a388080363b.php 第 159 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\455a6242d1c94ccc41106a388080363b.php 第 159 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:23:04+08:00 ] 127.0.0.1 /carshop/index.php/Home/Message/code
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:23:05+08:00 ] 127.0.0.1 /carshop/index.php/Home/Page/index/cateid/167
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 167 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 167 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 167 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=167 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=152 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=152 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 167 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:23:06+08:00 ] 127.0.0.1 /carshop/index.php/Home/Page/index/cateid/148
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 148 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 148 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 148 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=148 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=152 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=152 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 148 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:23:36+08:00 ] 127.0.0.1 /carshop/index.php/Home/Page/index/cateid/148
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.015625s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 148 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 148 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 148 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=148 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=152 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=152 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 148 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:23:36+08:00 ] 127.0.0.1 /carshop/index.php/Home/Carlist/index/cateid/149
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cs_article` WHERE ( cateid=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( cateid=149 ) ORDER BY time asc LIMIT 0,2   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 150 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 150 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 150 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 150 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:23:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Arlist/index/cateid/150
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=150 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=150 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cs_article` WHERE ( cateid=150 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( cateid=150 ) ORDER BY time asc LIMIT 0,2   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 143 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 146 行.
+NOTIC: [8] Undefined variable: contro D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 143 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\0b67f368aa9aa7c51ba19e336244a85a.php 第 146 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:23:37+08:00 ] 127.0.0.1 /carshop/index.php/Home/Carlist/index/cateid/151
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 151 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 151 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 151 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=151 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=152 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=152 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `cs_article` WHERE ( cateid=151 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_article` WHERE ( cateid=151 ) ORDER BY time asc LIMIT 0,2   [ RunTime:0.015625s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\a48709bca952eced7bd8fa469ec83b13.php 第 153 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:39:37+08:00 ] 127.0.0.1 /carshop/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`pic`,`rizu` FROM `cs_article` WHERE ( cateid=151 ) ORDER BY id desc LIMIT 3   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`pic`,`rizu` FROM `cs_article` WHERE ( cateid=149 ) ORDER BY id desc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`time` FROM `cs_article` WHERE ( cateid=150 ) ORDER BY id desc LIMIT 3   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:39:39+08:00 ] 127.0.0.1 /carshop/index.php/Home/Page/index/cateid/148
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 148 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 148 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 148 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=148 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=152 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=149 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( parentid=152 )  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cs_cate` WHERE ( `id` = 148 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+NOTIC: [8] Undefined variable: son3pid D:\www\carshop\Application\Runtime\Cache\Home\68bce0ec7afdf8798ef65138f610dc8c.php 第 146 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T15:39:48+08:00 ] 127.0.0.1 /carshop/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.000000s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`pic`,`rizu` FROM `cs_article` WHERE ( cateid=151 ) ORDER BY id desc LIMIT 3   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`pic`,`rizu` FROM `cs_article` WHERE ( cateid=149 ) ORDER BY id desc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`time` FROM `cs_article` WHERE ( cateid=150 ) ORDER BY id desc LIMIT 3   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-23T16:20:38+08:00 ] 127.0.0.1 /carshop/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_cate` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`name`,`type` FROM `cs_cate` WHERE ( `parentid` = 0 ) AND ( `pc` = 1 ) ORDER BY sort asc  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_link` [ RunTime:0.015625s ]
+SQL: SELECT `title`,`url` FROM `cs_link`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cs_article` [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`pic`,`rizu` FROM `cs_article` WHERE ( cateid=151 ) ORDER BY id desc LIMIT 3   [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`pic`,`rizu` FROM `cs_article` WHERE ( cateid=149 ) ORDER BY id desc  [ RunTime:0.000000s ]
+SQL: SELECT `id`,`title`,`time` FROM `cs_article` WHERE ( cateid=150 ) ORDER BY id desc LIMIT 3   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

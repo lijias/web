@@ -1,0 +1,33 @@
+@CHARSET "UTF-8";
+*{padding:0;margin:0}
+#content{
+	width:600px;
+	height:320px;
+	border:5px solid green;
+	margin:10px auto;
+	position:relative;
+	overflow:hidden;
+}
+#content #move{
+	width:1800px;
+	height:320px;
+	position:absolute;
+	z-index:100;
+	left:0;
+	top:0;
+}
+#content .block div{
+	z-index:1000;
+	position:absolute;
+	bottom:10px;
+	border:1px solid green;
+	padding:3px 5px;
+	background:#ccc;
+}
+#content .block .cur{
+	background:#abcdef;
+}
+#content #move img{
+	display:block;
+	float:left;
+}

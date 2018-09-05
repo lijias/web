@@ -1,0 +1,370 @@
+[ 2017-01-12T15:35:38+08:00 ] ::1 /project2/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.007000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\project2\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.005001s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.098006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.098006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.018001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.018001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-01-12T15:36:01+08:00 ] ::1 /project2/index.php/Home/Cart/index/ref/@project2@
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\project2\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004001s ]
+SQL: SELECT c.*,p.title,p.style,p.userprice,p.saleprice,p.salenum FROM cart c INNER JOIN product as p on c.productid=p.id  WHERE ( c.userid=1 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.007000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-01-12T15:36:03+08:00 ] ::1 /project2/index.php/Home/Cart/index/ref/api/cron.php?t=1344206124
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\project2\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.004001s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004000s ]
+SQL: SELECT c.*,p.title,p.style,p.userprice,p.saleprice,p.salenum FROM cart c INNER JOIN product as p on c.productid=p.id  WHERE ( c.userid=1 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-01-12T15:36:05+08:00 ] ::1 /project2/index.php/Home/Cart/index/ref/checkout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\project2\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004000s ]
+SQL: SELECT c.*,p.title,p.style,p.userprice,p.saleprice,p.salenum FROM cart c INNER JOIN product as p on c.productid=p.id  WHERE ( c.userid=1 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-01-12T15:36:06+08:00 ] ::1 /project2/index.php/Home/Cart/index/ref/api/cron.php?t=1344206124
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\project2\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.005000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.003001s ]
+SQL: SELECT c.*,p.title,p.style,p.userprice,p.saleprice,p.salenum FROM cart c INNER JOIN product as p on c.productid=p.id  WHERE ( c.userid=1 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-01-12T15:36:08+08:00 ] ::1 /project2/index.php/Home/Cart/index/ref/checkout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\project2\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004000s ]
+SQL: SELECT c.*,p.title,p.style,p.userprice,p.saleprice,p.salenum FROM cart c INNER JOIN product as p on c.productid=p.id  WHERE ( c.userid=1 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-01-12T15:36:10+08:00 ] ::1 /project2/index.php/Home/Cart/index/ref/api/cron.php?t=1344206124
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\project2\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004000s ]
+SQL: SELECT c.*,p.title,p.style,p.userprice,p.saleprice,p.salenum FROM cart c INNER JOIN product as p on c.productid=p.id  WHERE ( c.userid=1 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-01-12T15:36:41+08:00 ] ::1 /project2/index.php/Home/Cart/checkout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\project2\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-01-12T15:36:42+08:00 ] ::1 /project2/index.php/Home/themes/jindong/stye.css
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Themes
+
+[ 2017-01-12T15:36:43+08:00 ] ::1 /project2/index.php/Home/js/common.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Js
+
+[ 2017-01-12T15:36:43+08:00 ] ::1 /project2/index.php/Home/js/dialog3.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Js
+
+[ 2017-01-12T15:36:43+08:00 ] ::1 /project2/index.php/Home/js/shopping_flow.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Js
+
+[ 2017-01-12T15:36:43+08:00 ] ::1 /project2/index.php/Home/js/utils.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载控制器:Js
+
+[ 2017-01-12T15:36:43+08:00 ] ::1 /project2/index.php/Home/js/transport.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Js
+
+[ 2017-01-12T15:36:44+08:00 ] ::1 /project2/index.php/Home/Cart/api/cron.php?t=1344206149
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\project2\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.005000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.001000s ]
+ERR: 非法操作:api
+
+[ 2017-01-12T15:36:47+08:00 ] ::1 /project2/index.php/User/Addr/showall/ref/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\project2\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `addrinfo` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `addrinfo` WHERE ( userid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-01-12T15:36:48+08:00 ] ::1 /project2/index.php/User/Addr/showall/ref/api/cron.php?t=1344205417
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\phpStudy\WWW\project2\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.004000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `addrinfo` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `addrinfo` WHERE ( userid=1 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+

@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+.title2{
+	width:375px;
+	height:36px;
+	border-top:1px solid #ccc;
+	border-bottom:3px solid #FFB000;
+	margin:50px auto 0;
+	padding:0 10px;
+	line-height:36px;
+}
+.title2 h3{
+   float:left;
+}
+.title2 div{
+   float:right;	
+}
+.title2 span{
+	float:left;
+	width:13px;
+	height:13px;
+	background:url(../images/icon01.png) -80px -33px;
+    margin:12px 6px 0 0;
+}
+
+
+
+
+
+

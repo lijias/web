@@ -1,0 +1,10 @@
+<!--pages/bind/bind.wxml-->
+<view>
+  <text>{{msg}}</text>
+</view>
+<view>
+  <text bindtap='clickMe'>点击我！</text>
+</view>
+<view>
+  <web-view src="http://localhost/pro2/ci/index.php/file/xcxfile/kf"></web-view> 
+</view>

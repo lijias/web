@@ -1,0 +1,326 @@
+ThinkPHP
+
+模型的命名规则
+1、必须采用大驼峰的命名规则
+2、必须以表名来命名
+3、必须以Model.class.php来结尾
+BbsInfoModel.class.php
+ReviewsModel.class.php
+
+
+定义模型语法格式
+namespace Home\Model;
+use Think\Model;
+class XxxModel extends model
+{
+   public $tableName = "省略了前缀的表名";
+   public $trueTableName = "完整的表名";
+}
+
+
+获得模型对象的方法
+$model = D("模型名");//必须创建一个模型文件
+$model = D("表名");//不用新建模型文件
+$model = M("表名");//不用新建模型文件
+注意：表名必须全部小写
+
+
+建议：Linux系统下，所有表名全部小写
+
+
+数据库操作
+1、查询多条记录，返回：二维数组
+   $result = $model->select();
+   $result = $model->field("字段,字段...")->select();
+   $result = $model->where()->select();
+   $result = $model->order()->select();
+   $result = $model->limit()->select();
+   $result = $model->field()->where()->order()->limit()->select();
+   $result = $model->join()->select();
+2、查询一条记录，返回：一维关联数组
+   $result = $model->find();
+   $result = $model->field()->find();
+   $result = $model->where()->find();
+   $result = $model->join()->find();
+3、添加记录，返回：受影响的行数、新加记录的主键值
+   $result = $model->add(一维关联数组);
+   $result = $model->data(一维关联数组)->add();
+4、修改记录，返回：受影响的行数
+   $result = $model->save(一维关联数组);
+   $result = $model->where()->save(一维关联数组);
+5、删除记录，返回：受影响的行数
+   $result = $model->delete();
+   $result = $model->where()->delete();
+6、执行select语句，返回：二维数组
+   $result = M()->query("select语句");
+7、执行insert、update、delete语句，返回：受影响的行数
+   $result = M()->execute("insert|update|delete语句");
+8、聚合查询，返回：数字
+   $result = $model->count();
+   $result = $model->sum(字段);
+   $result = $model->avg(字段);
+   $result = $model->max(字段);
+   $result = $model->min(字段);
+9、修改某一个字段值
+   $result = $model->setField(字段名,字段值);
+   $result = $model->where()->setField(字段名,字段值);
+10、让某个字段值自增
+   $result = $model->where()->setInc(字段名);//让该字段自增一
+   $result = $model->where()->setInc(字段名,5);//让该字段自增五
+11、让某个字段值自减
+   $result = $model->where()->setDec(字段名);//让该字段自增一
+   $result = $model->where()->setDec(字段名,5);//让该字段自增五
+
+
+页面重定向
+1、跳转页面
+   $this->redirect("控制器/方法");
+   $this->redirect("控制器/方法",array(名=>值,名=>值...));
+2、跳转页面，并提示信息
+   $this->redirect("控制器/方法",array(),时间,提示信息);
+   $this->redirect("控制器/方法",NULL,时间,提示信息);
+
+
+
+系统提示信息页面
+$this->success(提示信息,跳转地址);
+$this->error(提示信息,跳转地址);
+
+
+自定义success页面
+1、在View\Public新建一个success.html文件
+2、修改配置文件
+   "TMP_XXXX_SUCCESS"=>"Public:success",
+   "TMP_XXXX_ERROR"=>"Public:success",
+
+
+
+分页类：ThinkPHP/Librarys/Think/Page.class.php
+1、导入分页类
+   use Think\Page;
+2、实例化
+   $page = new Page(总记录数,每页记录数);
+3、获得每页记录的起始值
+   $page->firstRow;
+4、获得每页记录数
+   $page->listRows;
+5、获得分页栏
+   $page->show();
+
+
+验证码类：ThinkPHP\Library\Think\Verify.class.php
+1、在控制器中新建一个方法，添加如下代码
+   use Think\Verify;
+   public function 方法()
+   {
+      $verify = new Verify();
+      $verify->length = 4;//设置字符的个数
+      $verify->fontSize = 13;//设置字符的大小
+      $verify->entry();//显示验证码
+   }
+2、视图页面的代码
+   <img src="__APP__/控制器/方法">
+3、比对验证码
+   $verify = new Verify();
+   $result = $verify->check(用户输入的验证码);
+
+
+网站架构模式
+1、C/S：客户端服务器模式
+2、B/S：服务器模式
+
+
+ThinkPHP自带的表单验证
+1、新建模型文件，在模型中添加如下代码
+   public $_validate = array(
+     array("表单元素名","验证规则","提示信息"),
+     array("表单元素名","验证规则","提示信息"),
+     array("表单元素名","验证规则","提示信息"),
+   );
+2、在控制器的指定方法中，添加如下代码
+   $model = D("模型名");
+   if($model->create())
+   {
+      //验证通过
+   }
+   else
+   {
+      //验证失败
+      $this->success($model->getError(),跳转地址);
+   }
+
+
+
+文件上传类：ThinkPHP\Library\Think\Upload.class.php
+单文件上传-----------------------
+use Think\Upload.class.php
+$upload = new Upload();//实例化
+$upload->maxSize = 大小;
+$upload->exts = array("jpg","rar","gif");//设置上传文件的类型
+$uplaod->autoSub = false;//是否生成子目录
+$upload->rootPath = "./";//上传文件的根目录
+$upload->savePath = "";//保存目录
+$result = $upload->uploadOne($_FILES["名"]);
+if($result)
+{
+   print_r($result);
+}
+else
+{
+   $message = $upload->getError();
+}
+多文件上传-----------------------
+use Think\Upload.class.php
+$upload = new Upload();//实例化
+$upload->maxSize = 大小;
+$upload->exts = array("jpg","rar","gif");//设置上传文件的类型
+$uplaod->autoSub = false;//是否生成子目录
+$upload->rootPath = "./";//上传文件的根目录
+$upload->savePath = "";//保存目录
+$result = $upload->upload();
+if($result)
+{
+   print_r($result);
+}
+else
+{
+   $message = $upload->getError();
+}
+注意：多文件上传不成功！修改Upload.class.php文件
+'saveName'      =>  array('uniqid', ''),
+1)先在Common中自定义一个函数(为上传的文件，命名)
+2)修改'saveName' =>  array('自定义函数名', ''),
+
+
+
+Common文件夹的用法：定义公用函数
+1、在Common文件夹下新建一个function.php
+2、function.php文件名固定(该文件由系统自动加载)
+3、控制器、视图都可以直接调用
+
+控制器调用公用函数：直接调
+函数名();
+函数名(值,值...);
+$变量 = 函数名(值,值...);
+
+视图调用公用函数：配合着输出值的标签来使用
+{$key,$key...|函数名}
+{$key.下标|函数名}
+{$key[下标]|函数名}
+
+
+
+
+
+缓存Cache：提高网站的访问效率
+
+缓存分类
+1、按缓存数据存储位置不同
+   1)文件缓存
+   2)内存缓存
+2、按缓存数据量不同
+   1)整站缓存
+   2)页面缓存
+   3)局部缓存(片段缓存)
+   4)局部不缓存
+   5)数据缓存(变量缓存)
+
+
+ThinkPHP缓存：文件缓存、数据缓存(变量缓存)
+1、数据缓存、快捷缓存
+   1)向缓存中添加数据
+     S(名,值,时间)
+   2)获得缓存中的数据
+     $变量 = S(名);
+   3)清除指定的缓存
+     S(名,NULL);
+2、快速缓存
+   1)向缓存中添加数据
+     F(名,值);
+   2)获得缓存中的数据
+     $变量 = F(名);
+   3)清除指定的缓存
+     F(名,NULL);
+3、查询缓存
+   $result = $model->cache(true,时间)->select();
+   $result = $model->cache(true,时间)->where()->find();
+
+
+
+
+
+ThinkPHP知识点
+1、入口文件写法
+2、目录结构
+3、控制器
+   1)控制器的命名规则
+   2)方法的命名规则
+   3)控制器定义的语法格式
+   4)$this->display()
+4、视图
+   1)存储位置
+   2)Think标签
+5、公用html存储位置
+   1)View\Public
+   2)<include file="文件夹:文件名"/>
+6、url路由
+   1)问号传参
+   2)pathinfo
+7、系统常量
+   __APP__、__ROOT__、U()、{:U()}
+8、模型
+   1)模型命名规则
+   2)模型定义的语法格式
+   3)获得模型对象
+     D()、M()
+   4)数据库操作
+9、页面重定向
+   $this->redirect()
+10、系统提示信息页面
+    $this->success();
+    $this->error();
+    自定义success页面
+11、配置文件
+    application/Home/Conf/config.php
+    application/Common/Conf/config.php
+    library/ThinkPHP/Conf/convention.php
+12、分页类
+    library/ThinkPHP/Library/Think/Page.class.php
+13、上传类
+    library/ThinkPHP/Library/Think/Upload.class.php
+14、验证码类
+    library/ThinkPHP/Library/Think/Verify.class.php
+15、表单验证
+16、Common用法
+17、缓存
+    1)数据缓存
+    2)快速缓存
+    3)查询缓存
+18、后台管理
+19、给控制器找父类
+    1)控制器的父类
+    2)特殊的方法：_initialize()
+
+
+
+学习MVC框架的步骤：
+1、特点
+2、目录结构、入口文件
+3、控制器：命名、定义、传值、显示html页面
+4、视图：存储位置、标签
+5、url路由：写法、加载图片、样式表、第三方插件、链接
+6、模型：命名、定义、获得模型对象、数据库操作
+7、配置文件
+8、其他功能
+9、缓存
+10、后台管理
+
+
+
+
+
+
+
+
+
+

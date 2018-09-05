@@ -1,0 +1,129 @@
+dedecms织梦:
+cms：内容管理系统。
+1、栏目管理（文章分类）
+2、内容管理（文章添加  产品添加 ....）
+3、静态化
+4、广告管理
+5、友情链接
+6、评论管理
+7、留言管理
+8、会员系统
+
+如何使用？ 简单  网络营销  学好  能找到工作
+
+点按钮，套标签。
+
+互联网没有小事？ 5000  ----  30000     19000   25000   4 5
+
+hao123.com  
+
+discus   
+
+ecshop   ecstore  mvcL
+
+八戒  
+
+dedecms.com
+
+目录结构：
+	dede   后台
+	date   配置文件
+	templets  模板
+	a 静态化后的html文件
+	install 安装目录
+安装：
+后台使用：
+	系统》基本参数》模板默认风格》my
+主页模板单独设置：
+	生成》更新主页html>设置首页模板》
+套标签，呈现页面：
+	1、呈现首页
+	a、拷贝模板到my
+	b、修改静态资源的路径
+{dede:global.cfg_templets_skin/}
+/18_dede/templets/my/images/gsjj.jpg
+	2、实现导航栏，添加栏目
+	栏目名称
+	文件保存目录：勾选拼音
+	栏目属性： 列表  频道封面
+	模板路径：
+		列表模板   详细页模板
+		频道封面模板
+	提交
+	3、在页面上展现栏目
+	{dede:channel type='top'} 
+ 	<li ><a href='[field:typelink/]'>[field:typename/]</a> </li> 
+	{/dede:channel} 
+	栏目对应的页面要想看的到，就要静态化。
+	生成》一键更新网站 
+	4、调整每个模板的静态资源路径。
+	5、制作头部模板，并调用
+	a、新建header.html
+	b、模板页套标签
+	{dede:include filename="header.htm"/}
+
+	6、公司简介
+	a、当前栏目的内容
+
+
+
+
+
+DEDE标签总结
+系统标签：
+{dede:global.cfg_basehost/}
+{dede:global.cfg_webname/}
+{dede:global.cfg_powerby/}版权信息
+{dede:global.cfg_keywords/}
+{dede:global.cfg_description/}
+{dede:global.cfg_beian/}
+{dede:global.cfg_templets_skin/}/style/
+{dede:global.cfg_templets_skin/}/js/
+{dede:global.cfg_templets_skin/}/images/
+{dede:global.cfg_indexurl/}主页链接
+{dede:global.cfg_indexname/}主页名称
+
+导航标签：
+{dede:channel type ='top' typeid=''  reid ='上级栏目id'}
+<a href="[field:typelink/]" target="_self" class="menumain_dolphin">[field:typename/]</a>
+{/dede:channel}	
+
+
+文章详细页标签
+{dede:field.title/}//标题
+{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}发布时间
+{dede:field.source/}来源
+{dede:field.writer/}作者
+<script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}"type='text/javascript' language="javascript"></script>点击数
+{dede:field.body/}内容
+
+{dede:prenext get='pre'/}上一篇
+{dede:prenext get='next'/}下一篇
+文章列表标签
+{dede:list pagesize ='5'}
+[field:title/] [field:arcurl/][field:pubdate function="MyDate('Y-m-d',@me)"/]
+{/dede:list}
+分页：
+<div class="dede_pages"><ul class=pagelist>{dede:pagelist listitem="info,index,end,pre,next,pageno,option"listsize="5"/}</ul></div>
+相关文章
+{dede:likearticle mytypeid='1' titlelen='20' row='5'}
+
+
+{/dede:likearticle}
+
+当前位置：
+{dede:field name='position'/}
+栏目名称：
+{dede:field name='typename'/}
+栏目树：
+{dede:cattree catid='3' showall=''/}
+关于我们：
+{dede:channelartlist typeid="0,1"}
+{dede:field name='content'/}
+{/dede:channelartlist}
+
+
+{dede:include filename="head.htm"/}
+
+
+

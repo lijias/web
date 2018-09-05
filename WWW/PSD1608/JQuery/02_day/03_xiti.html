@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src='jquery-1.8.0.js'></script>
+<script>
+/*习题：
+3、有如下div层
+   <div style="width:150px;height:150px;background-color:red;"></div>
+   应用hover事件，当鼠标划入时，div层背景色改为绿色。鼠标划出时，div层背景色改为蓝色。
+*/
+
+$(function(){
+	 $("div").hover(function(){
+		 $("div").css("background-color","green");
+	 },function(){
+		 $("div").css("background-color","blue");
+	 })
+});
+</script>
+</head>
+<body>
+<div style="width:150px;height:150px;background-color:red;"></div>
+
+</body>
+</html>

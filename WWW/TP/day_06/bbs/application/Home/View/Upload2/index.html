@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>多文件上传</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="__ROOT__/public/css/bbs.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <include file="Public:header" />
+    
+    <form name="frm" method="post" action="__APP__/Upload2/upload" enctype="multipart/form-data">
+    <table border="1" align="center">
+      <tr>
+        <td>请选择：</td>
+        <td><input type="file" name="myFile1" size="20"></td>
+      </tr>
+      <tr>
+        <td>请选择：</td>
+        <td><input type="file" name="myFile2" size="20"></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="上传">
+          &nbsp;&nbsp;&nbsp;
+          <input type="reset" value="重置">
+        </td>
+      </tr>
+    </table>
+    </form>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

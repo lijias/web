@@ -1,0 +1,118 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>JavaScript</title>
+<style>
+.hind{
+	color:#ccc;
+}
+.wrong{
+	color:#ff0000;
+}
+.correct{
+	color:#00ff00;
+}
+</style>
+</head>
+
+
+<body onload="check();">
+<center>登录</center>
+<form  name="form"  onsubmit="check();">
+用户名:<input type='text' name='username' id='username'/><span></span><br/>
+密&nbsp;&nbsp;码:<input type='password' name='password' id='password'/><span></span><br/>
+<input type="submit" value='提交'/>
+</form>
+<script>
+var form = document.form;
+
+var username = document.getElementById("username");
+var uspan = get(username);
+
+var password = document.getElementById("password");
+var pspan = get(password);
+
+var uflag = false;
+var pflag = false;
+
+function get(obj){
+	while(true){
+		if(obj.nodeName=="SPAN"){
+			return obj;
+		}else{
+			obj=obj.nextSibling;
+		}
+	}
+}
+
+function check(){
+	
+username.onfocus=function(){
+	if(username.value==""){
+		uspan.innerHTML="请输入用户名";
+		uspan.className="hind";
+		uflag = false;
+	}
+}
+username.onblur=function(){
+	if(username.value==""){
+		uspan.innerHTML="用户名不能为空";
+		uspan.className="wrong";
+		uflag = false;
+	}else {
+		uspan.innerHTML="正确";
+		uspan.className="correct";	
+		uflag = true;
+	}
+}
+
+password.onfocus=function(){
+	if(password.value==""){
+		pspan.innerHTML="请输入密码";
+		pspan.className="hind";
+		pflag = false;
+	}
+}
+password.onblur=function(){
+	if(password.value==""){
+		pspan.innerHTML="密码不能为空";
+		pspan.className="wrong";
+		pflag = false;
+	}else {
+		pspan.innerHTML="正确";
+		pspan.className="correct";	
+		pflag = true;
+	}
+}
+
+if(uflag==true&&pflag==true){
+	form.action="login.php";
+	form.method="post";
+	form.submit();
+}
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

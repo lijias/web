@@ -1,0 +1,29 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src='jquery-1.8.0.js'></script>
+<script>
+/*习题：
+5、有图片
+    <img src="qq.png" style="position:absolute;"/>
+    应用动画效果，是图片移到右边 150像素位置
+
+*/
+
+$(function(){
+	 $("input").click(function(){
+      $("img").animate({"right":"150",
+    		                   "width":"100",
+    		                   "height":"100"});
+	 });
+});
+</script>
+</head>
+<body>
+<input type="button" value="click" />
+<br/>
+<img src="dog.gif" style="position:absolute;"/>
+
+</body>
+</html>

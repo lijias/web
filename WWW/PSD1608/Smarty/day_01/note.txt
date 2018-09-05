@@ -1,0 +1,247 @@
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+abcdefghijklmnopqrstuvwxyz
+
+Smarty：模板引擎
+
+作用：显示与逻辑相分离
+
+优点
+1、代码分工更加明确
+2、便于网站的维护与管理(便于二次开发)
+
+
+
+传统php页面运行原理
+浏览器----------Apache----------xxx.php(html、php)
+            将php代码执行掉
+
+
+Smarty运行原理
+         执行掉php代码
+浏览器-----Apache-----Smarty-----xxx.html(html)、xxx.php(php)
+                     合并文件(xxxxx.php)
+
+
+下载资源包
+Smarty-2.xxxxxx.zip
+Smarty-3.1.16.zip
+
+
+
+Smarty.class.php中所指定的相关信息
+1、指定html文件存储目录
+   ->setTemplateDir('.' . DS . 'templates' . DS)
+2、指定编译文件存储目录
+   ->setCompileDir('.' . DS . 'templates_c' . DS)
+3、指定缓存文件存储目录
+   ->setCacheDir('.' . DS . 'cache' . DS)
+4、指定配置文件存储目录
+   ->setConfigDir('.' . DS . 'configs' . DS);
+5、设置缓存的时间
+   public $cache_lifetime = 3600;
+6、是否开启缓存
+   public $caching = false;
+7、设置标签的左定界符
+   public $left_delimiter = "{";
+8、设置标签的右定界符
+   public $right_delimiter = "}";
+
+
+
+
+项目目录
+smarty-----------------Smarty资源包
+  Smarty.class.php-----Smarty的入口文件
+configs----------------配置文件存储目录
+templates--------------html文件存储目录
+  xxx.html
+  xxx.html
+  xxx.html
+templates_c------------编译文件存储目录
+xxx.php
+xxx.php
+xxx.php
+
+
+
+smarty中每个页面对应的php文件的写法
+xxx.php
+<?php
+  header(...);
+  include_once 'smarty/Smarty.class.php';
+  $smarty = new Smarty();
+
+  //逻辑处理
+
+  $smarty->assign(key,value);
+  $smarty->assign(key,value);
+  $smarty->assign(key,value);
+  $smarty->display("xxx.html");
+?>
+
+
+
+Smarty标签
+1、显示某一变量值
+   {$key}
+2、显示数组中某一个值
+   {$key.下标}
+   {$key[下标]}
+3、判断
+   {if 条件}
+     内容
+   {elseif 条件}
+     内容
+   {else}
+     内容
+   {/if}
+4、for标签
+   {for $变量名=起始值 to 结束值}
+     内容  {$变量名}
+   {/for}
+   注意：只有Smarty3可用
+5、while标签
+   {while 条件}
+     内容
+   {/while}
+   注意：只有Smarty3可用
+6、section标签
+   {section name="别名" loop=$key}
+     {$key[别名]}
+   {/section}
+   注意：
+   1)只遍历索引数组
+   2)无法获得数组下标
+7、foreach标签
+   {foreach $key as $k=>$v}
+      下标：{$k}    值：{$v}
+   {/foreach}
+8、忽略标签
+   {literal}
+      Smarty标签
+   {/literal}
+9、包含html文件
+   {include file="xxx.html"}
+10、包含php文件
+    {include_php file="xxx.php"}
+    注意：只有Smarty2可用
+11、php标签
+    {php}
+       php代码;
+       php代码;
+       php代码;
+    {/php}
+    注意：只有Smarty2可用
+12、禁止缓存
+    {nocache}
+      不想缓存的内容
+    {/nocache}
+13、加载配置文件
+    {config_load file="配置文件名"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

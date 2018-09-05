@@ -1,0 +1,6 @@
+2016/11/23 16:44:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\php\mails\framework\web\CWebApplication.php:332
+Stack trace:
+#0 E:\php\mails\framework\web\CWebApplication.php(121): CWebApplication->runController('')
+#1 E:\php\mails\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 E:\php\mails\app\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/mails/app/index.php

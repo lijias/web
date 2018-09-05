@@ -1,0 +1,156 @@
+韩老师
+13581698800
+84772721
+
+
+知识点
+1、开发网站
+2、Smarty模板引擎
+3、MVC框架
+4、MySQL高级
+
+
+新闻网站
+第一天：前台首页
+第二天：新闻分类页、新闻页、新闻搜索
+后三天：后台管理
+
+
+当一个文件中有且只有一个类时,那么类名与文件名相同
+
+
+数据库封装类
+class DbConn
+{
+  private $conn = NULL;
+  private $rs = NULL;
+
+  public function __construct(){}//连接数据
+  public function queryAll($sql){}//查询多条记录
+  public function queryOne($sql){}//查询一条记录
+  public function exec($sql){}//执行insert、update、delete操作
+  public function freeResult(){}//释放结果集
+  public function close(){}//关闭数据库
+}
+
+封装类的使用方法
+1、查询多条记录，返回：二维数组
+$conn = new DbConn();
+$result = $conn->queryAll("select语句");
+foreach($result as $v)
+{}
+$conn->freeResult();
+$conn->close();
+2、查询一条记录，返回：一维数组
+$conn = new DbConn();
+$result = $conn->queryOne("select语句");
+$conn->freeResult();
+$conn->close();
+3、执行增、删、改操作，返回：受影响的行数
+$conn = new DbConn();
+$result = $conn->exec("insert|update|delete语句");
+$conn->close();
+
+
+单例设计模式的作用：多用户共享同一数据对象
+
+静态变量：多个同名的静态变量，在内存中只有一个副本(省内存)
+例子：
+function hello()
+{
+  static $a = 0;
+  $a++;
+  echo $a;
+}
+hello();//1
+hello();//2
+hello();//3
+例子：
+function hello()
+{
+  $a = 0;
+  $a++;
+  echo $a;
+}
+hello();//1
+hello();//1
+hello();//1
+
+
+clone：克隆对象
+$变量 = clone $对象;
+
+防止克隆对象：
+private function __clone()
+{}
+
+
+项目目录
+conn
+  DbConn.php
+index.php
+
+
+
+三层体系架构
+显示层：html、css、js、jquery
+逻辑层：php
+数据层：操纵数据库的代码、database
+
+优点
+1、代码分工更加明确
+2、便于网站的维护与管理(便于二次开发)
+
+
+项目目录
+conn
+  DbConn.php
+index.php
+
+三层体系架构
+显示层：index.php
+逻辑层：index.php
+数据层：conn、database
+
+
+页面的访问流程
+             表的操作类
+xxx.php---------dbio---------conn--------database
+                         数据库封装类
+
+
+项目目录
+conn-----------------数据库的封装类
+  DbConn.php
+dbio-----------------表的操作类
+  表名.php
+  表名.php
+  表名.php
+页面.php
+页面.php
+页面.php
+页面.php
+页面.php
+
+
+驼峰的命名规则
+大驼峰：如果名字有多个单词组成，那么每个单词的首字母必须大写
+小驼峰：从第二个单词开始，每个单词的首字母大写
+
+命名
+大驼峰：类名
+小驼峰：变量、方法名、属性名、函数名、数组名...
+全部大写：常量名
+
+
+
+
+
+
+
+
+
+
+
+
+

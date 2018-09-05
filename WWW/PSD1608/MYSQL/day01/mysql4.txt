@@ -1,0 +1,181 @@
+Microsoft Windows XP [版本 5.1.2600]
+(C) 版权所有 1985-2001 Microsoft Corp.
+
+C:\Documents and Settings\Administrator>mysql -uroot -p
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.5.21 MySQL Community Server (GPL)
+
+Copyright (c) 2000, 2011, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> USE psd1608;
+Database changed
+mysql> SHOW TABLES;
++-------------------+
+| Tables_in_psd1608 |
++-------------------+
+| user              |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE TABLE test1(
+    -> num1 TINYINT,
+    -> num2 SMALLINT,
+    -> num3 MEDIUMINT,
+    -> num4 INT
+    -> );
+Query OK, 0 rows affected (0.28 sec)
+
+mysql> DESC test1;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| num1  | tinyint(4)   | YES  |     | NULL    |       |
+| num2  | smallint(6)  | YES  |     | NULL    |       |
+| num3  | mediumint(9) | YES  |     | NULL    |       |
+| num4  | int(11)      | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> CREATE TABLE test2(
+    -> num1 SMALLINT,
+    -> num2 SMALLINT UNSIGNED
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DESC test2;
++-------+----------------------+------+-----+---------+-------+
+| Field | Type                 | Null | Key | Default | Extra |
++-------+----------------------+------+-----+---------+-------+
+| num1  | smallint(6)          | YES  |     | NULL    |       |
+| num2  | smallint(5) unsigned | YES  |     | NULL    |       |
++-------+----------------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT test2(num1,num2)
+    -> VALUE
+    -> (-10,-10);
+ERROR 1264 (22003): Out of range value for column 'num2' at row 1
+mysql> INSERT test2(num1,num2)
+    -> VALUE
+    -> (-10,10);
+Query OK, 1 row affected (1.20 sec)
+
+mysql> SELECT * FROM test2;
++------+------+
+| num1 | num2 |
++------+------+
+|  -10 |   10 |
++------+------+
+1 row in set (0.00 sec)
+
+mysql> INSERT test2(num1,num2)
+    -> VALUE
+    -> (-32769,10);
+ERROR 1264 (22003): Out of range value for column 'num1' at row 1
+mysql> INSERT test2(num1,num2)
+    -> VALUE
+    -> (-32768,65536);
+ERROR 1264 (22003): Out of range value for column 'num2' at row 1
+mysql> INSERT test2(num1,num2)
+    -> VALUE
+    -> (-32768,65535);
+Query OK, 1 row affected (0.23 sec)
+
+mysql> SELECT * FROM test2;
++--------+-------+
+| num1   | num2  |
++--------+-------+
+|    -10 |    10 |
+| -32768 | 65535 |
++--------+-------+
+2 rows in set (0.00 sec)
+
+mysql> CREATE TABLE test3(
+    -> num1 TINYINT,
+    -> num2 SMALLINT(3) ZEROFILL
+    -> );
+Query OK, 0 rows affected (0.20 sec)
+
+mysql> DESC test3;
++-------+-------------------------------+------+-----+---------+-------+
+| Field | Type                          | Null | Key | Default | Extra |
++-------+-------------------------------+------+-----+---------+-------+
+| num1  | tinyint(4)                    | YES  |     | NULL    |       |
+| num2  | smallint(3) unsigned zerofill | YES  |     | NULL    |       |
++-------+-------------------------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT test3(num1,num2)
+    -> VALUE
+    -> (1,1);
+Query OK, 1 row affected (0.28 sec)
+
+mysql> SELECT * FROM test3;
++------+------+
+| num1 | num2 |
++------+------+
+|    1 |  001 |
++------+------+
+1 row in set (0.00 sec)
+
+mysql> INSERT test3(num1,num2)
+    -> VALUE
+    -> (1,65535);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> SELECT * FROM test3;
++------+-------+
+| num1 | num2  |
++------+-------+
+|    1 |   001 |
+|    1 | 65535 |
++------+-------+
+2 rows in set (0.00 sec)
+
+mysql> CREATE TABLE test4(
+    -> num1 FLOAT(7,2),
+    -> num2 DOUBLE(7,2),
+    -> num3 DECIMAL(7,2)
+    -> );
+Query OK, 0 rows affected (0.19 sec)
+
+mysql> DESC test4;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| num1  | float(7,2)   | YES  |     | NULL    |       |
+| num2  | double(7,2)  | YES  |     | NULL    |       |
+| num3  | decimal(7,2) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT test4(num1,num2,num3)
+    -> VALUE
+    -> (454.789,868.876,454.567);
+Query OK, 1 row affected, 1 warning (0.20 sec)
+
+mysql> SHOW WARNINGS;
++-------+------+-------------------------------------------+
+| Level | Code | Message                                   |
++-------+------+-------------------------------------------+
+| Note  | 1265 | Data truncated for column 'num3' at row 1 |
++-------+------+-------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM test4;
++--------+--------+--------+
+| num1   | num2   | num3   |
++--------+--------+--------+
+| 454.79 | 868.88 | 454.57 |
++--------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql>

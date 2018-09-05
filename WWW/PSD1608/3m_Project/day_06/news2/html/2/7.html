@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>天天新闻网</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link href="../../css/news.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../../kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery-1.4.js"></script>
+    <script type="text/javascript">
+      var editor;
+      KindEditor.ready(function(e){
+          editor = e.create("[name=content]",{
+              "width":"560px",
+              "height":"200px",
+              "items":["undo","redo","|","bold","italic","underline"]
+          });
+      });
+      //利用ajax发表评论
+      function addReviews()
+      {
+    	  if(editor.html() == "")
+   		  {
+    		  alert("请输入评论内容！");
+    		  editor.focus();
+   		  }
+    	  else if(document.frm.userName.value == "")
+   		  {
+    		  alert("请输入评论人的姓名！");
+    		  document.frm.userName.focus();
+   		  }
+    	  else
+   		  {
+    		  //发表评论
+    		  $.ajax({
+    			  type:"post",
+    			  url:"../../plus/addreview.php",
+    			  data:"face="+document.frm.face.value+"&content="+editor.html()+"&userName="+document.frm.userName.value+"&articleId=7",
+    			  dataType:"html",
+    			  success:function(msg){
+    				  $("#reviewSpan").html(msg);
+    				  editor.html("");
+    				  document.frm.userName.value = "";
+    				  document.frm.face[0].checked = true;
+    			  }
+    		  });
+   		  }
+      }
+      //一打开页面就获得所有评论
+      function getReviews()
+      {
+    	  $.ajax({
+			  type:"post",
+			  url:"../../plus/addreview.php",
+			  data:"articleId=7",
+			  dataType:"html",
+			  success:function(msg){
+				  $("#reviewSpan").html(msg);
+			  }
+		  });
+      }
+    </script>
+  </head>
+  <body onload="getReviews()">
+    <!-- 网站头 -->
+    <div class="headDiv">
+  <div class="headDiv1">
+    <div class="headDiv10">www.<b>ttnewS</b>.com</div>
+    <div class="headDiv11"><img src="/news2/images/banner17.gif" width="370" height="50"></div>
+  </div>
+  <div class="headDiv2">天天新闻网</div>
+</div>
+<!-- 导航菜单 -->
+<div class="menuDiv">
+  <a href="/news2/index.html" class="a">首页</a> | 
+  <a href='/news2/html/1/newstype.html' class='a'>国内新闻</a> | <a href='/news2/html/2/newstype.html' class='a'>体育新闻</a> | <a href='/news2/html/3/newstype.html' class='a'>国际新闻</a> | <a href='/news2/html/4/newstype.html' class='a'>科技新闻</a> | <a href='/news2/html/6/newstype.html' class='a'>IT新闻</a> | 
+  <a href="/news2/plus/search.php" class="a">搜索</a>
+</div>
+
+
+
+
+
+
+
+
+	
+	<!-- 正文内容 -->
+	<div class="mainDiv clear">
+	  <!-- 显示的新闻 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">
+	      &nbsp;<a href="../../index.html" class="a">新闻主页</a> &raquo; 体育新闻
+	    </div>
+	  </div>
+	  <div class="newsTitle">丁俊晖最大瓶颈何时能突破</div>
+	  <div class="newsTime">2016-10-02 17:00:17</div>
+	  
+	  <div class="newsContent">新浪体育讯　虽然丁俊晖没有再次倒在排名赛首轮出局的魔咒下，但是上海大师赛第二轮被多特1比5淘汰出局，这个结果显然不能让家乡观战的球迷感到满意，特别是丁俊晖在比赛中表现出来的心理状态更令喜爱他的球迷担心。 　　<BR>在丁俊晖以往的比赛中被人抨击最多的便是脆弱的心理素质以及抗压能力，从温布利大师赛输给火箭奥沙利文，在排名赛首轮出局貌似成为了丁俊晖挥之不去的梦魇，连续四次首轮出局像个巨大的阴影笼罩着丁俊晖，久久不能摆脱。进入新赛季，在训练中出色的状态，在欧亚对抗赛牛刀小试都让人们对丁俊晖新赛季的表现充满了期待，人们都渴望他能展现一个全新的面貌。 　　<BR>首轮击败实力相差较大的中国另一位选手于德陆，虽然取胜，但是丁俊晖却没有达到以往的颠峰状态，整场比赛除了第一局险些单杆破百能让人们依稀记得那个雷厉风行的神奇小子，除此之外，频繁的失误充斥着整个比赛，让人感到亮点不多，乏善可陈。反而在领先时急于求成的急躁再次显露了心理状态的不稳定。 </div>
+	  
+	  <!-- 发表评论 -->
+	  <form name="frm" method="post">
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 发表评论</div>
+	  </div>
+	  <div class="newsContent">
+	    <img src="/news2/images/face/em01.gif"><input type="radio" name="face" value="em01.gif" checked>
+	    <img src="/news2/images/face/em02.gif"><input type="radio" name="face" value="em02.gif">
+	    <img src="/news2/images/face/em03.gif"><input type="radio" name="face" value="em03.gif">
+	    <img src="/news2/images/face/em04.gif"><input type="radio" name="face" value="em04.gif">
+	    <img src="/news2/images/face/em05.gif"><input type="radio" name="face" value="em05.gif">
+	    <img src="/news2/images/face/em06.gif"><input type="radio" name="face" value="em06.gif">
+	    <img src="/news2/images/face/em07.gif"><input type="radio" name="face" value="em07.gif">
+	    <img src="/news2/images/face/em08.gif"><input type="radio" name="face" value="em08.gif">
+	    <img src="/news2/images/face/em09.gif"><input type="radio" name="face" value="em09.gif">
+	    <img src="/news2/images/face/em10.gif"><input type="radio" name="face" value="em10.gif">
+	    <img src="/news2/images/face/em11.gif"><input type="radio" name="face" value="em11.gif">
+	  </div>
+	  <div class="newsImg"><textarea name="content"></textarea></div>
+	  <div class="newsContent">
+	    姓名：<input type="text" name="userName" size="20">
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <input type="button" value="发表" onclick="addReviews()">
+	  </div>
+	  </form>
+	  <!-- 评论内容 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 新闻点评</div>
+	  </div>
+      <span id="reviewSpan"></span>
+	  
+	  <br>
+	</div>
+    
+    
+    <!-- 网页脚 -->
+    <div class="footDiv">
+      网站简介 - 广告服务 - 网站地图 - 帮助信息 - 联系方式<br>
+   Copyrights &copy; 2014 hys.com All Rights Reserved
+</div>
+  </body>
+</html>
+
+
+

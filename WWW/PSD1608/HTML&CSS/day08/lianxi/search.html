@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<link type="text/css" rel="stylesheet" href="css/global.css" media="all"/>
+<style>
+   .search{
+	     width:400px;
+       height:32px;
+       border:1px solid #ffa31c;
+       margin:50px auto 0;
+       z-index:200;
+   }
+   .select{
+   	  position:relative;
+   	  float:left;
+	    width:65px;
+      height:32px;
+      background:#f7f7f7;
+      border-right:1px solid #dadada;
+      font-size:14px;
+   }
+   .select-info{
+	     line-height:32px;
+       padding-left:12px;
+       cursor:pointer;
+   }
+   .select span{
+   	  position:absolute;
+      top:15px;
+      right:8px;
+	  width:8px;
+      height:5px;
+      background:url(images/arrow.gif) no-repeat;
+   }
+   .select-item{
+	  position:absolute;
+      top:32px;
+      left:-1px;
+      width:65px;
+      border:1px solid #dadada;
+      border-top:0;
+   }
+   .select-item li{
+	   height:32px;
+       border-top:1px solid #dadada;
+       line-height:32px;
+       text-align:center;
+   }
+   .search-key{
+   	   float:left;
+	     width:220px;
+       height:20px;
+       margin:5px 0 0 14px;
+       display:inline;
+       border:0;
+       outline:none;
+       font: 16px/20px 微软雅黑,宋体;
+   }
+   .search-btn{
+	    float:right;
+      width:82px;
+      height:32px;
+      background:url(images/bg01.gif);
+      border:0;
+      text-indent:-9999px;
+      cursor:pointer;
+   }
+</style>
+</head>
+<body>
+    <div class="search">
+        <div class="select">
+            <div class="select-info">文章</div>
+            <span></span>
+            <ul class="select-item">
+               <li>文章</li>
+               <li>作者</li>
+            </ul>
+        </div>
+        <input type="text" value="请输入关键词" class="search-key"/>
+        <input type="button" value="搜索" class="search-btn"/>
+    </div>
+</body>
+</html>

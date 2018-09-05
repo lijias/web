@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>天天新闻网</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link href="../../css/news.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../../kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery-1.4.js"></script>
+    <script type="text/javascript">
+      var editor;
+      KindEditor.ready(function(e){
+          editor = e.create("[name=content]",{
+              "width":"560px",
+              "height":"200px",
+              "items":["undo","redo","|","bold","italic","underline"]
+          });
+      });
+      //利用ajax发表评论
+      function addReviews()
+      {
+    	  if(editor.html() == "")
+   		  {
+    		  alert("请输入评论内容！");
+    		  editor.focus();
+   		  }
+    	  else if(document.frm.userName.value == "")
+   		  {
+    		  alert("请输入评论人的姓名！");
+    		  document.frm.userName.focus();
+   		  }
+    	  else
+   		  {
+    		  //发表评论
+    		  $.ajax({
+    			  type:"post",
+    			  url:"../../plus/addreview.php",
+    			  data:"face="+document.frm.face.value+"&content="+editor.html()+"&userName="+document.frm.userName.value+"&articleId=3",
+    			  dataType:"html",
+    			  success:function(msg){
+    				  $("#reviewSpan").html(msg);
+    				  editor.html("");
+    				  document.frm.userName.value = "";
+    				  document.frm.face[0].checked = true;
+    			  }
+    		  });
+   		  }
+      }
+      //一打开页面就获得所有评论
+      function getReviews()
+      {
+    	  $.ajax({
+			  type:"post",
+			  url:"../../plus/addreview.php",
+			  data:"articleId=3",
+			  dataType:"html",
+			  success:function(msg){
+				  $("#reviewSpan").html(msg);
+			  }
+		  });
+      }
+    </script>
+  </head>
+  <body onload="getReviews()">
+    <!-- 网站头 -->
+    <div class="headDiv">
+  <div class="headDiv1">
+    <div class="headDiv10">www.<b>ttnewS</b>.com</div>
+    <div class="headDiv11"><img src="/news2/images/banner17.gif" width="370" height="50"></div>
+  </div>
+  <div class="headDiv2">天天新闻网</div>
+</div>
+<!-- 导航菜单 -->
+<div class="menuDiv">
+  <a href="/news2/index.html" class="a">首页</a> | 
+  <a href='/news2/html/1/newstype.html' class='a'>国内新闻</a> | <a href='/news2/html/2/newstype.html' class='a'>体育新闻</a> | <a href='/news2/html/3/newstype.html' class='a'>国际新闻</a> | <a href='/news2/html/4/newstype.html' class='a'>科技新闻</a> | <a href='/news2/html/6/newstype.html' class='a'>IT新闻</a> | 
+  <a href="/news2/plus/search.php" class="a">搜索</a>
+</div>
+
+
+
+
+
+
+
+
+	
+	<!-- 正文内容 -->
+	<div class="mainDiv clear">
+	  <!-- 显示的新闻 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">
+	      &nbsp;<a href="../../index.html" class="a">新闻主页</a> &raquo; 国际新闻
+	    </div>
+	  </div>
+	  <div class="newsTitle">美国加州南部发生里氏4.5级地震</div>
+	  <div class="newsTime">2016-10-02 17:00:16</div>
+	  <div class='newsImg'><img src='../../newspicture/c5a1d4e594a00ff2eaaa15ce9b39d344.jpg' width='400' height='300'></div>
+	  <div class="newsContent">新华网洛杉矶8月9日电(记者 高原)美国加利福尼亚州南部9日凌晨发生震感强烈的地震，在当地引发恐慌。 　　<BR>据美国地质测量局称，这次里氏4.5级的地震发生在当地时间9日零点58分，震中在洛杉矶市东北部约50公里的切茨沃斯镇，洛杉矶市中心和附近地区也有明显震感。此后又发生了数次余震。 　　<BR>当地警方称，据初步调查，地震造成当地一座桥梁和多处房屋出现裂缝，被损坏的桥梁已被关闭.目前没有人员伤亡的报道。 　　<BR>据震区居民反映，他们是在睡梦中被惊醒的，当时房屋晃动，家中物品纷纷落在地上，数千辆汽车的报警器在震动后发出狂叫。 　　<BR>地震专家称，这是自1994年洛杉矶地区发生6.7级大地震以来，加州南部发生的最强烈地震。1994年的地震造成72人死亡，1万多人受伤，财产损失达125亿美元。 </div>
+	  
+	  <!-- 发表评论 -->
+	  <form name="frm" method="post">
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 发表评论</div>
+	  </div>
+	  <div class="newsContent">
+	    <img src="/news2/images/face/em01.gif"><input type="radio" name="face" value="em01.gif" checked>
+	    <img src="/news2/images/face/em02.gif"><input type="radio" name="face" value="em02.gif">
+	    <img src="/news2/images/face/em03.gif"><input type="radio" name="face" value="em03.gif">
+	    <img src="/news2/images/face/em04.gif"><input type="radio" name="face" value="em04.gif">
+	    <img src="/news2/images/face/em05.gif"><input type="radio" name="face" value="em05.gif">
+	    <img src="/news2/images/face/em06.gif"><input type="radio" name="face" value="em06.gif">
+	    <img src="/news2/images/face/em07.gif"><input type="radio" name="face" value="em07.gif">
+	    <img src="/news2/images/face/em08.gif"><input type="radio" name="face" value="em08.gif">
+	    <img src="/news2/images/face/em09.gif"><input type="radio" name="face" value="em09.gif">
+	    <img src="/news2/images/face/em10.gif"><input type="radio" name="face" value="em10.gif">
+	    <img src="/news2/images/face/em11.gif"><input type="radio" name="face" value="em11.gif">
+	  </div>
+	  <div class="newsImg"><textarea name="content"></textarea></div>
+	  <div class="newsContent">
+	    姓名：<input type="text" name="userName" size="20">
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <input type="button" value="发表" onclick="addReviews()">
+	  </div>
+	  </form>
+	  <!-- 评论内容 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 新闻点评</div>
+	  </div>
+      <span id="reviewSpan"></span>
+	  
+	  <br>
+	</div>
+    
+    
+    <!-- 网页脚 -->
+    <div class="footDiv">
+      网站简介 - 广告服务 - 网站地图 - 帮助信息 - 联系方式<br>
+   Copyrights &copy; 2014 hys.com All Rights Reserved
+</div>
+  </body>
+</html>
+
+
+

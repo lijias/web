@@ -1,0 +1,586 @@
+MySQL基础
+1、安装
+   1)设置密码
+   2)设置编码
+2、my.ini配置文件
+   1)端口号
+     port=3306
+   2)设置编码
+     default-character-set=utf8
+     character-set-server=utf8
+   3)存储引擎
+     default-storage-engine=INNODB
+   4)设置最大边接数
+     max_connections=100
+   注意：修改完配置文件后，必须重启mysql服务
+3、登陆mysql
+   mysql -h主机地址 -u用户名 -p密码
+   mysql -u用户名 -p密码
+   mysql -u用户名 -p
+   注意："mysql"不是系统内部或外部的命令！
+   解决：将mysql的bin目录配置到系统的path环境变量中
+         变量名：Path
+         变量值：asdfasdfjasd;D:\MySQL\MySQL Server 5.5\bin
+
+
+4、设置客户端的编码
+set names gbk;
+
+5、查看mysql编码
+show variables like 'character%';
+
+6、查看现存的所有表
+show databases;
+
+7、进入库
+use 库名;
+
+8、查看库现存的所有表
+show tables;
+
+9、查看表结构
+desc 表名;
+
+10、建库
+create database 库名;
+
+11、建表
+create table 表名
+(
+   字段名  数据类型  约束,
+   字段名  数据类型  约束,
+   字段名  数据类型  约束,
+   字段名  数据类型  约束
+);
+
+12、数据类型
+int  float   char   varchar   text   timestamp
+
+13、约束
+主键约束		primary key
+外键约束		foreign key
+非空约束		not null
+空约束		null
+唯一约束		unique
+自增长约束	auto_increment
+默认值约束	default
+
+14、修改表名
+alter table 原表名 rename to 新表名;
+
+15、添加字段
+alter table 表名 add column 字段名 数据类型 约束;
+alter table 表名 add 字段名 数据类型 约束;
+
+16、删除字段
+alter table 表名 drop column 字段名;
+alter table 表名 drop 字段名;
+
+17、修改字段
+alter table 表名 change 原字段名 新字段名 数据类型 约束;
+
+18、添加记录
+insert into 表名(字段名...)values(值...);
+
+19、修改记录
+update 表名 set 字段=值,字段=值...;
+update 表名 set 字段=值,字段=值... where 条件;
+
+20、删除记录
+delete from 表名;
+delete from 表名 where 条件;
+
+21、清空表
+delete from 表名;     不恢复自增长的id  慢  可恢复  支持事务
+truncate table 表名;  恢复自增长的id    快  不恢得  不支持事务
+
+22、普通查询
+select * from 表名;
+select 字段,字段... from 表名;
+
+23、条件查询
+select * from 表名 where 条件;
+
+24、排序
+select * from 表名 order by 字段;#升序
+select * from 表名 order by 字段 desc;#降序
+select * from 表名 where 条件 order by 字段;
+
+25、分组
+select * from 表名 group by 字段;
+
+26、聚合查询(统计查询)
+select count(*) from 表名 where 条件;
+select sum(字段) from 表名 where 条件;
+select avg(字段) from 表名 where 条件;
+select max(字段) from 表名 where 条件;
+select min(字段) from 表名 where 条件;
+
+27、分页查询
+select * from 表名 limit 起始值,条数;
+select * from 表名 where 条件 order by 字段 limit 起始值,条数;
+
+28、模糊查询(搜索)[Sphinx]
+select * from 表名 where 字段 like '%_内容';
+select * from 学生表 where 姓名 like '张%';
+select * from 学生表 where 姓名 like '张_';
+select * from 学生表 where 姓名 like '%文字%';
+通配符
+%：代表任意长度的任意字符
+_：代表任意一个字符
+
+
+
+多表查询
+1、子查询
+2、内连接
+3、外连接
+
+
+子查询(嵌套查询)
+1、子查询语句出现在where条件中(充当条件)
+   select * from 表 where 字段 in (select语句);
+   delete from 表 where 字段 in (select语句);
+   update 表 set 字段=值 where 字段 in (select语句);
+   例子1：查询"国内新闻"下的所有新闻
+   select * from newsArticles
+    where typeId in 
+     (select typeId from newsTypes where typeName='国内新闻');
+   例子2：查询typeId=3这个分类下所有新闻的评论
+          说明：newsTypes->newsArticles  newsArticles->reviews
+   select * from reviews where articleId in 
+     (select articleId from newsArticles where typeId=3);
+   例子3：删除typeId=3这个分类下的所有新闻评论
+   delete from reviews where articleId in 
+    (select articleId from newsArticles where typeId=3);
+2、子查询充当字段
+   select 字段,字段,(select语句),字段 from 表名;
+
+create table geshou
+(
+  userId  int  auto_increment primary key,
+  userName varchar(20) not null
+);
+insert into geshou(userName)values('周杰伦');
+insert into geshou(userName)values('林俊杰');
+insert into geshou(userName)values('张三');
+create table ych
+(
+  id      int  auto_increment primary key,
+  userId  int  not null,
+  address varchar(200) not null,
+  dateandtime timestamp default current_timestamp,
+  foreign key (userId) references geshou(userId)
+);
+insert into ych(userId,address)values(1,'北京');
+insert into ych(userId,address)values(2,'北京');
+insert into ych(userId,address)values(3,'上海');
+insert into ych(userId,address)values(2,'深圳');
+insert into ych(userId,address)values(1,'天津');
+insert into ych(userId,address)values(2,'达内');
+
+问题：查询所有歌手信息，并显示每个歌手的演唱会的次数
+select 
+ userId,
+ userName,
+ (select count(*) from ych b where a.userId=b.userId) as ychTimes
+ from geshou a;
+
+
+内连接：将多张表的字段合为一个结果集
+两表的内连接
+select * from 表1 inner join 表2 on 关联的字段相等;
+三表的内连接
+select * from 表1 inner join 表2 on 关联的字段相等
+  inner join 表3 on 关联的字段相等;
+内连接的另一种写法
+select * from 表1,表2,表3 where 关联的字段相等;
+
+例子：查询所有新闻，并显示分类名称
+select articleId,typeName,title from newsArticles a inner join newsTypes b
+  on a.typeId=b.typeId;
+select articleId,typeName,title from newsArticles a,newsTypes b
+  where a.typeId=b.typeId;
+
+
+外连接：将多张表的字段合为一个结果集
+1、左外连接：以左表为主，右表为副
+select * from 表1 left outer join 表2 on 关联的字段相等;
+2、右外连接：以右表为主，左表为副
+select * from 表1 right outer join 表2 on 关联的字段相等;
+
+
+
+多表查询的使用情况
+1、子查询：查询出现结果集，只有一个表中的数据
+2、内连接：查询出现结果集，有多张表中的数据
+3、外连接：查询出现结果集，有多张表中的数据
+使用情况
+1、外连接(不用)
+2、内连接
+3、子查询(被动使用)
+---------------------------------------------------------
+视图View：简化查询语句
+
+
+创建视图
+create view 视图名
+as
+select语句;
+
+create view myview
+as
+select * from bbsInfo;
+
+
+修改视图
+alter view 视图名
+as
+select语句;
+
+
+查看现存的所有视图
+1、查看当前库中的所有表
+   show tables;
+2、information_schema库->views表
+   select table_schema,table_name from information_schema.views;
+
+
+删除视图
+1、删除视图所在的库
+   drop database 库名;
+2、删除视图
+   drop view 视图名;
+
+
+使用视图：把视图当表用
+select * from 视图名;
+select * from myview;
+select * from myview where bbsId>10;
+select bbsId,title from myview where bbsId>10;
+
+
+例子：针对新闻分类表、新闻表来个视图
+create view newsInfo
+as
+select articleId,a.typeId,typeName,articleNums,hints,title,content,source,writer,userName,imagepath,dateandtime from newsArticles a,newsTypes b
+  where a.typeId=b.typeId order by articleId;
+问题1：查询热点要闻
+select typeId,typeName,title,articleId,dateandtime from newsInfo order by hints desc limit 0,6;
+问题2：查询articleId=7的新闻
+select articleId,typeName,title,content,imagepath,dateandtime from newsInfo where articleId=7;
+
+
+视图知识点
+1、介绍、作用
+2、创建
+3、修改
+4、查看
+5、删除
+6、使用
+
+
+视图注意
+1、简化查询语句(视图里面只能存放select语句)
+2、把视图当表用
+   建议：只对视图执行查询操作，不执行增、删、改操作
+
+
+使用视图的场合
+1、有一个多表查询语句
+2、该语句的使用频率高
+------------------------------------------------------
+触发器Trigger：数据库中的事件
+
+作用：当用户对表进行增、删、改的同时，是否要执行其他操作
+
+触发器的执行时间
+before：先调用触发器，后执行增、删、改
+after：先执行增、删、改，后调用触发器
+
+触发器的类型
+insert：当对表进行insert操作时，系统将自动调用触发器
+update：当对表进行update操作时，系统将自动调用触发器
+delete：当对表进行delete操作时，系统将自动调用触发器
+注意：一个触发器最多只能有一个类型
+
+
+修改mysql语句的定界符
+delimiter 符号
+
+
+创建触发器
+delimiter //
+drop trigger if exists 触发器名//
+create trigger 触发器名
+before|after  insert|update|delete
+on 表名
+for each row
+begin
+  sql语句;
+  sql语句;
+  sql语句;
+end//
+delimiter ;
+
+
+删除触发器
+1、删除触发器所对应的表
+   drop table 表名;
+2、删除触发器所在的库
+   drop database 库名;
+3、删除触发器
+   drop trigger 触发器名;
+
+
+查看现存的触发器
+1、information_schema库->triggers表
+   select trigger_schema,trigger_name from information_schema.triggers;
+
+
+例子1：修改bbsInfo表中的记录，同时向userInfo表添加一条记录
+delimiter //
+drop trigger if exists updateBbs//
+create trigger updateBbs
+after update
+on bbsInfo
+for each row
+begin
+  insert into userInfo(userName,password)values('Tom','123');
+end //
+delimiter ;
+
+update bbsInfo set clickTimes=123 where bbsId=8;
+
+
+例子2：统计表的功能
+create table bumen
+(
+  bmId   int    auto_increment primary key,
+  bmName varchar(100) not null
+);
+create table employee
+(
+  empId  int   auto_increment primary key,
+  userName varchar(20) not null
+);
+create table tongji
+(
+  bmCount  int  not null,#bumen表的总记录数
+  empCount int  not null#employee表的总记录数
+);
+insert into tongji values(0,0);
+
+
+bumen表添加记录的触发器
+delimiter //
+drop trigger if exists addBm//
+create trigger addBm
+after insert
+on bumen
+for each row
+begin
+  update tongji set bmCount=bmCount+1;
+end//
+delimiter ;
+
+
+删除bumen表记录的触发器
+delimiter //
+drop trigger if exists delBm//
+create trigger delBm
+after delete
+on bumen
+for each row
+begin
+  update tongji set bmCount=bmCount-1;
+end//
+delimiter ;
+
+测试
+insert into bumen(bmName)values('市场部');
+insert into bumen(bmName)values('开发部');
+insert into bumen(bmName)values('测试部');
+insert into bumen(bmName)values('售后部');
+delete from bumen where bmName='售后部';
+
+
+触发器知识点
+1、介绍、作用
+2、触发器时间、类型
+3、创建、查看、删除
+
+触发器注意
+1、当对表进行增、删、改的同时，由系统自动调用
+2、没有参数、没有返回值
+3、一个触发器只能有一个类型
+4、一个触发器只能施加给一个表
+
+
+触发器使用场合
+当对表进行增、删、改的同时，是否执行其他操作
+-------------------------------------------------------
+
+
+查看表的索引
+show index from 表名
+
+删除索引
+drop index 索引名 on 表名
+
+创建索引
+1.主键索引
+	1)建表的同时,直接指定主键约束
+2.唯一索引
+	1)建表的同时,直接指定唯一约束
+	2)create unique index 索引名 on 表名(字段名);
+3.普通索引
+	create index 索引名 on 表名(字段);
+4.全文索引
+	create fulltext index 索引名 on 表名(字段);
+
+索引知识点
+1.介绍,作用
+2.分类
+3.创建,删除,查看
+
+索引注意:
+1.索引是施加给字段
+2.索引分类:主键索引,唯一索引,普通索引
+3.什么样的字段应当添加索引
+-------------------------------------------------------------------------------------------------------------------------------------
+存储引擎Engine:改变数据库的性能
+
+ISAM:	查询速度快,不支持外键操作,不支持事务,支持全文索引
+MyISAM:	ISAM升级版
+Memory:	速度快,数据驻留在计算机内存,数据管理不稳定,计算机断电后数据全部丢失
+InnoDB:		速度较慢,不支持全文索引,支持外键,支持事务
+
+可使用的储存引擎
+MyISAM:CMS系统(内容管理系统)
+InnoDB:	bbs,blog,webo,mail,oa....
+
+设置存储引擎
+1.修改my.ini配置文件
+	default-storage-engine=InnoDB
+	必须重启mysql服务
+2.建表的同时,直接指定表的存储引擎
+	MySQL5.0以前的版本
+	create table 表名
+	(
+		字段 数据类型 约束,
+		字段 数据类型 约束,
+		字段 数据类型 约束
+	)type=存储引擎;
+	MySQL5.0及以后版本
+	create table 表名
+	(
+		字段 数据类型 约束,
+		字段 数据类型 约束,
+		字段 数据类型 约束
+	)engine=存储引擎;
+	
+查看表的存储引擎
+show create table 表名;
+
+建表的同时直接指定存储引擎
+create table newsinfo
+(
+	newsId int auto_increment primary key,
+	title varchar(100) not null
+	content text not null
+);
+给content字段添加全文索引
+create fulltext index c_index on newsInfo(content);
+------------------------------------------------------------------------------------------------------------------------------------
+事务Transaction:	 保持数据的完整性
+
+事务特征:原子性,一致性,隔离性,持久性
+原子性:
+一致性:
+隔离性:
+持久性:
+
+事务最终状态
+commit;		成功
+rollback;	失败
+
+结束事物的办法
+commit;		提交
+rollback;	回滚(撤销)
+
+开启一个事务
+start transaction;
+
+结束事务
+1.提交事务(事务成功)
+	commit;
+2.回滚事务(事务失败)
+	rollback;
+
+设置回滚点
+savepoint 名;
+回到指定的回滚点(注意:并没有结束事务)
+rollback to 名;
+
+
+
+
+显式提交事务
+隐式提交事务
+---------------------------------------------------------------------------------------------------------------------------
+MySQL高级
+1.View
+2.Trigger
+3.Procedure
+4.T-SQL
+5.Index
+6.Engine
+7.Transaction
+-----------------------------------------------------------------------------------------------------------------------------
+数据库的备份与还原
+1.数据库备份
+	1)打开命令提示符窗口
+	2)执行如下命令
+		mysqldump	-h主机地址	-u用户名		-p密码	库名>d:/hello.sql
+		mysqldump	-u用户名		-p密码	库名>d:/hello.sql
+		备份电脑上的库
+		mysqldump	-uroot	-proot test>e:/aaa.sql
+2.数据库还原
+	1)登录mysql数据库
+	2)新建一个库,并进入该库
+	3)执行如下命令
+	  source		e:/aaa.sql
+
+数据库的存储引擎:MyISAM
+数据库备份:进入到mysql的data目录,将库名对应的文件夹复制走
+数据库还原:将库名的文件夹,直接复制到mysql的data目录中即可
+--------------------------------------------------------------------------------------------------------------------------------
+数据库优化
+1.主键
+	1)每张表最好都有主键
+	2)主键最好是数字类型,最好是短主键
+2.字段的数据类型
+	1)能用数字类型,就不用字符串
+	2)选择合适的字符串类型:char,varchar,text
+3.每个字段最好都有约束:避免字段中出现NULL值
+4.合理的添加外键
+	A表	B表	B表里有外键,关联到了A表的主键
+	主表:A表		从表:B表
+5.避免使用select *这样查询
+6.尽可能那数字类型的字段充当条件
+7.避免在where条件中出现NULL关键字
+8.避免在where条件中出现数据类型的转换
+	select * from 表名 where age='30'
+9.避免在添加索引的字段上使用聚合函数,索引失效
+	select * from 学生表 where avg(score)>60
+10.尽可能别用子查询
+11.尽可能别用模糊查询
+12.索引
+13.拆分表(拆分记录,拆分字段)
+14.主从数据库
+15.缓存
+16.静态化
+17.负载均衡(硬件)
+
+

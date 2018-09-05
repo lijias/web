@@ -1,0 +1,49 @@
+@CHARSET "UTF-8";
+/*全局样式*/
+body{
+	font-size:12px;
+	font-family:宋体,arial;
+}
+body,div,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,tr,td,form,input,select,textarea{
+	margin:0;
+	padding:0;
+}
+h1,h2,h3,h4,h5,h6{
+	font-size:14px;
+	font-weight:bold;
+}
+img{
+	border:0;
+}
+a{
+	color:#333;
+	text-decoration:none;
+}
+a:hover{
+	color:#900;
+	text-decoration:underline;
+}
+ul,li,ol{
+	 list-style:none;
+}
+/*万能清除*/
+.clear{
+	clear:both;
+    zoom:1;
+}
+.clear:after{
+	display:block;
+    content:".";
+    clear:both;
+    height:0;
+    visibility:hidden;
+}
+
+
+
+
+
+
+
+
+

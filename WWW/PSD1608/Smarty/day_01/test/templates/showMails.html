@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-1.4.js"></script>
+        <script type="text/javascript">
+        function check(emailId){
+            if(confirm("是否要删除该邮件!!")){
+            	window.location =" showMails.php?emailId="+emailId;
+                }
+        }
+        </script>
+</head>
+<body>
+<center>所有邮件</center>
+<table border= 1 align='center' width='700'>
+<tr>
+<th>邮件ID</th><th>邮件标题</th><th>邮件日期</th><th>是否删除</th>
+</tr>
+{foreach $selectEmail as $v}
+<tr>
+<td>{$v.emailId}</td>
+<td><a href='email.php?emailId={$v.emailId}'>{$v.title}</a></td>
+<td>{$v.dataandtime}</td>
+<td><a href='#' onclick='check({$v.emailId})'>删除</a></td>
+</tr>
+{/foreach}
+</table>
+</body>
+</html>

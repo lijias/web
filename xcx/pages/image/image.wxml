@@ -1,0 +1,12 @@
+<!--pages/image/image.wxml-->
+<view>
+  <input type='text' name='searchName' bindinput="voteSearchStr"></input>
+  <button bindtap='sub'>提交</button>
+</view>
+<image src='./../../images/after_sale.png' style='width:25px;height:25px' bindtap='choose'></image>
+<button type="primary" style="border-radius: 20px;" class="btn-style" bindtouchstart="touchdown_plugin" bindtouchend="touchup_plugin">按下录音，松开结束</button>
+<view wx:if="{{searchView}}">
+  <view></view>
+</view>
+<block wx:else>
+</block>

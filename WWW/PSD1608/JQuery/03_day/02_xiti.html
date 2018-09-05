@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src='jquery-1.8.0.js'></script>
+<script>
+/*1、2、有如下数组：
+    hosts = ["163.com","qq.com","sina.com"]
+   对数组元素进行处理，要求返回如下的数组格式
+   tom@163.com,tom@qq.com,tom@sina.com*/
+   $(function(){
+	   var hosts = ["163.com","qq.com","sina.com"];
+	   var result = $.map(hosts,function(value,key){
+	         return "tom@"+value;
+	   })
+	   alert(result);
+   });
+</script>
+</head>
+<body>
+
+</body>
+</html>

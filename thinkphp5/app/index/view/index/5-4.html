@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-4</title>
+</head>
+<body>
+<!--视图中使用php函数-->
+<p>截取字符串 : {$pwd|substr=###,0,3}</p>
+<p>字符串加密并改为大写 : {$pwd|md5|strtoupper}</p>
+
+<!--视图中运算数据-->
+<p>a+b={$a+$b}</p>
+<p>a-b={$a-$b}</p>
+<p>a*b={$a*$b}</p>
+<p>a/b={$a/$b}</p>
+<p>a%b={$a%$b}</p>
+<p>a+b-c={$a+$b-$c}</p>
+
+<!--视图中数据可以设置默认值-->
+<p>{$name|default='天喔'}</p>
+
+<!--当要使用原来标签时-->
+{literal}
+    <script>
+        {$pwd}
+    </script>
+{/literal}
+</body>
+</html>

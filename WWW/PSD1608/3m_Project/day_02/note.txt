@@ -1,0 +1,170 @@
+三层体系架构
+显示层：html、css、js、jquery
+逻辑层：php
+数据层：dbio、conn、database
+
+优点
+1、代码分工更加明确
+2、便于网站的维护与管理(便于二次开发)
+
+
+项目目录
+conn------------------数据库封装类
+  DbConn.php
+dbio------------------表的操作类
+  表名.php
+  表名.php
+  表名.php
+index.php
+newstype.php
+news.php
+search.php
+...
+
+
+
+出现乱码的原因：编码不统一
+
+出现的编码地方
+1、文件本身的编码
+2、<meta http-equiv="content-type" content="text/html;charset=utf-8">
+3、header("content-type:text/html;charset=utf-8");
+4、mysql本身的编码
+5、set names gbk;
+6、mysql_query("set names utf8");
+
+
+国标编码(字符集)
+gb2312		简体中文(一个汉字占用二个字符)
+gbk		简繁体中文(一个汉字占用二个字符)
+utf-8		简繁体中文(一个汉字占用三个字符)
+
+
+mysql语句：查看mysql整体编码
+show variables like 'character%';
+
+ Variable_name            | Value
+--------------------------+-------------------------------------------
+ character_set_client     | utf8  mysql客户端的编码
+ character_set_connection | utf8  连接mysql的编码
+ character_set_database   | utf8  数据库的编码
+ character_set_filesystem | binary  表明新建的表都是字节文件
+ character_set_results    | utf8  结果集的编码
+ character_set_server     | utf8  mysql服务的编码
+ character_set_system     | utf8  mysql系统的编码
+ character_sets_dir       | D:\MySQL\MySQL Server 5.5\share\charsets\
+
+
+mysql语句：临时改变mysql客户端的编码
+set names gbk;
+
+
+修改mysql本身的编码：修改my.ini配置文件
+default-character-set=utf8
+character-set-server=utf8
+注意：修改完后，重启MySQL服务
+
+
+集成环境:建库时注意
+create database 库名 character set=utf8;
+
+
+string函数库
+strlen()
+substr()
+explode()
+...
+
+
+mbstring函数库
+1、获得字符串长度
+   int mb_strlen(字符串,"utf-8");
+2、截取字符串
+   string mb_substr(字符串,起始值,长度,"utf-8");
+注意：修改php.ini配置文件
+      ;extension=php_mbstring.dll
+
+
+php中包含文件的方法
+include "文件路径";
+include_once "文件路径";
+require "文件路径";
+require_once "文件路径";
+注意：
+1、带once与不带once的区别
+   带once：同一页面多次包含时，该页面只包含一次
+   不带once：同一页面多次包含时，该页面就是包含了多次
+2、include与require的区别
+   被包含页面出错时
+   include：页面上显示一个警告信息
+   require：页面上产生一个至命的错误
+
+
+
+
+HTML编辑器
+HTMLEditor、FckEditor、CKEditor
+QQEditor、SinaEditor、KindEditor
+
+
+子父类的称呼
+父类：基类、超类
+子类：派生类
+
+
+
+jquery选择器
+1、id选择器
+   $("#id")
+2、class选择器
+   $(".class名")
+3、标签选择器
+   $("标签")
+4、群组选择器
+   $("选择器,选择器...")
+5、派生选择器(后代选择器)
+   $("父标签选择器 子标签选择器")
+6、属性选择器
+   $("[属性名=属性值]")
+
+$("[type=text]")
+$("[size=30]")
+<input type="text" size="30">
+
+
+js中的document对象
+属性
+  1)html页面中的title标签
+    (1)设置标题
+       document.title = "标题内容";
+    (2)获得标题
+       var 变量 = document.title;
+  2)html页面中的body标签
+    document.body.bgColor = "blue";
+  3)找寻页面中指定表单名的表单对象
+    document.表单name名.submit()
+    document.表单name名.reset()
+    document.表单name名.表单元素的name名
+方法
+
+
+
+KindEditor编辑器
+
+下载编辑器资源包
+kindeditor-4.1.4.zip
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

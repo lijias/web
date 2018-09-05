@@ -1,0 +1,158 @@
+一.时间日期函数库
+ 1.安装:时间日期函数库PHPCORE组成部分
+ 2.
+  (1)date_default_timezone_set(string $timezone)
+          设置时区
+     说明:
+     a.  默认UTC
+     b.设置中国时区
+      (a)PRC
+      (b)Asia/Shanghai
+      (c)Asia/Chongqing
+      (d)php.ini date.timezone=PRC
+  (2) date_default_timezone_get()：获得时区
+  
+  (3) date:格式化一个本地时间／日期
+   string date ( string $format [, int $timestamp ] )
+   说明：
+    a.$format的值
+      Y: 四位的年(year)
+      m: 两位的月 (month)
+      d: 两位的日 (day)
+      H: 两位的小时(hours)
+      i：两位的分钟 (minutes)
+      s：两位的秒  (seconds) 
+      w:一周中的星期几 (0-6 0代表星期日 week)
+    b.$timestamp
+      (a)参数省略 ,默认值  time()
+      (b)time: 时间戳： 从 1970年01月01日 
+               00:00:00到现在的秒数
+      
+  (4) time: 返回当前的 Unix 时间戳
+  (5) strtotime: 将任何英文文本的
+             日期时间描述解析为 Unix 时间戳
+  
+  (6) mktime:取得一个日期的 Unix 时间戳
+      
+  (7) microtime:返回当前 Unix 时间戳和微秒数
+     
+     说明：microtime(true)以浮点数返回时间戳和微秒数
+     
+二.数学函数库
+  (1) floor:舍去法取整(向下取整)
+  (2) ceil:进一法取整(向上取整)
+  (3) round:对浮点数进行四舍五入 
+       float round ( float $val 
+          [, int $precision = 0])
+          例如: echo round(4.6);//5
+          echo round(4.789,2)//4.79
+  (4) pow:求次幂
+  (5) sqrt:开平方
+  (6) abs:求绝对值
+  (7) max:求最大值
+  (8) min:求最小值
+  (9) rand:获得随机整数
+  (10) mt_rand:获得更好随机整数
+
+三.循环
+ 1.什么时候用循环：重复的事情用循环,有规律的事情
+                                 用循环
+ 2.for循环
+  for(expr1;expr2;expr3){
+    ...
+  }
+  说明:
+   expr1:无条件执行一次,对变量赋初始值
+   expr2:每次循环时执行的语句,作用:判断
+                   循环进入的条件(循环终止条件)
+   expr3：每次循环后执行的语句(循环体最后)
+                   作用:变量步长(增量或减量)
+ 3. for 特殊使用
+  (1) 省略表达式
+    for(;;){
+      ...
+    }
+  (2)for中每个表达式可以有多条语句，
+          并且每条语句用逗号隔开
+    说明:
+     a.第一个表达式和第三个表达式多条语句
+     b.第二条表达式只执行最后一条语句
+  
+  4.while,do...while
+    (1)格式
+    while(循环终止条件){
+      ...
+    }
+    do{
+      ...
+    }while(循环终止条件)
+   
+     说明:
+    a. for,while先判断后执行
+       do...while先执行后判断
+    b.当第一次条件为假时，do...
+      while比while多执行一次
+    c.for 精确次数的循环，
+      while 不定次数的循环
+  
+  5. break,continue
+   (1)break用在 switch,循环
+            作用结束程序执行,如果在循环
+            只结束一层循环
+   (2)continue 用在 switch,循环
+         如果switch中 与break 功能相同。
+         如果在循环中跳过当前执行的语句中
+         后面的代码,而执行下一次循环
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+  
+  
+  
+  
+      
+      
+      
+      
+      
+      
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>天天新闻网</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link href="../../css/news.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../../kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery-1.4.js"></script>
+    <script type="text/javascript">
+      var editor;
+      KindEditor.ready(function(e){
+          editor = e.create("[name=content]",{
+              "width":"560px",
+              "height":"200px",
+              "items":["undo","redo","|","bold","italic","underline"]
+          });
+      });
+      //利用ajax发表评论
+      function addReviews()
+      {
+    	  if(editor.html() == "")
+   		  {
+    		  alert("请输入评论内容！");
+    		  editor.focus();
+   		  }
+    	  else if(document.frm.userName.value == "")
+   		  {
+    		  alert("请输入评论人的姓名！");
+    		  document.frm.userName.focus();
+   		  }
+    	  else
+   		  {
+    		  //发表评论
+    		  $.ajax({
+    			  type:"post",
+    			  url:"../../plus/addreview.php",
+    			  data:"face="+document.frm.face.value+"&content="+editor.html()+"&userName="+document.frm.userName.value+"&articleId=6",
+    			  dataType:"html",
+    			  success:function(msg){
+    				  $("#reviewSpan").html(msg);
+    				  editor.html("");
+    				  document.frm.userName.value = "";
+    				  document.frm.face[0].checked = true;
+    			  }
+    		  });
+   		  }
+      }
+      //一打开页面就获得所有评论
+      function getReviews()
+      {
+    	  $.ajax({
+			  type:"post",
+			  url:"../../plus/addreview.php",
+			  data:"articleId=6",
+			  dataType:"html",
+			  success:function(msg){
+				  $("#reviewSpan").html(msg);
+			  }
+		  });
+      }
+    </script>
+  </head>
+  <body onload="getReviews()">
+    <!-- 网站头 -->
+    <div class="headDiv">
+  <div class="headDiv1">
+    <div class="headDiv10">www.<b>ttnewS</b>.com</div>
+    <div class="headDiv11"><img src="/news2/images/banner17.gif" width="370" height="50"></div>
+  </div>
+  <div class="headDiv2">天天新闻网</div>
+</div>
+<!-- 导航菜单 -->
+<div class="menuDiv">
+  <a href="/news2/index.html" class="a">首页</a> | 
+  <a href='/news2/html/1/newstype.html' class='a'>国内新闻</a> | <a href='/news2/html/2/newstype.html' class='a'>体育新闻</a> | <a href='/news2/html/3/newstype.html' class='a'>国际新闻</a> | <a href='/news2/html/4/newstype.html' class='a'>科技新闻</a> | <a href='/news2/html/6/newstype.html' class='a'>IT新闻</a> | 
+  <a href="/news2/plus/search.php" class="a">搜索</a>
+</div>
+
+
+
+
+
+
+
+
+	
+	<!-- 正文内容 -->
+	<div class="mainDiv clear">
+	  <!-- 显示的新闻 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">
+	      &nbsp;<a href="../../index.html" class="a">新闻主页</a> &raquo; 体育新闻
+	    </div>
+	  </div>
+	  <div class="newsTitle">英超新赛季五大看点</div>
+	  <div class="newsTime">2016-10-02 17:00:17</div>
+	  
+	  <div class="newsContent">2007-2008赛季英超联赛将在8月11日拉开大幕，四大豪门争霸曼联能否卫冕？谁能搅乱前四格局？三支升班马谁能带来惊喜？中国球员孙继海和董方卓又会有什么样的表现？新浪体育特邀ESPN英超专家詹俊先生为即将开幕的英超新赛季做一番评论。 　　<BR>我认为英超新赛季有五大看点，第一，曼联能否卫冕，四大豪门前景如何 　　<BR>这是最吸引人的环节，也是球迷们最关心的环节。曼联能否卫冕，切尔西前景如何？利物浦在引进强援后能否威胁到曼联切尔西，没有了亨利，阿森纳的前四位置会不会收到影响。 　　我个人认为，在新赛季里，至少是前半程里面，曼联的优势还是比较稳固的，他们上赛季夺冠最成功的地方可以或者说最大的收获，是老将继续发光，新人不断成熟并挑起大浪。弗格森拥有的是一支非常成熟的球队。今年夏天曼联又加强了中场力量，给球队添加了技术元素，我觉得他们的整体发挥会比上赛季更加稳定，去年时隔4年夺冠但整个过程惊涛骇浪，几场关键比赛赢得惊险。 　　<BR>弗格森重点培养的青训球员，通过上赛季磨练已经能够挑起大量，比如奥谢和布朗。奥谢是一个中后场中坚替补，无论是中前卫还是边后卫，处理球方面都非常成熟，没有浪费爵爷对他的栽培，上赛季两个关键的客场胜利，赢了利物浦的埃弗顿，他都有进球，证明他有一明显进步。布朗过往总觉得过于毛躁，但是经过磨练，无论是中卫还是做内维尔替身，都是称职人选。 </div>
+	  
+	  <!-- 发表评论 -->
+	  <form name="frm" method="post">
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 发表评论</div>
+	  </div>
+	  <div class="newsContent">
+	    <img src="/news2/images/face/em01.gif"><input type="radio" name="face" value="em01.gif" checked>
+	    <img src="/news2/images/face/em02.gif"><input type="radio" name="face" value="em02.gif">
+	    <img src="/news2/images/face/em03.gif"><input type="radio" name="face" value="em03.gif">
+	    <img src="/news2/images/face/em04.gif"><input type="radio" name="face" value="em04.gif">
+	    <img src="/news2/images/face/em05.gif"><input type="radio" name="face" value="em05.gif">
+	    <img src="/news2/images/face/em06.gif"><input type="radio" name="face" value="em06.gif">
+	    <img src="/news2/images/face/em07.gif"><input type="radio" name="face" value="em07.gif">
+	    <img src="/news2/images/face/em08.gif"><input type="radio" name="face" value="em08.gif">
+	    <img src="/news2/images/face/em09.gif"><input type="radio" name="face" value="em09.gif">
+	    <img src="/news2/images/face/em10.gif"><input type="radio" name="face" value="em10.gif">
+	    <img src="/news2/images/face/em11.gif"><input type="radio" name="face" value="em11.gif">
+	  </div>
+	  <div class="newsImg"><textarea name="content"></textarea></div>
+	  <div class="newsContent">
+	    姓名：<input type="text" name="userName" size="20">
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <input type="button" value="发表" onclick="addReviews()">
+	  </div>
+	  </form>
+	  <!-- 评论内容 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 新闻点评</div>
+	  </div>
+      <span id="reviewSpan"></span>
+	  
+	  <br>
+	</div>
+    
+    
+    <!-- 网页脚 -->
+    <div class="footDiv">
+      网站简介 - 广告服务 - 网站地图 - 帮助信息 - 联系方式<br>
+   Copyrights &copy; 2014 hys.com All Rights Reserved
+</div>
+  </body>
+</html>
+
+
+

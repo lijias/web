@@ -1,0 +1,306 @@
+﻿17701268205
+
+html:超文本标记语言
+文本标签
+<font size="" color="" face=""></font>
+<i></i>
+<e></e>
+<u></u>
+<b></b>
+<s></s>
+<span></span>
+<h1></h1>
+<p></p>
+<br/>
+<hr/>
+
+列表
+	<ul>
+		<li></li>
+		
+	</ul>
+
+表格
+	<table>
+		<tr>
+			<td></td>
+		</tr>
+	</table>
+
+图片
+	<img src=""/>
+视频
+	<video></video>
+音频
+	<audio></audio>
+布局
+	<div></div>
+	<a ></a>
+表单：
+	
+css：级联样式表
+	选择器
+	#id值{}
+	.类别名称{}
+	标记{}
+
+	后代{}
+
+	样式语句
+	名称:值;
+	修饰文本
+	字体
+	颜色
+	大小
+	加粗
+	倾斜
+	下划线
+	行高
+	缩进 text-indent:2em;
+	
+	盒子模型：页面中的每一个元素所占的位置都是一个方框，
+类似于二维空间的盒子，因此称每个元素为一个盒子模型。
+	宽
+	高
+	边框
+	颜色
+	边框样式
+	背景
+	定位
+	浮动 float:
+	清除环绕
+	内边距
+	外边距
+
+	超链接
+	伪类 
+	:hover{}
+	
+	列表
+	list-style:none;
+
+	
+php 一步一个脚印 进步过程 30%---70%  经历 --- 经验
+
+	变量：在内存中申请了一个有名称的空间。
+	$str;
+	$str="abc";
+	变量类型
+	我是达内php讲师，我讲的最差的。
+	我给大家讲1一个月，大家希望讲1.5个月。
+	我帅吗？ false
+
+	string
+	int
+	float
+	bool
+	
+	array
+	object
+	
+	resource
+	null
+
+	转化
+	
+	运算
+
+	算术运算  拼接
+	比较运算
+	逻辑运算  先左后右
+	赋值运算
+
+$a=5;
+$b=7;
+if($a= $a>$b || 9>$b){
+	var_dump($a,$b);//true,7
+}
+	
+
+	
+	预定义变量
+	$_POST
+	$_GET
+	$_SESSION
+	$_COOKIE
+	$_SERVER
+	$_FILES
+	常量
+	define("",值)
+	魔术常量
+	__FIEL__
+	__LINE__
+	__FUNCTION__
+	__CLASS__
+	__METHOD__
+	__DIR__
+	class News extends CActiveRecord{
+		static function model($className=__CLASS__){
+			return parent::model($className);
+		}	
+	}
+	$ob=News::model();
+
+	流程控制语句
+	有一个数组：
+	$arr=array('a','b','c','d');
+	$arr1=array('a','e','d','w');
+	1、把数组arr中的值拼成一个字符串
+	2、把两个数组拼接成一个数组，不适用数据拼接函数。
+
+	基本函数库
+	string
+		$str="I like php,i like linux.";
+		看：
+		获取字符串的长度
+		int strlen($str)
+		截取
+		string substr(string,start,length)
+		拆分
+		array explode(delimiter,string)
+		替换
+		string str_replace(search,replace,string)
+		大小写
+		string strtolower(string)
+		string strtoupper(string)
+		string ucfirst(string)
+		string ucwords(string)
+		查找
+		int strpos(search,string)
+		int strrpos(search,string)
+	$path="a/b/c.jpg";
+	例子：获取文件名称及扩展名
+	1、获取最后一个/的位置
+	2、从这个位置开始截取，到最后。
+	
+	时间日期
+	时间戳：1970年1月1日0时0分0秒到现在的秒数。
+	$t=time()
+	格式化时间戳
+	date("Y-m-d H:i:s",时间戳)
+	把时间日期格式字符串转化成时间戳
+	strtotime('-1 days')
+	例子：
+	有一个人1970年1月1日0时0分0秒，
+	三天打鱼两天晒网，今天在干什么？
+	ceil(time()/(24*3600))%5
+
+	
+	
+	数值函数
+	round()
+	ceil()
+	floor()
+		
+	数组函数
+		$arr=array('a','c','d','a','e');
+		获取长度
+		查找
+		头部追加
+		尾部追加
+		头部删除
+		尾部删除
+		转化成字符串
+		数据连接
+		去重
+		排序
+		
+	文件操作
+		resouce fopen(path,"a|w|r")
+		fwrite()
+		fread()
+		fclose()
+
+		file_get_contents("url地址|path")
+		采集
+		file_put_contents()
+	目录函数	
+		创建目录
+		mkdir()
+		删除空目录
+		rmdir()
+		是否是一个存在的目录
+		is_dir()
+		file_exist()
+		打开目录
+		$d=opendir(path)
+		读目录下的内容
+		$content=readdir($d)
+		关闭
+		closedir($d)
+	例子：
+	获取目录"D:/www/17_zongjie/test"下的子目录及文件。
+	$path="D:/www/17_zongjie/test";
+	打开目录
+	$d=opendir(path)
+	读目录下的内容
+	$content=readdir($d)
+	关闭
+	closedir($d)
+		
+	自定义函数
+	function 函数名(参数,....){
+
+	}
+
+	递归函数？？？
+	目录的递归遍历
+		遇到目录自己调用自己
+	无限极分类显示
+普通变量：
+	特点：函数运行完，变量销毁。
+	          每次重新声明。
+
+	
+静态变量：
+	特点：一次声明，多次使用。
+	函数运行完，不销毁，程序运行结束才销毁。
+
+	
+	
+	
+
+
+	
+	
+	
+
+mysql
+js
+jquery
+
+
+php高级
+oop
+PDO
+
+smarty
+mvc
+tp
+yii
+mysql高级
+
+dedecms
+无限极分类
+购物车
+订单
+linux
+memcached
+redis
+mongodb
+微信
+支付宝
+
+laravel
+svn
+
+
+
+
+
+
+
+
+
+
+

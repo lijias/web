@@ -1,0 +1,84 @@
+<!--pages/arr/arr.wxml-->
+<view>
+  <text>{{arr[0]}}</text>
+</view>
+
+<view wx:for="{{[zero, 1, 2, 3, 4]}}"> {{item}} </view>
+
+<!--模板  -->
+<template name="objectCombine">
+  <view>
+    <text>a:{{a}}</text>
+    <text>b:{{b}}</text>
+    <text>c:{{c}}</text>
+  </view>
+</template>
+
+<template name="objectCombine2">
+  <view>
+    <text>{{foo}}</text>
+    <text>{{bar}}</text>
+  </view>
+</template>
+
+<!--注意：上述方式可以随意组合，但是如有存在变量名相同的情况，后边的会覆盖前面，如：  -->
+<template is="objectCombine" data="{{...obj1, ...obj2, a, c: 6}}"></template>
+
+<template is="objectCombine2" data="{{foo, bar}}"></template>
+
+<!--注意： 花括号和引号之间如果有空格，将最终被解析成为字符串  -->
+<view wx:for="{{[1,2,3]}} ">
+  {{item}}
+</view>
+<view wx:for="{{[1,2,3]+' '}}">
+  {{item}}
+</view>
+
+<!--循环二维数组  -->
+<view wx:for="{{array}}">
+  {{index}}: {{item.msg}}
+</view>
+
+<!--多次循环key value 起别名  -->
+<view wx:for="{{array}}" wx:for-index="k" wx:for-item="v">
+  <view wx:for="{{v}}" wx:for-index="kk" wx:for-item="vv">
+    {{k}}: {{vv}}
+  </view>
+</view>
+
+<!--当前页面路径  -->
+<view>
+  <text>{{route}}</text>
+</view>
+
+<view>
+  <text>{{a + 1}}</text>
+</view>
+
+<block wx:for="{{[1,2,3]}}">
+  <text> {{index}}: </text>
+  <text> {{item}} </text>
+</block>
+
+<!--注意：当 wx:for 的值为字符串时，会将字符串解析成字符串数组  -->
+<view wx:for="array">
+  {{item}}
+</view>
+
+<!--条件渲染文档  -->
+<view wx:if="{{condition}}"> True </view>
+
+<view wx:if="{{length > 5}}"> 1 </view>
+<view wx:elif="{{length > 2}}"> 2 </view>
+<view wx:else> 3 </view>
+
+
+<block wx:if="{{length > 5}}">
+  <view>1</view>
+</block>
+<block wx:elif="{{length > 2}}">
+  <view>2</view>
+</block>
+<block wx:else>
+  <view>3</view>  
+</block>

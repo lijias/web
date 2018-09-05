@@ -1,0 +1,7 @@
+<!--map.wxml-->
+<view>
+  <text>{{name}}</text>
+</view>
+<view>
+  <map bindmarkertap="markertap" latitude="{{lati}}" longitude="{{longi}}" style='width:100%'></map>
+</view>

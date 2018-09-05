@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>查询缓存</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="__ROOT__/public/css/bbs.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <include file="Public:header" />
+    
+    <table border="1" align="center" width="600">
+      <tr>
+        <td>编号</td>
+        <td>标题</td>
+        <td>点击次数</td>
+        <td>时间</td>
+      </tr>
+      <volist name="bbsInfo" id="v">
+      <tr>
+        <td>{$v.bbsId}</td>
+        <td>{$v.title}</td>
+        <td>{$v.clickTimes}</td>
+        <td>{$v.bbsTime}</td>
+      </tr>
+      </volist>
+    </table>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

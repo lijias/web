@@ -1,0 +1,165 @@
+MVC框架
+Model		模型(dbio)
+View		视图(templates)
+Controller	控制器(php)
+
+MVC框架优点
+1、代码分工更加明确
+2、便于网站的维护与管理(便于二次开发)
+
+
+目录结构
+library-----------------第三方资源包
+  smarty
+  jquery
+  kindeditor
+application-------------应用程序
+  configs---------------配置文件
+  core------------------核心文件
+    DbConn.php
+    Controller.php
+    Model.php
+  model-----------------模型
+  controller------------控制器
+  view------------------视图
+  runtime---------------运行时
+    templates_c
+    cache
+public------------------公用文件
+  images
+  css
+index.php---------------入口文件
+
+
+控制器的命名规则
+1、必须采用大驼峰的命名规则
+2、必须以Controller来结尾
+IndexController.php
+LoginController.php
+
+
+控制器中方法的命名规则
+1、必须采用小驼峰的命名规则
+2、必须以Action来结尾
+deleteAction()
+delAction()
+aaaAction()
+indexAction()
+
+
+控制器定义语法格式
+class XxxController extends Controller
+{
+  public function xxxxxAction()
+  {
+     逻辑处理;
+
+     $this->assign(key,value);
+     $this->assign(key,value);
+     $this->assign(key,value);
+     $this->display("xxx.html");
+  }
+}
+
+
+url访问方式(url路由)
+1、url传参方式
+   http://localhost/项目/index.php
+   http://localhost/项目/index.php?c=控制器&a=方法
+   http://localhost/项目/index.php?c=控制器&a=方法&名=值
+   1)超链接地址
+     <a href="index.php?c=控制器&a=方法"></a>
+     <a href="index.php?c=控制器&a=方法&名=值"></a>
+   2)加载css
+     <link href="public/css/xxx.css">
+   3)加图片
+     <img src="public/images/xxx.jpg">
+2、pathinfo方式
+   http://localhost/项目/index.php
+   http://localhost/项目/index.php/控制器/方法.html
+   http://localhost/项目/index.php/控制器/方法/名/值.html
+   1)链接地址
+     <a href="{$APP}/控制器/方法.html"></a>
+     <a href="{$APP}/控制器/方法/名/值.html"></a>
+   2)加载css
+     <link href="{$ROOT}/public/css/xxx.css">
+   3)加载image
+     <img src="{$ROOT}/public/images/xxx.jpg">
+
+
+定义系统常量
+ROOT：返回项目根目录地址(加载css、images、library)
+APP：返回入口文件地址(链接地址、跳转地址)
+
+
+MVC框架运行原理
+                        Smarty
+                          |
+                      Controller
+                          |
+入口文件-------------XxxController-------------xxx.html
+
+
+模型命名规则
+1、必须采用大驼峰的命名规则
+2、必须以表名来命名
+3、必须以Model来结尾
+UserInfoModel.php
+ReviewsModel.php
+BbsInfoModel.php
+
+
+定义模型的语法格式
+class XxxModel extends Model
+{
+  public $tableName = "表名";
+}
+
+
+获得模型对象
+$model = D("模型名");//必须新建一个模型文件
+$model = M("表名");//不用新建模型文件
+
+
+数据库操作
+1、查询多条记录，返回：二维数组
+   $result = $model->select();
+   $result = $model->field("字段,字段...")->select();
+   $result = $model->where()->select();
+   $result = $model->order()->select();
+   $result = $model->limit()->select();
+   $result = $model->where()->order()->limit()->select();
+2、添加记录，返回：受影响的行数
+   $result = $model->insert(一维关联数组);
+3、删除记录，返回：受影响的行数
+   $result = $model->delete();
+   $result = $model->where()->delete();
+4、查询一条记录，返回：一维关联数组
+   $result = $model->find();
+   $result = $model->field("字段,字段...")->find();
+   $result = $model->where()->find();
+5、修改记录，返回：受影响的行数
+   $result = $model->update(一维关联数组);
+   $result = $model->where()->update(一维关联数组);
+
+
+
+页面重定向(跳转页面)
+$this->redirect("跳转地址");
+
+
+系统提示信息
+$this->success("提示信息","跳转地址");
+
+
+
+
+
+
+
+
+
+
+
+
+

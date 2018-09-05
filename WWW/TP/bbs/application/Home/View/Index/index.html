@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>网站首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="__ROOT__/public/css/bbs.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <include file="Public:header" />
+    
+    {$userName}<br><br>
+    
+    {$age}<br><br>
+    
+    {$cityList.0}<br><br>
+    
+    {$cityList[1]}<br><br>
+    
+    {$userInfo.userName}<br><br>
+    
+    {$userInfo["address"]}<br><br>
+    
+    <if condition="$userName=='张三'">
+    小三
+    <elseif condition="$userName=='李四'"/>
+    小四
+    <else/>
+    不知道
+    </if><br><br>
+    
+    <if condition="$age lt 18">
+    未成年
+    <else/>
+    己成年
+    </if><br><br>
+    
+    <switch name="age">
+      <case value="1">出场亮相</case>
+      <case value="10">天天向上</case>
+      <case value="20">远大理想</case>
+      <case value="30">基本定向</case>
+      <case value="40">处处吃香</case>
+      <default/>不知道
+    </switch><br><br>
+    
+    <for start="0" end="5">
+      Hello{$i}&nbsp;&nbsp;
+    </for><br><br>
+    
+    <foreach name="cityList" key="k" item="v">
+      {$k}---{$v}<br>
+    </foreach><br>
+    
+    <foreach name="userInfo" key="k" item="v">
+      {$k}---{$v}<br>
+    </foreach><br>
+    
+    <volist name="cityList" key="k" id="v">
+      {$k}---{$v}<br>
+    </volist><br>
+    
+    <volist name="userInfo" key="k" id="v">
+      {$k}---{$v}<br>
+    </volist><br>
+    
+    <literal>
+      {$userInfo.address}
+    </literal><br><br>
+    
+    <php>
+      echo "大家好";
+    </php><br><br>
+    
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+

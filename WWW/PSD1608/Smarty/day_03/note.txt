@@ -1,0 +1,260 @@
+Smarty：模板引擎
+
+作用：显示与逻辑相分离
+
+项目目录
+smarty
+  Smarty.clas.php
+configs
+templates
+  xxx.html
+  xxx.html
+  xxx.html
+templates_c
+xxx.php
+xxx.php
+xxx.php
+
+
+
+php文件写法
+<?php
+  header(...);
+  include_once 'smarty/Smarty.class.php';
+  $smarty = new Smarty();
+
+  //逻辑处理
+
+  $smarty->assign(key,value);
+  $smarty->assign(key,value);
+  $smarty->assign(key,value);
+  $smarty->display("xxx.html");
+?>
+
+
+Smarty标签
+1、显示变量值
+   {$key}
+2、显示数组中的值
+   {$key.下标}
+   {$key[下标]}
+3、if标签
+   {if $age < 20}
+     内容
+   {elseif 条件}
+     内容
+   {else}
+     内容
+   {/if}
+4、for标签
+   {for $变量=初始值 to 结束值}
+      内容   {$变量}
+   {/for}
+5、while标签
+   {while 条件}
+      内容
+   {/while}
+6、section标签
+   {section name="别名" loop=$key}
+     {$key[别名]}
+   {/section}
+7、foreach标签
+   {foreach $key as $k=>$v}
+     {$k}  {$v}
+   {/foreach}
+8、包含html文件
+   {include file="xxx.html"}
+9、包含php文件
+   {include_php file="xxx.php"}
+10、php标签
+    {php}
+      php代码;
+    {/php}
+11、忽略标签(原样显示)
+    {literal}
+       Smarty标签
+    {/literal}
+12、禁止缓存
+    {nocache}
+      不想缓存的数据
+    {/nocache}
+13、加载配置文件
+    {config_load file="xxx.conf"}
+    {#key#}
+
+
+变量调节器：对页面显示的变量值进行微调
+{$key|调节器名:参数:参数...}
+{$key.下标|调节器名:参数:参数...}
+
+默认值
+{$key|default:"默认的内容"}
+截取字符串
+{$key|truncate:长度}
+{$key|truncate:长度:"省略符号"}
+html转义
+{$key|escape}
+将\n转换为<br/>
+{$key|nl2br}
+
+
+
+configs用法：存储网站上一些公用的信息
+1、在configs文件夹下新建一个配置文件xxx.conf
+2、配置文件名任意，但扩展名必须为.conf
+3、配置文件以键值对的形存存储数据
+   key=value
+   key=value
+   key=value
+4、配置只允许html模板文件来调用
+   1)加载指定的配置文件
+     {config_load file="xxx.conf"}
+   2)获得配置文件中的指定值
+     {#key#}
+
+
+缓存Cache：提高网站的访问效率
+
+缓存分类
+1、按缓存数据存储位置不同
+   1)文件缓存
+   2)内存缓存
+2、按缓存的数据量不同
+   1)整站缓存
+   2)页面缓存、按不同的请求参数进行缓存
+   3)局部缓存(片段缓存)
+   4)局部不缓存
+   5)数据缓存(变量缓存)
+
+
+Smarty缓存：文件缓存
+1、整站缓存(不用)
+2、页面缓存
+3、按不同的请求参数进行缓存
+4、局部不缓存
+
+
+整站缓存：修改Smarty.class.php文件
+1、开启缓存
+   public $caching = false;
+2、设置缓存时间
+   public $cache_lifetime = 3600;
+3、设置缓存文件存储的目录
+   ->setCacheDir(DS."cache".DS);
+
+
+页面缓存：修改页面对应的php文件
+1、开启缓存
+   $smarty->caching = true;
+2、设置缓存时间
+   $smarty->cache_lifetime = 3600;
+3、设置缓存目录
+   $smarty->setCacheDir("cache");
+
+
+局部不缓存：当前页面开启了缓存
+{nocache}
+   不想缓存的数据
+{/nocache}
+
+
+按不同的请求参数进行缓存：页面开启了缓存、url中有参数
+$a;
+$b;
+$smarty->display("xxx.html","{$a}{$b}");
+
+
+Smarty中清除缓存
+1、清除所有缓存
+   $smarty->clearAllCache();
+2、清除指定页面的缓存
+   $smarty->clearCache("xxx.html");
+
+
+
+项目目录
+admin
+conn
+dbio
+smarty
+configs
+templates
+  index.html
+  newstype.html
+  news.html
+  search.html
+templates_c
+jquery
+kindeditor
+images
+newspicture
+css
+index.php
+newstype.php
+news.php
+search.php
+
+
+
+$newsTypes = array(
+  array(typeId=>值,typeName=>值,articleNums=>值,news=>array(数组,数组)),
+  array(typeId=>值,typeName=>值,articleNums=>值,news=>array(数组,数组)),
+  array(typeId=>值,typeName=>值,articleNums=>值,news=>array(数组,数组)),
+  array(typeId=>值,typeName=>值,articleNums=>值,news=>array(数组,数组)),
+  array(typeId=>值,typeName=>值,articleNums=>值,news=>array(数组,数组))
+);
+html页面遍历
+{foreach $newsTypes as $v}
+  {$v.typeName}
+  {foreach $v.news as $vv}
+    {$vv.title}
+  {/foreach}
+{/foreach}
+
+
+周末任务
+1、Smarty知识点
+2、复习面向对象
+
+
+编程语言的种类
+1、结构化的编程    =  结构 + 算法
+2、面向对象的编程  =  对象 + 消息
+
+
+
+面向对象知识点
+1、面向对象概念：利用程序来描述一个客观存在的事物
+2、定义类、定义属性、定义方法
+3、对象
+   1)实例化对象
+   2)通过对象调用类里的属性和方法
+4、this关键字
+5、常量属性const
+6、构造函数、析构函数
+7、static关键字
+8、self关键字
+9、继承extends、方法重写
+10、访问控制修饰符
+-----------------------
+11、final最终
+12、abstruct抽象
+13、interface接口
+14、垃圾回收机制
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

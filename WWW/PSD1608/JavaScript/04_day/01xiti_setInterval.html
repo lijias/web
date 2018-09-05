@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div style="width:150px;height:150px;background-color:red;font-size:50px"></div>
+<script>
+var div = document.getElementsByTagName("div");
+var i = 1;
+var shu;
+function ks(){
+shu=setInterval(function(){
+	                         div[0].innerHTML=i;i++
+	                         },0.000000001);
+}
+function tz(){
+	clearInterval(shu);
+}
+</script>
+<input type="button"  value="开始" onclick="ks();"/>
+<input type="button"  value="停止" onclick="tz();"/>
+</body>
+</html>

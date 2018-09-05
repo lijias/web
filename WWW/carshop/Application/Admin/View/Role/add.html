@@ -1,0 +1,100 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>添加角色-后台管理</title>
+    <link rel="stylesheet" type="text/css" href="<?PHP echo ADMIN_PUC;?>/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="<?PHP echo ADMIN_PUC;?>/css/main.css"/>
+    <script type="text/javascript" src="<?PHP echo ADMIN_PUC;?>/js/libs/modernizr.min.js"></script>
+    <script type="text/javascript" src="<?PHP echo ADMIN_PUC;?>/js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/jquery/jquery-1.4.js"></script>
+</head>
+<body>
+
+<!--头部 -->
+<include file='Public:top'/>
+<!-- /头部 -->
+
+<div class="container clearfix">
+ <div class="sidebar-wrap">
+        <div class="sidebar-title">
+            <h1>菜单</h1>
+        </div>
+    <!--左侧-->
+<include file='Public:left'/>  
+    <!--/左侧-->
+    
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="__MODULE__/Role/lst.html">角色管理</a><span class="crumb-step">&gt;</span><span>新增角色</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>角色名称：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="rolename" size="50" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>角色权限：</th>
+                                <td>
+                                	<ul>
+                                	<foreach name="prires" item="v">
+                                		<li level="{$v.level}">                               			
+                                			<input class="common-text" name="pri_id_list[]" size="50" value="{$v.id}" type="checkbox">
+                                			<if condition="$v['parentid'] neq 0">|</if><?php echo str_repeat('-',$v['level']*8);?>
+                                			{$v.pri_name}             			
+                                		</li>
+                                		</foreach>
+                                	</ul>
+                                </td>
+                            </tr>  
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>
+<script>
+	$(":checkbox").click(function(){
+		var cur_li=$(this).parent();
+		var level = cur_li.attr("level");
+		var checked=$(this).attr("checked");
+		cur_li.prevAll("li").each(function(){
+			if($(this).attr("level")<level && checked){
+				$(this).find(":checkbox").attr("checked","checked");
+				if($(this).attr("level")==0){
+					return false;
+				}
+			}
+		});
+		
+		if(!checked){
+			cur_li.nextAll("li").each(function(){
+				if($(this).attr("level")>level){
+					$(this).find(":checkbox").removeAttr("checked","checked");
+					
+				}else{
+					return false;
+				}
+			});
+		}
+	});
+</script>

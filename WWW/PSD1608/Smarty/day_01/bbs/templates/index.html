@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>网站首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    {include file="header.html"}
+    
+    {$uname}<br><br>
+    
+    {$age}<br><br>
+    
+    {$cityList.0}<br><br>
+    
+    {$cityList[1]}<br><br>
+    
+    {$userInfo.sex}<br><br>
+    
+    {$userInfo["address"]}<br><br>
+    
+    {if $age < 18}
+    未成年
+    {elseif $age==18}
+    刚成年
+    {else}
+    己成年
+    {/if}<br><br>
+    
+    {for $i=0 to 5}
+      hello{$i}&nbsp;&nbsp;
+    {/for}<br><br>
+    
+    {while $age<25}
+      {$age++}哈哈&nbsp;&nbsp;
+    {/while}<br><br>
+    
+    {section name="hello" loop=$cityList}
+      {$cityList[hello]}<br>
+    {/section}<br><br>
+    
+    {foreach $cityList as $k=>$v}
+      {$k}---{$v}<br>
+    {/foreach}<br><br>
+    
+    {foreach $userInfo as $k=>$v}
+      {$k}---{$v}<br>
+    {/foreach}<br><br>
+    
+    {literal}
+      {$userInfo.address}
+    {/literal}<br><br>
+    
+  </body>
+</html>
+
+
+
+
+
+
+
+

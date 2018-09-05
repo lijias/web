@@ -1,0 +1,130 @@
+JQuery
+一、概述
+    封装好的JavaScript库
+   
+    john resig 2008
+
+    JQuery宗旨
+    writeless,do more.
+
+
+二、安装
+    1、获取库
+       www.jquery.com
+       production（生产环境版本）- 线上（压缩）
+       development（开发环境版本）- 开发和学习（未被压缩）
+
+    2、引入JQuery库
+       <script src="jquery库地址"></script>
+
+三、JQuery的应用
+    1、$(document).ready();
+       或
+       $();
+    2、$(selector).action();
+       selector:选择器
+       action ：完成的功能。
+       
+    3、选择器
+       css(属性名称，属性值)
+      
+       a、通配选择器
+          *
+       b、元素选择器
+          HTML tag 名称
+       c、id选择器
+          #id属性值 
+       d、class选择器
+          .class属性值
+       e.群组选择器
+           个选择器之间用逗号间隔
+       f.后代选择器
+           用空格 间隔
+       g.子代选择器
+           用>号  间隔
+       h.同胞选择器
+           用+号  间隔
+          只能找到下一个同胞
+       i.范兄弟选择器
+          用~号   间隔
+          能找到向下所有的兄弟
+       j.过滤选择器
+       :first 
+       :last  
+       :eq()   任意后代
+       :odd   基数
+       :even  偶数
+       k.排他选择器
+   
+  四. JQuery操作HTML元素的属性
+        1.获取
+           $(selector).attr(属性名称);
+       2、设置
+       $(selector).attr(属性名称,属性值);
+       $(selector).attr({属性名称:属性值[,属性名称:属性值]});
+       3、删除
+       $(selector).removeAttr(属性名称);
+ 
+ 五.JQuery操作HTML元素的样式   
+    1.获取
+       $(selector).css(css属性名称); 
+       css属性名称:backgroundColor
+                         background-color
+         两者都支持.
+     2.设置
+       $(selector).css(css属性名称,属性值);
+       $(selector).css({css属性名称:属性值[,css属性名称:属性值]});
+       
+ 六.  JQuery操作HTML元素的文本
+       1.获取
+          $(selector).html()
+          $(selector).text()
+        2.设置
+           $(selector).html(设置的文本内容)
+           $(selector).text(设置的文本内容)
+           
+         html是可以解析HTML标签,但是text是不能解析HTML标签
+       
+七.JQuery的遍历
+     父级
+     $(selector).parent()//直接父
+     $(selector).parents()//所有父
+     $(selector).parentsUntil(父级节点)
+     
+     子级
+     $(selector).children()//第一级子
+     $(selector).find(子节点)当子节点为通配符号"*",找到全部向下子节点
+     
+     同胞节点
+     $(selector).siblings() 所有同胞
+     
+     $(selector).next()  下一个同胞
+     $(selector).nextAll()  向下所有的同胞
+     $(selector).nextUntil() 向下同胞节点 当前选择器到向下同胞节点之间的节点,不含向下同胞节点
+     
+     $(selector).prev()  上一个同胞
+     $(selector).prevAll()  向上所有的同胞
+     $(selector).prevUntil() 向上同胞节点 当前选择器到向上同胞节点之间的节点,不含向上同胞节点  
+     
+ 八. JQuery元素的添加
+ 
+      $(selector).append(添加的内容)
+       在selector原有内容的后面添加.添加的内容在selector里面
+      
+      $(selector).prepend(添加的内容)
+      在selector原有内容的前面添加.添加的内容在selector里面      
+      
+      $(selector).before("添加的内容")
+      在selector选择器的外面的前面添加内容
+      
+      $(selector).after("添加的内容")
+      在selector选择器的外面的后面添加内容 
+      
+ 九.  JQuery元素的删除
+      $(selector).remove()
+       删除选择器
+      
+      $(selector).empty()
+       清空选择器
+       remove和empty的区别:remove删除,empty清空
+       

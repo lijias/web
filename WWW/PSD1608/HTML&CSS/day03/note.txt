@@ -1,0 +1,202 @@
+一.HTML公共属性
+ 1. title 提示
+ 2. class
+ 3. id
+ 4. style
+ 说明:除了 html,head,body,link,meta外
+          其他标记都可使用的属性
+      
+二.表单
+  1.表单的作用:收集客户端的信息，然后发送到服务器上。
+  2.表单格式
+  <form action="服务器的URL .php" method="传输方式get|post" name="表单名称">
+    ...
+  </form>
+	  说明:
+	  a. action写服务器的URL
+	          服务器:装有应用软件的计算机
+	     WEB服务器：装有提供浏览服务的应用软件
+	  b. method 默认值 get
+	  c. get：将信息名/值对附加在浏览器地址栏的后面
+	                    形如: xx.php?user=tom&pwd=123
+	                    小文件，不安全
+	  d. post:将信息名/值对附加在HTTP请求头部
+	                    中，大文件，安全
+	  e.表单元素要有有效的名称和提交值
+	  
+  3.表单元素
+   (1) 单行文本框
+   <input type="text" name="名称" value="值"
+    size="文本框宽度" maxlength="最大字符长度"/>
+   (2) 密码框
+   <input type="password" name="名称" value="值"
+    size="文本框宽度" maxlength="最大字符长度"/>
+   (3)单选框
+   <input type="radio" name="名称" value="值"/>
+      说明:
+     a.一组相同的单选框名称必须相同
+     b.单选框必须有有效的提交值 checked="checked"
+  (4)多选框
+   <input type="checkbox" name="名称" value="值"/>
+      说明:
+    a.一组相同的 多选框名称必须相同，并且
+          名称以数组(存多个值)形式存储，形如 :名称[]
+    b.多选框必须有有效的提交值 checked="checked"
+  
+  (5) 下拉列表框
+   <select name="名称" multiple="multiple" size="高度">
+     <optgroup label="分组名称">
+      <option value="名称">...</option>
+      <option value="名称">...</option>
+     </optgroup>
+     ...
+   </select>
+   说明:
+    a.下拉列表框 要有有效的提交值 selected="selected"
+    b.设置 multiple="multiple"实现多选下拉列表框
+      name名称以数组形式存储 ,形如 名称[]
+  (6) 浏览框
+   <input type="file" name="名称" value="值"/>
+     说明:
+        表单中有浏览框具备的条件
+    a. method 传输方式必须是post
+    b. form标记中添加属性和值
+       enctype="multipart/form-data"
+  (7)多行文本框
+   <textarea name="属性" rows="高度" cols="宽度">
+         值
+   </textarea>
+     说明: 多行文本框被HTML在线编辑器替代
+  (8)按钮
+        提交按钮:
+     <input type="submit" name="名称" value="值"/>  
+        普通按钮:
+     <input type="button" name="名称" value="值"/>
+           注意:必须结合javascript脚本代码实现表单提交
+        图像域按钮:
+     <input type="image" src="图像URL" name="名称" value="值"/>
+        重置按钮
+     <input type="reset" name="名称" value="值"/> 
+       说明:一般不给按钮 加 name属性
+  (9)隐藏域
+    <input type="hidden" name="名称" value="值"/>
+       说明:给服务器传值，客户端无需理会
+  (10)总结
+   a. <input type="类型" name="名称" value="值"/>
+     type:
+       text 单行文本框
+       password 密码框
+       radio  单选框
+       checkbox 多选框
+       file  浏览框
+       submit 提交按钮
+       button 普通按钮
+       image  图像域按钮
+       reset  重置按钮
+       hidden 隐藏域
+       
+    b.其他
+           下拉列表框 <select>...</select>
+           多行文本框  <textarea>...</textarea>
+           
+ 三.框架集：
+   1.作用:框架集被用来组织实现多个窗口效果，
+                   并且每个窗口实现独立的页面
+   2.分类
+     frameset框架集
+     iframe 框架集
+   3.frameset 格式
+    (1)<frameset rows|cols>
+         <frame src="1.html"/>
+         <frame src="2.html"/>
+       </frameset>
+	       说明:
+	     a. frameset 属性
+	         rows="20%,*" 实现上下窗口
+	         cols="20%,*" 实现左右窗口
+	     b.frameset 不能和 body一起使用
+	     c.检查是否支持框架集
+	       <noframes>
+	          <body>此浏览器不支持框架</body>
+	       </noframes>
+    (3)嵌套框架
+       <frameset rows="20%,*">
+          <frame src="top.html"/>
+          <frameset cols="20%,*">
+             <frame src="menu.html"/>
+             <frame src="main.html"/>
+          </frameset>
+       </frameset>
+    (4) frame 属性
+        a.noresize:no|yes 调整窗口
+        b.scrolling:no|yes|auto自动 设置滚动条
+        c.frameborder:框架边框 值 0,1
+        
+   4.iframe 框架
+     
+    <iframe src="目标文档URL" 
+      width="宽度" height="高度" 
+      name="框架名称" 
+      scrolling="no" 
+      frameborder="0">
+      ...
+    </iframe> 
+   
+    
+    
+    
+    
+     
+       
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+ 
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          
+          
+          

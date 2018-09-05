@@ -1,0 +1,39 @@
+<div class="headtop">
+    	<div class="fra1">
+        	<a href="index.php" title="这里是您的网站名称"><img src="__PUBLIC__/pc/images/logo.png" alt="这里是您的网站名称" /></a>
+            <div class="head-right">
+            <span><font>租车<br />热线 </font><label>{$Think.config.PHONE}</label></span>
+            <div class="search">
+               <form id="search" name="search" method="get" action="__MODULE__/Search/">
+               
+                <input type="text" class="text pngFix" name="kws" id="kws" value="请输入搜索关键词"/>
+                <div class="select pngFix">
+                 <select id="rid" style="display: none" name="cateid">
+                                         <option value="150" selected="selected">新闻资讯</option>
+                                         <option value="149" >车辆展示</option>
+                                         <option value="151" >主要车型</option>
+                                         <option value="161" >资质荣誉</option>
+                                     </select>
+                </div>
+                <input type="submit" title="搜索" style="cursor:pointer;"class="button" value=""/>
+            </form>
+            <script type=text/javascript>
+                jQuery(document).ready(function() {
+                    jQuery("#rid").selectbox();
+                });
+            </script> 
+            </div>
+            </div>
+        </div>
+    </div>
+
+	<div class="nav">
+    	<ul>
+        	<li><a href="__APP__/Home/Index/index" title="网站首页">网站首页</a></li>
+        	<foreach name="navres" item="v">
+            <li><a href="__MODULE__/<if condition="$v['type'] eq 1">Arlist<elseif condition="$v['type'] eq 2" />Page<elseif condition="$v['type'] eq 3" />Message<elseif condition="$v['type'] eq 4" />Zplist<elseif condition="$v['type'] eq 5" />Carlist<elseif condition="$v['type'] eq 6" />Rylist<elseif condition="$v['type'] eq 7" />Job</if>/index/cateid/{$v.id}" title="{$v.name}">{$v.name}</a></li>
+            </foreach>
+       </ul>
+    </div>
+    
+</div>

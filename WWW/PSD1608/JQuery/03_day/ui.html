@@ -1,0 +1,110 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>JQuery </title>
+
+<!-- 引入JQuery 库 -->
+<script src="jquery-1.8.0.js"></script>
+<script src="./validate/jquery-ui-1.10.3.custom.js"></script>
+<link rel="stylesheet" href="./validate/smoothness/jquery-ui-1.10.3.custom.css" /><!-- 样式 -->
+<script src="./validate/jquery.validate.js"></script>
+<script src="./validate/jquery.validate.messages_zh.js"></script><!-- 汉化包 -->
+<!-- 引入ajax插件 -->
+<script src="./validate/jquery.form.js"></script>
+<script>
+$(function(){
+	//应用对话框插件
+	//当点击p标签,注册对话框出现
+    $('p').click(function(){
+    	$("#reg").dialog({
+    		"width":400,
+    		"title":"用户注册",
+    		"buttons":{
+    			"注册":function(){
+    				//针对按钮执行的程序
+    				$("#reg").submit();
+    			}
+    		}
+    	});
+    	//validate验证合法后,自动调用submit
+    	//后面的匿名函数
+    	$("#reg").validate({
+    		"submitHandler":function(){
+    			//应用对话框插件
+    			//当点击p标签,注册对话框出现
+    			$("#reg").ajaxSubmit({
+    				"url" : "regist.php",
+    				"type" : "post",
+    				"success" : function(response,status){
+    					//将regist.php文件返回的内容写入到
+    					//span里
+    					$("#tip").html(response);
+    				}
+    			});
+    		}
+    	});
+    	
+    	//对出生日期输入框加入日期选择器
+    	$("#birthday").datepicker();
+    	
+    	//邮箱自动补全
+    	$("#email").autocomplete({
+    		"source":function(request,response){
+    			var hosts = ["163.com","126.com","qq.com","189.com","sina.com"];
+    			var term = request.term;
+    			var name = term;
+    			var host ;
+    			var result;
+    			var ix = term.indexOf("@");//@在用户输入的位置
+    			if(ix>-1){ //若用户输入了@
+    				     //str.slice(start,end)
+    				name = term.slice(0,ix);
+    				host = term.slice(ix+1);
+    			}
+    			//过滤用户
+    			var findHosts;
+    			if(host){ //若用户输入了host才进行过滤
+    				findHosts=$.grep(hosts,function(value,key){
+    					if(value.indexOf(host)>-1){
+    						return value;
+    					}
+    				});
+    			}else{
+    				findHosts=hosts;
+    			}
+    			//findHosts每一个数组元素缺少
+    			//name 和 @
+    			//将name和@添加到findHosts下的每个元素上
+    			result = $.map(findHosts,function(value,key){
+    				return name+"@"+value;
+    			});
+    			response(result);
+    		}
+    	});
+    });
+});
+</script>
+</head>
+
+<body>
+<p>注册</p>
+<form action="regist.php" method="post" id="reg" style="display:none;">
+<span id="tip"></span>
+用户名:<input type="text" name="username" class="required"/><br/><br/>
+密码:<input type="password" name="password" class="required"/><br/><br/>
+邮箱:<input type="text" name="email" class="required email" id="email"/><br/><br/>
+出生日期<input type="text" name="birthday" id="birthday"/><br/><br/>
+<!-- <input type="submit" value="注册" /> -->
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

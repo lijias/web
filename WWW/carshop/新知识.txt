@@ -1,0 +1,4 @@
+select FIND_IN_SET('2','1£¬2');·µ»Ø2 
+select FIND_IN_SET('6','1'); ·µ»Ø0 
+select * from cs_role a left join cs_privilege b on find_in_set(b.id,a.pri_id_list);
+select a.*,group_concat(b.pri_name) from cs_role a left join cs_privilege b on find_in_set(b.id,a.pri_id_list) group by a.id;

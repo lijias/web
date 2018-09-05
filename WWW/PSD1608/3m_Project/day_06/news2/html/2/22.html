@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>天天新闻网</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link href="../../css/news.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../../kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery-1.4.js"></script>
+    <script type="text/javascript">
+      var editor;
+      KindEditor.ready(function(e){
+          editor = e.create("[name=content]",{
+              "width":"560px",
+              "height":"200px",
+              "items":["undo","redo","|","bold","italic","underline"]
+          });
+      });
+      //利用ajax发表评论
+      function addReviews()
+      {
+    	  if(editor.html() == "")
+   		  {
+    		  alert("请输入评论内容！");
+    		  editor.focus();
+   		  }
+    	  else if(document.frm.userName.value == "")
+   		  {
+    		  alert("请输入评论人的姓名！");
+    		  document.frm.userName.focus();
+   		  }
+    	  else
+   		  {
+    		  //发表评论
+    		  $.ajax({
+    			  type:"post",
+    			  url:"../../plus/addreview.php",
+    			  data:"face="+document.frm.face.value+"&content="+editor.html()+"&userName="+document.frm.userName.value+"&articleId=22",
+    			  dataType:"html",
+    			  success:function(msg){
+    				  $("#reviewSpan").html(msg);
+    				  editor.html("");
+    				  document.frm.userName.value = "";
+    				  document.frm.face[0].checked = true;
+    			  }
+    		  });
+   		  }
+      }
+      //一打开页面就获得所有评论
+      function getReviews()
+      {
+    	  $.ajax({
+			  type:"post",
+			  url:"../../plus/addreview.php",
+			  data:"articleId=22",
+			  dataType:"html",
+			  success:function(msg){
+				  $("#reviewSpan").html(msg);
+			  }
+		  });
+      }
+    </script>
+  </head>
+  <body onload="getReviews()">
+    <!-- 网站头 -->
+    <div class="headDiv">
+  <div class="headDiv1">
+    <div class="headDiv10">www.<b>ttnewS</b>.com</div>
+    <div class="headDiv11"><img src="/news2/images/banner17.gif" width="370" height="50"></div>
+  </div>
+  <div class="headDiv2">天天新闻网</div>
+</div>
+<!-- 导航菜单 -->
+<div class="menuDiv">
+  <a href="/news2/index.html" class="a">首页</a> | 
+  <a href='/news2/html/1/newstype.html' class='a'>国内新闻</a> | <a href='/news2/html/2/newstype.html' class='a'>体育新闻</a> | <a href='/news2/html/3/newstype.html' class='a'>国际新闻</a> | <a href='/news2/html/4/newstype.html' class='a'>科技新闻</a> | <a href='/news2/html/6/newstype.html' class='a'>IT新闻</a> | 
+  <a href="/news2/plus/search.php" class="a">搜索</a>
+</div>
+
+
+
+
+
+
+
+
+	
+	<!-- 正文内容 -->
+	<div class="mainDiv clear">
+	  <!-- 显示的新闻 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">
+	      &nbsp;<a href="../../index.html" class="a">新闻主页</a> &raquo; 体育新闻
+	    </div>
+	  </div>
+	  <div class="newsTitle">NBA史上最强阵容:邓肯最佳大前 奥尼尔挤掉张伯伦</div>
+	  <div class="newsTime">2016-10-02 17:00:22</div>
+	  <div class='newsImg'><img src='../../newspicture/U2138P6T12D3108676F44DT20070817030528.jpg' width='400' height='300'></div>
+	  <div class="newsContent"><P>新浪体育讯　北京时间8月17日，美国NBA专家伊恩-汤姆森发表文章，评出了NBA史上全明星队，根据位置选了12名最有影响力的球员以及一名教练。来看看他心目中的最强12人都是谁吧。 　　<BR>从比尔-拉塞尔到科比-布莱恩特，NBA联盟经历了很多变化，单纯从球员实力上评出最强阵容实在难保公平，因此我们应该更多的考虑球员在所处年代是否具备统治优势，要考虑他们赢得总冠军的次数。同时季后赛的表现非常重要，能统治季后赛的才是最好的球员，比如奥尼尔。但威尔特-张伯伦则没有做到，当时他只能排在拉塞尔之后。因此鲨鱼能够入选这支球队而“篮球皇帝”却不行。 　　<BR>这12名球员都有总冠军戒指，其中10人赢得过MVP，例外的两人是约翰-海弗里切克和杰里-韦斯特，这二人没能赢得MVP绝不是因为实力不够。而最难的选择在于科比，很多人认为他应该名列其中，我在一开始也是这样选择的，但最终的选择是鲍勃-库西，这位凯尔特人名宿连续10个赛季入选最佳阵容第一队。 　　<BR>以下为史上全明星对首发阵容： 　　<BR><BR>小前锋：拉里-伯德 凯尔特人(1979-1992年) 　　<BR>在前半段职业生涯，伯德的运动能力其实很出色。“大鸟”在得分和助攻方面表现得像一个超人，他可以在球场的任何位置命中篮筐或者送出妙传。同时伯德还是公认的历史上最好的关键先生，史上唯一一位赢得常规赛MVP奖项的小前锋球员。 　　<BR><BR>大前锋：蒂姆-邓肯 马刺(1997年至今) 　　<BR>作为史上最好的大前锋，邓肯就是当今的比尔-拉塞尔。在邓肯的年代，大前锋是联盟中最强的位置，而石佛则是其中的佼佼者，他在球场两端都表现出了统治能力。 　　<BR><BR>中锋：比尔-拉塞尔 凯尔特人(1956-1969年) 　　<BR>拉塞尔在13年里拿下11次总冠军，其中包括一次8连冠。他把盖帽带进了这个联盟，也开创了总冠军头衔更重过得分王的历史。拉塞尔无疑是篮球史上最有影响力最有地位的球员。 　　</P> <P>组织后卫：埃文-约翰逊 湖人(1979-1991年；1995-96年) 　　<BR>作为控卫，“魔术师”有不同寻常的身材，出众的运动能力和领袖气质，他带来湖人在12年中9次打入总决赛5次夺冠，这一纪录仅次于拉塞尔。 　　</P> <P>得分后卫：迈克尔-乔丹 公牛(1984-1993；1994-1998)，奇才(2001-2003) 　　<BR>最辉煌的6个赛季里，乔丹同时赢下得分王和总冠军，除了他能做到这一点的只有乔治-麦肯(两次，1949-50赛季和51-52赛季)，贾巴尔(70-71赛季)和奥尼尔(99-00赛季)。 　　</P> <P>主教练：奥尔巴赫 　　</P> <P>替补阵容： 　　<BR>中锋：贾巴尔，奥尼尔；前锋：鲍勃-佩蒂特，约翰-海弗里切克；后卫：奥斯卡-罗伯逊，杰里-韦斯特，鲍勃-库西。 　　<BR></P> <P>(小柯) </P></div>
+	  
+	  <!-- 发表评论 -->
+	  <form name="frm" method="post">
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 发表评论</div>
+	  </div>
+	  <div class="newsContent">
+	    <img src="/news2/images/face/em01.gif"><input type="radio" name="face" value="em01.gif" checked>
+	    <img src="/news2/images/face/em02.gif"><input type="radio" name="face" value="em02.gif">
+	    <img src="/news2/images/face/em03.gif"><input type="radio" name="face" value="em03.gif">
+	    <img src="/news2/images/face/em04.gif"><input type="radio" name="face" value="em04.gif">
+	    <img src="/news2/images/face/em05.gif"><input type="radio" name="face" value="em05.gif">
+	    <img src="/news2/images/face/em06.gif"><input type="radio" name="face" value="em06.gif">
+	    <img src="/news2/images/face/em07.gif"><input type="radio" name="face" value="em07.gif">
+	    <img src="/news2/images/face/em08.gif"><input type="radio" name="face" value="em08.gif">
+	    <img src="/news2/images/face/em09.gif"><input type="radio" name="face" value="em09.gif">
+	    <img src="/news2/images/face/em10.gif"><input type="radio" name="face" value="em10.gif">
+	    <img src="/news2/images/face/em11.gif"><input type="radio" name="face" value="em11.gif">
+	  </div>
+	  <div class="newsImg"><textarea name="content"></textarea></div>
+	  <div class="newsContent">
+	    姓名：<input type="text" name="userName" size="20">
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <input type="button" value="发表" onclick="addReviews()">
+	  </div>
+	  </form>
+	  <!-- 评论内容 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 新闻点评</div>
+	  </div>
+      <span id="reviewSpan"></span>
+	  
+	  <br>
+	</div>
+    
+    
+    <!-- 网页脚 -->
+    <div class="footDiv">
+      网站简介 - 广告服务 - 网站地图 - 帮助信息 - 联系方式<br>
+   Copyrights &copy; 2014 hys.com All Rights Reserved
+</div>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,201 @@
+一.CSS2.0[Cascading Style Sheets]层叠样式表
+  1.什么是CSS:修饰网页元素(标记)
+                          外观(比如给文字加颜色，
+                          大小，字体)的，W3C规
+                          定尽量用CSS样式替代XHTML属性
+  2.XHTML和CSS的关系
+    XHTML实现是网页结构，CSS修饰网页外观
+  3.CSS的使用
+   (1)内联样式(写在标记上的)
+      <标记名称 style="css样式"/>
+      <标记名称 style="css样式">...</标记名称>
+   (2)内部样式(写在head标记中)
+      <style type="text/css">
+          ... css样式
+      </style>
+   (3)外部样式(将CSS样式单独写一个页面，然后引用页面)
+    <link type="text/css" rel="stylesheet"
+     href="CSS文档URL" media="all"/>
+        说明:
+       type:目标文档类型
+       rel :当前文档和目标文档的关系 
+       href :CSS文档URL
+       media:根据不同的媒介(设备)，
+                           使用不同CSS样式
+       
+       media:
+           all 所有
+           print 打印机
+           screen 屏幕
+           TV 电视
+    (4)优先级：内联样式最高，内部和外部优先级同级
+                             后面的覆盖前面的样式
+    
+  4.CSS样式格式
+      选择器{属性:值;属性:值;...}
+   selector{property:value;property:value;...}
+  5. 选择器(selector)
+   (1)通配符选择器   *{...}(自动应用于所有标记中)
+   (2)标记选择器    标记{...}(自动应用于指定标记中)
+   (3)class(类)选择器   .class名称{...}(手动应用
+           于任意标记中 ，应用例如 class="a1 a2..."
+           如果有多个class名称用空格隔开)
+   (4)id选择器   #id名称{...}(手动应用唯一标记中
+        例如应用: id="id名称")
+   (5)群组选择器   选择器名称,选择器名称...{...}
+    (不同选择器但属性相同的缩写)
+   (6)后代选择器   选择器名称 选择器名称{...}
+     (两个选择器至少是父子关系)
+   (7)子代选择器   选择器名称>选择器名称{...}
+     (两个选择器必须是父子关系) 
+  6. 选择器的优先级
+             标记选择器      权值  0001
+      class选择器   权值  0010
+      id选择器         权值  0100
+            内联样式          权值   1000
+         说明:权值越大优先级越高,权值
+               相同优先级相同后面的样式覆
+               盖前面的样式,继承的优先级
+               最低
+     
+  7.color的属性值
+   (1) 单词   red blue green...
+   (2) 十六进制  (0-9 a b c d e f)
+                红色: #ff0000 == #f00
+   (3) rgb: (r:red,g:green,b:blue 0-255)
+                 红色:rgb(255,0,0) ==rgb(100%,0%,0%)
+   
+         红色       #f00   rgb(255,0,0)
+         绿色       #0f0   rgb(0,255,0)
+         蓝色       #00f   rgb(0,0,255)
+         白色       #fff   rgb(255,255,255)
+         黑色       #000   rgb(0,0,0)
+         黄色       #ff0   rgb(255,255,0)
+         浅灰色    #eee   rgb(200,200,200)
+         深灰色    #333   rgb(3,3,3)
+   8.伪类选择器
+     (1)行为伪类
+         :link 元素未访问过状态
+         :visited 元素访问过的状态
+         :hover  设置鼠标悬停状态
+         :active 设置鼠标激活状态 
+                说明:
+          a. 按LVHA 的顺序设置
+          b.工作中实现
+             a{
+			   color:#333;
+		       text-decoration:none;
+		     }
+		     a:hover{
+			   color:#900;
+		       text-decoration:underline;
+		     }
+		:focus： 设置鼠标获得焦点状态
+     (2)UI元素伪类
+         :checked 设置元素被选中状态(css3.0)
+         :disabled 设置元素禁止状态
+         :enabled  设置元素启用状态
+   9.伪元素选择器
+      :before :设置元素之前的内容或图像
+      :after ： 设置元素之后的内容或图像
+            例如:
+      :before{
+         content:"内容"|url(图像)
+      }
+      :after{
+         content:"内容"|url(图像)
+      }
+   
+   10.文本样式
+     (1)文本颜色 color:value; 
+     (2)文本大小 font-size:value;
+       (单位:像素px;默认字的大小的倍数 em,例如:1.5em)
+     (3)文本字体 font-family:宋体,arial,"Times New  Roman"
+     (4)文本水平对齐  text-align:left|center|right
+     (5)文本行高 line-height:value;
+            说明:如果文本行高 和盒子高度一致，能实现文本
+                     在盒子中垂直居中
+     (6)文本缩进 text-indent:value
+              例如:首行缩进 ：text-indent:2em;
+            说明:只能对块元素实现文本缩进，而行元素不可以
+     (7)文本加粗 font-weight:normal默认值|bold加粗|100-900
+            说明: normal ==400  bold==700  
+     (8)文本倾斜 font-style:normal默认值|italic倾斜
+     (9)小型大写字母  font-variant:normal|small-caps
+     
+     font的缩写形式
+       font:font-style倾斜||
+            font-variant小型大写字母||
+            font-weight加粗||
+            font-size 字大小/line-height 行高||
+            font-family字体
+     (10)文本修饰 text-decoration:none|
+                                underline下划线|
+                                overline上划线|
+                                line-through删除线
+   
+     (11)text-transform : none | 
+                    capitalize 每个单词首字母大写| 
+                    uppercase 转为大写| 
+                    lowercase 转为小写
+    11 盒模型(BoxModel)
+     (1)width 宽度
+     (2)height 高度
+           说明:块元素和有宽高属性的标记(img input等)
+                 设置宽度和高度,行元素不能设置宽度和高度
+     (3)padding 内边距
+     (4)margin  外边距
+     (5)border  边框
+         说明:
+       div标记:没实际意义的块元素
+       span标记 :没实际意义的行元素
+         
+         
+         
+         
+         
+    
+   
+   
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   
+    
+  
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+   
+   
+   
+   
+   
+    
+  

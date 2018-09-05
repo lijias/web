@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>my demo</title>
+<style>
+  .box{
+  	 display:inline;/*将块元素转行元素*/
+	 width:80px;
+  	 height:80px;
+  	 background:#ff0;
+  }
+  .spa{
+  	 display:block;/*将行元素转块元素*/
+	 width:80px;
+  	 height:80px;
+  	 background:#00f;
+  }
+  .list li{
+  	 /* float:left; */
+  	 display:inline-block;
+	 width:80px;
+  	 height:80px;
+  	 background:#0f0;
+  }
+  .list li.two{
+	 /*  display:none; */
+  	 visibility:hidden;
+  }
+</style>
+</head>
+<body>
+    <div class="box">块元素</div>
+    <span class="spa">行元素</span>
+    
+    <ul class="list">
+       <li>one</li>
+       <li class="two">two</li>
+       <li>three</li>
+    </ul>
+</body>
+</html>
+
+
+
+
+
+
+

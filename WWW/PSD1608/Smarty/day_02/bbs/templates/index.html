@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>网站首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/bbs.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    {include file="header.html"}
+    
+    <table border="1" align="center" width="600">
+      <tr>
+        <td>编号</td>
+        <td>标题</td>
+        <td>点击次数</td>
+        <td>时间</td>
+      </tr>
+      {foreach $bbsInfo as $v}
+      <tr>
+        <td>{$v.bbsId}</td>
+        <td>{$v.title}</td>
+        <td>{$v.clickTimes}</td>
+        <td>{$v.bbsTime}</td>
+      </tr>
+      {/foreach}
+      <tr>
+        <td colspan="4" align="center">
+          {for $i=1 to $totalPage}
+            {if $i==$currentPage}
+              [{$i}]&nbsp;&nbsp;&nbsp;
+            {else}
+              <a href="index.php?currentPage={$i}">[{$i}]</a>&nbsp;&nbsp;&nbsp;
+            {/if}
+          {/for}
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4" align="center">
+          {if $currentPage==1}
+            首页&nbsp;&nbsp;&nbsp;上一页&nbsp;&nbsp;&nbsp;
+          {else}
+          <a href="index.php?currentPage=1">首页</a>&nbsp;&nbsp;&nbsp;
+          <a href="index.php?currentPage={$currentPage-1}">上一页</a>&nbsp;&nbsp;&nbsp;
+          {/if}
+          
+          {if $currentPage == $totalPage}
+          下一页&nbsp;&nbsp;&nbsp;尾页&nbsp;&nbsp;&nbsp;
+          {else}
+          <a href="index.php?currentPage={$currentPage+1}">下一页</a>&nbsp;&nbsp;&nbsp;
+          <a href="index.php?currentPage={$totalPage}">尾页</a>&nbsp;&nbsp;&nbsp;
+          {/if}
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+
+
+
+
+

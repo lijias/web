@@ -1,0 +1,222 @@
+一.PHPCORE基础
+ 1.什么是PHP：[Hypertext Preprocessor]
+            WEB程序开发语言，运行在服务器端
+                         的脚本语言
+ 2.PHP的好处
+   (1) 代码开源
+   (2) 支持多种平台(WindowS,Linux等)
+   (3) 支持多种WEB服务器(Apache,IIS Tomact,Nginx)
+   (4) 支持多种数据库(Mysql,SQLServer,Orcale等)
+ 3.PHP的安装(windows)
+   (1)安装apache服务器,WEB服务器只能解析静态页面
+   (2)安装PHP引擎
+      a.php-5.4.15-Win32-VC9-x86.zip
+                免安装解压缩，放到目标安装位置重命名
+      b.将php.ini-development改为 php.ini
+                文件名称，作为PHP的配置文件
+      c.将PHP引擎 和apache绑定
+                 将如下代码写在 conf/http.conf 文件上：
+        #加载PHP5这个模块，加载路径php5apache2_2.dll所在位置及全称
+		LoadModule php5_module "D:\php5.4\php5apache2_2.dll"
+		#加载PHP配置文件所在位置
+		PHPIniDir "D:\php5.4"
+		#告诉Apache什么样类型的文件交给PHP引擎处理
+		AddType application/x-httpd-php .php
+    (3) PHP原理:如果浏览器请求.php页面,apache服务器
+                 只能静态页面，apache服务器请PHP引擎帮忙 ，PHP
+                 引擎执行动态页面并且将执行后的静态结果给apache
+                 服务器，apache服务器能解析静态页面，响应给客户
+                 端浏览器，最终将结果显示出来
+4.PHP的语法结构
+  (1) XML风格(基本风格)
+  <?php
+     ...
+  ?>
+  说明:如果最后是PHP代码 '?>'
+          结束符可以省略，推荐省略
+  (2)短风格
+  <?
+    ...
+  ?>
+  说明:需要修改 配置文件php.ini
+     short_open_tag =Off
+           改为 On 重启apache服务器
+  (3)asp风格
+  <%
+    ...
+  %>
+      说明:需要修改 配置文件php.ini
+       asp_tags =Off
+               改为 On 重启apache服务器 
+  (4)script风格
+  <script language="php">
+  ...
+  </script>
+  
+5.PHP的文档结构
+  (1)PHP代码
+  (2)HTML标记
+  (3)CSS样式
+  (4)Javascript ,Jquery
+    说明:PHP的文档结构,可以有多个PHP语法结构,
+            并且PHP语法结构 可以放在任意位置上，
+            每句代码用分号结束
+            
+6.PHP注释
+  (1) #单行注释
+  (2) //单行注释
+  (3) /*多行
+                注释*/
+7. 变量(Varible)
+   1.什么是变量:在内存中有名称的量,并且量在程序
+            执行中可以改变,也就是说变量临时存放值的容器。
+           内存: 临时存放当前执行的数据和程序，一旦断电
+                      数据不存在
+   2.什么时候用变量: 当数据不只一次被用到,那就可以
+                                   定义成变量
+                                   
+   3.声明变量
+     $变量名称;
+     $变量名称=值;
+   4.变量名称的命名规范
+     (1)$开始,然后变量名称以字母和下划线开头，
+                            后面包含数字，字母，下划线。
+                            
+     (2)变量名称禁止包含特殊符号，例如 空格
+                  斜杠，反斜杠等特殊符号
+     (3)变量名称尽量含义明确
+     (4)变量名称尽量采用驼峰格式
+                  例如: userName  UserName
+     (5)变量名称区分大小写
+                 例如: $test $Test 不是一个变量
+     (6)变量名称相同，后面的值覆盖前面的值。
+    5.变量的特殊用法
+      (1) 多个变量赋相同的值
+      (2)可变变量
+      (3)引用变量: &
+      
+8.数据类型(8个主要数据类型和4伪类型)
+  << 8个主要数据类型
+     (1)标量类型(存储单一值)
+         a.整型(Integer Int)
+         b.浮点型(Float,Double)
+         c.布尔类型(Boolean Bool)
+         d.字符类型(String)
+     (2)复合类型(存储多个值)
+         a.数组(Array)
+         b.对象(Object)
+     (3)特殊类型
+         a.资源(Resource)
+         b. NULL
+
+     (4)整型(Integer Int)
+        a. PHP整型:十进制,
+                                      二进制(0b开头),
+                                      八进制(0开头),
+                                      十六进制(0x开头)。
+        b.整型的最大值与操作系统有关系
+          PHP_INT_MAX 看最大值，
+                     超出最大值会产生溢出变浮点类型
+     (5)浮点型(Float,Double)
+        a.科学计数法( e或 E)
+                     例如: 2.1e2 = 2.1*10^2
+               2.1e-2 =2.1/(10^2)
+        b.浮点型最大值与操作系统有关系
+                     最大值1.79*e308
+        c.PHP中浮点型存近似值，所以不要对
+                    浮点型进行比较
+     
+     (6)布尔类型(Boolean Bool)
+        a.只有 TRUE|true真 和 FALSE|false假
+                     两个值 
+                   
+     (7)字符类型(String):必须用定界符括起来
+        a.定界符
+           (a)单引号(推荐) 
+           (b)双引号
+           (c)HereDOC(自定义定界符)
+           (d)NowDOC(自定义定界符)
+        b.单引号和 双引号的区别
+           (a)双引号能解析变量，而单引号不解析变量
+           (b)双引号能解析所有的转义字符,单引号只能
+                             解析 \' 和 \\
+        
+        c.转义字符(在源码中的特殊符号)
+          \' 单引号
+          \" 双引号
+          \n 换行
+          \r 回车
+          \t 水平制表符
+          \v 垂直制表符
+          \\ 反斜杠
+          
+        d.单引号和 双引号的HTML实体和转义字符的使用
+          (a)W3C规定在浏览器中看到特殊符号必须用
+             HTML实体,PHP中也必须用HTML实体实现
+             
+          (b)在源代码中看到的用转义字符,在PHP中
+                           当单引号和 双引号冲突时用转义字符
+      
+      
+      
+      
+      
+      
+             
+    
+   
+   
+     
+            
+                         
+ 
+                
+
+=======================================
+ (1) echo :向浏览器输出字符串   
+     echo 字符串;
+     echo 字符串,字符串,字符串;
+     echo(字符串); 只能输出一个字符串
+     
+ (2) 中文乱码
+   (1) xhmtl中文乱码:
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   (2)PHP的中文乱码:
+      header('Content-Type:text/html;charset=utf-8');
+             说明:前面不能有任何输出
+   (3)编辑器的中文编码：
+      window-Preferences(参数)
+      -General(基本)-Workspace-utf-8
+      
+ (3) var_dump :打印出详细信息(值,类型)
+ 
+     var_dump($var,$var2,$var3...);
+      
+ 
+ 
+ 
+ 
+ 
+ 
+
+  
+
+  
+  
+  
+  
+   
+  
+
+
+
+      
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  

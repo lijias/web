@@ -1,0 +1,202 @@
+一.表结构的操作(DDL)
+ 1. 添加(多个)字段
+ ALTER TABLE 表名
+ ADD 字段名称 数据类型 [字段属性|约束条件]
+ [FIRST|AFTER 字段名称],
+ ADD 字段名称 数据类型 [字段属性|约束条件]
+ [FIRST|AFTER 字段名称],
+ ...;
+ 2.删除字段
+ ALTER TABLE 表名
+ DROP 字段名称,
+ DROP 字段名称...;
+ 3.修改字段
+ ALTER TABLE 表名
+ MODIFY 字段名称 数据类型 [字段属性|约束条件]
+ [FIRST|AFTER 字段名称];
+ 
+ 4.修改字段名称
+  ALTER TABLE 表名
+  CHANGE 旧字段名称  新字段名称  数据类型 [字段属性|约束条件]
+ [FIRST|AFTER 字段名称];
+ 
+二.查找帮助
+  help 关键字
+  ? 关键字
+  \h
+三.表中数据的操作(DML)
+  1.添加(INSERT)
+    (1)不写字段名称的添加(从第一个字段到最后字段值不能省略)
+    INSERT 表名
+    VALUE (值,值,值...);
+    (2).写字段名称的添加
+    INSERT 表名 (字段名称,字段名称...)
+    VALUE 
+    (值,值,值...),
+    (值,值,值...)...;
+    (3)INSERT ...SET...(只能添加一条记录)
+    INSERT 表名 SET 字段名称=值,字段名称=值...;
+    
+  2.删除(DELETE)
+   (1) DELETE FROM 表名 [WHERE 条件]
+         说明:
+      a.如果没有WHERE 条件,将清空整个表中的数据
+      b.不能重置 AUTO_INCREMENT
+   (2) TRUNCATE
+      TRUNCATE 表名;
+      a. 清空整个表中的数据
+      b.能重置 AUTO_INCREMENT
+  3.修改(UPDATE)
+    UPDATE 表名 SET 字段名称=值,字段名称=值...
+    [WHERE 条件]
+       说明:如果WHERE 条件 ,将修改所有记录的对应的值
+
+四.表中数据的查询(DQL)
+  1. SELECT * FROM 表名;
+    说明：效率低
+  2.SELECT 字段名,字段名...
+    FROM 表名;
+  3.给字段起别名
+   SELECT 字段名 [AS]别名,字段名...
+   FROM 表名;
+  4.给表起别名
+   SELECT 字段名,字段名...
+   FROM 表名  [AS]别名;
+   
+  5.表名(别名).字段名称(字段来自哪个表) 
+   SELECT 表名(别名).字段名,字段名...
+   FROM 表名 ;
+  6.数据库名.表名(表来自哪个数据库) 
+   SELECT 字段名,字段名...
+   FROM 数据库名.表名
+   
+  7. 完整格式
+  SELECT 字段名|expr,字段名|expr...
+  FROM 表名
+  [WHERE 条件]
+  [GROUP BY 字段]
+  [HAVING 条件]
+  [ORDER BY 字段]
+  [LIMIT [$offset,]$length]
+  8. WHERE 条件 : 条件过滤
+      (1) 比较运算符 > >= < <= !=
+                 <> = ,<=>判断null
+      (2) IS [NOT] NULL  判断null
+      
+      (3) [NOT] BETWEEN ...AND...(范围值)
+  
+      (4) [NOT] IN(值,值...) (取某几个不连续的值)
+  
+      (5) 逻辑运算符
+         !非
+         && AND
+         || OR
+      (6) [NOT] LIKE '字符串' 模糊查询
+        _： 任意一个字符
+        %：任意字符(0个,1个,多个)
+       
+   9.GROUP BY 字段：对字段值分组
+          原理:对某一个字段值分组，只显示一个字段值结果
+         (小编号记录),所以一般只显示分组的那个
+                   字段的信息和显示聚合函数
+    说明:
+      聚合函数
+      COUNT(*)：每组中的个数,包含 null值
+      COUNT(字段):每组中的个数,不包含null值
+      AVG(字段):每组中的平均值
+      MAX(字段):每组中的最大值
+      MIN(字段):每组中的最小值
+      SUM(字段):每组中的和
+     
+   10:HAVING 条件:二次过滤
+          说明:
+       a. WHERE对字段的过滤
+       b. HAVING 对一个结果的过滤
+                      一般结合 GROUP BY使用
+      
+   11.ORDER BY 字段 ：对字段排序
+      ORDER BY 字段   ASC升序|DESC降序
+      
+   12.LIMIT [$offset,]$length :得前n条记录
+      说明:
+      a.$offset :偏移量,起始编号,编号从0开始
+      b.$length: 显示记录数长度
+      c.WEB程序中的分页
+               计算:偏移量= (当前页-1)*显示的记录数
+        $offset = ($curpage-1)*$pagesize
+             
+五.多表联合查询
+  1.格式
+  SELECT 字段名1,字段名2...
+  FROM 表1
+    类型  表2
+  ON  两个表的逻辑关系
+    类型  表3
+  ON  两个表的逻辑关系
+  [WHERE 条件]
+  2.类型
+   (1) 内连接 ：INNER JOIN:查询两个表符号要求的消息
+   (2) 外连接
+  
+  
+  
+  
+  
+  
+strcmp
+strcasecmp
+ord
+cha
+quotemate
+
+
+
+
+
+
+     
+      
+      
+      
+      
+     
+   
+   
+   
+   
+   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+  
+  
+  
+  
+  
+  
+
+
+
+
+
+
+
+ 
+  
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+

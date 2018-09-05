@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>天天新闻网</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link href="../../css/news.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../../kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery-1.4.js"></script>
+    <script type="text/javascript">
+      var editor;
+      KindEditor.ready(function(e){
+          editor = e.create("[name=content]",{
+              "width":"560px",
+              "height":"200px",
+              "items":["undo","redo","|","bold","italic","underline"]
+          });
+      });
+      //利用ajax发表评论
+      function addReviews()
+      {
+    	  if(editor.html() == "")
+   		  {
+    		  alert("请输入评论内容！");
+    		  editor.focus();
+   		  }
+    	  else if(document.frm.userName.value == "")
+   		  {
+    		  alert("请输入评论人的姓名！");
+    		  document.frm.userName.focus();
+   		  }
+    	  else
+   		  {
+    		  //发表评论
+    		  $.ajax({
+    			  type:"post",
+    			  url:"../../plus/addreview.php",
+    			  data:"face="+document.frm.face.value+"&content="+editor.html()+"&userName="+document.frm.userName.value+"&articleId=18",
+    			  dataType:"html",
+    			  success:function(msg){
+    				  $("#reviewSpan").html(msg);
+    				  editor.html("");
+    				  document.frm.userName.value = "";
+    				  document.frm.face[0].checked = true;
+    			  }
+    		  });
+   		  }
+      }
+      //一打开页面就获得所有评论
+      function getReviews()
+      {
+    	  $.ajax({
+			  type:"post",
+			  url:"../../plus/addreview.php",
+			  data:"articleId=18",
+			  dataType:"html",
+			  success:function(msg){
+				  $("#reviewSpan").html(msg);
+			  }
+		  });
+      }
+    </script>
+  </head>
+  <body onload="getReviews()">
+    <!-- 网站头 -->
+    <div class="headDiv">
+  <div class="headDiv1">
+    <div class="headDiv10">www.<b>ttnewS</b>.com</div>
+    <div class="headDiv11"><img src="/news2/images/banner17.gif" width="370" height="50"></div>
+  </div>
+  <div class="headDiv2">天天新闻网</div>
+</div>
+<!-- 导航菜单 -->
+<div class="menuDiv">
+  <a href="/news2/index.html" class="a">首页</a> | 
+  <a href='/news2/html/1/newstype.html' class='a'>国内新闻</a> | <a href='/news2/html/2/newstype.html' class='a'>体育新闻</a> | <a href='/news2/html/3/newstype.html' class='a'>国际新闻</a> | <a href='/news2/html/4/newstype.html' class='a'>科技新闻</a> | <a href='/news2/html/6/newstype.html' class='a'>IT新闻</a> | 
+  <a href="/news2/plus/search.php" class="a">搜索</a>
+</div>
+
+
+
+
+
+
+
+
+	
+	<!-- 正文内容 -->
+	<div class="mainDiv clear">
+	  <!-- 显示的新闻 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">
+	      &nbsp;<a href="../../index.html" class="a">新闻主页</a> &raquo; 科技新闻
+	    </div>
+	  </div>
+	  <div class="newsTitle">Google胜过百度还是Google败给百度</div>
+	  <div class="newsTime">2016-10-02 17:00:20</div>
+	  
+	  <div class="newsContent">Google胜过百度 最近一咨询公司做了中国2007年搜索质量盲测评估报告，在盲测参与者完成的全部11,864次测试中，判断Google搜索结果好于百度的比例48.2%，百度搜索结果好于<BR>Google的比例为39.8%，Google的中文搜索质量在八个日常搜索分类领域中的七个超越百度，百度仅在娱乐搜索分类领域中胜出。从报告可以看出Google搜索质量是明显优于百度的，但为什么Google仍然败给了百度呢?这部分原因是跟Google的市场推广、本地化不够有关，但从报告还可以得出Google败给百度的真正原因。 Google败给百度 从评估报告中有一项很重要的指标“对百度和Google提供的搜索服务不满意的方面”，从这里可以看出对百度不满意的是对搜索结果的质量、客观性、范围和相关性，这几乎是对搜索引擎核心功能的全面否定。 而对Google不满意的却是它的附加服务，例如快照不能使用，这是Google在中国妥协的结果，而不是它自身不能提供这项服务；搜索不稳定我倒很少遇到过，但是有时出现页面不能访问的情况，大多跟国内网络的监控有关，这也是败在国内特殊环境之下；未提供MP3搜索，是因为MP3涉及版权纠纷，不做恶的Google也只能无言以对；不能提供百度贴吧算是Google中国本地化不够的一个方面，但跟搜索引擎本身并不相关。所以Google败给百度不是败在搜索上，而百度胜过Google却主要靠着外部环境的因素。如果哪一天Google的这几项备受困扰的服务和功能可以开放、推出，那百度在市场上败给Google是迟早的事情。 </div>
+	  
+	  <!-- 发表评论 -->
+	  <form name="frm" method="post">
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 发表评论</div>
+	  </div>
+	  <div class="newsContent">
+	    <img src="/news2/images/face/em01.gif"><input type="radio" name="face" value="em01.gif" checked>
+	    <img src="/news2/images/face/em02.gif"><input type="radio" name="face" value="em02.gif">
+	    <img src="/news2/images/face/em03.gif"><input type="radio" name="face" value="em03.gif">
+	    <img src="/news2/images/face/em04.gif"><input type="radio" name="face" value="em04.gif">
+	    <img src="/news2/images/face/em05.gif"><input type="radio" name="face" value="em05.gif">
+	    <img src="/news2/images/face/em06.gif"><input type="radio" name="face" value="em06.gif">
+	    <img src="/news2/images/face/em07.gif"><input type="radio" name="face" value="em07.gif">
+	    <img src="/news2/images/face/em08.gif"><input type="radio" name="face" value="em08.gif">
+	    <img src="/news2/images/face/em09.gif"><input type="radio" name="face" value="em09.gif">
+	    <img src="/news2/images/face/em10.gif"><input type="radio" name="face" value="em10.gif">
+	    <img src="/news2/images/face/em11.gif"><input type="radio" name="face" value="em11.gif">
+	  </div>
+	  <div class="newsImg"><textarea name="content"></textarea></div>
+	  <div class="newsContent">
+	    姓名：<input type="text" name="userName" size="20">
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <input type="button" value="发表" onclick="addReviews()">
+	  </div>
+	  </form>
+	  <!-- 评论内容 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 新闻点评</div>
+	  </div>
+      <span id="reviewSpan"></span>
+	  
+	  <br>
+	</div>
+    
+    
+    <!-- 网页脚 -->
+    <div class="footDiv">
+      网站简介 - 广告服务 - 网站地图 - 帮助信息 - 联系方式<br>
+   Copyrights &copy; 2014 hys.com All Rights Reserved
+</div>
+  </body>
+</html>
+
+
+

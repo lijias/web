@@ -1,0 +1,617 @@
+多表查询
+1、子查询(被动使用)
+2、内连接
+3、外连接(不用)
+-----------------------------------------------------
+视图View：简化查询语句
+
+创建视图
+create view 视图名
+as
+select语句;
+
+
+修改视图
+alter view 视图名
+as
+select语句;
+
+
+查看视图
+1、查看当前库中所有表
+   show tables;
+2、information_schema库->views表
+   select * from information_schema.views;
+
+
+删除视图
+1、删除视图所在的库
+   drop database 库名;
+2、删除视图
+   drop view 视图名;
+
+
+使用视图：把视图当表用
+select * from 视图名;
+select 字段... from 视图名;
+select * from 视图名 where 条件 order by 字段 limit 起始值,条数;
+
+
+使用视图注意：
+1、简化查询语句(视图中只能存放select语句)
+2、把视图当表用(建议：只对视图执行查询操作)
+
+
+使用场合
+1、出现了多表查询语句
+2、使用频率高
+--------------------------------------------------------
+触发器Trigger：数据库中的事件
+
+作用：当用户对表进行增、删、改操作的同时，是否要执行其他操作
+
+触发器时间：before、after
+
+触发器类型：insert、update、delete
+
+创建触发器
+delimiter //
+drop trigger if exists 触发器名//
+create trigger 触发器名
+before|after  insert|update|delete
+on 表名
+for each row
+begin
+  sql语句;
+  sql语句;
+  sql语句;
+end//
+delimiter ;
+
+
+删除触发器
+1、删除触发器所在的库
+   drop database 库名;
+2、删除触发器施加的表
+   drop table 表名;
+3、删除触发器
+   drop trigger 触发器名;
+
+
+查看触发器
+1、information_schema库->triggers表
+   select * from information_schema.triggers;
+
+
+触发器注意：
+1、由系统自动调用
+2、没有参数、没有返回值
+3、一个触发器只能有一个类型
+4、一个触发器只能施加给一个表
+
+
+使用场合：当对表进行增、删、改的同时，是否要执行其他操作
+---------------------------------------------------------
+存储过程Procedure：相当于数据库中的自定义函数
+
+创建存储过程
+delimiter //
+drop procedure if exists 存储过程名//
+create procedure 存储过程名(参数名 数据类型,参数名 数据类型)
+begin
+  sql语句;
+  sql语句;
+  sql语句;
+end//
+delimiter ;
+
+
+调用存储过程
+call 存储过程名();
+call 存储过程名(值,值...);
+
+
+删除存储过程
+1、删除存储过程所在的库
+   drop database 库名;
+2、删除存储过程
+   drop procedure 存储过程名;
+   drop procedure delNewsType;
+
+
+查看存储过程
+1、mysql库->proc表
+   select db,name from mysql.proc;
+
+
+例子1：利用存储过程查询bbsInfo表
+delimiter //
+drop procedure if exists hello//
+create procedure hello()
+begin
+  select * from bbsInfo;
+end//
+delimiter ;
+
+call hello();
+
+
+
+例子2：利用存储过程查询bbsInfo表的指定记录
+delimiter //
+drop procedure if exists hello//
+create procedure hello(bid int)
+begin
+  select * from bbsInfo where bbsId=bid;
+end//
+delimiter ;
+
+call hello(7);
+
+
+例子3：通过存储过程删除一个新闻的分类
+delimiter //
+drop procedure if exists delNewsType//
+create procedure delNewsType(tid int)
+begin
+  delete from reviews where articleId in (select articleId from newsArticles where typeId=tid);
+  delete from newsArticles where typeId=tid;
+  delete from newsTypes where typeId=tid;
+end//
+delimiter ;
+
+call delNewsType(4);
+
+
+存储过程知识点
+1、介绍、作用
+2、创建、调用、查看、删除
+
+
+存储过程注意
+1、一次编写，多次调用
+2、必须由用户显示的来调用
+3、有参数、有返回值
+
+
+存储过程与触发器的区别？
+1、存储过程由用户调用，触发器由系统调用
+2、存储过程有参数、返回值。触发器没参数、没有返回值
+
+
+使用场合
+执行一个网站上的操作，但必须要执行多个sql语句
+---------------------------------------------------------
+Transaction-SQL编程
+1、定义变量
+2、变量赋值
+3、运算
+4、判断
+5、循环
+
+
+T-SQL编程只能出现在trigger、procedure里
+
+
+输出语句
+select '社会主义好' as msg;
+select 30 as age,'田七' as userName;
+select current_timestamp as time;
+-----------------
+定义变量
+declare 变量名 数据类型;
+declare 变量名 数据类型 default 值;
+注意：定义变量的代码必须出现在begin、end的最顶部
+
+delimiter //
+drop procedure if exists hello//
+create procedure hello()
+begin
+  #定义变量
+  declare age int;
+  declare userName varchar(20) default '张三';
+  #显示
+  select age,userName;
+end//
+delimiter ;
+-------------------
+变量赋值
+declare 变量名 数据类型 default 值;
+set 变量名 = 值;
+set 变量名 = (select语句);
+select 字段 into 变量 from 表名 where 条件;
+
+
+delimiter //
+drop procedure if exists hello//
+create procedure hello()
+begin
+  declare num int;
+  declare t varchar(100);
+  #赋值
+  select count(*) into num from bbsInfo;
+  select title into t from bbsInfo where bbsId=3;
+  #显示
+  select num,t;
+end//
+delimiter ;
+
+
+delimiter //
+drop procedure if exists hello//
+create procedure hello()
+begin
+  declare num int;
+  declare t varchar(100);
+  #赋值
+  set num = (select count(*) from bbsInfo);
+  set t = (select title from bbsInfo where bbsId=7);
+  #显示
+  select num,t;
+end//
+delimiter ;
+
+
+delimiter //
+drop procedure if exists hello//
+create procedure hello()
+begin
+  declare age int;
+  declare address varchar(50);
+  #变量赋值
+  set address = '北京';
+  set age = 37;
+  #显示
+  select age,address;
+end//
+delimiter ;
+-----------------------
+运算符
+算术运算符：+  -  *  /  %
+比较运算符：<  <=  >  >=  =  !=  <>
+逻辑运算符：and  or  not
+赋值运算符：=
+
+
+delimiter //
+drop procedure if exists hello//
+create procedure hello()
+begin
+  declare a int default 5;
+  declare b int default 2;
+  declare result int;
+  #运算
+  set result = a % b;
+  #输出
+  select result;
+end//
+delimiter ;
+----------------------
+判断
+if 条件 then
+  sql语句;
+  sql语句;
+elseif 条件 then
+  sql语句;
+  sql语句;
+else
+  sql语句;
+  sql语句;
+end if;
+
+
+delimiter //
+drop procedure if exists hello//
+create procedure hello(age int)
+begin
+  if age<18 then
+    select '未成年' as msg;
+  elseif age=18 then
+    select '刚成年' as msg;
+  else
+    select '己成年' as msg;
+  end if;
+end//
+delimiter ;
+------------------------
+循环：了解
+while 条件 do
+  sql语句;
+end while;
+
+repeat
+  sql语句;
+until 条件 end repeat;
+
+别名:loop
+  sql语句;
+end loop;
+
+
+delimiter //
+drop procedure if exists hello//
+create procedure hello()
+begin
+  declare i int default 0;
+
+  haha:loop
+    select i;
+    set i=i+1;
+    if i=5 then
+      leave haha;#结束循环
+    end if;
+  end loop;
+end//
+delimiter ;
+
+
+delimiter //
+drop procedure if exists hello//
+create procedure hello()
+begin
+  declare i int default 0;
+
+  repeat
+    select i;
+    set i=i+1;
+  until i=5 end repeat;
+end//
+delimiter ;
+
+
+delimiter //
+drop procedure if exists hello//
+create procedure hello()
+begin
+  declare i int default 0;
+
+  while i<5 do
+    select i;
+    set i=i+1;
+  end while;
+end//
+delimiter ;
+----------------------
+T-SQL编程知识点
+1、定义变量
+2、赋值
+3、运算
+4、判断
+----------------------------------------------------------
+存储过程的参数
+
+输入参数：外->里
+输出参数：里->外
+
+delimiter //
+drop procedure if exists hello//
+create procedure hello(in a int,in b int,out c int)
+begin
+  sql语句;
+  sql语句;
+  sql语句;
+  给输出参数赋值
+end//
+delimiter ;
+
+call hello(10,20,@名);
+select @名;
+
+
+例子1：通过bbsId，获得title标题
+delimiter //
+drop procedure if exists hello//
+create procedure hello(out t varchar(100),in id int)
+begin
+  #select title into t from bbsInfo where bbsId=id;
+  set t = (select title from bbsInfo where bbsId=id);
+end//
+delimiter ;
+
+call hello(@ttt,7);
+select @ttt;
+-------------------------------------------------------
+索引Index：提高表的where条件查询语句速度
+
+什么样的字段应当添加索引：经常充当where条件的字段
+
+索引分类
+1、主键索引：唯一、非空
+2、唯一索引：唯一
+3、普通索引：没限制
+4、全文索引：text字段
+
+
+查看表的索引
+show index from 表名;
+
+删除索引
+drop index 索引名 on 表名;
+drop index t_index on bbsInfo;
+
+
+创建索引
+1、主键索引
+   1)建表的同时，直接指定主键约束
+2、唯一索引
+   1)建表的同时，直接指定唯一约束
+   2)create unique index 索引名 on 表名(字段);
+     create unique index t_index on bbsInfo(title);
+3、普通索引
+   create index 索引名 on 表名(字段);
+   create index t_index on bbsInfo(title);
+4、全文索引
+   create fulltext index 索引名 on 表名(字段);
+   create fulltext index t_index on bbsInfo(title);
+
+索引知识点
+1、介绍、作用
+2、分类
+3、创建、删除、查看
+
+索引注意：
+1、索引是施加给字段
+2、索引分类：主键索引、唯一索引、普通索引
+3、什么样的字段应当添加索引
+---------------------------------------------------------
+存储引擎Engine：改变数据库的性能
+
+ISAM：查询速度快、不支持外键、不支持事务、支持全文索引
+MyISAM：ISAM升级版
+Memory：速度快、数据驻留在计算机内存、数据管理不稳定、计算机断电后数据全部丢失
+InnoDB：速度较慢、不支持全文索引、支持外键、支持事务
+
+
+可使用的存储引擎
+MyISAM：CMS系统(内容管理系统)
+InnoDB：bbs、blog、webo、mail、oa...
+
+
+设置存储引擎
+1、修改my.ini配置文件
+   default-storage-engine=MyISAM
+   必须重启mysql服务
+2、建表的同时，直接指定的表的存储引擎
+   MySQL5.0以前的版本
+   create table 表名
+   (
+      字段  数据类型  约束,
+      字段  数据类型  约束,
+      字段  数据类型  约束
+   )type=存储引擎;
+   MySQL5.0及以后的版本
+   create table 表名
+   (
+      字段  数据类型  约束,
+      字段  数据类型  约束,
+      字段  数据类型  约束
+   )engine=存储引擎;
+
+
+查看表的存储引擎
+show create table 表名;
+
+
+建表的同时直接指定存储引擎
+create table newsInfo
+(
+  newsId   int   auto_increment primary key,
+  title   varchar(100)  not null,
+  content  text  not null
+)engine=myisam;
+给content字段添加全文索引
+create fulltext index c_index on newsInfo(content);
+--------------------------------------------------------
+事务Transaction：保持数据的完整性
+
+事务特征：原子性、一致性、隔离性、执久性
+
+事务最终状态
+commit;		成功
+rollback;	失败
+
+结束事务的办法
+commit;		提交
+rollback;	回滚(撤消)
+
+
+开启一个事务
+start transaction;
+
+结束事务
+1、提交事务(事务成功)
+   commit;
+2、回滚事务(事务失败)
+   rollback;
+
+
+设置回滚点
+savepoint 名;
+
+回到指定的回滚点(注意：并没有结束事务)
+rollback to 名;
+
+
+
+start transaction;
+delete from bbsInfo;
+savepoint hello;
+delete from userInfo;
+rollback to hello;
+commit;
+---------------------------------------------------------
+MySQL高级
+1、View
+2、Trigger
+3、Procedure
+4、T-SQL
+5、Index
+6、Engine
+7、Transaction
+-------------------------------------------------------
+数据库备份与还原
+1、数据库备份
+   1)打开命令提示符窗口
+   2)执行如下命令
+     mysqldump -h主机地址 -u用户名 -p密码 库名>d:/hello.sql
+     mysqldump -u用户名 -p密码 库名>d:/hello.sql
+     备份电脑上的test库
+     mysqldump -uroot -proot test>e:/aaa.sql
+2、数据库还原
+   1)登陆mysql数据库
+   2)新建一个库，并进入该库
+   3)执行如下命令
+     source e:/aaa.sql
+
+
+数据库的存储引擎：MyISAM
+数据库备份：进入到mysql的data目录，将库名对应的文件夹复制走
+数据库还原：将库名的文件夹，直接复制到mysql的data目录中既可
+----------------------------------------------------------
+数据库优化
+1、主键
+   1)每张表最好都有主键
+   2)主键最好是数字类型，最好是短主键
+2、字段的数据类型
+   1)能用数字类型，就不用字符串
+   2)选择合适的字符串类型：char、varchar、text
+     char：定长       char(10)-->'hello'
+     varchar：变长    varchar(10)-->'hello'
+     text：没限制
+3、每个字段最好都有约束：避免字段中出现NULL值
+4、合理的添加外键
+   A表  B表   B表里有外键，关联到了A表的主键
+   主表：A表   从表：B表
+5、避免使用select*这样查询
+6、尽可能拿数字类型的字段充当条件
+7、避免在where条件中出现NULL关键字
+8、避免在where条件中出现数据类型的转换
+   select * from 表名 where age='30'
+9、避免在添加索引的字段上使用聚合函数，索引失效
+   select * from 学生表 where avg(score)>60
+10、尽可能别用子查询
+11、尽可能别用模糊查询
+12、索引
+13、拆分表(拆分记录、拆分字段)
+userInfo表->10W
+userInfo1->5W
+userInfo2->5W
+userInfo0->字段：userId、表名
+                 1       userInfo2
+                 2       userInfo1
+                 3       userInfo1
+14、主从数据库
+15、缓存
+16、静态化
+17、负截均衡(硬件)
+
+
+
+
+
+
+
+
+
+
+

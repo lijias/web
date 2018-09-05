@@ -1,0 +1,84 @@
+﻿mecached
+	文章 点击数
+	用户信息 sns社区
+
+	a----friend  3,5,7,9   好友动态
+	2亿  内存服务器集群
+
+	
+
+
+	把内存中存放数据以列表形式显示出来。
+	列表
+	select * from news limit 0,5
+	$maxId=100000;
+	$key=0;
+	$arr=array();
+	$num=0;
+	while(true){
+		$key++;
+		if($v=$m->get("click_{$key}")){
+			$arr[$key]=$v;
+			$num++;
+		}
+		if($num==10 || $key>$maxId)
+			break;
+	}
+
+
+
+
+redis 内存缓存。
+安装：
+www.redis.io
+1、把安装文件复制到D:/redis/
+2、打开cmd窗口
+3、运行命令
+redis-server.exe redis.conf
+
+通过客户端测试：
+redis-cli.exe
+2、打开cmd窗口
+3、运行命令
+redis-cli.exe -h 127.0.0.1 -p 6379
+
+如果通过php操作redis
+通过php的dll文件，实现对redis操作。
+1、把dll文件放在php安装目录下ext
+2、修改php的配置文件php.ini 加载dll
+extension=php_igbinary.dll
+extension=php_redis.dll
+3、重启Apache
+4、确认dll文件是否加载并运行成功。
+phpinfo();
+
+存字符串，数组，把数组序列化。serialize() 
+get(key)
+set(key,value)
+setnx(key,value)  not exist
+del(key)
+incr(key)//某个下标对应的值自增
+incrby(key,number)//某个下标对应的值增加多少
+
+mset(array('key0'=>value,'key1'=>value,.....))
+msetnx(array('key0'=>value,'key1'=>value,.....))
+存hash表
+hset("表名",'名',值)
+hget("表名",'名')
+hlen("表名")
+hgetall("表名")
+hkeys("表名")
+hvals("表名")
+
+hincr("表名",'名')
+hincrby("表名",'名',number)
+
+
+
+
+
+
+
+
+
+

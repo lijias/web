@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src='jquery-1.8.0.js'></script>
+<script src='./validate/jquery.validate.js'></script>
+<script src='./validate/jquery.validate.messages_zh.js'></script>
+<script>
+$(function(){
+	$('form').validate();
+});
+</script>
+</head>
+<body>
+<body>
+<form action="regist.php" method="post">
+用户名:<input type="text" name="username" class="required"/><br/><br/>
+密码:<input type="password" name="password"/><br/><br/>
+邮箱:<input type="text" name="email" class="required email"/><br/><br/>
+出生日期<input type="text" name="birthday"/><br/><br/>
+<input type="submit" value="注册" />
+</form>
+
+</body>
+</html>

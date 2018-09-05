@@ -1,0 +1,649 @@
+﻿html:超文本标记语言
+文本标签
+<font size="" color="" face=""></font>
+<i></i>
+<e></e>
+<u></u>
+<b></b>
+<s></s>
+<span></span>
+<h1></h1>
+<p></p>
+<br/>
+<hr/>
+
+列表
+	<ul>
+		<li></li>
+		
+	</ul>
+
+表格
+	<table>
+		<tr>
+			<td></td>
+		</tr>
+	</table>
+
+图片
+	<img src=""/>
+视频
+	<video></video>
+音频
+	<audio></audio>
+布局
+	<div></div>
+	<a ></a>
+表单：
+	
+css：级联样式表
+	选择器
+	#id值{}
+	.类别名称{}
+	标记{}
+
+	后代{}
+
+	样式语句
+	名称:值;
+	修饰文本
+	字体
+	颜色
+	大小
+	加粗
+	倾斜
+	下划线
+	行高
+	缩进 text-indent:2em;
+	
+	盒子模型：页面中的每一个元素所占的位置都是一个方框，
+类似于二维空间的盒子，因此称每个元素为一个盒子模型。
+	宽
+	高
+	边框
+	颜色
+	边框样式
+	背景
+	定位
+	浮动 float:
+	清除环绕
+	内边距
+	外边距
+
+	超链接
+	伪类 
+	:hover{}
+	
+	列表
+	list-style:none;
+
+	
+php 一步一个脚印 进步过程 30%---70%  经历 --- 经验
+
+	变量：在内存中申请了一个有名称的空间。
+	$str;
+	$str="abc";
+	变量类型
+	我是达内php讲师，我讲的最差的。
+	我给大家讲1一个月，大家希望讲1.5个月。
+	我帅吗？ false
+
+	string
+	int
+	float
+	bool
+	
+	array
+	object
+	
+	resource
+	null
+
+	转化
+	
+	运算
+
+	算术运算  拼接
+	比较运算
+	逻辑运算  先左后右
+	赋值运算
+
+$a=5;
+$b=7;
+if($a= $a>$b || 9>$b){
+	var_dump($a,$b);//true,7
+}
+	
+
+	
+	预定义变量
+	$_POST
+	$_GET
+	$_SESSION
+	$_COOKIE
+	$_SERVER
+	$_FILES
+	常量
+	define("",值)
+	魔术常量
+	__FIEL__
+	__LINE__
+	__FUNCTION__
+	__CLASS__
+	__METHOD__
+	__DIR__
+	class News extends CActiveRecord{
+		static function model($className=__CLASS__){
+			return parent::model($className);
+		}	
+	}
+	$ob=News::model();
+
+	流程控制语句
+	有一个数组：
+	$arr=array('a','b','c','d');
+	$arr1=array('a','e','d','w');
+	1、把数组arr中的值拼成一个字符串
+	2、把两个数组拼接成一个数组，不适用数据拼接函数。
+
+	基本函数库
+	string
+		$str="I like php,i like linux.";
+		看：
+		获取字符串的长度
+		int strlen($str)
+		截取
+		string substr(string,start,length)
+		拆分
+		array explode(delimiter,string)
+		替换
+		string str_replace(search,replace,string)
+		大小写
+		string strtolower(string)
+		string strtoupper(string)
+		string ucfirst(string)
+		string ucwords(string)
+		查找
+		int strpos(search,string)
+		int strrpos(search,string)
+	$path="a/b/c.jpg";
+	例子：获取文件名称及扩展名
+	1、获取最后一个/的位置
+	2、从这个位置开始截取，到最后。
+	
+	时间日期
+	时间戳：1970年1月1日0时0分0秒到现在的秒数。
+	$t=time()
+	格式化时间戳
+	date("Y-m-d H:i:s",时间戳)
+	把时间日期格式字符串转化成时间戳
+	strtotime('-1 days')
+	例子：
+	有一个人1970年1月1日0时0分0秒，
+	三天打鱼两天晒网，今天在干什么？
+	ceil(time()/(24*3600))%5
+
+	
+	
+	数值函数
+	round()
+	ceil()
+	floor()
+		
+	数组函数
+		$arr=array('a','c','d','a','e');
+		获取长度
+		查找
+		头部追加
+		尾部追加
+		头部删除
+		尾部删除
+		转化成字符串
+		数据连接
+		去重
+		排序
+		
+	文件操作
+		resouce fopen(path,"a|w|r")
+		fwrite()
+		fread()
+		fclose()
+
+		file_get_contents("url地址|path")
+		采集
+		file_put_contents()
+	目录函数	
+		创建目录
+		mkdir()
+		删除空目录
+		rmdir()
+		是否是一个存在的目录
+		is_dir()
+		file_exist()
+		打开目录
+		$d=opendir(path)
+		读目录下的内容
+		$content=readdir($d)
+		关闭
+		closedir($d)
+	例子：
+	获取目录"D:/www/17_zongjie/test"下的子目录及文件。
+	$path="D:/www/17_zongjie/test";
+	打开目录
+	$d=opendir(path)
+	读目录下的内容
+	$content=readdir($d)
+	关闭
+	closedir($d)
+		
+	自定义函数
+	function 函数名(参数,....){
+
+	}
+
+	递归函数？？？
+	目录的递归遍历
+		遇到目录自己调用自己
+	无限极分类显示
+普通变量：
+	特点：函数运行完，变量销毁。
+	          每次重新声明。
+
+	
+静态变量：
+	特点：一次声明，多次使用。
+	函数运行完，不销毁，程序运行结束才销毁。
+mysql
+	1、创建表（如何分析页面，创建表）
+	看有多少类数据，每类数据的属性
+	admin
+	栏目(2级文章分类)
+		id
+		分类名称
+		fid
+		
+		1 服装 0
+		2 男装 1
+		3 裤子 2
+		4 7分裤子 3
+		5 0分裤子 3
+	文章
+		id
+		标题
+		内容
+		发布时间
+		flag  0--普通 1--推荐  9--删除
+		imagename 图片名称
+		reviewnum 
+	文章点击表 newsclicknum
+		id
+		newsid
+		clicktime
+		ip
+		1  1  1234567890  123.112.78.66
+		2  2  1234567890  123.112.78.66
+		3  3  1234567890  123.112.78.66
+		4  1  1234567890  123.112.78.66
+		5  2  1234567890  123.112.78.66
+	24小时点击排行榜
+
+	24小时之内的。
+	$startTime=time()-24*3600;
+	select * from newsclicknum where clicktime>=$startTime
+	统计点击数
+	select  count(*) as num,newsid from newsclicknum
+	where clicktime>=$startTime 
+	group by newsid 
+	根据点击数进行排序（倒）
+	select  count(*) as num,newsid from newsclicknum
+	where clicktime>=$startTime 
+	group by newsid 
+	order by num desc
+	查询出文章标题
+	select  count(*) as num,c.newsid,n.title from newsclicknum as c
+	join news as n on c.newsid=n.id
+	where c.clicktime>=$startTime 
+	group by c.newsid 
+	order by num desc
+	
+	文章的评论
+		id
+		newsid
+		pubtime
+		title
+		content
+		userid
+	匹配 img 标签正则：
+	"/<img>/"
+	1、要找的目标是什么样式。
+	<img src="path" title="" ...../>
+	<img src="path"></img>
+	2、分析出变化的部分
+	"/<img.*?\/>|<img.*?>.*?<\/img>/i"
+	邮箱的正则表达式：
+	abc123_-.@域名.com   .cn  .com.cn
+	"/\w+@\w+(\.\w{2,})+/"
+	
+	2、四大语句
+	insert into 表名(字段列表) value(数据列表)//写数据
+	delete from 表名 where 条件
+	update 表名 set 字段=数据  where 条件
+	select 字段列表 from 表名 where 条件 order by 字段 desc|asc limit start,length
+	
+	分组查询（一类数据进行汇总）
+	
+	表链接查询（要查的数据不在同一个表）
+	
+	1、学生表   班级表
+	student
+		id
+		name
+		age
+		sex
+		classid
+	1 小张1 22 男 5
+	2 小张2 21 男 5
+	3 小张3 23 男 5
+	4 小张4 21 女 5
+	5 小张5 20 女 5
+	6 小张6 20 女 6
+	7 小张7 20 女 6
+	class
+		cid
+		cname
+	查出班级id为5的男女生数。
+	select count(*) as num from student where classid=5 group by sex
+	每个班级中年龄最小者。
+	select min(s.age) as age,c.cname from student as s 
+	join class as c on s.classid=c.cid
+	group by s.classid
+php高级
+	mysql函数库
+	gd库（和画图工具）
+	新建画布
+	imagecreatetruecolor(w,h)
+	通过gif图创建画布
+	imagecreatefromgif(path)
+	通过png图创建画布
+	通过jpeg图创建画布
+	分配颜色
+	填充颜色
+	imagefttext()
+	imageftbbox()
+	imagechar()
+	imagestring()
+
+	水印
+	imagefttext()
+	imagecopy()
+	
+oop ***
+	会封装一个类
+	读一个类，并使用
+	分页类，分析，编写类的过程：
+	作用：获取当前页的开始位置，并展现分页的结果。
+	protected $pageNum;
+	protected $page;
+	protected $pageSize;
+	function __construct($num,$pageSize){
+		//总记录数，每页的显示条数
+		$pageNum=ceil($num/$pageSize);
+		$this->pageNum=$pageNum;
+		//当前页码值
+		$page=isset($_GET['p'])?(int)$_GET['p']:1;
+		//页码值得合法性判断
+		if($page<0){
+			$page=1;
+		}else if($page>$this->pageNum){
+			$page=$this->pageNum;
+		}
+		$this->page=$page;
+		$this->pageSize=$pageSize;
+	}
+	function getStart(){
+		$start=($this->page-1)*$this->pageSize;
+	}
+	展现分页效果
+	function showPage(){
+		//获取总页数，总记录数，每页的显示条数
+		
+		<a href="?p=值">上一页</a>
+		<a href="?p=值">下一页</a>
+		return $str;
+	}
+	
+	继承：把多个类共同的方法及属性放到父类中去。
+	数据模型类
+	class Model{
+		protected $tableName="";
+		protected $pdo="";
+		function __construct($tableName){
+			//实例化pdo
+			$pdo=new PDO("","","");
+			$this->pdo=$pdo;
+			$this->tableName=$tableName;
+		}
+		//添加记录 array('title'=>'ttt',....)
+		function addNews($arr){
+			$vList="";
+			$fList="";
+			foreach($arr as $k=>$v){
+				$fList.=",$k";
+				$vList.=",'$v'";
+			}
+			$vList=trim($vList,",");
+			$fList=trim($fList,",");
+			$sql="insert into {$this->tableName}($fList) value($vList)";
+			return $this->pdo->exec($sql);	
+		}
+		//修改
+		//删除
+		function delete($where=""){
+			$where=empty($where)?"":"where ".$where;
+			$sql="delete from {$this->tableName} $where";
+			return $this->pdo->exec($sql);
+		}
+	}
+	操作文章表
+	class News extend Model{
+		//根据id删除
+		function deleteById($id){
+			return $this->delete("id=$id");
+		}
+	}
+	操作文章分类表
+	class Newstype{
+		protected $tableName="";
+		protected $pdo="";
+		function __construct($tableName){
+			//实例化pdo
+			$pdo=new PDO("","","");
+			$this->pdo=$pdo;
+			$this->tableName=$tableName;
+		}
+		//添加记录 array('title'=>'ttt',....)
+		function addNews($arr){
+			$vList="";
+			$fList="";
+			foreach($arr as $k=>$v){
+				$fList.=",$k";
+				$vList.=",'$v'";
+			}
+			$vList=trim($vList,",");
+			$fList=trim($fList,",");
+			$sql="insert into {$this->tableName}($fList) value($vList)";
+			return $this->pdo->exec($sql);	
+		}
+		//修改
+		//删除
+		function delete($where=""){
+			$where=empty($where)?"":"where ".$where;
+			$sql="delete from {$this->tableName} $where";
+			return $this->pdo->exec($sql);
+		}
+	}
+	
+	练习：
+	class f{
+		public $a=1;
+		protected $b=2;
+		private $c=3;
+		function fun1(){
+			echo $this->a;
+		}
+		function fun2(){
+			echo $this->b;
+		}
+		function fun3(){
+			echo $this->c;
+		}	
+	}
+	class s extends f{
+		public $a=4;
+		protected $b=5;
+		private $c=6;
+		function fun4(){
+			echo $this->a;
+		}
+		function fun5(){
+			echo $this->b;
+		}
+		function fun6(){
+			echo $this->c;
+		}	
+	}
+	$ob=new s();//123451  123453 123456  123453 406426 456456  s  f 453456
+	$ob->fun1();
+	$ob->fun2();
+	$ob->fun3();
+	$ob->fun4();
+	$ob->fun5();
+	$ob->fun6();
+	
+PDO  
+	php中的mysql函数库，操作mysq的步骤
+	 
+作用：数据库操作类。
+	链接mysql，选择数据
+	$pdo=new PDO("mysql:host=localhost;dbname=projecttwo","root","root");
+	执行sql语句
+		$pdoStatement=$pdo->query()
+		$pdoStatement->fetch(PDO::FETCH_ASSOC);
+		$pdoStatement->fetchAll(PDO::FETCH_ASSOC);
+		$num=$pdo->exec();
+		$id=$pdo->lastInsertId();
+		$pdoStatement=$pdo->prepare(sql)
+
+js
+	找到页面元素，对元素进行动态操作。
+	基本语句
+	函数库
+	BOM
+		window
+		location
+		screen
+		navigator.userAgent
+	DOM
+		document.getElementById()
+		document.getElementsByName()
+		docuemnt.getElementsByTagName()
+	通过节点对象能操作元素的哪些内容：
+	样式   Element.style.样式名=值;  Element.className="类别样式"
+	内容  Element.innerHTML  Element.innerText  Element.value
+	属性  Element.属性名=值
+	节点的动态产生删除
+	事件  Element.onclick=function(){}
+	 
+jquery
+	找到页面元素
+	$("#id值")
+	$(".类别名称")
+	$("标记名")
+	$("[属性名='值']")
+	$("[属性名^='值']")
+	$("[属性名$='值']")
+	$("[属性名*='值']")
+
+	后代
+	子代
+	过滤
+	位置
+	$(":eq(0)")
+	$(":even")
+	$(":odd")
+	对页面元素进行操作
+
+	对选择器对象遍历
+	object.each(function(index){
+		$(this)
+	})
+	样式
+	object.css("样式属性名","值")
+	object.addClass('名')
+	object.removeClass("名称")
+	内容
+	html()
+	text()
+	val()
+	属性
+	attr()
+	事件
+	bind()
+	unbind()
+	click()
+	.......
+	动画
+	show()
+	hide()
+	animate()
+	slideDown()
+	slideUp()
+	元素动态操作
+	remove()
+	append()
+	empty()
+	宽高位置
+	object.offset().left
+	object.offset().top
+	object.width()
+	object.height()
+
+	鼠标位置
+	object.mouseover(function(e){
+		e.pageX
+		e.pageY
+	})
+
+
+
+smarty
+mvc
+tp
+yii
+mysql高级
+
+dedecms
+无限极分类
+购物车
+订单
+linux
+memcached
+redis
+mongodb
+微信
+支付宝
+
+laravel
+svn
+ 
+
+
+
+
+
+
+
+
+
+
+

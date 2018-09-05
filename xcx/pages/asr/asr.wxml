@@ -1,0 +1,1 @@
+<button type="primary" style="border-radius: 20px;" class="btn-style" bindtouchstart="touchdown_plugin" bindtouchend="touchup_plugin">按下录音，松开结束</button>

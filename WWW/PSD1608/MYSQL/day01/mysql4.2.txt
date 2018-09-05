@@ -1,0 +1,300 @@
++-------------------+
+| Tables_in_psd1608 |
++-------------------+
+| user              |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE TABLE test1(
+    -> num1 TINYINT,
+    -> num2 SMALLINT,
+    -> num3 MEDIUMINT,
+    -> num4 INT
+    -> );
+Query OK, 0 rows affected (0.28 sec)
+
+mysql> DESC test1;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| num1  | tinyint(4)   | YES  |     | NULL    |       |
+| num2  | smallint(6)  | YES  |     | NULL    |       |
+| num3  | mediumint(9) | YES  |     | NULL    |       |
+| num4  | int(11)      | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> CREATE TABLE test2(
+    -> num1 SMALLINT,
+    -> num2 SMALLINT UNSIGNED
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DESC test2;
++-------+----------------------+------+-----+---------+-------+
+| Field | Type                 | Null | Key | Default | Extra |
++-------+----------------------+------+-----+---------+-------+
+| num1  | smallint(6)          | YES  |     | NULL    |       |
+| num2  | smallint(5) unsigned | YES  |     | NULL    |       |
++-------+----------------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT test2(num1,num2)
+    -> VALUE
+    -> (-10,-10);
+ERROR 1264 (22003): Out of range value for column 'num2' at row 1
+mysql> INSERT test2(num1,num2)
+    -> VALUE
+    -> (-10,10);
+Query OK, 1 row affected (1.20 sec)
+
+mysql> SELECT * FROM test2;
++------+------+
+| num1 | num2 |
++------+------+
+|  -10 |   10 |
++------+------+
+1 row in set (0.00 sec)
+
+mysql> INSERT test2(num1,num2)
+    -> VALUE
+    -> (-32769,10);
+ERROR 1264 (22003): Out of range value for column 'num1' at row 1
+mysql> INSERT test2(num1,num2)
+    -> VALUE
+    -> (-32768,65536);
+ERROR 1264 (22003): Out of range value for column 'num2' at row 1
+mysql> INSERT test2(num1,num2)
+    -> VALUE
+    -> (-32768,65535);
+Query OK, 1 row affected (0.23 sec)
+
+mysql> SELECT * FROM test2;
++--------+-------+
+| num1   | num2  |
++--------+-------+
+|    -10 |    10 |
+| -32768 | 65535 |
++--------+-------+
+2 rows in set (0.00 sec)
+
+mysql> CREATE TABLE test3(
+    -> num1 TINYINT,
+    -> num2 SMALLINT(3) ZEROFILL
+    -> );
+Query OK, 0 rows affected (0.20 sec)
+
+mysql> DESC test3;
++-------+-------------------------------+------+-----+---------+-------+
+| Field | Type                          | Null | Key | Default | Extra |
++-------+-------------------------------+------+-----+---------+-------+
+| num1  | tinyint(4)                    | YES  |     | NULL    |       |
+| num2  | smallint(3) unsigned zerofill | YES  |     | NULL    |       |
++-------+-------------------------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT test3(num1,num2)
+    -> VALUE
+    -> (1,1);
+Query OK, 1 row affected (0.28 sec)
+
+mysql> SELECT * FROM test3;
++------+------+
+| num1 | num2 |
++------+------+
+|    1 |  001 |
++------+------+
+1 row in set (0.00 sec)
+
+mysql> INSERT test3(num1,num2)
+    -> VALUE
+    -> (1,65535);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> SELECT * FROM test3;
++------+-------+
+| num1 | num2  |
++------+-------+
+|    1 |   001 |
+|    1 | 65535 |
++------+-------+
+2 rows in set (0.00 sec)
+
+mysql> CREATE TABLE test4(
+    -> num1 FLOAT(7,2),
+    -> num2 DOUBLE(7,2),
+    -> num3 DECIMAL
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that
+corresponds to your MySQL server version for the right syntax to use near '' at
+line 4
+mysql> CREATE TABLE test4(
+    -> num1 FLOAT(7,2),
+    -> num2 DOUBLE(7,2),
+    -> num3 DECIMAL(7,2)
+    -> );
+Query OK, 0 rows affected (0.19 sec)
+
+mysql> DESC test4;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| num1  | float(7,2)   | YES  |     | NULL    |       |
+| num2  | double(7,2)  | YES  |     | NULL    |       |
+| num3  | decimal(7,2) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT test4(num1,num2,num3)
+    -> VALUE
+    -> (454.789,868.876,454.567);
+Query OK, 1 row affected, 1 warning (0.20 sec)
+
+mysql> SHOW WARNINGS;
++-------+------+-------------------------------------------+
+| Level | Code | Message                                   |
++-------+------+-------------------------------------------+
+| Note  | 1265 | Data truncated for column 'num3' at row 1 |
++-------+------+-------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM test4;
++--------+--------+--------+
+| num1   | num2   | num3   |
++--------+--------+--------+
+| 454.79 | 868.88 | 454.57 |
++--------+--------+--------+
+1 row in set (0.00 sec)
+
+mysql> INSERT test4(num1,num2,num3)
+    -> VALUE
+    -> (454.789,868.876,454.56);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> CREATE TABLE test5(
+    -> aa CHAR(5),
+    -> bb VARCHAR(21844)
+    -> );
+ERROR 1118 (42000): Row size too large. The maximum row size for the used table
+type, not counting BLOBs, is 65535. You have to change some columns to TEXT or B
+LOBs
+mysql> CREATE TABLE test5(
+    -> aa CHAR(5),
+    -> bb VARCHAR(21800)
+    -> );
+Query OK, 0 rows affected (0.17 sec)
+
+mysql> CREATE TABLE test6(
+    -> sex1 TINYINT(1),
+    -> sex2 BOOLEAN
+    -> );
+Query OK, 0 rows affected (1.78 sec)
+
+mysql> DESC test6;
++-------+------------+------+-----+---------+-------+
+| Field | Type       | Null | Key | Default | Extra |
++-------+------------+------+-----+---------+-------+
+| sex1  | tinyint(1) | YES  |     | NULL    |       |
+| sex2  | tinyint(1) | YES  |     | NULL    |       |
++-------+------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> CREATE TABLE test7(
+    -> aa DATE,
+    -> bb TIME,
+    -> cc YEAR,
+    -> dd DATETIME,
+    -> ee TIMESTAMP
+    -> );
+Query OK, 0 rows affected (1.41 sec)
+
+mysql> DESC test7;
++-------+-----------+------+-----+-------------------+--------------------------
+---+
+| Field | Type      | Null | Key | Default           | Extra
+   |
++-------+-----------+------+-----+-------------------+--------------------------
+---+
+| aa    | date      | YES  |     | NULL              |
+   |
+| bb    | time      | YES  |     | NULL              |
+   |
+| cc    | year(4)   | YES  |     | NULL              |
+   |
+| dd    | datetime  | YES  |     | NULL              |
+   |
+| ee    | timestamp | NO   |     | CURRENT_TIMESTAMP | on update CURRENT_TIMESTA
+MP |
++-------+-----------+------+-----+-------------------+--------------------------
+---+
+5 rows in set (0.00 sec)
+
+mysql> INSERT test7(aa,bb,cc,dd,ee)
+    -> VALUE
+    -> ('2016-09-24','11:30:10','2016',now(),current_timestamp);
+Query OK, 1 row affected (0.20 sec)
+
+mysql> SELECT * FROM test7;
++------------+----------+------+---------------------+---------------------+
+| aa         | bb       | cc   | dd                  | ee                  |
++------------+----------+------+---------------------+---------------------+
+| 2016-09-24 | 11:30:10 | 2016 | 2016-09-24 16:55:42 | 2016-09-24 16:55:42 |
++------------+----------+------+---------------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> CREATE TABLE test8(
+    -> sex ENUM('man','woman','secret')
+    -> );
+Query OK, 0 rows affected (0.34 sec)
+
+mysql> INSERT test8(sex)
+    -> VALUE
+    -> ('man');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> INSERT test8(sex)
+    -> VALUE
+    -> ('hello');
+ERROR 1265 (01000): Data truncated for column 'sex' at row 1
+mysql> CREATE TABLE cms_user(
+    ->   id SMALLINT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+    ->   name VARCHAR(30) NOT NULL UNIQUE,
+    ->   pwd  CHAR(32) NOT NULL,
+    ->   age  TINYINT UNSIGNED NOT NULL DEFAULT 18,
+    ->   sex  TINYINT(1)  NOT NULL DEFAULT 0,
+    ->   email VARCHAR(50) NOT NULL UNIQUE
+    -> );
+Query OK, 0 rows affected (0.23 sec)
+
+mysql> DESC cms_user;
++-------+----------------------+------+-----+---------+----------------+
+| Field | Type                 | Null | Key | Default | Extra          |
++-------+----------------------+------+-----+---------+----------------+
+| id    | smallint(5) unsigned | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(30)          | NO   | UNI | NULL    |                |
+| pwd   | char(32)             | NO   |     | NULL    |                |
+| age   | tinyint(3) unsigned  | NO   |     | 18      |                |
+| sex   | tinyint(1)           | NO   |     | 0       |                |
+| email | varchar(50)          | NO   | UNI | NULL    |                |
++-------+----------------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> INSERT cms_user(name,pwd,email)
+    -> VALUE
+    -> ('tom','tom123','11@163.com'),
+    -> ('rose','rose123','22@163.com'),
+    -> ('alice','tom123','33@163.com');
+Query OK, 3 rows affected (0.34 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM cms_user;
++----+-------+---------+-----+-----+------------+
+| id | name  | pwd     | age | sex | email      |
++----+-------+---------+-----+-----+------------+
+|  1 | tom   | tom123  |  18 |   0 | 11@163.com |
+|  2 | rose  | rose123 |  18 |   0 | 22@163.com |
+|  3 | alice | tom123  |  18 |   0 | 33@163.com |
++----+-------+---------+-----+-----+------------+
+3 rows in set (0.00 sec)
+
+mysql>

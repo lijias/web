@@ -1,0 +1,70 @@
+1、mamp自带的php版本文件缺少头部，所以要先去官网下载PHP源码。如本地使用的是php7.0.0,那么我就可以下载php7.0.x
+2、在php7.0.0目录下创建一个文件夹，名为include,将下载的PHP源码放入到include中，改名为php
+{
+(教程方法)
+	首先我们要去下PHP的源码文件，本人使用的 PHP7.0.8 所以下载的 7.0.15 的源码，也就是说只要下载X.X对应的版本号就可以了，最后的 .08 和官网的 .15 虽然不同，但是不影响使用，下载完成解压放到Applications/MAMP/bin/php/php7.0.8/include/ 下(include如果不存在请新建)，具体的命令如下：
+
+	sudo wget -O php-7.0.15.tar.bz2 http://jp2.php.net/get/php-7.0.15.tar.bz2/from/this/mirror
+	（不能在终端下载，直接输入网址下载）
+
+	tar xf php-7.0.15.tar.bz2
+
+	mkdir -p /Applications/MAMP/bin/php/php7.0.8/include
+
+	cp -r /opt/package/php-7.0.15 /Applications/MAMP/bin/php/php7.0.8/include/php // 根据自己解压的路径进行php源代码的拷贝
+
+	cd /Applications/MAMP/bin/php/php7.0.8/include/php
+
+	3、进入到include/php/目录下，命令: ./configure
+}
+
+4、在include／php目录下，下载phpredis,命令：git clone git clone https://github.com/nicolasff/phpredis.git（没有git直接输入网址，注意了：如果是PHP7+版本的，要下载对应7版本的phpredis，搜索php7）
+ （以下操作都要在MAMP/Applications/bin/php7.0.0/include/php里面执行下面的命令）
+
+5、进入到对应PHP版本的源码的bin/phpize,命令： ./../../../../php7.0.0/bin/phpize
+
+6、如果出现此错误，说明你使用的MAMP缺少build文件我们只需要从别的版本的php里拷贝一个build文件夹进去
+{
+	（错误情况）
+	Cannot find build files at '/Applications/MAMP/bin/php/php7.0.0/lib/php/build'. Please check your PHP installation.
+}
+
+7、再执行一遍（./../../../../php7.0.0/bin/phpize）
+如果出现此错误
+
+{
+	（错误情况）
+	Cannot find autoconf. Please check your autoconf installation and the $PHP_AUTOCONF environment variable. Then, rerun this script.
+}
+
+8、则是因为此命令依赖autoconf工具，需要安装autoconf工具，而autoconf又依赖m4，所以我们还得再安装m4
+{
+	# wget http://mirrors.kernel.org/gnu/m4/m4-1.4.13.tar.gz 
+	（不能在终端下载，直接输入网址下载）
+	# tar -zvxf m4-1.4.13.tar.gz # cd m4-1.4.13/ 
+	# ./configure --prefix=/usr/local 
+	# make 
+	# sudo make install 
+	# cd ../ 
+	# wget http://mirrors.kernel.org/gnu/autoconf/autoconf-2.65.tar.gz 
+	（不能在终端下载，直接输入网址下载）
+	# tar -zvxf autoconf-2.65.tar.gz 
+	# cd autoconf-2.65/ 
+	# ./configure --prefix=/usr/local 
+	# ironic, isn't it? 
+	# make 
+	# sudo make install
+}
+
+9、执行./configure
+{
+	#./configure --with-php-config=/Applications/MAMP/bin/php/php7.0.8/bin/php-config
+	# make
+	# make test
+}
+
+10、将redis.so文件移到,命令:sudo cp -p modules/redis.so /Applications/MAMP/bin/php/php7.0.0/lib/php/extensions/no-debug-non-zts-20151106/
+
+11、在mammp pro里面修改对应版本的PHP的php.ini文件,加上这一句：extension=redis.so
+
+12、重启服务器

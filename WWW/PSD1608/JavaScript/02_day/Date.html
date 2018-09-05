@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+//2、输出当前日期要是输出的格式为YYYY年M月D日 小时：分钟：秒
+//3、应用switch分支语句，获取当前的星期值。根据当前的星期值。输出今天是星期几。
+var d=new Date();
+document.write(d.getFullYear()+"年");
+document.write(d.getMonth()+1+"月");
+document.write(d.getDate()+"日");
+document.write(d.getHours()+"时");
+document.write(d.getMinutes()+"分");
+document.write(d.getSeconds()+"秒");
+//
+var zhou =d.getDay();
+if(zhou = 1){
+	document.write("星期一");
+}else if(zhou = 2){
+	document.write("星期二");
+}else if(zhou = 3){
+	document.write("星期三");
+}else if(zhou = 4){
+	document.write("星期四");
+}else if(zhou = 5){
+	document.write("星期五");
+}else if(zhou = 6){
+	document.write("星期六");
+}else if(zhou = 0){
+	document.write("星期日");
+}else{
+	document.write("未知");
+}
+</script>
+</body>
+</html>

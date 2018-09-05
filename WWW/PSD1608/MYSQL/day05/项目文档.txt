@@ -1,0 +1,114 @@
+1、将index.html改名为index.php
+2、在项目的文件目录下创建文件header.php
+3、将首页的导航头部内容放入到header.php文件中。
+4、将头文件 header.php文件引入到index.php文件中
+        include "header.php";
+5、改变header.php中首页的地址:index.php
+6、读出新闻
+        -  在项目目录下，创建common目录
+        - 在项目目录下创建 db.inc.php，此文件用户保存数据库的通用配置信息。
+7、在newtype数据库表中添加新闻分类“内地新闻”
+- 在首页添加“港澳台新闻”
+1、 在newtype表中插入“港澳台新闻“
+       insert into newtype(name) values ('港澳台新闻');
+
+8、建立footer.php 文件在前台
+       - 将首页下的 
+          版权区挪如到footer.php文件中。
+       - 在footer.php文件中加入
+　　　mysql_close();
+       - 在index.php文件中，原版权区位置 引入footer.php文件。
+
+用户注册
+1、将header.php文件中的
+         您好：** 退出
+       文字注释掉
+2、将注册程序 register.html 改为register.php
+3、将header.php中的注册地址由 register.html 改为register.php
+4、register.php文件，将"请输入账号信息 "注释掉
+5、在register.php文件中的验证码输入框后面 ，添加上
+        img标签,引入验证码程序   
+        <img src="./common/code.php" />
+6、将code.php程序，保存在common/ 目录下。 
+7、在common目录下创建通用配置文件config.inc.php
+        在config文件中保存
+         session_start();
+8、在register.php文件的最上面一行，引入config.inc.php文件
+        include './common/config.inc.php';  
+9、引入数据库文件
+         include "./common/db.inc.php";
+10、创建前台用户表(user)
+         创建表的sql语句 /data/cms.sql
+12、改index.php文件，在文件的最上方引入 
+            include './common/config.inc.php';  
+13、改header.php文件，对用户是否登录进行判断。
+
+退出
+1、创建退出文件 logout.php
+
+用户登录
+1、给登录功能添加入口，改header.php文件中的
+    <a href="login.html" target="_blank" class="top-nav-login-title">登录</a>
+   改为
+    <a href="login.php" target="_blank" class="top-nav-login-title">登录</a>
+2、将login.html文件改为login.php
+3、引入文件，在login.php文件的最上面
+   include "./common/config.inc.php";
+   include "./common/db.inc.php"; 
+
+新闻内容页
+1、改index.php页面的链接地址。
+2、将 articles.html 改为articles.php
+3、编辑 articles.php文件。
+4、在文件的最上方 ，加入：
+   include './common/config.inc.php';
+   include './common/db.inc.php';
+5、将<?php include "header.php"; ?>文件引入。替换原有的head部分。
+6、将对应的新闻从数据库中读出。
+
+
+验证码的应用
+1、将验证码程序放到common目录
+2、在common目录做一个验证码引入程序。vcode.php
+3、在vcode.php文件中
+   session_start();
+   应用autoload引入类文件
+   实例化类对象
+   将字符串给SESSION
+   将字符串进行图片输出
+4、将原有的register.php程序复制保存(register_old.php)。建立新的register.php
+5、register.php文件中引入./common/vcode.php
+   <img src='./common/vcode.php'>
+   
+   
+
+
+          
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

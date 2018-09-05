@@ -1,0 +1,57 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>JavaScript OPEN</title>
+
+</head>
+
+
+<body onunload="test();">
+I am father
+
+<script>
+
+//open("","_blank","width=500,height=500");
+var son = open("son.html","_blank","width=300,height=300");
+//setTimeout("son.alert('hello father')",1000);
+//2、在关闭父页面的同时，关闭已经打开的子页面。
+function test(){
+	//通过son调用子页面的自定义函数callFather()
+	//son.callFather();
+	//关闭打开的子页面
+	son.close();
+}
+
+function callSon(){
+	alert("hello son");
+}
+</script>
+<input type="button" value="callFather" onclick="test()" />
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

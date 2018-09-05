@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src='jquery-1.8.0.js'></script>
+<script>
+/*1、有如下数组：
+    hosts = ["tom@163.com","jerry@qq.com","jack"]
+   要求过滤数组，找到含有 "@"的数组元素*/
+   $(function(){
+	   var hosts = ["tom@163.com","jerry@qq.com","jack"];
+	   var result = $.grep(hosts,function(value,key){
+		   if(value.indexOf("@")>-1){
+			   return value;
+		   }
+	   })
+	   alert(result);
+   })
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+2016/11/24 17:23:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\php\words\framework\web\CWebApplication.php:332
+Stack trace:
+#0 E:\php\words\framework\web\CWebApplication.php(121): CWebApplication->runController('')
+#1 E:\php\words\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 E:\php\words\app\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/words/app/index.php
+2016/11/24 17:31:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "show/index".' in E:\php\words\framework\web\CWebApplication.php:332
+Stack trace:
+#0 E:\php\words\framework\web\CWebApplication.php(121): CWebApplication->runController('show/index')
+#1 E:\php\words\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 E:\php\words\app\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/words/app/index.php?r=show/index
+2016/11/24 17:34:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "add/index".' in E:\php\words\framework\web\CWebApplication.php:332
+Stack trace:
+#0 E:\php\words\framework\web\CWebApplication.php(121): CWebApplication->runController('add/index')
+#1 E:\php\words\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 E:\php\words\app\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/words/app/index.php?r=add/index
+2016/11/24 17:51:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'words'' in D:\www\Yii\day_08\words\framework\db\CDbConnection.php:348
+Stack trace:
+#0 D:\www\Yii\day_08\words\framework\db\CDbConnection.php(297): CDbConnection->open()
+#1 D:\www\Yii\day_08\words\framework\db\CDbConnection.php(275): CDbConnection->setActive(true)
+#2 D:\www\Yii\day_08\words\framework\base\CModule.php(372): CDbConnection->init()
+#3 D:\www\Yii\day_08\words\framework\base\CApplication.php(426): CModule->getComponent('db')
+#4 D:\www\Yii\day_08\words\framework\db\ar\CActiveRecord.php(607): CApplication->getDb()
+#5 D:\www\Yii\day_08\words\framework\db\ar\CActiveRecord.php(2236): CActiveRecord->getDbConnection()
+#6 D:\www\Yii\day_08\words\framework\db\ar\CActiveRecord.php(371): CActiveRecordMetaData->__construct(Object(UserInfo))
+#7 D:\www\Yii\day_08\words\framework\db\ar\CActiveRecord.php(386): CActiveRecord::model('UserInfo')
+#8 D:\www\Yii\day_08\words\framework\db\ar\CActiveRecord.php(62): CActiveRecord->getMetaData()
+#9 D:\www\Yii\day_08\words\app\protected\models\UserInfo.php(6): CActiveRecord->__construct()
+#10 D:\www\Yii\day_08\words\app\protected\controllers\LoginController.php(15): UserInfo::models()
+#11 D:\www\Yii\day_08\words\framework\web\actions\CInlineAction.php(50): LoginController->actionLogin()
+#12 D:\www\Yii\day_08\words\framework\web\CController.php(300): CInlineAction->runWithParams(Array)
+#13 D:\www\Yii\day_08\words\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#14 D:\www\Yii\day_08\words\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\www\Yii\day_08\words\framework\web\CWebApplication.php(328): CController->run('login')
+#16 D:\www\Yii\day_08\words\framework\web\CWebApplication.php(121): CWebApplication->runController('login/login')
+#17 D:\www\Yii\day_08\words\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#18 D:\www\Yii\day_08\words\app\index.php(13): CApplication->run()
+#19 {main} REQUEST_URI=/Yii/day_08/words/app/index.php?r=login/login

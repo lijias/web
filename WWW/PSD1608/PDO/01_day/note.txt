@@ -1,0 +1,87 @@
+DNS domain name service 
+ip  www.baidu.com
+
+注入
+
+PDO
+PHP Data Object(PHP数据对象)
+一、概述
+    PHP操作数据库的类。
+  
+    PDO安装
+    - 确认PDO是否已经安装
+      phpinfo()  
+    - 编辑配置文件php.ini
+      extension_dir
+      ;extension=php_pdo_mysql.dll
+      去掉前面的分号
+    - 重新启动网络服务器（apache）
+    - 再次确认是否安装成功。
+       PDO 
+       PDO_MYSQL 
+
+二、PDO应用
+    1、获取PDO的类对象
+       $pdo = new PDO(string $dsn,string $username,string $password)
+       功能：获取PDO的类对象
+       参数：
+       dsn data source name（数据源名称）
+           mysql:host=localhost;dbname=cms
+       username 用户名
+       password 密码
+
+   2、exec(string $query)
+      功能：执行一条sql语句
+      参数：
+      query sql语句
+      返回：返回被影响行数。
+ 
+   3、lastInsertId()
+      功能：获取上一次insert操作产生的id
+      返回：一次insert操作产生的id，id字段必须是自（auto_increment)
+
+   4、query(string $query)
+      功能：执行有返回结果集的sql语句
+      参数：
+      query 有返回结果集的sql语句
+      返回：PDOStatement类的类对象。
+
+   PDO准备语句 
+   - 提升效率
+   - 提升安全
+
+   准备语句应用
+   1、PDO通知MySQL编译sql语句。此时sql语句不执行
+      prepare($query)
+      功能：PDO通知MySQL编译sql语句
+      参数：
+      query  mysql要进行编译的sql语句
+      返回：PDOStatement的类对象。
+
+   2、绑定参数（可选）
+      bindParam(mixed $name,参数值变量)
+      功能：绑定参数（PDOStatement）
+      参数：
+      name 要进行绑定的参数名称
+      参数值变量：
+      返回：布尔 
+
+   3、执行
+      execute()
+      功能：执行mysql编译好的sql语句，（PDOStatement）
+      返回：布尔
+   
+   获取PDO准备语句执行有返回结果集的sql语句操作的结果。
+   fetch([int $fetch_style])
+   功能：获取有返回结果集的sql语句操作的结果
+   参数：
+   fetch_style 制定结果的格式，默认是两种格式数组都返回。
+               类名称：：常量名称
+               PDO::FETCH_BOTH 两种格式数组都返回
+               PDO::FETCH_NUM  索引数组
+               PDO::FETCH_ASSOC 关联数组 
+   返回：一次获取一行结果，获取不到返回false
+
+   rowCount()
+   功能：PDO准备语句影响的行数。
+   返回：被影响的行数。

@@ -1,0 +1,194 @@
+一.多表联合查询
+ 1.格式
+ SELECT 字段名1,字段名2...
+ FROM 表1
+  类型    表2
+ ON 两表逻辑关系  
+  类型    表3
+ ON 两表逻辑关系 ...
+ [WHER 条件]
+ 2. 类型分类
+   (1) 内连接： INNER JOIN  查询两表符号条件信息
+   (2) 外连接:
+                  左外连接: LEFT [OUTER] JOIN
+                      说明:显示左表的所有信息和右表符合条件的信息
+                               当左表的信息右表没有 用NULL填补
+                  右外连接: RIGHT [OUTER] JOIN、
+                       说明:显示右表的所有信息和左表符合条件的信息
+                               当右表的信息左表没有 用NULL填补
+二.子查询(嵌套查询)
+  1. 子查询 ：SQL语句中嵌套 SELECT语句
+  2.子查询特点
+    (1)子查询SELECT语句
+    (2) 一般 用小括号括起来
+    (3) 一般 结合 WHERE 和GROUP BY 使用
+  3.子查询使用
+    (1)WHERE
+        a.IN
+        b.比较运算符
+                 说明:子查询使用 比较运算符后比较的是一个结果
+                        如果有多个结果会报错
+                        可以用 ALL 和 SOME/ANY来解决
+           > >= ALL  大于最大值             
+           < <= ALL  小于最小值  
+           > >= SOME/ANY  大于最小值             
+           < <= SOME/ANY  小于最大值 
+           =SOME/ANY 等同于 IN    
+    (2)FROM:FROM 后除了跟表还可以跟子查询产生的新表
+    
+三.约束条件
+   1.约束条件:对字段的非空，唯一性等约束
+   2.约束条件种类
+    (1) NOT NULL 不能空
+    (2) DEFAULT 默认值
+    (3) [PRIMARY] KEY 主键
+    (4) UNIQUE [KEY] 唯一性
+    (5) FOREIGN KEY 外键
+   3.约束条件写法
+    1.列约束： 在一个字段后面写的约束
+                   说明: NOT NULL DEFAULT必须是列约束
+    2.表约束：可以对两个字段以上写约束
+                  说明:[PRIMARY] KEY 主键 
+             UNIQUE [KEY] 唯一性
+             FOREIGN KEY 外键 可以是表约束
+    3. 格式
+     (1) 列约束
+      CREATE TABLE test(
+        id..,
+        name VARCHAR(30) NOT NULL UNIQUE
+        ...
+      );
+      (2) 表约束
+      CREATE TABLE test(
+        id..,
+        name VARCHAR(30) NOT NULL,
+        ...
+        PRIMARY KEY('id'),
+        UNIQUE KEY('name','email')
+      );    
+   
+    4.FOREIGN KEY外键：对字段完整性和一致性的约束
+      1.格式
+      CREATE TABLE testson(
+        ...
+        tid SMALLINT UNSIGNED NOT NULL,
+        ...
+        FOREIGN KEY(外键列 tid)
+        REFERENCES  参考表(父表cms_type)(字段名称 id)
+      );
+            说明:
+        a.外键是表约束
+        b.一定先要参考表(父表)，后有外键表(子表)
+                     先有参考表记录，后有外键表(子表)记录
+                     先删外键表(子表)表，后删参考表(父表)
+                     先删外键表(子表)记录，后删参考表(父表)记录
+        c. 外键表的字段和  参考表(父表)对应的字段类型
+                      要一致，如果整型 unsigned 也必须一致
+                      如果字符类型编码必须一致，但长度可以不一致
+        d.外键表默认引擎一定是InnoDB。
+        e.如果给外键列设置约束名称，那会自动产生索
+                     引的约束名称
+                       
+      5.完整代码
+      CREATE TABLE test(
+        ...
+        FOREIGN KEY(外键列) 
+        REFERENCES 参考表(字段名称)
+        [UPDATE RESTRICT|CASCADE|SET NULL|NO ACTION]
+        [DELETE RESTRICT|CASCADE|SET NULL|NO ACTION]
+      );
+      说明:
+    a. RESTRICT(默认值)|NO ACTION: 父表不能更
+                       新或删除子表中有对应信息的记录
+    b. CASCADE 级联：父表更新或删除
+                     子表对应的信息也更新和删除
+    c. SET NULL:父表更新或删除 子表对应的信
+                                息设置为NULL,子表字段不能是
+                NOT NULL
+    6.逻辑外键
+                原理:父表和子表是一个表
+              说明: 无限极分类菜单
+     
+四. 用第三方软件可视化操作MySQL
+  1. C/S :Client/Server  安装软件
+     Front-SQL , Navicat
+  2. B/S ：Browser/Server  web程序软件
+     phpMyAdmin (PHP程序)
+     
+     安装: php.ini
+     1. 指定函数库位置
+      extension_dir = "D:\php5.4\ext"
+     2. 
+       extension=php_mysql.dll
+       extension=php_mysqli.dll
+       extension=php_mbstring.dll
+             前面分号去掉重启apache
+
+
+
+            
+              
+              
+    
+    
+    
+    
+    
+    
+                    
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        
+              
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    
+    
+    
+    
+    
+    
+                    
+                     
+    
+    
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 

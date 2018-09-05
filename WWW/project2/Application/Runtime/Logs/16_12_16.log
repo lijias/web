@@ -1,0 +1,1817 @@
+[ 2016-12-16T14:19:54+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-12-16T14:19:55+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/api/cron.php?t=1344195212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=12 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=13 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=14 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T14:19:56+08:00 ] 127.0.0.1 /project2/index.php/Home/User/reg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T14:19:56+08:00 ] 127.0.0.1 /project2/index.php/Home/User/api/cron.php?t=1344196684
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+ERR: 非法操作:api
+
+[ 2016-12-16T14:19:58+08:00 ] 127.0.0.1 /project2/index.php/Home/User/checkusername?username=dabenxiong&1481869198775775
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `user` WHERE ( username='dabenxiong' ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T14:20:05+08:00 ] 127.0.0.1 /project2/index.php/Home/User/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.000000s ]
+
+[ 2016-12-16T14:44:00+08:00 ] 127.0.0.1 /project2/index.php/Home/User/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.000000s ]
+SQL: INSERT INTO `user` (`username`,`email`,`password`,`qq`,`tel`,`question`,`answer`,`pubtime`,`ip`) VALUES ('dabenxiong','beifangdelang107@163.com','saasdsa','asdsa','asdas','0','asdas',1481870640,'127.0.0.1') [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T14:44:01+08:00 ] 127.0.0.1 /project2/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T14:44:01+08:00 ] 127.0.0.1 /project2/index.php/Home/Index/data/flashdata/dynfocus/cycle_image.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+ERR: 非法操作:data
+
+[ 2016-12-16T14:44:01+08:00 ] 127.0.0.1 /project2/index.php/Home/Index/api/cron.php?t=1344196915
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+ERR: 非法操作:api
+
+[ 2016-12-16T14:50:55+08:00 ] 127.0.0.1 /project2/index.php/Home/User/tuichu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T14:50:56+08:00 ] 127.0.0.1 /project2/index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T14:50:56+08:00 ] 127.0.0.1 /project2/index.php/Home/Index/data/flashdata/dynfocus/cycle_image.js
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.015625s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+ERR: 非法操作:data
+
+[ 2016-12-16T14:50:57+08:00 ] 127.0.0.1 /project2/index.php/Home/Index/api/cron.php?t=1344196915
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+ERR: 非法操作:api
+
+[ 2016-12-16T15:03:40+08:00 ] 127.0.0.1 /project2/index.php/Home/User/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: ref D:\www\project2\Application\Runtime\Cache\Home\5c9ee6d19cd41add49f97afe3aef0b25.php 第 229 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T15:03:40+08:00 ] 127.0.0.1 /project2/index.php/Home/User/api/cron.php?t=1344196727
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+ERR: 非法操作:api
+
+[ 2016-12-16T15:05:28+08:00 ] 127.0.0.1 /project2/index.php/User/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Index
+
+[ 2016-12-16T15:05:32+08:00 ] 127.0.0.1 /project2/index.php/Home/User/api/cron.php?t=1344196727
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+ERR: 非法操作:api
+
+[ 2016-12-16T15:15:19+08:00 ] 127.0.0.1 /project2/index.php/User/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载控制器:Index
+
+[ 2016-12-16T15:15:21+08:00 ] 127.0.0.1 /project2/index.php/Home/User/api/cron.php?t=1344196727
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+ERR: 非法操作:api
+
+[ 2016-12-16T15:16:47+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.015625s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-12-16T15:16:47+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/api/cron.php?t=1344195212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=12 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=13 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=14 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T15:16:58+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T15:16:58+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/api/cron.php?t=1344195212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=12 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=13 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=14 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T15:17:59+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T15:18:01+08:00 ] 127.0.0.1 /project2/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.015625s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T15:18:02+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T15:18:02+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/api/cron.php?t=1344195212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=12 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=13 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=14 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T16:15:29+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/detail/id/16/tid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.015625s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT p.*,b.bname FROM product p INNER JOIN brand b on p.brandid=b.id  WHERE ( p.id=16 ) LIMIT 1   [ RunTime:0.031250s ]
+SQL: SELECT * FROM `type` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.078125s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078125s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-12-16T16:15:29+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/detail/id/16/tid/captcha.php?39466540
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT p.*,b.bname FROM product p INNER JOIN brand b on p.brandid=b.id  WHERE ( p.id=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T16:15:29+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/detail/id/16/tid/api/cron.php?t=1344195518
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT p.*,b.bname FROM product p INNER JOIN brand b on p.brandid=b.id  WHERE ( p.id=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T16:15:35+08:00 ] 127.0.0.1 /project2/index.php/Home/Cart/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T16:15:38+08:00 ] 127.0.0.1 /project2/index.php/Home/User/login/ref/%40project2%40index.php%40Home%40Product%40detail%40id%4016%40tid%401.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T16:15:38+08:00 ] 127.0.0.1 /project2/index.php/Home/User/login/ref/api/cron.php?t=1344196727
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T16:15:42+08:00 ] 127.0.0.1 /project2/index.php/Home/User/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.031250s ]
+SQL: SELECT `id`,`username` FROM `user` WHERE ( username='admin' and password='123456' ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.015625s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T16:15:43+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/detail/id/16/tid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.015625s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT p.*,b.bname FROM product p INNER JOIN brand b on p.brandid=b.id  WHERE ( p.id=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T16:15:43+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/detail/id/16/tid/captcha.php?39466540
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT p.*,b.bname FROM product p INNER JOIN brand b on p.brandid=b.id  WHERE ( p.id=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T16:15:43+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/detail/id/16/tid/api/cron.php?t=1344195518
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT p.*,b.bname FROM product p INNER JOIN brand b on p.brandid=b.id  WHERE ( p.id=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T16:15:45+08:00 ] 127.0.0.1 /project2/index.php/Home/Cart/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `cart` WHERE ( userid=1 and productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: INSERT INTO `cart` (`buynum`,`productid`,`pubtime`,`userid`,`ip`) VALUES (1,16,1481876145,1,'127.0.0.1') [ RunTime:0.000000s ]
+
+[ 2016-12-16T16:15:45+08:00 ] 127.0.0.1 /project2/index.php/Home/Cart/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT c.*,p.title,p.style,p.userprice,p.saleprice,p.salenum FROM cart c INNER JOIN product as p on c.productid=p.id  WHERE ( c.userid=1 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T16:15:46+08:00 ] 127.0.0.1 /project2/index.php/Home/Cart/api/cron.php?t=1344206124
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+ERR: 非法操作:api
+
+[ 2016-12-16T17:48:20+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/%3E1%3E.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.015625s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:48:20+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/api/cron.php?t=1344195212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=12 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=13 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=14 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:48:24+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.015625s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 and typestr like '>6>%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 and typestr like '>6>%' ) LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\project2\Application\Home\Controller\ProductController.class.php 第 25 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-12-16T17:48:24+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/api/cron.php?t=1344195212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=12 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=13 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=14 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:48:32+08:00 ] 127.0.0.1 /project2/index.php/Admin/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:48:32+08:00 ] 127.0.0.1 /project2/index.php/Admin/Login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046875s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:48:37+08:00 ] 127.0.0.1 /project2/index.php/Admin/Login/check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `admin` [ RunTime:0.171875s ]
+SQL: SELECT * FROM `admin` WHERE ( username='admin' and password='e10adc3949ba59abbe56e057f20f883e' ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:48:37+08:00 ] 127.0.0.1 /project2/index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:48:37+08:00 ] 127.0.0.1 /project2/index.php/Admin/Index/header
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:48:37+08:00 ] 127.0.0.1 /project2/index.php/Admin/Index/welcome
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:48:37+08:00 ] 127.0.0.1 /project2/index.php/Admin/Index/menu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:48:39+08:00 ] 127.0.0.1 /project2/index.php/Admin/Product/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=1 and state<9 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=2 and state<9 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=3 and state<9 )  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\project2\Application\Admin\Common\function.php 第 8 行.
+SQL: SELECT * FROM `type` WHERE ( fid=10 and state<9 )  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\project2\Application\Admin\Common\function.php 第 8 行.
+SQL: SELECT * FROM `type` WHERE ( fid=4 and state<9 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=5 and state<9 )  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\project2\Application\Admin\Common\function.php 第 8 行.
+SQL: SELECT * FROM `type` WHERE ( fid=6 and state<9 )  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=8 and state<9 )  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\project2\Application\Admin\Common\function.php 第 8 行.
+SQL: SHOW COLUMNS FROM `brand` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `brand`  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:48:55+08:00 ] 127.0.0.1 /project2/index.php/Admin/Product/getbrand?typeid=6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `brand` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `brand` WHERE ( typeid=6 )  [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:48:59+08:00 ] 127.0.0.1 /project2/index.php/Admin/Product/save
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: INSERT INTO `product` (`title`,`price`,`userprice`,`salenum`,`saleprice`,`content`,`style`,`typestr`,`brandid`) VALUES ('4',4,4,4,4,'4','4','>6>',11) [ RunTime:0.000000s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\www\project2\ThinkPHP\Library\Think\Upload.class.php 第 169 行.
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: INSERT INTO `productimage` (`imagename`,`productid`) VALUES ('49375853b88be12562.62658819.jpg',18) [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:00+08:00 ] 127.0.0.1 /project2/index.php/Admin/Product/oper.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 ) ORDER BY id desc LIMIT 0,3   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=18 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:08+08:00 ] 127.0.0.1 /project2/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:10+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/6
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 and typestr like '>6>%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 and typestr like '>6>%' ) LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.015625s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=18 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:10+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/api/cron.php?t=1344195212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=12 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=13 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=14 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=18 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:13+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 and typestr like '>1>%' ) LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:13+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/api/cron.php?t=1344195212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=12 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=13 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=14 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=18 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:14+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/detail/id/17/tid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT p.*,b.bname FROM product p INNER JOIN brand b on p.brandid=b.id  WHERE ( p.id=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:14+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/detail/id/17/tid/captcha.php?39466540
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT p.*,b.bname FROM product p INNER JOIN brand b on p.brandid=b.id  WHERE ( p.id=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:14+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/detail/id/17/tid/api/cron.php?t=1344195518
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT p.*,b.bname FROM product p INNER JOIN brand b on p.brandid=b.id  WHERE ( p.id=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:18+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/%3E1%3E4%3E.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 and typestr like '>1>4>%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 and typestr like '>1>4>%' ) LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:19+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/api/cron.php?t=1344195212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.140625s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.015625s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=12 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=13 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=14 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=18 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:26+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/detail/id/17/tid/%3E1%3E4%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT p.*,b.bname FROM product p INNER JOIN brand b on p.brandid=b.id  WHERE ( p.id=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:26+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/detail/id/17/tid/captcha.php?39466540
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT p.*,b.bname FROM product p INNER JOIN brand b on p.brandid=b.id  WHERE ( p.id=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062500s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062500s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:26+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/detail/id/17/tid/api/cron.php?t=1344195518
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT p.*,b.bname FROM product p INNER JOIN brand b on p.brandid=b.id  WHERE ( p.id=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:27+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/%3E1%3E4%3E.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 and typestr like '>1>4>%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 and typestr like '>1>4>%' ) LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:28+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/api/cron.php?t=1344195212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=12 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=13 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=14 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=18 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:31+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/api/cron.php?t=1344195212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.015625s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=12 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=13 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=14 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=18 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:37+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/%3E1%3E4%3E.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` WHERE ( state<9 and typestr like '>1>4>%' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` WHERE ( state<9 and typestr like '>1>4>%' ) LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-16T17:49:38+08:00 ] 127.0.0.1 /project2/index.php/Home/Product/lister/tid/api/cron.php?t=1344195212
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `cart` [ RunTime:0.000000s ]
+SQL: SELECT sum(buynum) as num FROM `cart` WHERE ( userid=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `type` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `type` WHERE ( fid=0 and state<9 )  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `product` [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `product` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `product` LIMIT 0,10   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `productimage` [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=10 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=12 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=13 ) LIMIT 1   [ RunTime:0.015625s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=14 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=15 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=16 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=17 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `productimage` WHERE ( productid=18 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

@@ -1,0 +1,147 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>JavaScript 事件 TAB切换</title>
+<style>
+#tab{
+	font-size:14px;
+}
+
+#tit{
+	width:300px;
+	height:30px;
+}
+
+#tit h3{
+	width:96px;
+	height:30px;
+	line-height:30px;
+	border:2px solid #fff;
+	background-color:#ccc;
+	float:left;
+	text-align:center;
+	color:#fff;
+	margin:0px;
+}
+
+#content{
+	background-color:#888;
+	width:300px;
+}
+
+#content ul{
+	list-style-type:none;
+}
+
+#content div{
+	display:none;
+}
+
+#content .now{
+	display:block;
+}
+
+#tit .tit_now{
+	background-color:#888;
+}
+</style>
+</head>
+
+
+<body>
+<!-- 最外层div -->
+<div id="tab">
+	<!-- 新闻分类div -->
+	<div id="tit">
+	  <h3 class="tit_now" onmouseover="changes(0)">国际</h3>
+	  <h3 onmouseover="changes(1)">国内</h3>
+	  <h3 onmouseover="changes(2)">娱乐</h3>
+	</div>
+	<!-- 新闻分类div -->
+	
+	<!-- 新闻标题div -->
+	<div id="content">	 
+	   <div class="now">
+	      <ul>
+	        <li>国际新闻1</li>
+	        <li>国际新闻2</li>
+	        <li>国际新闻3</li>
+	        <li>国际新闻4</li>
+	        <li>国际新闻5</li>
+	      </ul>
+	   </div>
+	   
+	    <div>
+	      <ul>
+	        <li>国内新闻1</li>
+	        <li>国内新闻2</li>
+	        <li>国内新闻3</li>
+	        <li>国内新闻4</li>
+	        <li>国内新闻5</li>
+	      </ul>
+	   </div>
+	   
+	    <div>
+	      <ul>
+	        <li>娱乐新闻1</li>
+	        <li>娱乐新闻2</li>
+	        <li>娱乐新闻3</li>
+	        <li>娱乐新闻4</li>
+	        <li>娱乐新闻5</li>
+	      </ul>
+	   </div>
+	
+	   
+	</div>	
+	<!-- 新闻标题div -->
+</div>
+<!-- 最外层div -->
+<script>
+//获取对象
+//获取h3对象
+var h3=document.getElementsByTagName("h3");
+//获取div对象
+var div=document.getElementById("content").getElementsByTagName("div");
+
+function changes(id){
+	//id 鼠标当前划过的h3的下标
+for(var i=0;i<h3.length;i++){
+	//对比每一个新闻标题的下标和鼠标划过的h3的下标
+	if(i==id){
+		h3[i].className="tit_now";
+		div[i].className="now";
+	}else{
+		h3[i].className="";
+		div[i].className="";		
+		}
+	}
+}
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

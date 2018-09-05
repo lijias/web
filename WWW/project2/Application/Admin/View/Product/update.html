@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.js"></script>
+<script type="text/javascript">
+function getBrand(bid){
+	//获取当前选中的分类的value
+	var typestr=$("[name='typestr']").val();
+	//正则
+	if(typestr=='0'){
+		var typeid=0;
+	}else{
+		var arr=typestr.match(/^>(\d+)/);
+		var typeid=arr[1];
+	}
+	$.ajax({
+		url:'__URL__/getbrand',
+		data:'typeid='+typeid,
+		dataType:'json',
+		success:function(re){
+			var brandid='';
+			var brandname='';
+			$("[name=brandid]").empty();
+			for(var k in re){
+				brandid=re[k].id;
+				brandname=re[k].bname;
+				if(bid==brandid){
+					$("[name=brandid]").append("<option selected='selected' value='"+brandid+"'>"+brandname+"</option>");
+				}else{
+					$("[name=brandid]").append("<option value='"+brandid+"'>"+brandname+"</option>");
+				}
+			}
+		}
+	})
+}
+function delImage(imageId,imageName){
+	$.ajax({
+		url:'__URL__/delimage',
+		data:'imageId='+imageId+"&imageName="+imageName,
+		success:function(re){
+			if(re==1){
+				$("#image_"+imageId).remove();
+			}
+		}
+	});
+}
+$(function(){
+	$("[name='typestr']").val('{$arr.typestr}');
+	//获取分类下的品牌
+	getBrand('{$arr.brandid}');//没有选中品牌
+})
+</script>
+</head>
+<body>
+<div>当前操作：修改产品</div>
+<form action="__URL__/usave" method="post" enctype="multipart/form-data">
+<table>
+	<tr>
+		<td>标题：</td>
+		<td><input value="{$arr.title}" type="text" name="title"/></td>
+	</tr>
+	<tr>
+		<td>市场价格：</td>
+		<td><input value="{$arr.price}" type="text" name="price"/></td>
+	</tr>
+	<tr>
+		<td>会员价格：</td>
+		<td><input value="{$arr.userprice}" type="text" name="userprice"/></td>
+	</tr>
+	<tr>
+		<td>优惠数量：</td>
+		<td><input value="{$arr.salenum}" type="text" name="salenum"/></td>
+	</tr>
+	<tr>
+		<td>优惠价格：</td>
+		<td><input type="text" value="{$arr.saleprice}" name="saleprice"/></td>
+	</tr>
+	<tr>
+		<td>简介：</td>
+		<td><textarea  name="content" cols="8">{$arr.content}</textarea></td>
+	</tr>
+	<tr>
+		<td>规格：</td>
+		<td><textarea name="style" cols="8">{$arr.style}</textarea></td>
+	</tr>
+	<tr>
+		<td>图片：</td>
+		<td>
+		<table>
+			<foreach name='imageArr' item="v">
+			<tr id="image_{$v.id}">
+				<td><img height="100" src="__PUBLIC__/product/{$v.imagename}"/></td>
+				<td><a href="javascript:delImage('{$v.id}','{$v.imagename}');">删除</a></td>
+			</tr>
+			</foreach>
+		</table>
+		<input type="file" name="upload[]" multiple='multiple'/></td>
+	</tr>
+	<tr>
+		<td>分类：</td>
+		<td>
+		<select name="typestr" onchange="getBrand();">
+			<option value="0">请选择</option>
+			{$typestr}
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td>品牌：</td>
+		<td><select name="brandid">
+			<foreach name="brandArr" item="v">
+			<option value='{$v.id}'>{$v.bname}</option>
+			</foreach>
+		</select></td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td colspan="2"><input type="hidden" name="suibian" value="{$Think.server.HTTP_REFERER}"/><input type="hidden" name="pid" value="{$Think.get.id}"/><input type="submit" value="添加"/></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

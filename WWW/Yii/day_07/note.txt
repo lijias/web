@@ -1,0 +1,259 @@
+Yii框架：MVC框架
+Model		模型
+View		视图
+Controller	控制器
+
+Yii特点
+1、美籍华人
+2、重量级
+3、没有集成模板引擎
+4、脚手架yiic
+5、单一入口
+
+下载资源包：yii-framework-1-1-7-r3135-en-win.zip
+
+
+常见的DOS命令
+1、切换盘符
+   盘符:
+   e:
+2、查看当前目录下所有内容
+   dir  (Windows)
+   ls   (Linux)
+3、清屏
+   cls    (Windows)
+   clear  (Linux)
+4、进入当前目录下的文件夹
+   cd 文件夹名
+5、进入一个多级目录
+   cd 文件夹/文件夹/文件夹...
+6、回到盘符的根目录
+   cd \    (Windows)
+   cd /    (Linux)
+7、回到上一级目录
+   cd ..
+
+
+
+利用脚手架生成目录结构
+1、打开命令提示符窗口(Win7以管理员方式打开)
+2、切换到项目中的framework所在的目录
+3、执行如下命令，生成目录结构
+   yiic webapp ../app
+错误：'"php.exe"' 不是内部或外部命令，也不是可运行的程序或批处理文件。
+解决办法：将php5.4的安装路径，配置到系统的path环境变量中
+path环境变量的位置：我的电脑->属性->高级->环境变量->系统变量->Path
+变量名：Path
+变量值：akdlfjasdfjlasdf;D:\php5.4
+注意：命令提示符窗口，必须重开一次
+
+
+
+项目目录
+app------------------------应用程序
+  assets-------------------第三方插件*********
+  css----------------------样式表*********
+  images-------------------图片*********
+  protected----------------应用程序目录
+    commands---------------系统命令
+    components-------------组件文件夹(自定义类)*********
+      Controller.php-------控制器的父类
+    config-----------------配置文件夹*********
+      main.php
+    controllers------------控制器*********
+    data-------------------数据库脚本文件
+    extensions-------------扩展类
+    messages---------------翻译的信息
+    migrations-------------数据库移植文件
+    models-----------------模型*********
+    runtime----------------运行时
+    views------------------视图*********
+      layouts--------------布局文件
+  themes-------------------主题目录
+  index.php----------------入口文件
+framework------------------yii资源包
+
+
+
+控制器命名规则
+1、必须采用大驼峰的命名规则
+2、必须以Controller来结尾
+IndexController.php
+LoginController.php
+
+
+控制器中方法的命名规则
+1、必须采用小驼峰的命名规则
+2、必须以action来开头
+actionIndex()
+actionLogin()
+actionDelete()
+actionDel()
+
+
+控制器定义的语法格式
+class XxxController extends Controller
+{
+  public function actionXxxxx()
+  {
+	逻辑处理;
+
+        $this->renderPartial("视图名");
+  }
+}
+
+
+
+设置默认的控制器：修改main.php配置文件
+"defaultController"=>"控制器/方法",
+
+
+
+url路由
+1、url传参(默认)
+   http://localhost/项目/app/index.php
+   http://localhost/项目/app/index.php?r=控制器/方法
+   http://localhost/项目/app/index.php?r=控制器/方法/名/值
+   1)超链接
+     <a href="index.php?r=控制器/方法"></a>
+   2)引入样式表
+     <link href="css/xxx.css">
+     <img src="images/xxx.jpg">
+     <script src="assets/jquery/jquery-1.4.js">
+2、pathinfo
+   http://localhost/项目/app/index.php
+   http://localhost/项目/app/index.php/控制器/方法
+   http://localhost/项目/app/index.php/控制器/方法/名/值
+   1)超链接
+     <a href="<?php echo APP?>/控制器/方法"></a>
+     <a href="<?php echo APP?>/控制器/方法/名/值"></a>
+   2)引入样式表
+     <link href="<?php echo ROOT?>/css/xxx.css">
+     <img src="<?php echo ROOT?>/images/xxx.jpg">
+     <script src="<?php echo ROOT?>/assets/jquery/jquery-1.4.js">
+
+
+开启pathinfo访问模式：修改main.php配置文件
+/*
+   "urlManager"=>array(
+     ...
+   )
+*/
+去掉上边代码的注释
+
+
+自定义系统的常量：在入口文件中自定义常量
+1、入口文件地址(链接地址、跳转地址)
+   define("APP","/项目/app/index.php");
+2、根目录地址(引入样式表、图片、第三方插件)
+   define("ROOT","/项目/app");
+注意：这两常量在控制器、视图中都可调用
+
+
+
+通过控制器显示指定的视图
+1、renderPartial方法(不加载布局)
+   1)显示指定的视图页面
+     $this->renderPartial("视图名");
+   2)显示指定的视图，并传递数据
+     $this->renderPartial("视图名",array(名=>值,名=>值...));
+2、render方法(会加载布局)
+   1)显示指定的视图页面
+     $this->render("视图名");
+   2)显示指定的视图，并传递数据
+     $this->render("视图名",array(名=>值,名=>值...));
+
+
+布局Layout(文件)
+1、在views/layouts目录下新建一个布局文件(xxx.php)
+2、设置当前项目的布局文件(Controller.php)
+   public $layout='//layouts/column1';
+   改成
+   public $layout='//layouts/hello';
+3、修改控制器
+   $this->renderPartial();
+   改成
+   $this->render();
+4、设置页面的title标题
+   1)在控制器的方法中添加如下代码
+     $this->setPageTitle("页面标题");
+   2)在布局文件的title标签中
+     <title><?php echo $this->getPageTitle()?></title>
+
+
+
+布局文件的写法
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>xxxxxxx</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  </head>
+  <body>
+    网站的头
+    
+    <!-- 正文内容 -->
+    <?php echo $content?>
+    
+    网站的脚
+  </body>
+</html>
+
+
+
+
+查询多条记录，返回：二维数组
+$db = Yii::app()->db;
+$st = $db->createCommand("select语句");
+$rs = $st->queryAll();
+查询一条记录，返回：一维数组
+$db = Yii::app()->db;
+$st = $db->createCommand("select语句");
+$rs = $st->queryRow();
+执行insert、update、delete语句，返回：受影响的行数
+$db = Yii::app()->db;
+$st = $db->createCommand("insert|update|delete语句");
+$result = $st->execute()
+
+
+修改配置文件，设置连接数据库的信息
+
+
+页面重定向
+$this->redirect("路径");
+$this->redirect("index.php?r=控制器/方法");
+$this->redirect(APP."/控制器/方法");
+
+
+获得url中的参数
+1、通过$_GET来获得
+   $变量 = $_GET["参数名"];
+2、给控制器中的方法加参数
+   public function actionXxxxx($参数名,$参数名...)
+   {}
+
+
+知识点
+1、介绍、特点
+2、脚手架
+3、目录结构
+4、控制器
+5、视图
+6、url路由
+7、布局
+8、配置文件：默认控制器、数据库
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

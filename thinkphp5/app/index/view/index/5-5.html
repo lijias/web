@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-5</title>
+</head>
+<body>
+<!--volist循环 offset=偏移量 length=显示多少条 empty=没有数据时显示-->
+{php}
+ $empty = '没有内容!';
+{/php}
+<table border="1" cellspacing="0" cellpadding="0" style="margin: 10px">
+    <tr>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>年龄</td>
+    </tr>
+    {volist name='data' id='list_data' offset='0' empty='$empty' key='s'}
+    <!--<p>{empty}</p>-->
+    <tr>
+        <td>{$s}</td>
+        <td>{$list_data.name}</td>
+        <td>{$list_data.age}</td>
+    </tr>
+    {/volist}
+</table>
+
+<!--foreach-->
+<table border="1" cellspacing="0" cellpadding="0" style="margin: 10px">
+    <tr>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>年龄</td>
+    </tr>
+    {foreach name='data' item='v' key='k'}
+    <tr>
+        <td>{$k}</td>
+        <td>{$v.name}</td>
+        <td>{$v.age}</td>
+    </tr>
+    {/foreach}
+</table>
+
+<!--for step=每一次增加的数值-->
+<ul>
+{for start='1' end='10' step='2' name='j'}
+    <li>{$j}</li>
+{/for}
+</ul>
+</body>
+</html>

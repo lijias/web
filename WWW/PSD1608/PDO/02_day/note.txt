@@ -1,0 +1,58 @@
+PDO
+
+事务
+一、概述
+    事务是一组sql语句。要么都执行成功。要么都执行不成功。
+
+    事务的特征
+    原子性
+    隔离性
+    持久性
+    稳定性
+
+    InnoDB和MyISAM
+    区别
+    InnoDB支持事务，MyISAM不支持事务
+    InnoDB支持行级锁，MyISAM表级锁。
+
+    查看表引擎
+    show create table tbname; 
+
+    更改表引擎sql语句
+    alter table tbname engine=innodb;
+
+二、事务的应用
+     查询系统配置变量
+     show variables like '%commit%'
+     
+     事务的应用在命令行下的执行顺序
+      1、关闭自动提交。 
+         set autocommit=0;
+      2、开启事务
+         start transaction;
+      3、提交/回滚
+         提交
+         commit;
+         回滚
+         rollback;
+      4、开启自动提交
+         set autocommit=1;
+         
+       在PDO中完成事务
+        1.关闭自动提交
+         setAttribute(int $name,int $value)
+           功能:改变mysql的系统配置变量
+           参数:
+         name  PDO::ATTR_AUTOCOMMIT(自动提交)
+         value  0关闭  1开启
+           返回:布尔
+        2.开启事务
+           beginTransaction()
+             功能:开启事务
+        3.视sql语句执行的结果 提交或者回滚
+             提交
+           commit()
+             回滚
+           rollback()
+        4.开启自动提交
+           setAttribute(PDO::ATTR_AUTOCOMMIT,1)

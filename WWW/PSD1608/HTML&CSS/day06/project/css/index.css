@@ -1,0 +1,92 @@
+@CHARSET "UTF-8";
+/*公共样式 */
+.area{
+	width:1000px;
+	margin:0 auto;
+}
+/*============*/
+/*头部快速导航样式*/
+#top-nav-wrap{/*100%背景 */
+   height:40px;
+   background:#F7F7F7;
+   border-top:3px solid #213E82;
+   border-bottom:1px solid #ccc;
+   line-height:40px;
+}
+#top-nav-wrap .left{/*左版块 */
+	float:left;
+	width:480px;
+	
+}
+#top-nav-wrap .right{/*右版块 */
+	float:right;
+	width:280px;
+}
+.login-info{
+   float:left;
+   width:50px;
+   height:44px;
+   background:url(../images/top-nav-login-title.png);
+   text-align:center;
+}
+.login-info a{
+	display:block;
+	color:#fff;
+}
+.info{
+   float:left;	
+}
+.info span{
+	padding:0 6px;
+}
+.info span.blue a{
+	color:#213E82;
+}
+/*logo样式*/
+#logo{
+	margin-top:20px;
+}
+#logo .left{
+	float:left;
+	width:200px;
+}
+#logo .right{
+	float:right;
+	width:300px;
+}
+.frm{
+  width:300px;
+  height:28px;
+  margin-top:24px;	
+}
+.key{
+  float:left;
+  width:236px;
+  height:28px;
+  background:url(../images/search-bar-keywords.png);
+  border:0;
+  padding-left:10px;
+  font: 16px/28px 微软雅黑;
+}
+.search-btn{
+  float:left;
+  width:54px;
+  height:28px;
+  background:url(../images/search-bar-submit-button.png);	
+  border:0;
+  text-indent:-9999px;/*隐藏文字描述*/
+  cursor:pointer;/*鼠标小手*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

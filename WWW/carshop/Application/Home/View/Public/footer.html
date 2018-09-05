@@ -1,0 +1,69 @@
+<div class="foot">
+  <div class="foot-map">
+  		<div class="foot-mleft">
+        	<div class="site">网站地图（<a href="sitemap.xml" target="_blank">xml</a> / <a href="sitemap.html" target="_blank">html</a>）</div>        
+            <ul> 
+            <li>  
+            <a href="__APP__" title="网站首页">网站首页</a> 
+              <volist name="navres" id="v" key="k">  
+              <?php if($k<4):?>        	                       
+           	 <a href="__MODULE__/<if condition="$v['type'] eq 1">Arlist
+            										<elseif condition="$v['type'] eq 2" />Page
+            										<elseif condition="$v['type'] eq 3" />Message
+            										<elseif condition="$v['type'] eq 4" />Zplist
+            										<elseif condition="$v['type'] eq 5" />Carlist
+            										<elseif condition="$v['type'] eq 6" />Rylist
+            										<elseif condition="$v['type'] eq 7" />Job</if>/index/cateid/{$v.id}" title="{$v.name}">{$v.name}</a>  
+                <?php endif;?>  
+                </volist>                     	                         	                         	                         	                         	                         	                          </li>
+             <li>             
+                        	                         	                         	                         	                       
+           	  <volist name="navres" id="v" key="k">  
+              <?php if(8>$k&&$k>3):?>        	                       
+           	 <a href="__MODULE__/<if condition="$v['type'] eq 1">Arlist
+            										<elseif condition="$v['type'] eq 2" />Page
+            										<elseif condition="$v['type'] eq 3" />Message
+            										<elseif condition="$v['type'] eq 4" />Zplist
+            										<elseif condition="$v['type'] eq 5" />Carlist
+            										<elseif condition="$v['type'] eq 6" />Rylist
+            										<elseif condition="$v['type'] eq 7" />Job</if>/index/cateid/{$v.id}" title="{$v.name}">{$v.name}</a>  
+                <?php endif;?>  
+                </volist>
+                                     	                         	                          </li>
+            
+             <li>  
+                        	                         	                         	                         	                         	                         	                         	                         	                       
+           	 <volist name="navres" id="v" key="k">  
+              <?php if(7<$k):?>        	                       
+           	 <a href="__MODULE__/<if condition="$v['type'] eq 1">Arlist
+            										<elseif condition="$v['type'] eq 2" />Page
+            										<elseif condition="$v['type'] eq 3" />Message
+            										<elseif condition="$v['type'] eq 4" />Zplist
+            										<elseif condition="$v['type'] eq 5" />Carlist
+            										<elseif condition="$v['type'] eq 6" />Rylist
+            										<elseif condition="$v['type'] eq 7" />Job</if>/index/cateid/{$v.id}" title="{$v.name}">{$v.name}</a>  
+                <?php endif;?>  
+                </volist>
+                                      </li>
+      
+            </ul>
+        </div>
+        <div class="foot-tel"><p>热线电话<br><label>{$Think.config.PHONE}</label></p><span>7x24小时全国客服热线，全年无休</span></div>
+        <p class="foot-er"><img src="/carshop/Public/pc/images/er.gif" alt="" width="123" height="121"><br>扫一扫关注我们</p>
+  </div>
+  <div class="clear"></div>
+  <div class="footlink">
+   	<b class="name">友情链接： </b>
+    <div class="linka"> 
+    <volist name="linkres" id="v" key="k">  
+		       	  <a href="{$v.url}" target="_blank">{$v.title}</a>
+     </volist> 
+    </div>
+  </div>
+    <div class="foot-con">
+        <div class="foot-left">电话：{$Think.config.PHONE}     传真：{$Think.config.FAX}     地址：{$Think.config.ADDRESS}     版权所有：{$Think.config.COPY}<br>
+    技术支持：<a href="http://www.pangu.us" target="_blank" title="盘古网络－提供基于互联网的全套解决方案">盘古网络</a><a href="http://ks.pangu.us" target="_blank" title="盘古建站－快速开展网络营销的利器">【盘古建站】</a>ICP备案编号：<a href="http://www.miitbeian.gov.cn/" title="备********号" target="_blank">备********号</a></div>
+    <div class="newsshare"><div class="bdsharebuttonbox"><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a><a class="bds_bdhome" data-cmd="bdhome" title="分享到百度新首页" href="#"></a></div>
+		<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></div>
+</div>
+</div>

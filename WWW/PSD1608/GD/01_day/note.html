@@ -1,0 +1,35 @@
+三.GD库的应用
+  1.纸
+  2.画
+  3.保存/展示
+  4.清理
+  
+  1.imagecreatetruecolor(int $width int $height)\
+           功能: 创建画布
+           参数
+    width 画布的宽
+    height 画布的高
+           返回类型 
+                 成功    资源
+                 失败     false
+   2.imagecolorallocate(resource $img, int $red,int $green,int $blue)    
+            功能:创建颜色
+   
+   3.展示/收藏    
+   
+   空心矩形
+   imagerectangle($img ) 
+   实心矩形
+   imagefilledrectangle($img )  
+    圆
+   imageellipse($img )
+    字体
+    imagestring或imagettftext
+     验证码
+     -画布(浅色,随机)
+     -干扰(随机出现的线,随机出现的点)
+     -输出文字
+     -展示
+     -释放资源
+  
+    

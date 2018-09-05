@@ -1,0 +1,54 @@
+#menumain_dolphin{
+   margin:0;
+   white-space:nowrap;
+   overflow:hidden;
+   font:14px/38px 'Microsoft YaHei','SimSun',Arial,Sans-Serif;
+   height:38px;
+   background:url(menubg.jpg) 0px 0px repeat-x;
+}
+
+#menumain_dolphin .mainmenuiner {
+    height:38px;
+	padding:0;
+    line-height:38px;
+    font:14px/38px 'Microsoft YaHei','SimSun',Arial,Sans-Serif;
+    overflow: hidden;
+    margin:0px; 
+}
+
+#menumain_dolphin .menuright {
+	float:right;
+    height:38px;
+	width:2px;
+	padding:0;
+	font:14px/38px 'Microsoft YaHei','SimSun',Arial,Sans-Serif;
+    overflow: hidden;
+    margin:0px;
+	background:url(menu.jpg) 0px 0px no-repeat;
+}
+
+#menumain_dolphin a.menumain_dolphin:link,#menumain_dolphin a.menumain_dolphin:active,#menumain_dolphin a.menumain_dolphin:visited{
+   display:block;
+   float:left;
+   height:38px;
+   text-decoration: none;
+   text-align:center;
+   width:111px;
+   color:#fff;
+   font:14px/38px 'Microsoft YaHei','SimSun',Arial,Sans-Serif;
+   background:url(menu.jpg) 0px 0px no-repeat;
+   margin:0px;
+}
+
+#menumain_dolphin a.menumain_dolphin:hover{
+   display:block;
+   float:left;
+   height:38px;
+   color:#fff; 
+   text-decoration: none;
+   text-align:center;
+   width:111px;
+   font:14px/38px 'Microsoft YaHei','SimSun',Arial,Sans-Serif;
+   background:url(menunow.jpg) 0px 0px no-repeat;
+   margin:0px;
+} 

@@ -1,0 +1,6 @@
+数据库优化
+show processList;查看慢查询
+为select 创建索引
+联合索引
+select count(*) from student where classid=5 group by sex
+create index i_c_s on 表名(classid,sex);

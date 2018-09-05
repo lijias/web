@@ -1,0 +1,14 @@
+/*style:center invit ; type:1 */
+/*
+09.09.15修正了对方网站背景图及背景色全局CSS对我们的影响
+*/
+.tracq_fix_bg{BACKGROUND:transparent none repeat scroll 0% 0%;color:#000000;font-size:12px;line-height:14px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;border:0px solid #d35555;margin:0px 0px 0px 0px;overflow:hidden;FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, "Bitstream Vera Sans",sans-serif;word-break:break-all;text-align:left;position:static;z-index:8000;}
+.tq_invit_title{width: 360px; height: 17px; left: 31px;  top: 6px; color:#FFFFFF;font-size:12px;font-weight:bold;text-align:left;z-index: 1;border:0px;padding:0px;cursor:move;position: absolute}
+.tq_invit_close{width: 19px;  height: 19px; left: 378px; top: 7px; z-index: 20;border:0px;padding:0px;cursor:pointer;position: absolute; }
+.tq_invit_words{color:#000066; width: 280px; height: 65px; left: 25px;  top: 35px; overflow-x:hidden;overflow-Y:auto;position: absolute;  z-index: 3;font-size:12px;font-weight:bold;text-align:left;}
+.tq_invit_callback_button{width: 81px;  height: 25px; left: 147px; top: 110px; z-index: 4;border:0px;padding:0px;position: absolute;cursor:pointer}
+.tq_invit_accept_button  {width: 81px;  height: 25px; left: 227px; top: 110px; z-index: 5;border:0px;padding:0px;position: absolute;cursor:pointer}
+.tq_invit_refuse_button  {width: 81px;  height: 25px; left: 314px; top: 110px; z-index: 6;border:0px;padding:0px;position: absolute;cursor:pointer}
+
+.tracq_iframe{visibility:hidden;display:none;width:0;height:0}
+#tracqfloater1{overflow:visible}

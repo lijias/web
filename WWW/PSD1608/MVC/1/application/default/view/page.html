@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>数据库分页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="{$ROOT}/public/css/bbs.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    {include file="header.html"}
+    
+    <table border="1" align="center" width="600">
+      <tr>
+        <td>编号</td>
+        <td>标题</td>
+        <td>点击次数</td>
+        <td>时间</td>
+      </tr>
+      {foreach $bbsInfo as $v}
+      <tr>
+        <td>{$v.bbsId}</td>
+        <td>{$v.title}</td>
+        <td>{$v.clickTimes}</td>
+        <td>{$v.bbsTime}</td>
+      </tr>
+      {/foreach}
+      <tr>
+        <td colspan="4" align="center">
+          <a href="{$APP}/Page/index/currentPage/1.html">首页</a>&nbsp;&nbsp;&nbsp;
+          <a href="{$APP}/Page/index/currentPage/{$currentPage-1}.html">上一页</a>&nbsp;&nbsp;&nbsp;
+          <a href="{$APP}/Page/index/currentPage/{$currentPage+1}.html">下一页</a>&nbsp;&nbsp;&nbsp;
+          <a href="{$APP}/Page/index/currentPage/{$totalPage}.html">尾页</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

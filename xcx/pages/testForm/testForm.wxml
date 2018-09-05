@@ -1,0 +1,34 @@
+<!--pages/testForm/testForm.wxml-->
+<form bindsubmit='subFrom'>
+  <view class="section__title">姓名:</view>  
+<view class='form-group'>  
+  <input type="text" class="input-text" name="username" placeholder="请输入姓名" />  
+</view>
+<view class="section section_gap">  
+  <view class="section__title">年龄:</view>  
+  <view class='form-group'>  
+      <slider name="age" show-value ></slider>  
+  </view>      
+</view>
+<view class="section section_gap">  
+  <view class="section__title">性别:</view>  
+  <view class='form-group'>  
+    <radio-group name="gender">  
+      <label><radio value="1"/>男</label>  
+      <label><radio value="0"/>女</label>  
+    </radio-group>  
+  </view>      
+</view>
+<view class="section">
+  <view class="section__title">日期选择器</view>
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class="picker">
+      当前选择: {{date}}
+    </view>
+  </picker>
+</view>
+<view class="section btn-area">  
+  <button formType="submit">提交</button>  
+  <button formType="reset">清空</button>  
+</view>   
+</form>

@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<div class="container" bindTap=''>
+  <div class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse && !openSq}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:elif="{{openSq}}">
+    <button open-type="openSetting"> 打开授权设置页 </button>
+    </block>
+    <block wx:else>
+      <image bindtap="bindDivTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <p class="userinfo-nickname">{{userInfo.nickName}}</p>
+    </block>
+  </div>
+  <div class="usermotto">
+    <p bindtap='toMap' class="user-motto" id="id-{{id}}">{{motto}}</p>
+  </div>
+  <div>
+    <p bindtap='toBind' class="user-motto">{{bind}}</p>
+  </div>
+  <div>
+    <p bindtap='toArr' class="user-motto">{{arr}}</p>
+  </div>
+  <div>
+    <p bindtap='toViews' class="user-motto">{{views}}</p>
+  </div>
+  <div>
+    <p bindtap='toRequest' class="user-motto">{{api}}</p>
+  </div>
+  <div>
+    <p bindtap='toOrder' class="user-motto">{{orders}}</p>
+  </div>
+  <div>
+    <p bindtap='toVerificationCode' class="user-motto">{{verificationCode}}</p>
+  </div>
+  <div>
+    <p bindtap='toImage' class="user-motto">{{image}}</p>
+  </div>
+  <div>
+    <p bindtap='toAsr' class="user-motto">{{asr}}</p>
+  </div>
+  <div>
+    <p bindtap='toTanChuang' class="user-motto">{{tanChuang}}</p>
+  </div>
+  <div>
+   <navigator target="miniProgram" open-type="navigate" app-id="wx2699f0f86ca08d27" path="" extra-data="" version="release">打开绑定的小程序</navigator>
+  </div>
+  <div>
+    <p bindtap='toS' class="user-motto">缓存保存</p>
+  </div>
+</div>
+<!-- <view class="modalDlg" wx:if="{{showModal}}">
+    <view class='modalDlgView'>
+      欢迎来到模态对话框~
+    </view>
+    <button bindtap="go">点我可以关掉对话框</button>
+</view> -->

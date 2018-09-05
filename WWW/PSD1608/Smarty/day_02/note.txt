@@ -1,0 +1,218 @@
+Smarty：模板引擎
+
+作用：显示与逻辑相分离
+
+
+Smarty运行原理
+            执行php代码
+浏览器--------Apache-------Smarty--------xxx.html、xxx.php
+                          合并文件
+
+
+下载资源包：Smarty2、Smarty3
+
+
+项目目录
+smarty---------------Smarty资源包
+  Smarty.class.php
+configs--------------配置文件
+templates------------模板文件
+  xxx.html
+  xxx.html
+  xxx.html
+templates_c----------编译文件
+xxx.php
+xxx.php
+xxx.php
+
+
+每个页面对应的php文件的写法
+<?php
+  header(...);
+  include_once 'smarty/Smarty.class.php';
+  $smarty = new Smarty();
+
+  //逻辑处理
+
+  $smarty->assign(key,value);
+  $smarty->assign(key,value);
+  $smarty->assign(key,value);
+  $smarty->display("xxx.html");
+?>
+
+
+
+Smarty标签
+1、显示变量值
+   {$key}
+2、显示数组中的某一个值
+   {$key.下标}
+   {$key[下标]}
+3、if标签
+   {if 条件}
+     内容
+   {elseif 条件}
+     内容
+   {else}
+     内容
+   {/if}
+4、for标签
+   {for $变量=初始值 to 结束值}
+     内容   循环变量：{$变量}
+   {/for}
+   注意：只有Smarty3可用
+5、while标签
+   {while 条件}
+     内容
+   {/while}
+   注意：只有Smarty3可用
+6、section标签
+   {section name="别名" loop=$key}
+     {$key[别名]}
+   {/section}
+7、foreach标签
+   {foreach $key as $k=>$v}
+     下标：{$k}    值：{$v}
+   {/foreach}
+8、忽略标签(原样显示)
+   {literal}
+     smarty标签
+   {/literal}
+9、包含html文件
+   {include file="xxx.html"}
+10、包含php文件
+    {include_php file="xxx.php"}
+    注意：只有Smarty2可用
+11、php标签
+    {php}
+      php代码;
+    {/php}
+    注意：只有Smarty2可用
+12、禁止缓存
+    {nocache}
+      不想缓存的内容
+    {/nocache}
+13、加载配置文件
+    {config_load file="配置文件名"}
+
+
+
+
+
+变量调节器：对页面上显示的变量值进行微调
+{$key|调节器名:参数:参数...}
+{$key.下标|调节器名:参数:参数...}
+
+默认值
+{$key|default:"默认的内容"}
+html转义
+{$key|escape}
+截取字符串
+{$key|truncate:长度}
+{$key|truncate:长度:"省略符号"}
+将\n转换为<br/>
+{$key|nl2br}
+
+
+
+configs文件夹用法：存储配置文件
+1、在configs文件夹下新建一个配置文件(xxx.conf)
+2、配置文件的文件名任意，但扩展名必须为.conf
+3、配置文件的写法：以键值对的形式来存储数据
+   key=value
+   key=value
+   key=value
+4、配置文件只能允许模板文件来调用
+   1)加载配置文件
+     {config_load file="xxx.conf"}
+   2)获得配置文件中指定的信息
+     {#key#}
+
+
+
+缓存Cache
+
+作用：提高网站的访问效率
+
+缓存分类
+1、按照缓存数据存储位置不同
+   1)文件缓存：将缓存的数据存储到文件中
+   2)内存缓存：将缓存的数据存储到内存
+2、按照缓存的数据量不同
+   1)整站缓存
+   2)页面缓存、按不同的请求参数进行缓存
+   3)局部缓存(片段缓存)
+   4)局部不缓存
+   5)数据缓存(变量缓存)
+
+
+
+Smarty缓存：文件缓存
+1、整站缓存
+2、页面缓存、按不同的请求参数进行缓存
+3、局部不缓存
+
+
+
+整站缓存：修改Smarty.class.php文件
+1、是否开启缓存
+   public $caching = false;
+2、缓存时间
+   public $cache_lifetime = 3600;
+3、设置缓存文件存储的目录
+   ->setCacheDir('.' . DS . 'cache' . DS)
+
+
+页面缓存：在页面对应的php文件中添加如下代码
+1、开启缓存
+   $smarty->caching = true;
+2、设置缓存时间
+   $smarty->cache_lifetime = 时间;
+3、设置缓存目录
+   $smarty->setCacheDir("cache");
+
+
+局部不缓存：当前页面必须开启缓存
+1、在模板页面添加如下标签
+   {nocache}
+      不想缓存的数据
+   {/nocache}
+
+
+按照页面不同的请求参数分别进行缓存
+1、当前页面开启缓存，而且url中有参数
+2、修改如下代码
+   $smarty->display("xxx.html",缓存id);
+
+
+smarty中删除缓存的方法
+1、清除所有缓存
+   $smarty->clearAllCache();
+2、清除指定页面的缓存
+   $smarty->clearCache("xxx.html");
+
+
+
+什么样的页面应当添加缓存？
+1、页面的访问量高(高并发)
+2、页面的数据量大
+
+
+什么样的页面不能加缓存？
+1、页面里只有一个表单
+2、页面的数据变更太频繁
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

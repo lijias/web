@@ -1,0 +1,208 @@
+模型的命名规则
+1、必须采用大驼峰的命名规则
+2、必须以表名来命名
+3、必须以Model来结尾
+BbsInfoModel.php
+ReviewsModel.php
+
+
+模型的定义的语法格式
+class XxxModel extends Model
+{
+  public $tableName = "表名";
+}
+
+
+获得模型对象
+$model = D("模型名");//必须新建一个模型文件
+$model = M("表名");//不用新建模型文件
+
+
+数据库操作
+1、查询多条记录，返回：二维数组
+   $result = $model->select();
+   $result = $model->join()->select();
+   $result = $model->field("字段,字段...")->select();
+   $result = $model->where()->select();
+   $result = $model->order()->select();
+   $result = $model->limit()->select();
+   $result = $model->field()->where()->order()->limit()->select();
+2、查询一条记录，返回：一维关联数组
+   $result = $model->find();
+   $result = $model->join()->find();
+   $result = $model->field()->find();
+   $result = $model->where()->find();
+3、添加记录，返回：受影响的行数
+   $result = $model->insert(一维关联数组);
+4、修改记录，返回：受影响的行数
+   $result = $model->update(一维关联数组);
+   $result = $model->where()->update(一维关联数组);
+5、删除记录，返回：受影响的行数
+   $result = $model->delete();
+   $result = $model->where()->delete();
+6、执行select语句，返回：二维数组
+   $result = M()->queryAll("select语句");
+7、执行select语句，返回：一维关联数组
+   $result = M()->queryOne("select语句");
+8、执行insert、update、delete语句，返回：受影响的行数
+   $result = M()->exec("insert|update|delete语句");
+9、count查询，返回：整数
+   $result = $model->count();
+   $result = $model->where()->count();
+10、sum查询，返回：数字
+   $result = $model->sum("字段");
+   $result = $model->where()->sum("字段");
+11、avg查询，返回：数字
+   $result = $model->avg("字段");
+   $result = $model->where()->avg("字段");
+12、max查询，返回：数字
+   $result = $model->max("字段");
+   $result = $model->where()->max("字段");
+13、min查询，返回：数字
+   $result = $model->min("字段");
+   $result = $model->where()->min("字段");
+
+
+
+
+
+页面重定向(跳转页面)
+$this->redirect(跳转地址);
+
+
+系统提示信息
+$this->success(提示信息,跳转地址);
+
+
+
+MVC运行原理
+                      Smarty
+                        |
+                    Controller
+                        |
+入口文件-----------XxxController-----------xxx.html
+                        |
+                     XxxModel
+                        |
+                      Model
+                        |
+                      DbConn
+                        |
+                     Database
+
+
+
+全局配置文件：application/configs/config.php
+
+
+自定义success页面
+1、在application/view下新建一个success.html文件
+2、success.html中
+    提示信息：{$message}
+    跳转地址：{$jumpUrl}
+3、修改config.php配置文件
+   "success"=>"application/view"
+
+
+验证码的使用
+1、在页面的控制器中添加一个方法
+   public function xxxAction()
+   {
+	Image::verify();
+   }
+2、页面的视图文件中
+   <img src="{$APP}/控制器/xxx">
+3、注意：session中的名(verify)
+
+
+项目目录
+library
+application
+  core------------核心文件夹
+  default---------前台
+    configs
+    model
+    view
+    controller
+    runtime
+  admin-----------后台
+    configs
+    model
+    view
+    controller
+    runtime
+public
+index.php---------前台入口
+admin.php---------后台入口
+
+
+
+
+class 父类
+{
+  public function __construct()
+  {
+	$this->hello();
+  }
+}
+class 子类 extends 父类
+{
+  public function hello()
+  {}
+}
+
+$对象 = new 子类();
+
+
+
+在控制器中：_initialize()，相当于子类的构造函数
+
+
+
+
+
+class Controller
+{}
+class BaseController extends Controller
+{
+  public function _initialize()
+  {
+     $newsTypes = M("newstypes")->select();
+     $this->assign("newsTypes",$newsTypes);
+  }
+}
+class XxxxController extends BaseController
+{}
+
+
+
+
+HelloPHP总结
+1、运行原理
+2、目录结构
+3、配置文件
+4、控制器(命名、定义)
+5、视图(Smarty标签)
+6、模型(命名、定义、获得模型对象、数据库操作)
+7、url路由(url传参、pathinfo)
+8、重定向($this->redirect())
+9、系统提示信息页面($this->success())
+10、给控制器找父类的方法(_initialize())
+11、验证码类
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src='jquery-1.8.0.js'></script>
+<script>
+/*习题：
+8、应用异步请求。向test.php文件发送ajax请求。
+test.php文件对发送过来的内容进行判断。
+若发送来的数据是以post形式发送，切发送来的数据id值为100则输出响应 1，否则输出响应 2.
+
+*/
+
+$(function(){
+	 $("input").click(function(){
+      $.post("test.php",{"id":200},function(response,status,xhr){
+    	  $("p:eq(0)").html("response:"+response);
+    	  $("p:eq(1)").html("status:"+status);
+    	  $("p:eq(2)").html("xhr.responseText:"+xhr.responseText);
+    	  $("p:eq(3)").html("xhr.statusText:"+xhr.statusText);
+      });
+     });
+});
+
+
+</script>
+</head>
+<body>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<input type="button" value="tclick" />
+<br/>
+
+
+</body>
+</html>

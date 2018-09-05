@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+.list{
+	width:200px;
+	margin:50px auto 0;
+}
+.list li{
+	background:url(../images/dot.gif) no-repeat 0 -46px;
+    line-height:24px;
+	padding-left:12px;
+}

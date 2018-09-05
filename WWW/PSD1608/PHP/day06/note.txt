@@ -1,0 +1,102 @@
+一.字符串函数库
+ 1.安装
+ 2.
+   (1)strlen:获得字符串的字符长度
+   (2)substr:字符串截取
+       格式: string substr(string $var,
+         int $start[,int $length]);
+       说明:
+       (a)$start:开始编号位置,编号从0开始
+       (b)$length:字符串的截取长度
+                     如果$length省略，截取从字符开始到
+                     字符串结束
+       (c)如果$start 开始编号大于字符串的总
+                    长度，返回false
+       (d)$start,$length如果是负值，位置
+                    倒数
+   (3) 
+      strtoupper：将字符串转为大写
+      strtolower:将字符串转为小写
+      ucfirst:字符串的首字母大写
+      ucwords:每个单词的首字母大写    
+   (4)
+      trim:清除字符串两边的空格,也可以清除指定字符
+      ltrim：清除字符串左边的空格,也可以清除指定字符
+      rtrim: 清除字符串右边的空格,也可以清除指定字符           
+                    
+   (5)
+     strpos:返回子字符串在字符串中首次出现的编号位置,
+                         编号从0开始,区分大小写
+           格式：
+       mixed strpos(string $haystack,
+           mixed $needle[,int $flag=0]);
+               成功返回编号位置，失败返回false
+     stripos:不区分大小写
+     strrpos:返回子字符串在字符串中最后出现的编号位置,
+                         编号从0开始,区分大小写
+     strripos:最后出现的编号位置,不区分大小写
+   
+   (6)
+     strstr:查找字符串的首次出现位置,区别大小写
+          格式:string strstr ( string $haystack ,
+        mixed $needle [, bool $before_needle = false ] )
+               返回 haystack 字符串从 needle 第一次出现
+               的位置开始到 haystack 结尾的字符串。
+              如果 $before_needle为true 返回 needle
+              在 haystack 中的位置之前的部分     
+     stristr:不区分大小写
+     strchr:别名 strstr()
+     strrchr:查找指定字符在字符串中的最后一次出现位置
+                           区别大小写
+     string strrchr ( string $haystack 
+            , mixed $needle )
+      
+   (7)
+     strrev :反转字符串
+   (8)
+     str_replace:字符串的替换
+     mixed str_replace ( mixed $search ,
+           mixed $replace , mixed $subject 
+          [, int &$count ] )
+   (9)
+     htmlspecialchars:转换为html实体
+         格式：string htmlspecialchars ( string $string 
+     [, int $flags = ENT_COMPAT])
+       说明:
+      (1) htmlspecialchars只能转换 < > ' 
+          " &的特殊符号为HTML实体
+      (2)$flags默认值：ENT_COMPAT 不处理单引号
+         $flags:
+            ENT_COMPAT 不处理单引号
+            ENT_QUOTES 处理单引号和双引号
+            ENT_NOQUOTES 不处理单引号和双引号
+     (10)
+        MD5:计算字符串的 MD5 散列值，返回32位
+        sha1:计算字符串的 sha1 散列值，返回40位
+        
+     (11)strip_tags:从字符串中去除 HTML 和 PHP 标记
+      string strip_tags ( string $str
+       [, string $allowable_tags ] )
+            说明:
+        a.使用可选的第二个参数指定
+                     不被去除的字符列表
+     
+     
+     
+     
+     
+     
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+                   
+                    
+                    
+                    

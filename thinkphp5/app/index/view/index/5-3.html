@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-3</title>
+</head>
+<body>
+<p>
+    <!--视图中直接使用系统变量-->
+<p>{$Think.server.HTTP_HOST}</p>
+<p>{$Think.env.PHP_STATUS}</p>
+<p>{$Think.session.name}</p>
+<p>{$Think.cookie.age}</p>
+
+<!--视图中直接使用接收到的数据(http://thinkphp.com/index.php/index/index/view3?id=1)-->
+<p>{$Think.get.id}</p>
+<p>{$Think.request.id}</p>
+<p>{$Think.post.id}</p>
+
+<!--视图中直接使用常量-->
+<p>{$Think.const.APP_PATH}</p>
+<p>{$Think.APP_PATH}</p>
+
+<?php
+    $a = 1;
+    $b = 2;
+    if($a>$b){
+        echo '<p>php标签输出的内容1</p>';
+    }else{
+        echo '<p>php标签输出的内容2</p>';
+    }?>
+</body>
+</html>

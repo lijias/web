@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>my demo</title>
+<style>
+   .box1{
+   	  float:left;
+	  width:50px;
+   	  height:100px;
+   	  background:#ff0;
+   }
+   .box2{
+   	  float:left;
+	  width:100px;
+   	  height:100px;
+   	  background:#f0f;
+   }
+   .box3{
+	  width:200px;
+   	  height:200px;
+   	  background:#00f;
+   }
+   .clear1{
+	  clear:both;
+   }
+   .parent{
+	  width:300px;
+   	  border:1px solid #f00;
+   }
+   .son1,.son2,.son3{
+   	  float:left;
+	  width:50px;
+   	  height:50px;
+   	  background:#0f0;
+   }
+   .list{
+	  width:300px;
+   	  border:1px solid #f00;
+   	  background:#ff0;
+   }
+   .list li{
+   	  float:left;
+	  width:50px;
+   	  height:50px;
+   	  background:#0f0;
+   }
+    /*万能清除*/
+   .clear{
+	  zoom:1;
+   }
+   .clear:after{
+	 content:".";
+   	 display:block;
+   	 clear:both;
+   	 height:0;
+   	 visibility:hidden;
+   }
+</style>
+</head>
+<body>
+   <div class="box1">内容</div>
+   <div class="box2">内容</div>
+   <div class="clear1"></div>
+   <div class="box3">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</div>
+
+   
+   <div class="parent">
+      <div class="son1">one</div>
+      <div class="son2">two</div>
+      <div class="son3">three</div>
+      <div class="clear1"></div>
+   </div>
+   
+   <ul class="list clear">
+      <li>one</li>
+      <li>two</li>
+      <li>three</li>
+   </ul>
+   <!--a.万能清除写在父元素上
+       b.解决高度塌陷
+       c.让版块间划分界限  -->
+   <br/>
+   <br/>
+   
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/><br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   <br/>
+   
+   <br/>
+   
+</body>
+</html>

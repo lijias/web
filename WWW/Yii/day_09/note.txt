@@ -1,0 +1,325 @@
+Yii框架
+
+模型的命名规则
+1、必须采用大驼峰的命名规则
+2、必须以表名来命名
+BbsInfo.php
+Reviews.php
+
+
+模型定义的语法格式
+class 表名 extends CActiveRecord
+{
+  public static function models()
+  {
+     return new 类名();
+  }
+  public function tableName()
+  {
+     return "完整的表名";
+     return "{{省略了前缀表名}}";
+  }
+}
+
+
+获得模型对象
+$model = new 模型名();
+$model = 模型名::models();
+
+
+数据库操作
+1、查询多条记录，返回：二维数组
+   $result = $model->findAll();
+   $result = $model->findAll(条件);
+   $result = $model->findAll(array(
+     "select"=>"字段,字段...",
+     "condition"=>"条件",
+     "order"=>"排序",
+     "offset"=>起始值,
+     "limit"=>条数
+   ));
+   $result = $model->findAllBySql("select语句");
+2、查询一条记录，返回：一维数组
+   $result = $model->find();
+   $result = $model->find(条件);
+   $result = $model->findByPk(主键);
+   $result = $model->findBySql("select语句");
+3、添加记录，返回：受影响的行数
+   $model->字段 = 值;
+   $model->字段 = 值;
+   $model->字段 = 值;
+   $result = $model->save();
+4、修改记录，返回：受影响的行数
+   $result = $model->updateAll(关联数组);
+   $result = $model->updateAll(关联数组,条件);
+   $result = $model->updateByPk(主键,关联数组);
+5、删除记录，返回：受影响的行数
+   $result = $model->deleteAll();
+   $result = $model->deleteAll(条件);
+   $result = $model->deleteByPk(主键);
+6、执行select语句，返回：二维数组
+   $db = Yii::app()->db;
+   $st = $db->createCommand("select语句");
+   $rs = $st->queryAll();
+7、执行select语句，返回：一维数组
+   $db = Yii::app()->db;
+   $st = $db->createCommand("select语句");
+   $rs = $st->queryRow();
+8、执行insert、update、delete语句，返回：受影响的行数
+   $db = Yii::app()->db;
+   $st = $db->createCommand("insert|update|delete语句");
+   $result = $st->execute();
+9、执行count查询，返回：数字
+   $result = $model->count();
+   $result = $model->count(条件);
+   $result = $model->countBySql("select语句");
+
+
+路径别名
+application	/项目/app/protected
+system		/项目/framework
+system.web	/项目/framework/web
+zii		/项目/framework/zii
+webroot		/项目/app
+
+
+错误页面
+1、新建一个页面，充当错误页面
+2、修改main.php配置文件，设置错误页面
+   'errorAction'=>'控制器/方法',
+   'errorAction'=>'error/index',
+3、获得错误信息
+   Yii::app()->errorHandler->error;
+
+
+自定义类的做法
+1、自定义类必须存放在components目录下
+2、控制器通过类名直接调用(components目录下的所有类自动包含)
+
+
+系统自带的验证码类
+/项目/framework/web/widgets/captcha/CCaptchaAction.php
+1、在控制器中添加如下代码
+   public function actions()
+   {
+      return array(
+	"名"=>array(
+	   "class"=>"类的路径"
+	),
+      );
+   }
+2、视图里的代码
+   <img src="<?php echo APP?>/控制器/名">
+   <img src="index.php?r=控制器/名">
+
+
+
+缓存Cache：提高网站的访问效率
+
+缓存分类
+1、按缓存数据存储位置不同
+   1)文件缓存
+   2)内存缓存
+2、按缓存的数据量不同
+   1)整站缓存
+   2)页面缓存
+   3)局部缓存(片段缓存)
+   4)局部不缓存
+   5)数据缓存(变量缓存)
+
+
+Yii缓存：文件缓存
+1、页面缓存
+2、片段缓存(局部缓存)
+3、数据缓存(变量缓存)
+4、动态缓存(局部不缓存)
+
+
+修改main.php配置文件，开启缓存功能
+"components"=>array(
+  //开启缓存
+  "cache"=>array(
+     "class"=>"system.caching.CFileCache"
+  ),
+  ...
+  ...
+  ...
+  ...
+),
+
+
+片段缓存：在视图中添加如下代码
+<?php
+  if($this->beginCache("别名",array("duration"=>时间)))
+  {
+?>
+    想缓存的数据
+<?php
+     $this->endCache();
+  }
+?>
+
+
+页面缓存：/项目/framework/web/widgets/COutputCache.php
+在控制器中添加如下代码
+public function filters()
+{
+  return array(
+    array(
+      "system.web.widgets.COutputCache",
+      "duration"=>时间
+    )
+  );
+}
+
+
+数据缓存：在控制器中添加如下代码
+1、向缓存中添加数据
+   Yii::app()->cache->set(名,值,时间);
+2、从缓存中获得数据
+   $变量 = Yii::app()->cache->get(名);
+3、删除指定的缓存
+   Yii::app()->cache->delete(名);
+4、清除所有缓存
+   Yii::app()->cache->flush();
+
+
+动态缓存：局部不缓存
+1、当前页面必须开启了缓存
+2、在控制器中添加一个方法
+   public function 方法名()
+   {
+      return 不想缓存的数据;
+   }
+3、视图页面的代码
+   <?php echo $this->renderDynamic("方法名")?>
+
+
+
+给所有控制器找父类：BaseController.php
+第一种做法：
+  1)在controllers新建一个BaseController.php
+  2)修改main.php配置文件
+    "import"=>array(
+      "application.models.*",
+      "application.components.*",
+      "application.controllers.*",//注意
+    )
+第二种做法：
+  1)在components新建一个BaseController.php
+
+
+控制器中相当于是构造函数的方法：
+public function init()
+{}
+
+
+控制器如何给布局传值
+1、在控制器定义一个属性，给属性值
+2、在布局文件中通过$this调用该属性
+
+
+
+gii功能：生成一个全新的模块
+1、打开main.php配置文件，开启gii功能
+   1)找到gii选项，去掉注释
+   2)设置gii的密码
+2、通过浏览器访问gii功能
+   http://localhost/项目/app/index.php?r=gii
+   http://localhost/项目/app/index.php/gii
+3、创建完模块后，必须修改main.php配置
+   "模块名",
+   "模块名",
+   "模块名",
+   "gii"=>array(
+     ...
+     ...
+     ...
+   ),
+4、访问指定的模块
+   http://localhost/项目/app/index.php?r=模块名
+   http://localhost/项目/app/index.php?r=模块名/控制器/方法
+   http://localhost/项目/app/index.php/模块名
+   http://localhost/项目/app/index.php/模块名/控制器/方法
+5、修改后台默认的控制器
+   在后台管理的入口文件中进行修改
+   public function init()
+   {
+     ...
+     ...
+     $this->defaultController = "控制器/方法";
+   }
+6、设置后台管理的布局
+   在后台管理的入口文件中进行修改
+   public function beforeControllerAction()
+   {
+      $controller->layout = "/layouts/admin";
+      ...
+      ...
+      ...
+   }
+
+
+
+Yii知识点
+1、介绍、特点
+2、脚手架
+3、目录结构
+4、控制器
+   1)命名规则
+   2)方法的命名规则
+   3)定义的语法格式
+5、显示视图的方法
+   $this->render()
+   $this->renderPartical()
+6、视图
+   1)存储位置
+   2)显示数据
+7、url路由
+   1)url传参
+   2)pathinfo
+8、布局
+   1)存储位置
+   2)修改Controller.php，设置布局
+   3)布局文件的写法
+9、模型
+   1)命名
+   2)定义语法格式
+   3)数据库操作
+10、错误页面
+11、自定义类
+12、验证码
+13、缓存
+    1)页面缓存
+    2)片段缓存
+    3)数据缓存
+    4)动态缓存
+14、后台管理(gii功能)
+15、其他
+    1)给控制器找父类
+    2)控制器的"构造函数"
+    3)给布局传数据
+16、配置文件
+    1)设置默认的控制器
+    2)url路由
+    3)数据库
+    4)缓存
+    5)自动导入类
+    6)gii
+    7)错误页面
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

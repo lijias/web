@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ajax功能</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="css/bbs.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery/jquery-1.4.js"></script>
+    <script type="text/javascript">
+      function showCity()
+      {
+    	  $.ajax({
+    		  type:"post",
+    		  url:"check.php",
+    		  data:"cityCode="+$("#cityCode").val(),
+    		  dataType:"html",
+    		  success:function(msg){
+    			  $("#mySpan").html(msg);
+    		  }
+    	  });
+      }
+    </script>
+  </head>
+  <body>
+    {include file="header.html"}
+    
+    <table border="1" align="center" width="600">
+      <tr>
+        <td>
+          请输入：<input type="text" id="cityCode" size="20">
+          <input type="button" value="显示" onclick="showCity()">
+          <span id="mySpan"></span>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+.navi{/*100%宽度的背景色 */
+   width:100%;
+   height:40px;
+   background:#fc0;
+   line-height:40px;
+}
+.navi ul{/*固定宽度导航内容*/
+   width:1000px;
+   margin:0 auto;
+}
+.navi li{
+	float:left;
+	width:82px;
+	text-align:center;
+	font:bold 16px/40px 微软雅黑;
+	
+}
+.navi a{
+	display:block;/*将行元素转为块元素 */
+	color:#00f;
+}
+.navi a:hover{
+	color:#f00;
+	background:#f90;
+}
+
+
+
+
+

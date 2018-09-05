@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1" align="center">
+	<foreach name="result" item="v">
+		<tr>
+			<td>{$v.aid}</td><td>{$v.dateandtime}</td><td>{$v.name}</td><td>{$v.content}</td>
+		</tr>
+	</foreach>
+		<tr>
+			<td colspan=4>{$pageList}</td>
+		</tr>
+</table>
+</body>
+</html>

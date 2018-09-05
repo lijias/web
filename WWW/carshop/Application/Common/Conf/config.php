@@ -1,0 +1,22 @@
+<?php
+return array (
+  'DB_TYPE' => 'mysql',
+  'DB_HOST' => 'localhost',
+  'DB_NAME' => 'carshop',
+  'DB_USER' => 'root',
+  'DB_PWD' => 'root',
+  'DB_PORT' => '3306',
+  'DB_PREFIX' => 'cs_',
+  'DOMAIN' => 'http://localhost/carshop/',
+  'TITLE' => '你的网站',
+  'KEYWORDS' => 'thinkphp',
+  'DESCRIPTION' => '教程',
+  'EMAIL' => '163@163.com',
+  'CONTACT' => '134657855***',
+  'FAX' => '456897',
+  'PHONE' => '84411203',
+  'ICP' => '备案',
+  'COPY' => '本人所拥有',
+  'ADDRESS' => '海珠区工业园',
+  'FILE' => '',
+); ?>

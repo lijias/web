@@ -1,0 +1,91 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>查看及回复留言-后台管理</title>
+    <link rel="stylesheet" type="text/css" href="<?PHP echo ADMIN_PUC;?>/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="<?PHP echo ADMIN_PUC;?>/css/main.css"/>
+    <script type="text/javascript" src="<?PHP echo ADMIN_PUC;?>/js/libs/modernizr.min.js"></script>
+    
+    
+</head>
+<body>
+
+<!--头部 -->
+<include file='Public:top'/>
+<!-- /头部 -->
+
+<div class="container clearfix">
+ <div class="sidebar-wrap">
+        <div class="sidebar-title">
+            <h1>菜单</h1>
+        </div>
+    <!--左侧-->
+<include file='Public:left'/>  
+    <!--/左侧-->
+    
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="__APP__/Admin/Index/index">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="__MODULE__/Message/lst.html">留言管理</a><span class="crumb-step">&gt;</span><span>查看及回复留言</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                	<input type="hidden" name="mid" value="{$messages.id}"/>
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>姓名：</th>
+                                <td>
+                                    {$messages.nickname}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>手机：</th>
+                                <td>
+                                    {$messages.telephone}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>邮箱：</th>
+                                <td>
+                                    {$messages.email}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>留言内容：</th>
+                                <td>
+                                    {$messages.content}
+                                </td>
+                            </tr>
+                            <volist name="replyres" id="v">
+                            <tr>
+                                <th><i class="require-red" ></i>回复{$i}：</th>
+                                <td>
+                                   {$v.content}
+                                </td>
+                            </tr>
+                            </volist>
+                            <tr>
+                                <th>管理员回复：</th>
+                                <td><textarea name="content" class="common-textarea" cols="75"  rows="6">{$linkres.des}</textarea></td>
+                            </tr>  
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <title>天天新闻网</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link href="css/news.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+      //验证码的看不清换一张
+      function changeImage()
+      {
+          document.getElementById("myImg").src = "plus/image.php?id="+new Date();
+      }
+      //登陆表单验证
+      function checkLogin()
+      {
+          if(document.frm.userName.value == "")
+          {
+              alert("请输入用户名！");
+              document.frm.userName.focus();
+              return false;
+          }
+          else if(document.frm.password.value == "")
+          {
+              alert("请输入密码！");
+              document.frm.password.focus();
+              return false;
+          }
+          else if(document.frm.checkCode.value == "")
+          {
+              alert("请输入验证码！");
+              document.frm.checkCode.focus();
+              return false;
+          }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 网站头 -->
+    {#header#}
+	
+	<!-- 正文内容 -->
+	<div class="mainDiv clear">
+	  <!-- 左侧 -->
+	  <div class="leftDiv">
+	    <!-- 登陆 -->
+	    <form name="frm" method="post" action="plus/login.php" onsubmit="return checkLogin()">
+	    <div class="loginDiv">
+	      <div class="loginDiv1">会员登陆</div>
+	      <div class="loginDiv2 clear">
+	        <div class="loginDiv20">用户名</div>
+	        <div class="loginDiv21"><input type="text" name="userName" value="admin" class="txt1">*</div>
+	      </div>
+	      <div class="loginDiv2 clear">
+	        <div class="loginDiv20">密码</div>
+	        <div class="loginDiv21"><input type="password" name="password" value="123" class="txt1">*</div>
+	      </div>
+	      <div class="loginDiv2 clear">
+	        <div class="loginDiv20">验证码</div>
+	        <div class="loginDiv21"><input type="text" name="checkCode" size="8" maxlength="4"><img id="myImg" src="plus/image.php" onclick="changeImage()" style="cursor:pointer;" title="看不清换一张" alt="看不清换一张" align="absmiddle"></div>
+	      </div>
+	      <div class="loginDiv2 clear">
+	        <div class="loginDiv20">&nbsp;</div>
+	        <div class="loginDiv21"><input type="submit" value="登陆"></div>
+	      </div>
+	    </div>
+	    </form>
+	    <!-- 一个分类带两条新闻 -->
+	    {#newTwo#}
+	    
+	  </div>
+	  <!-- 右侧 -->
+	  <div class="rightDiv">
+	    <!-- 热点要闻 -->
+	    <div class="hotNews">热点要闻</div>
+        {#hotNews#}
+	    
+	    <!-- 新闻分类导航 -->
+	    <div class="hotNews">新闻分类导航</div>
+	    <div class="newsDh">
+	      <div class="newsDh1"><span class="newsCount">新闻总数：</span></div>
+	      <div class="newsDh2">{#newsCount#}</div>
+	      <div class="newsDh3">&nbsp;</div>
+	    </div>
+	    {#newsType#}
+	  </div>
+	</div>
+    
+    
+    <!-- 网页脚 -->
+    {#footer#}
+  </body>
+</html>
+
+
+
+
+
+
+

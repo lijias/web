@@ -1,0 +1,17 @@
+<?php
+	class UsersModel extends Model
+	{
+		public $tableName = "users";
+		
+		public $_validate = array(
+			array("userName","require","请输入用户名！"),
+			array("userName","","用户名必须唯一！",0,'unique',3),
+			array("password","require","请输入密码！"),
+			array("checkPwd","require","请输入确认密码！"),
+			array("checkPwd","password","两次输入的密码不一致！",1,"confirm",3),
+			array("tel","/^1[34578]\d{9}$/","手机号码格式不正确！",1,"regex",3),
+			array("userCode","/^\d{17}(\d|x|X)$/","身份证号码格式不正确！",1,"regex",3),
+			array("mailBox","email","邮件地址格式不正确！")
+		);
+	}
+?>

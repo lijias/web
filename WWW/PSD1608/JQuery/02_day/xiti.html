@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src='jquery-1.8.0.js'></script>
+<script>
+$(function(){
+	 $("input").click(function(){
+      $.ajax({
+    	 "url":"login.php",
+    	 "type":"post",
+    	 "data":
+    	 			{
+    		 		"username":$("#username").val(),
+    		        "password":$("#password").val()
+    		        },
+         "success": function(response,status,xhr){
+        	 if(response==1){
+        		 $("div").html("用户名不能为空");
+        	 }else if(response==2){
+        		 $("div").html("密码不能为空");
+        	 }else if(response==3){
+        		 $("div").html("成功");
+        	 }else if(response==4){
+        		 $("div").html("失败");
+        	 }
+         }
+      })
+     });
+});
+
+
+</script>
+</head>
+<body>
+<div></div>
+<center>用户注册</center>
+<form action="login.php" method='post'>
+用户名:<input type="text" name="username" id="username" /><br/>
+密码:<input type="password" name="password" id="password" /><br/>
+<input type="button" value="tclick" />
+</form>
+<br/>
+
+
+</body>
+</html>

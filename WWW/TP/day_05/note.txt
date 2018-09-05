@@ -1,0 +1,332 @@
+ThinkPHP框架：MVC框架
+
+Model		模型
+View		视图
+Controller	控制器
+
+下载资源包：ThinkPHP3.2
+
+入口文件
+<?php
+  header(...);
+  //绑定模块
+  define("BIND_MODULE","Home");
+  //指定应用程序目录
+  define("APP_PATH","application/");
+  //开启调试模式(可有可无)
+  define("APP_DEBUG",true);
+  //开启目录安全(可有可无)
+  define("BUILD_DIR_SECURE",false);
+  //包含ThinkPHP的入口文件
+  include_once "library/ThinkPHP/ThinkPHP.php";
+?>
+
+
+
+项目目录
+library-------------------第三方资源包
+  ThinkPHP
+application---------------应用程序目录
+  Common
+    Common----------------公用函数
+    Conf------------------配置文件
+  Home--------------------Home模块
+    Common----------------公用函数
+    Conf------------------配置文件
+    Controller------------控制器
+    Model-----------------模型
+    View------------------视图
+  Runtime-----------------运行时
+public--------------------公用文件
+  images
+  css
+index.php-----------------入口文件
+
+
+
+
+
+控制器的命名规则
+1、必须采用大驼峰的命名规则
+2、必须以Controller.class.php来结尾
+IndexController.class.php
+LoginController.class.php
+
+
+控制器中方法的命名规则
+1、必须采用小驼峰的命名规则
+login()
+delete()
+del()
+index()
+
+
+控制器定义的语法格式
+namespace 模块名\Controller;
+use Think\Controller;
+class XxxController extends Controller
+{
+  public function xxxxx()
+  {
+     逻辑处理;
+
+     $this->assign(key,value);
+     $this->assign(key,value);
+     $this->assign(key,value);
+     $this->display();
+  }
+}
+
+
+display()用法
+1、$this->display()
+   View
+     控制器
+       方法.html
+2、$this->display("hello");
+   View
+     控制器
+       hello.html
+
+
+
+
+Think标签
+1、显示变量值
+   {$key}
+2、显示数组中某个值
+   {$key.下标}
+   {$key[下标]}
+3、if标签
+   <if condition="条件">
+     内容
+   <elseif condition="条件"/>
+     内容
+   <else/>
+     内容
+   </if>
+4、switch标签
+   <switch name="key">
+     <case value="值">内容</case>
+     <case value="值">内容</case>
+     <case value="值">内容</case>
+     <default/>内容
+   </switch>
+5、比较标签
+   <		lt
+   <=		elt
+   >		gt
+   >=		egt
+   ==		eq
+   ===		heq
+   !=		neq
+   !==		nheq
+6、for标签
+   <for start="起始值" end="结束值">
+     内容   循环变量：{$i}
+   </for>
+7、foreach标签
+   <foreach name="key" item="v" key="k">
+      值:{$v}  下标:{$k}
+   </foreach>
+8、volist标签
+   <volist name="key" id="v" key="k">
+      值:{$v}   序号:{$k}
+   </volist>
+9、literal标签
+   <literal>
+     Think标签
+   </literal>
+10、php标签
+   <php>
+     php代码;
+   </php>
+11、运算标签
+   + - * / % ++ --
+12、包含html文件
+   <include file="路径"/>
+   <include file="文件夹:文件名"/>
+
+
+公用html存储位置
+View
+  Public
+    header.html
+    footer.html
+    success.html
+<include file="Public:header"/>
+
+
+配置文件
+1、当前模块下的配置文件
+   application/Home/Conf/Config.php
+2、当前application目录下的配置文件
+   application/Common/Conf/config.php
+3、全局配置文件
+   library/ThinkPHP/Conf/convention.php
+优先级：1 > 2 > 3
+建议不要修改convention.php配置文件
+
+
+url路由
+1、url传参
+   http://localhost/项目/index.php
+   http://localhost/项目/index.php?c=控制器&a=方法
+   http://localhost/项目/index.php?c=控制器&a=方法&名=值
+   1)超链接地址
+     <a href="index.php?c=控制器&a=方法"></a>
+     <a href="index.php?c=控制器&a=方法&名=值"></a>
+   2)引入样式表
+     <link href="public/css/xxx.css">
+2、pathinfo
+   http://localhost/项目/index.php
+   http://localhost/项目/index.php/控制器/方法.html
+   http://localhost/项目/index.php/控制器/方法/名/值.html
+   1)超链接地址
+     <a href="__APP__/控制器/方法.html"></a>
+     <a href="__APP__/控制器/方法/名/值.html"></a>
+   2)引入样式表
+     <link href="__ROOT__/public/css/xxx.css">
+
+
+ThinkPHP系统常量
+__APP__：返回入口文件地址(链接地址、跳转地址)
+__ROOT__：返回根目录地址(引入css、images、library)
+
+
+U()用法：跳转页面、链接地址
+1、控制器
+   U("控制器/方法");
+2、视图
+   <a href="{:U('控制器/方法')}"></a>
+
+
+表前缀、表后缀
+1、表前缀
+   news_userInfo
+   mails_userInfo
+2、表后缀
+   userInfo_news
+   userInfo_mails
+
+
+
+模型的命名规则
+1、必须采用大驼峰的命名规则
+2、必须以表名来命名
+3、必须以Model.class.php来结尾
+BbsInfoModel.class.php
+ReviewsModel.class.php
+
+定义模型的语法格式
+namespace Home\Model;
+use Think\Model;
+class 表名Model extends Model
+{
+  public $tableName = "省略了前缀的表名";
+  public $trueTableName = "真实的表名";
+}
+
+
+D("BbsInfo")--->模型：BbsInfoModel
+D("BbsInfo")--->表名：_bbs_info
+D("bbsInfo")--->表名：bbs_info
+D("bbsinfo")--->表名：bbsinfo
+M("bbsInfo")--->表名：bbs_info
+M("bbsinfo")--->表名：bbsinfo
+
+
+获得模型对象
+$model = D("模型名");//必须新建一个模型文件
+$model = D("表名");//不用新建模型
+$model = M("表名");//不用新建模型
+注意：所有表名必须全部小写
+
+建议：Linux下所有表名全部小写
+
+
+数据库操作
+1、查询多条记录，返回：二维数组
+   $result = $model->select();
+   $result = $model->field("字段,字段...")->select();
+   $result = $model->where()->select();
+   $result = $model->order()->select();
+   $result = $model->limit()->select();
+   $result = $model->field()->where()->order()->limit()->select();
+2、添加记录，返回：受影响的行数、新加记录的主键值
+   $result = $model->add(一维关联数组);
+   $result = $model->data(一维关联数组)->add();
+3、删除记录，返回：受影响的行数
+   $result = $model->delete();
+   $result = $model->where()->delete();
+4、查询一条记录，返回：一维关联数组
+   $result = $model->find();
+   $result = $model->field()->find();
+   $result = $model->where()->find();
+   $result = $model->field()->where()->find();
+5、修改记录，返回：受影响的行数
+   $result = $model->save(一维关联数组);
+   $result = $model->where()->save(一维关联数组);
+6、执行select语句，返回：二维数组
+   $result = M()->query("select语句");
+7、执行insert、update、delete操作，返回：受影响的行数
+   $result = M()->execute("insert|update|delete语句");
+8、聚合查询
+   $result = $model->count();
+   $result = $model->sum("字段");
+   $result = $model->avg("字段");
+   $result = $model->max("字段");
+   $result = $model->min("字段");
+
+
+
+页面重定向
+1、跳转页面
+   $this->redirect("控制器/方法");
+   $this->redirect("控制器/方法",array(名=>值,名=>值));
+2、跳转页面，并提示信息
+   $this->redirect("控制器/方法",array(),时间,提示信息);
+   $this->redirect("控制器/方法",NULL,时间,提示信息);
+
+
+系统提示信息页面
+$this->success(提示信息,跳转地址);
+$this->error(提示信息,跳转地址);
+
+自定义success页面
+1、在View/Public下新建一个success.html
+   提示信息：{$message}   跳转地址：{$jumpUrl}
+2、修改配置文件，设置success页面
+   'TMPL_ACTION_ERROR'  => "Public:success",
+   'TMPL_ACTION_SUCCESS'=> "Public:success",
+
+
+获得url中参数的方式
+1、通过$_GET来获得
+   $变量 = $_GET["参数名"];
+2、通过给方法加参数
+   public function 方法名($参数名,$参数名,$参数名...)
+   {}
+   注意：
+   1)方法的参数名与url中的参数名必须相同
+   2)方法的参数的顺序必须url中参数的顺序相同
+
+
+
+在子类的控制器中：构造函数
+public function _initialize()
+{}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

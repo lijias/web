@@ -1,0 +1,96 @@
+一.WEB基础
+ 1. WEB工作模式：B/S (Browser浏览器/Server服务器)
+ 2. Browser浏览器:向服务器请求页面,并且将服务器响应
+                                    页面显示出来
+  (1) 主流浏览器
+    a.Internet Explorer(IE)
+    b.Chrome (谷歌)
+    c.fireFox (火狐)
+    d.Safari (苹果浏览器)
+    e.Opera (欧朋)
+  (2)客户端技术
+     HTML CSS Javascript
+ 3. Server服务器:装有应用软件的计算机
+    (1)WEB服务器：装有提供网页浏览服务的应用软件
+              说明:
+          a.WEB服务器： Aphache,IIS,Tomcat,Nginx
+          b.WEB服务器原理:处理浏览器请求(HTTP Request)
+                                          页面,并且响应(HTTP Response)页面
+                                          的执行结果给客户端浏览器
+    (2)数据库服务器:装有数据库应用软件
+    (3)FTP服务器:装有数据共享的应用软件
+    
+ 4.安装Aphache：只能解析静态页面
+   (1)端口:计算机和外界沟通的通道
+     a. Aphache服务器端口: 80
+     b. MySQL服务器端口: 3306
+     c. FTP服务器: 21 
+   (2)WEB服务器访问
+     http://IP (一个域名可以绑定多个IP)
+     http://域名
+         本地访问:
+     http://127.0.0.1 (循环地址)
+     http://localhost 
+   (3)默认主目录
+     windows ： htdocs
+     Linux : www 
+   (4)默认首页(自动执行的页面)   
+       index.html index.htm  index.php
+
+   (5)Aphache 配置参数
+     windows ：conf/httpd.conf
+     linux : /etc/httpd/httpd.conf
+     a. Listen 80 端口
+     b.DocumentRoot "D:/apache/htdocs"
+     c.<Directory "D:/apache/htdocs">
+           说明: 将 b和c 的路径改为目标路径，可以
+                      更改默认主目录位置
+                      更改参数需要重启apache服务器
+     d.DirectoryIndex index.html
+              设置默认首页
+    
+   
+   
+   
+   
+   
+   
+   
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

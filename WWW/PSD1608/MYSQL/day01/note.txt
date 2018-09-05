@@ -1,0 +1,279 @@
+一.数据库(DataBase DB)
+  1.数据库：以特定形态存储数据的仓库，电子文档形式
+  2.数据库的分类:
+     (1)关系型数据库,二维表形式存储的数据库(MySQL,Orcale,SQLserver等)
+     (2)非关系型数据库(NoSQL): mongDB等
+  3.MySQL
+   (1)安装
+   (2)打开窗口
+      windows：开始->运行-cmd
+      linux :  右键打开终端
+  4.MySQL登录和退出
+   (1)登录
+    shell>mysql -uroot -p密码 [-h服务器名称]
+          [-P端口] [-D数据库名]
+         说明:
+        (1) h:服务器名称/IP,访问本地服务器可以省略
+        (2) P :端口,当不是默认端口时必须写端口
+        (3) D : 选择数据库
+    
+   (2)退出
+    mysql> quit
+    mysql> exit
+    mysql> \q
+    
+   5.mysql注释
+    (1) -- 注释
+    (2) # 注释
+   
+   6. MySQL配置
+      windows: my.ini
+        (1)basedir="D:/MySQL/" MySQL安装目录
+        (2)datadir="C:/Documents and Settings/All Users/Application Data/MySQL/MySQL Server 5.5/Data/"
+           MySQL数据存放目录
+        (3) character-set-server=utf8
+          MySQL服务器编码
+        (4)default-storage-engine=INNODB
+           MySQL默认引擎
+      linux :/etc/my.cnf
+   7.MySQL开启/关闭
+      windows：
+         net  start  mysql
+         net  stop   mysql
+         net  restart  mysql
+      linux
+         service mysql[d] start
+         service mysql[d] stop
+         service mysql[d] restart
+    8.SQL语句 [Strucured Query Lanuage 结构化执行语言]
+      (1)DDL:数据定义语言，比如创建数据库，创建表，创建视图等
+                        创建(CREATE) 修改(ALTER) 删除(DROP)
+      (2)DML:表中数据的操作语言: 对表中数据的增，删，改
+                       添加(INSERT) 删除(DELETE) 更新(UPDATE)
+      (3)DQL:表中数据的查询语言:
+                       查询(SELECT)
+      (4)DCL：数据控制语言:给用户赋予权限(GRANT)和
+                        撤销权限(REVOKE)
+   
+    9.SQL语句规范：
+      (1) 系统命令大写,名称小写
+      (2) SQL语句结束符号是 分号 或\g
+      (3) SQL语句支持折行，不可以在 名称，函数
+                     引号中折行
+      (4) 名称不能用 关键字和保留字，如果使用必须用
+                    反引号括起来  `username`
+                    
+10.创建数据库
+   (1)查看数据库
+      SHOW DATABASES;
+   (2)创建数据库
+    CREATE DATABASE [IF NOT EXISTS] 数据库名
+    [[DEFAULT] CHARACTER SET [=] 编码];
+   (3)删除数据库
+    DROP DATABASE [IF EXISTS]数据库名;
+   (4) 查看创建数据库的命令
+    SHOW CREATE DATABASE 数据库名;
+   (5) 修改数据库编码
+    ALTER DATABASE 数据库名称
+    [DEFAULT] CHARACTER SET [=]编码;
+   (6)打开数据库
+    USE 数据库名称;
+   (7)查看当前打开的数据库
+    SELECT DATABASE();
+11. 创建表(Table)
+  (1) 查看表名
+   SHOW TABLES;
+  (2)创建表结构
+   CREATE TABLE [IF NOT EXISTS] 表名(
+            字段名  数据类型  [字段属性|约束条件],
+            字段名  数据类型  [字段属性|约束条件],
+      ...
+   )[ENGINE=InnoDB DEFAULT CHARSET=utf8];
+  (3)查看表结构
+    a.DESC 表名;
+    b.DESCRIBE 表名;
+    c.SHOW COLUMNS FROM 表名;
+     
+  (4)查看创建表的命令代码
+    SHOW CREATE TABLE 表名;
+   说明:
+     a.二维表有 列(column)又叫字段(Field)
+           和行又叫记录(Record),数据库和数据表的
+           关系，好比Excel中工作簿和工作表 
+     b. 数据表至少有1个字段，至少有0个记录
+
+     c. MySQL引擎
+        InnoDB：当实现 外键和事物必须是InnoDB引擎
+        MyISAM:
+
+   (5)给表中添加数据和查询数据
+     (1)添加数据
+       INSERT 表名(字段名,字段名...)
+       VALUE[S]
+       ('值','值'...),
+       ('值','值'...)...;
+      
+     (2)查询数据
+       SELECT * FROM 表名;
+       
+       SELECT 字段名,字段名... FROM 表名;
+              说明:*代表所有字段
+   
+12.MySQL的数据类型
+  (1)整型
+    TINYINT[(M)] [UNSIGNED|ZEROFILL]:
+               范围: 
+                  有符号位  -128~127
+                  无符号位  0~255
+                大小: 1字节(2^8)              
+    SMALLINT[(M)] [UNSIGNED|ZEROFILL]:
+              范围: 
+                  有符号位  -32768~32767
+                  无符号位  0~65535
+                大小: 2字节(2^16)
+    MEDIUMINT[(M)] [UNSIGNED|ZEROFILL]:
+               范围: 
+                  有符号位  -8388608~8388607
+                  无符号位  0~16777215
+                大小: 3字节(2^24)
+    INT[(M)] [UNSIGNED|ZEROFILL]:
+               范围: 
+                  有符号位  -2147483648~2147483647
+                  无符号位  0~4294967295
+                大小: 4字节(2^32)
+    BIGINT[(M)] [UNSIGNED|ZEROFILL]
+                大小: 8字节(2^64)
+  说明:
+      字段属性
+   a.UNSIGNED :无符号位,正数
+   b.ZEROFILL :填补0，当数值长度小于指定长度
+                                用0 填补，字段属性ZEROFILL
+                                 一定自动添加UNSIGNED
+
+ (2)浮点型
+    FLOAT[(M,D)]  [UNSIGNED|ZEROFILL]
+             范围: -3.40e308 ~3.40e308 最大小数点位数7位
+    DOUBLE[(M,D)] [UNSIGNED|ZEROFILL]
+             范围: -1.79e308~1.79e308  最大小数点位数15位
+    DECIMAL[(M,D)][UNSIGNED|ZEROFILL]
+             定长浮点,最大位数 65位(默认10位)
+             小数点最大位数30(默认0位)
+       说明:
+      a. M指整数位和小数位的总数
+         D 小数位数
+           例如 :FLOAT(7,2) 最大范围: 99999.99 
+ 
+      b. FLOAT,DOUBLE近似值
+         DECIMAL 精确值
+ 
+ 
+  (3)字符型
+    CHAR:定长字符，最多 255字节(1个字母占一个字节)
+                    例如 ：CHAR(30) 要存 'hello'不够用空格添加 
+                              在内存实际存 'hello    ' 
+    VARCHAR:变长字符，最多65535字节
+                    例如 ：VARCHAR(30) 要存 'hello' 
+                              在内存实际存 'hello' 
+    TINYTEXT:最多255字节
+    TEXT:最多65535字节，一般用在文章的内容
+    MEDIUMTEXT:16777215字节
+    LONGTEXT:42亿左右
+        说明:
+        a.CHAR效率高，不省空间，
+          VARCHAR效率低，但省空间
+                   例如:密码字段 建议存 定长字符CHAR(32)
+  
+        b.VARCHAR受下面的影响
+          (a)最多65535字节
+          (b)编码影响
+            gbk,gbk2312:1个字至少占2个字节
+            utf8:1个字至少占3个字节,最多21844字节
+          (c)字符类型的所有字段总共不超过65535字节(21844字节)
+        c. 效率最低，一般用在文章的内容
+        
+   (4) 布尔类型
+       TINYINT(1)
+       BOOLEAN
+   (5) 时间日期类型
+      DATE:占4个字节   YYYY MM DD
+      TIME:占3个字节   HH MM SS
+      YEAR:占1个字节   YYYY
+      DATETIME:占8个字节  YYYY MM DD  HH MM SS
+      TIMESTAMP:占4个字节  时间戳 :1970-1-1 00:00:00 ~2037-1-1 00:00:00
+   
+   (6)枚举类型：最多65535字节
+             例如: sex ENUM('man','woman','secret')
+   
+   
+ 13.约束条件
+   (1)DEFAULT: 默认值
+   (2)NOT NULL : 不为空
+   (3)[PRIMARY] KEY :主键,一个表结构中必须
+                          只能有一个主键，并且是主键
+                           一定自动添加 NOT NULL，UNIQUE.
+   (4) UNIQUE [KEY]: 唯一性，不重复
+            (例如:用户名不重复，邮箱不重复)
+                           可以多个不重复字段，但只能有一个
+                           主键字段。
+   (5)AUTO_INCREMENT:自动增长，并且是自动增长的字段
+                                             一定是主键
+      
+    
+   
+   
+   
+       
+        
+        
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+   
+   
+   
+   
+      
+      
+      
+      
+      
+     
+    
+    
+    
+    
+            
+    
+    
+    
+    
+    
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+  

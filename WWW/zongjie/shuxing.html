@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("[href$='php']").css("border","5px solid red");
+	$("[href^='http']").css("border","5px solid orange");
+	$("[href='a.html']").css("border","5px solid purple");
+	$("[href*='a']").css("border","5px solid green");
+	$("ul li").each(function(index){
+		//$(this).attr('title',"兄弟第"+(index+1)+"个");
+		this.title="兄弟第"+(index+1)+"个";
+	})
+	$("#div1").click(function(){
+		var h=$(this).height();
+		var w=$(this).width();
+		var L=$(this).offset().left;
+		var T=$(this).offset().top;
+		$(this).html("height:"+h+"|width:"+w+"|Left:"+L+"|top:"+T);
+	})
+	$("#div1").mousemove(function(e){
+		var x=e.pageX;
+		var y=e.pageY;
+		$(this).html("X:"+x+"|Y:"+y);
+	})
+})
+</script>
+<style type="text/css">
+*{
+	margin:0;
+	padding:0;
+}
+#div1{
+	border:5px solid orange;
+	width:500px;
+	height:300px;
+	margin:10px;
+}
+</style>
+</head>
+<body>
+<div id="div1">div-1</div>
+<a href="a.php">a.php</a>
+<a href="b.php">b.php</a>
+<a href="http://www.baidu.com">baidu</a>
+<a href="http://www.qq.com">qq</a>
+<a href="a.html">a.html</a>
+<hr/>
+<ul>
+	<li>li-1</li>
+	<li>li-2</li>
+	<li>li-3</li>
+	<li>li-4</li>
+	<li>li-5</li>
+</ul>
+</body>
+</html>

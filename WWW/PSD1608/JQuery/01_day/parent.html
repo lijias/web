@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src='jquery-1.8.0.js'></script>
+<script >
+ $(function(){
+	 $("ul").parent("div").css("border","1px solid green");
+ });
+</script>
+</head>
+<body>
+<!-- 5、有如下的HTML文档
+    <div>
+		<ul>
+			<li>我是li0<span>span</span></li>
+			<li>我是li1</li>
+			<li>我是li2</li>			
+		</ul>
+	</div>
+   找到ul的父节点。将ul的父节点边框改为绿色 -->
+       <div>
+		<ul>
+			<li>我是li0<span>span</span></li>
+			<li>我是li1</li>
+			<li>我是li2</li>			
+		</ul>
+	</div>
+</body>
+</html>

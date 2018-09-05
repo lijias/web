@@ -1,0 +1,191 @@
+Smarty：模板引擎
+
+作用：显示与逻辑相分离
+
+知识点
+1、工作原理
+2、项目目录
+3、php文件写法
+4、Smarty标签
+5、configs用法
+6、变量调节器
+7、缓存
+8、后台管理
+
+
+
+三层体系架构
+显示层：html、css、js、jquery
+逻辑层：php
+数据层：database、conn、dbio
+
+
+MVC框架
+Model		模型(dbio)
+View		视图(templates)
+Controller	控制器(php)
+
+
+MVC框架特点
+1、显示与逻辑相分离
+2、代码简化(通过面向对象进一步封装)
+3、项目单一入口
+
+
+MVC框架优点
+1、代码分工更加明确
+2、便于网站的维护与管理(便于二次开发)
+
+
+
+
+项目目录
+library----------------第三方资源包
+  smarty
+  jquery
+  kindeditor
+application------------应用程序
+  configs--------------配置文件
+  core-----------------核心类
+    DbConn.php
+  model----------------模型(dbio)
+  view-----------------视图(templates)
+  controller-----------控制器(每个页面对应的php文件)
+  runtime--------------运行时
+    templates_c--------编译文件
+    cache--------------缓存文件
+public-----------------公用文件
+  images
+  css
+index.php--------------入口文件(引导文件)
+
+
+
+
+控制器命名规则
+1、必须采用大驼峰的命名规则
+2、必须以Controller来结尾
+IndexController.php
+LoginController.php
+UserController.php
+
+
+控制器中方法的命名规则
+1、必须采用小驼峰的命名规则
+2、必须以Action来结尾
+deleteAction()
+delAction()
+insertAction()
+addAction()
+loginAction()
+indexAction()
+
+
+url的访问方式
+1、url传参方法
+   http://localhost/项目/index.php
+   http://localhost/项目/index.php?c=控制器&a=方法
+   http://localhost/项目/index.php?c=控制器&a=方法&名=值&名=值
+   1)链接地址
+     <a href="index.php?c=控&a=方">文字</a>
+     <a href="index.php?c=控&a=方&名=值">文字</a>
+   2)引入样式表
+     <link href="public/css/xxx.css" ......>
+   3)引入图片
+     <img src="public/images/xxx.jpg">
+   4)引入jquery
+     <script src="library/jquery/jquery-1.4.js">
+2、pathinfo方式
+   http://localhost/项目/index.php
+   http://localhost/项目/index.php/控制器/方法.html
+   http://localhost/项目/index.php/控制器/方法/名/值.html
+   1)超链接地址
+     <a href="/项目根目录/index.php/控制器/方法"></a>
+   2)引入样式表
+     <link href="/项目根目录/public/css/xxx.css">
+   3)引入图片
+     <img src="/项目根目录/public/images/xxx.jpg">
+   4)引入jquery
+     <script src="/项目根目录/library/jquery/jquery-1.4.js">
+
+
+项目根目录
+1、http://localhost/bbs/index.php/控制器/方法
+   项目根目录：/bbs
+2、http://localhost/php/mvc/day_01/bbs/index.php/控制器/方法
+   项目根目录：/php/mvc/day_01/bbs
+
+
+http://localhost/bbs/index.php
+<a href="login.php"></a>
+http://localhost/bbs/login.php
+
+http://localhost/bbs/index.php
+<a href="/login.php"></a>
+http://localhost/login.php
+
+
+http://localhost/bbs/index.php/Login/index
+<a href="/bbs/index.php/Index/index.html">
+http://localhost/bbs/index.php/Index/index.html
+
+
+session会话
+存
+$_SESSION["名"] = 值;
+取
+$变量 = $_SESSION["名"];
+生命周期：打开浏览器创建、关闭浏览器销毁
+
+get
+取
+$变量 = $_GET["名"];
+存
+$_GET["名"] = 值;
+生命周期：就是一个请求的时间
+
+
+
+子父类构造函数
+当实例化子类对象时，那么将调用子类的构造函数
+如果子类没有构造函数，那么将调用父类的构造函数
+
+
+定义控制器语法格式
+class XxxController extends Controller
+{
+  public function xxxxxAction()
+  {
+	逻辑处理;
+	$this->assign(key,value);
+	$this->assign(key,value);
+	$this->assign(key,value);
+	$this->display("xxx.html");
+  }
+}
+
+
+MVC框架运行原理
+                     Smarty
+                       |
+                   Controller
+                       |
+index.php---------XxxController----------xxx.html
+
+
+
+在入口文件中定义系统常量
+ROOT：返回项目根目录地址(引入css、image、library)
+APP：返回项目入口文件地址(链接地址、跳转地址)
+
+
+
+
+
+
+
+
+
+
+
+

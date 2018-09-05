@@ -1,0 +1,35 @@
+<?php
+$filename="dog.jpg";
+fYxuan($filename);
+function fYxuan($filename){
+//原图片信息
+list($w,$h,$type)=getimagesize($filename);
+$type_array=array(1=>"gif",2=>"jpeg",3=>"png");
+$type_str=$type_array[$type];
+//拼装函数
+$fun="imagecreatefrom";
+$function=$fun.$type_str;
+//获取图片资源
+$src_img=$function($filename);
+//获取目标图片资源
+$des_img=imagecreatetruecolor($w,$h);
+//
+for ($i=0;$i<$h;$i++){
+  $des_x=0;
+  $des_y=$h-$i-1;
+  $src_x=0;
+  $src_y=$i;
+  $src_w=$w;
+  $src_h=1;
+imagecopy($des_img,$src_img,
+          $des_x,$des_y,
+          $src_x,$src_y,
+          $src_w,$src_h);
+}
+//
+header("Content-Type:image/png");
+imagepng($des_img);
+//
+imagedestroy($des_img);
+imagedestroy($src_img);
+}

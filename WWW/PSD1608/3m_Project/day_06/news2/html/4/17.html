@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>天天新闻网</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link href="../../css/news.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../../kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery-1.4.js"></script>
+    <script type="text/javascript">
+      var editor;
+      KindEditor.ready(function(e){
+          editor = e.create("[name=content]",{
+              "width":"560px",
+              "height":"200px",
+              "items":["undo","redo","|","bold","italic","underline"]
+          });
+      });
+      //利用ajax发表评论
+      function addReviews()
+      {
+    	  if(editor.html() == "")
+   		  {
+    		  alert("请输入评论内容！");
+    		  editor.focus();
+   		  }
+    	  else if(document.frm.userName.value == "")
+   		  {
+    		  alert("请输入评论人的姓名！");
+    		  document.frm.userName.focus();
+   		  }
+    	  else
+   		  {
+    		  //发表评论
+    		  $.ajax({
+    			  type:"post",
+    			  url:"../../plus/addreview.php",
+    			  data:"face="+document.frm.face.value+"&content="+editor.html()+"&userName="+document.frm.userName.value+"&articleId=17",
+    			  dataType:"html",
+    			  success:function(msg){
+    				  $("#reviewSpan").html(msg);
+    				  editor.html("");
+    				  document.frm.userName.value = "";
+    				  document.frm.face[0].checked = true;
+    			  }
+    		  });
+   		  }
+      }
+      //一打开页面就获得所有评论
+      function getReviews()
+      {
+    	  $.ajax({
+			  type:"post",
+			  url:"../../plus/addreview.php",
+			  data:"articleId=17",
+			  dataType:"html",
+			  success:function(msg){
+				  $("#reviewSpan").html(msg);
+			  }
+		  });
+      }
+    </script>
+  </head>
+  <body onload="getReviews()">
+    <!-- 网站头 -->
+    <div class="headDiv">
+  <div class="headDiv1">
+    <div class="headDiv10">www.<b>ttnewS</b>.com</div>
+    <div class="headDiv11"><img src="/news2/images/banner17.gif" width="370" height="50"></div>
+  </div>
+  <div class="headDiv2">天天新闻网</div>
+</div>
+<!-- 导航菜单 -->
+<div class="menuDiv">
+  <a href="/news2/index.html" class="a">首页</a> | 
+  <a href='/news2/html/1/newstype.html' class='a'>国内新闻</a> | <a href='/news2/html/2/newstype.html' class='a'>体育新闻</a> | <a href='/news2/html/3/newstype.html' class='a'>国际新闻</a> | <a href='/news2/html/4/newstype.html' class='a'>科技新闻</a> | <a href='/news2/html/6/newstype.html' class='a'>IT新闻</a> | 
+  <a href="/news2/plus/search.php" class="a">搜索</a>
+</div>
+
+
+
+
+
+
+
+
+	
+	<!-- 正文内容 -->
+	<div class="mainDiv clear">
+	  <!-- 显示的新闻 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">
+	      &nbsp;<a href="../../index.html" class="a">新闻主页</a> &raquo; 科技新闻
+	    </div>
+	  </div>
+	  <div class="newsTitle">微软会公开Vista全部代码吗？</div>
+	  <div class="newsTime">2016-10-02 17:00:19</div>
+	  
+	  <div class="newsContent">上周五，微软中国在钓鱼台举行新闻发布会，与中国信息安全产品评测认证中心（以下简称评测认证中心）签署了新一期的政府安全计划源代码协议。　　<BR>按照某国内媒体的报道，根据协议，中国信息安全产品测评认证中心和相关被授权机构，将被授权在线即时查看包括Windows Vista、XP、2003、2000和CE6.0、5.0及4.2版的专业版全部源代码，以及office专业版、2003及office系统中的任何附加产品在内的绝大部分现有版本的全部源代码及相关技术信息。　　<BR>有媒体认为，微软此举将使“Vista后门说不攻自破”。但是，笔者向来不惮以最坏的恶意来推测国内媒体。难道微软真的会“公开”Vista全部源代码吗？　　<BR>话说这个“政府安全计划源代码协议”乃是关于加强软件产业合作备忘录（二期）的重要组成部分。也是政府安全计划（以下简称GSP）协源代码议的重要组成部分。而GSP是微软面向政府层面，授权签约政府以可控的方式查看微软软件产品源代码的一项政府合作计划。中国于2003年第一次与微软签署此协议，是全球首批参与这一计划的国家之一。　　<BR>但是，正如倪光南所说：“尽管微软许诺向中国政府100％地公开其全部源代码，但根据微软在世界其他国家实施GSP计划的情况来看，都没有做到100％。可以断定，中国不可能得到比他们更优惠的待遇。”评测认证中心在2003年就确认过这一点。　　<BR>“如果不是100％的开放，源代码是不完整的，根本就不能就信息安全性做出任何结论。因为只需区区的几行源代码，就足以在一个软件中引入‘后门’”，倪光南如是说。这样的话，又怎么能说“Vista后门说不攻自破”了呢？　　<BR>而关于GSP计划的报道中的“疏漏”并不止与此。事实上，GSP的限制非常之多，只不过被部分媒体有意无意的略过了…… 　　<BR>平心而论，GSP的开放程度远不能和开源运动简直是风马牛不相及。首先，微软的源代码是商业产品，其开放对象是政府，而Linux中的源代码则是自由软件，其开放对象是公众；其次，对源代码的处理不同，对于自由软件而言，用户有使用、修改和复制的自由，而微软的源代码只能以在线方式查看，部分涉及到第三方知识产权的源代码，微软无权与签约方分享。　　<BR>事实上，关于微软对华合作活动的误读又何止于此呢？　　<BR>微软与中国发改委签署的关于继续加强软件产业合作（二期）的谅解备忘录，未来5年涉及金额超过37亿美元。结果就被媒体解读为微软未来5年对华投资37亿美元。但实际上呢？37亿中有35亿是硬件采购——微软即使不和发改委签约，也可能要到中国来采购；剩下的2亿，又有1亿是软件外包；换言之，37亿元中只有1亿才能算是实打实的投资！　　<BR>而在这1亿元的投资中，微软也是收益不菲。比如微软曾经以区区2500万美元的代价，就获得了浪潮国际超过四分之一的股份，并间接获得其它优质企业的股权。其.net平台也凭借与浪潮国际的合作关系，曲线进入了外资很难直接进入的电子政务平台。微软与中国的合作中，谁受益更多，不言自明…… 　　<BR>也许正是不错的收益，微软近期也加快了与中国企业的合作。在7月31日签约亿阳信通之后，微软在过去的5个月内，与5家中国企业结成战略或技术合作关系，超过了过去5年的总和。目前，微软的合作伙伴已遍及政府、电信、金融、服务外包、数字娱乐等各个行业。微软也借此不断推进在中国的产业布局，并已曲线争取到了不少行业用户的订单。　　<BR>综上所述，我们不难发现微软在对华合作中纯粹只是一只利益动物而已。实际上，这也无可厚非。因为微软本来就是一家以赢利为第一目标的企业。无论是GSP还是此前的Vista价格雪崩，都不过是微软对中国市场公关的一种手腕而已，完全不用大惊小怪。　　<BR>只是部分媒体在报道微软中那些有意无意的“省略”，着实值得让人玩味…… 文章引用自： </div>
+	  
+	  <!-- 发表评论 -->
+	  <form name="frm" method="post">
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 发表评论</div>
+	  </div>
+	  <div class="newsContent">
+	    <img src="/news2/images/face/em01.gif"><input type="radio" name="face" value="em01.gif" checked>
+	    <img src="/news2/images/face/em02.gif"><input type="radio" name="face" value="em02.gif">
+	    <img src="/news2/images/face/em03.gif"><input type="radio" name="face" value="em03.gif">
+	    <img src="/news2/images/face/em04.gif"><input type="radio" name="face" value="em04.gif">
+	    <img src="/news2/images/face/em05.gif"><input type="radio" name="face" value="em05.gif">
+	    <img src="/news2/images/face/em06.gif"><input type="radio" name="face" value="em06.gif">
+	    <img src="/news2/images/face/em07.gif"><input type="radio" name="face" value="em07.gif">
+	    <img src="/news2/images/face/em08.gif"><input type="radio" name="face" value="em08.gif">
+	    <img src="/news2/images/face/em09.gif"><input type="radio" name="face" value="em09.gif">
+	    <img src="/news2/images/face/em10.gif"><input type="radio" name="face" value="em10.gif">
+	    <img src="/news2/images/face/em11.gif"><input type="radio" name="face" value="em11.gif">
+	  </div>
+	  <div class="newsImg"><textarea name="content"></textarea></div>
+	  <div class="newsContent">
+	    姓名：<input type="text" name="userName" size="20">
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <input type="button" value="发表" onclick="addReviews()">
+	  </div>
+	  </form>
+	  <!-- 评论内容 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 新闻点评</div>
+	  </div>
+      <span id="reviewSpan"></span>
+	  
+	  <br>
+	</div>
+    
+    
+    <!-- 网页脚 -->
+    <div class="footDiv">
+      网站简介 - 广告服务 - 网站地图 - 帮助信息 - 联系方式<br>
+   Copyrights &copy; 2014 hys.com All Rights Reserved
+</div>
+  </body>
+</html>
+
+
+

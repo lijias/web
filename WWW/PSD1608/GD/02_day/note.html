@@ -1,0 +1,48 @@
+GD库
+1.应用不同的背景作为图片资源
+  imagecreatefrom图片格式(string $filename);
+  
+  getimagesize($string $filename);
+      功能:获取图片信息
+  imagefontwidth(int $font);
+      功能:获取文字的宽度
+      参数:
+  font 整数1~5
+      返回:
+  imagefontheight(int $font)
+      功能:获取文字的高度
+  imagecopy(resource $des_img,resource $src_img 
+            int $des_x, int $des_y,
+            int $src_x, int $src_y,
+            int $src_w, int $src_h);
+       功能:将两张图片合并为一张图片
+   
+       图片的缩放和剪接
+   imagecopyresampled(resource $des_img,resource $src_img 
+                     int $des_x, int $des_y,
+                     int $src_x, int $src_y,
+                     int $des_w, int $des_h,
+                     int $src_w, int $src_h);
+   $des_img 图片缩放后的资源
+   $src_img 原图片的资源         
+       图片的旋转
+   imagerotate(resource $img,float $angle,int $bgd_color)
+       功能: 图片的旋转   
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+               

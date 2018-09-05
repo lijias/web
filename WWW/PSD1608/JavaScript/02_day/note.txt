@@ -1,0 +1,246 @@
+JavaScript
+
+3.变量的作用域
+
+三.运算
+    1.按功能划分
+       -算术运算
+        + - * / %(模) + -
+        
+       -字符串运算
+        +
+        
+       -逻辑运算
+        && 
+        ||
+        !
+        
+       -比较运算
+         > < >= <= != <> == === !==
+         
+        -赋值运算
+         = += -= *= /= %=
+         
+     2.按运算项目来划分
+        -单目运算
+        +(正) -(负) ++ -- !
+        
+        -双目运算 
+        
+        -三目运算
+        exp1?exp2:exp3
+         当表达式exp1为真取值exp2为假取值exp3
+         
+ 四.流程控制
+     1.分支语句
+        if
+        if...else...
+        if...else if...
+        
+        switch(条件表达式){
+                  case  表达式1:
+                                 运算;
+                            break;
+                 [case  表达式2:
+                                 运算;
+                            break; 
+                     default:
+                                   运算;]                           
+        }
+        
+      2.循环
+         for
+         
+         while
+         
+         do...while...
+         
+         while和do...while...的区别
+         无论条件满足与否,do...while至少会执行一次循环体.
+         
+五.JavaScript的对象
+    JavaScript的对象都含有属性和方法
+    JavaScript的对象对于属性和方法的引用通过:.
+    例如:对象.属性
+            对象.方法
+        
+        1.字符串对象
+             定义:var str = new string()
+             定义时赋初值:var str = new String(string value)
+             
+            属性:
+            length 字符串的长度
+            
+            方法:
+            对象.indexOf (string substr)
+            功能:获取substr在对象中的首次出现的位置
+            参数:
+              substr 子字符串
+            返回:位置.若子字符串在字符串对象中不存在,则返回-1
+            
+            对象.toLowerCase() 
+            功能: 将字符串对象转换为小写
+            返回:转换后的字符串 
+     
+            对象.toUpperCase() 
+            功能: 将字符串对象转换为大写
+            返回:转换后的字符串
+            
+            对象.substr(number start[,number length])
+            功能: 字符串对象的截取
+            参数:
+          strat 截取的开始
+          length 截取的长度
+            返回:被截取过的字符串   
+            
+           对象.slice(number start[,number end])  
+           功能：字符串对象的截取
+           参数：
+         start 截取的开始
+         end   截取到第几位位置
+           返回：被截取过的字符串       
+           
+ 2、日期对象
+       var 变量 = new Date()
+
+       方法：
+       对象.getFullYear()
+       功能：获取当前年份（四位 2016）
+       返回：当前的年份
+
+       对象.getMonth()
+       功能：获取当前月份 （0~11）
+       返回：当前的月份 
+
+       对象.getDate()
+       功能：获取当前日期
+       返回：当前的日期
+
+
+       对象.getHours()
+       功能：获取当前小时
+       返回：获取当前小时
+
+       对象.getMinutes()
+       功能：获取当前分钟
+       返回：获取当前分钟
+
+       对象.getSeconds()
+       功能：获取当前秒数
+       返回：获取当前秒数    
+       
+       对象.getDay()
+       功能：获取当前的星期值（0~6）
+       返回：当前的星期值 0：星期日
+                          1~6：星期一至星期六
+                          
+     3、数学对象
+        属性：
+        数学对象.PI 
+        Math.PI
+        
+        方法
+        Math.round(变量)
+        功能：四舍五入
+        返回：四舍五入返回值
+
+        Math.ceil(变量)
+        功能：向上取整
+      
+        Math.floor(变量)
+        功能：向下取整 
+
+        Math.abs(变量)
+        功能:取绝对值
+
+        Math.random()
+        功能：取随机数（0~1），伪随机数。
+      
+     4、数组对象
+        数组对象的声明：
+        var arr = new Array();
+        var arr = [];
+  
+        声明数组对象时赋初值
+         var arr = new Array(2,3,4);
+         var arr = [2,3,4]
+
+        属性：
+        length 长度
+
+        数组输出：
+        document.write(数组名称)
+
+        数组赋初值
+        按数组小标赋初值
+        var arr = [];
+        arr[0]="hello";
+        
+        方法：
+        数组对象.concat(数组对象) 
+        功能：连接两个数组
+        返回：连接后的两个数组
+
+        数组对象.pop()
+        功能：弹出数组的最后一个元素
+        返回：返回被弹出的元素
+
+        数组对象.push()
+        功能：在数组最后添加一个元素
+        返回：新数组的长度
+六.JavaScript 的自定义函数
+     自定义函数的语法  
+     function 函数名称([参数]){
+         函数体
+     } 
+     
+     函数名称:1.函数采用数字,字母,下划线.数组不能作为函数名称的开始.
+                2.函数名称建议用小驼峰式命名规则
+                3.函数名称要尽量起的有意义.
+         
+    参数:最多可以有255
+    
+    函数体:函数执行的代码段.
+    
+    -var 函数名称 = new Functions([参数])
+    
+    -匿名函数方式
+     function([参数]){
+        函数体
+     }         
+     
+     自定义函数的调用:
+     -函数名称([参数])
+     -<a href="Javascript:函数名称([参数]);"></a>    
+     -事件触发方式
+     
+     JavaScript变量的作用域
+    全局变量：在自定义函数体外声明的变量
+    局部变量：在自定义函数体内声明的变量  
+    
+七.DOM
+    DOM(Document Objec Model)
+    Document  HTML/XML
+    
+    Object: JavaScript想要操作HTML/XML,需要将HTML/XML转换成  JavaScript对象
+    
+    -属性
+    -文本
+    -样式
+    
+    1.获取JavaScript对象
+       document.getElementsByTagName(HTML tag)
+        功能:把HTML元素转换为JavaScript对象
+        返回:JavaScript对象.数组对象
+        
+       document.getElementsByName(HTML name属性值)
+        功能:把HTML元素转换为JavaScript对象
+        返回:JavaScript对象.数组对象    
+        
+       document.getElementById(HTML id属性值)
+        功能:把HTML元素转换为JavaScript对象
+        返回:JavaScript对象
+        
+        -属性
+           属性的读取
+           对象.HTML属性名称         

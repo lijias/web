@@ -1,0 +1,117 @@
+JavaScript
+一、概述
+    JavaScript 是运行在客户端的解释型脚本语言。
+
+    解释型：PHP、JavaScript
+            每次运行前对程序进行编译成机器语言。
+    编译型：C、Java
+            第一次运行需要将程序编译成机器语言。在下一次运行时不再进行编译。
+
+    JavaScript的用途
+    - 是网页产生动态化效果。
+    - 对用户输入数据进行验证。
+    - 读取HTML/XML页面中的内容。
+
+    什么是XML
+    eXtensionable Markup Language(扩展标记语言)
+    XML没有规定的标签，要求所有的标签必须成对出现。
+    用途：在互联网中作为信息的载体和传递者。
+    XML 特点：不作为
+
+
+二、JavaScript应用
+    1、调试工具
+       Firefox firebug
+       安装：
+       打开菜单->附加组件->扩展->搜索"firebug"
+    
+       chrome
+       自带调试工具
+
+       IE httpwatch
+    
+    2、语法
+       JavaScript严格区分大小写
+
+       JavaScript可有可无的分号（所有语句结束时加上分号）
+ 
+       JavaScript注释：
+       - 单行注释 //
+
+       - 多行注释 /* 被注释掉的内容 */
+
+       
+       alert(string str)
+       功能：弹出一个对话框
+       参数：
+       str  弹出的对话框的内容
+       
+
+       document.write(string str) 
+       功能：在浏览器上输出str
+       参数：
+       str  在浏览器上输出的内容
+
+
+       JavaScript 的引入
+       1、 在HTML文件中引入JavaScript脚本
+           - 将JavaScript以单独的脚本方式引入。
+             JavaScript 文件定义：扩展名.js.
+             <script src="JavaScript脚本的地址"></script>
+
+           - 将JavaScript以代码方式引入。
+             <script>
+              JavaScript代码
+             </script>
+       
+        2.Javascript的变量
+
+
+    
+                
+
+
+    
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

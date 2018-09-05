@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";
+/*公共样式*/
+.area{
+	width:1000px;
+	margin:0 auto;
+}
+/*================================*/
+/*头部样式 */
+#header{
+	height:100px;
+	background:#f00;
+}
+/*conentA样式 */
+#contentA{
+	margin-top:10px;
+}
+#contentA .left{
+	float:left;
+	width:290px;
+	height:200px;
+	background:#f0f;
+	margin-right:10px;
+}
+#contentA .center{
+	float:left;
+	width:290px;
+	height:200px;
+	background:#ff0;
+	margin-right:10px;
+}
+#contentA .right{
+	float:right;
+	width:400px;
+	height:200px;
+	background:#00f;
+}
+/*contentB样式*/
+#contentB{
+	margin-top:10px;
+}
+#contentB .left{
+	float:left;
+	width:290px;
+	height:200px;
+	background:#000;
+	margin-right:10px;
+}
+#contentB .right{
+	float:right;
+	width:700px;
+	height:200px;
+	background:#0f0;
+}
+
+
+
+
+
+
+
+

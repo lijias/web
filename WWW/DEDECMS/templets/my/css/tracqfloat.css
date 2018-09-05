@@ -1,0 +1,47 @@
+/*2011-6-9 http://sysimages.tq.cn/images/vip/*/
+/*
+09.09.15修正了对方网站背景图及背景色全局CSS对我们的影响
+2011-4-29修正了对方网站img(float:left)全局CSS对我们的影响
+*/
+
+.tracq_div_main {PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;position:absolute;width:118px;font-size:12px;border:0px;}
+.tracq_div_title {line-height:14px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;TEXT-ALIGN:left;position: absolute;width:100px;height:20px;font-size:12px;border:0px;left:5px;top:6px;cursor:move}
+.tracq_div_close {TEXT-ALIGN:center;padding:0px;position: absolute;width:14px;height:14px;font-size:12px;border:0px;left:104px;top:6px;}
+.tracq_table_main{line-height:20px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;width:118px;font-size:12px;border:0px;}
+.tracq_tr_main {line-height:20px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;width:118px;font-size:12px;border:0px;}
+.tracq_td_main {line-height:20px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;vertical-align: middle;width:118px;height:21px;font-size:12px;border:0px;}
+.tracq_td_main_1 {line-height:20px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;vertical-align: middle;width:118px;height:40px;font-size:12px;border:0px;}
+.tracq_td_main_2 {line-height:20px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;vertical-align: middle;text-align:center;width:118px;height:25px;font-size:12px;border:0px}
+.tracq_table_term {line-height:20px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;height:100%;width:104px;font-size:12px;border:0px;background-color:#ffffff}
+.tracq_tr_term {line-height:20px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;width:104px;border:0px}
+.tracq_td_term {line-height:20px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;vertical-align: middle;text-align:center;width:104px;height:21px;border:0px}
+.tracq_td_down {line-height:20px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;vertical-align: middle;text-align:center;width:118px;font-size:12px;border:0px;}
+.tracq_img{BACKGROUND:transparent none repeat scroll 0% 0%;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;display: inline;border:0px;VERTICAL-ALIGN: none;}
+
+/*new float*/
+.tracq_div{float:none;BACKGROUND:transparent none repeat scroll 0% 0%;color:#000000;font-size:12px;line-height:14px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;border:0px solid #d35555;margin:0px 0px 0px 0px;overflow:hidden;FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, "Bitstream Vera Sans",sans-serif;word-break:break-all;text-align:left;position:static;z-index:8000;}
+.tq_div_main{float:none;BACKGROUND:transparent none repeat scroll 0% 0%;color:#000000;font-size:12px;line-height:14px;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;border:0px solid #d35555;margin:0px 0px 0px 0px;overflow:hidden;FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, "Bitstream Vera Sans",sans-serif;word-break:break-all;text-align:left;position:static;z-index:8000;}
+
+a.tq_a:link{color:#000000;text-decoration: none}
+a.tq_a:visited{color:#000000;text-decoration:none}
+a.tq_a:active{color:#000000;text-decoration:none}
+a.tq_a:hover{color:#000000;text-decoration:none}
+
+.tq_common{float:none;BACKGROUND:transparent none repeat scroll 0% 0%;PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px;border:0px solid #d35555;margin:0px 0px 0px 0px;overflow:hidden;font-size:12px;FONT-FAMILY: Tahoma, Verdana, Arial, Helvetica, "Bitstream Vera Sans",sans-serif;word-break:break-all;text-align:left;line-height:14px;position:static;z-index:8000;}
+.tq_tacticTermFloater{background-color:#f3f3f3;}
+#tq_tacticTermHead{CURSOR: move; COLOR: #FFFFFF; height:27px;margin:1px;}
+.tqfloat_title{CURSOR: move; COLOR: #FFFFFF; height:27px;margin:1px;}
+#tq_tacticTermClose{float:right;width:15%;cursor:pointer;font-size:18px;margin:3px 1px 3px 0px;}
+#tq_tacticTermTitle{margin:6px 0px 3px 4px;height:14px;line-height:14px;}
+#tq_tacticTermContainer{margin:0px 1px 1px 1px;}
+#tq_tacticTermContent{float:left;width:100%;overflow-y:auto;SCROLLBAR-FACE-COLOR: #cccccc; SCROLLBAR-HIGHLIGHT-COLOR: #efefef; SCROLLBAR-SHADOW-COLOR: #efefef; SCROLLBAR-3DLIGHT-COLOR: #cccccc; SCROLLBAR-ARROW-COLOR: #000000; SCROLLBAR-TRACK-COLOR: #999999; SCROLLBAR-DARKSHADOW-COLOR: #cccccc;background-color:#f3f3f3;}
+.tq_tacticTerm{font-weight:normal;cursor:pointer;color:#000000;height:22px;font-size:13px;}
+.tq_tacticTermStatus{float:right;font-weight:normal;margin-right:5px;margin-top:2px;color:#FF3300;}
+.tq_tacticTermOnline .tq_tacticTermStatus{color:#FF3300;}
+.tq_tacticTermOffline .tq_tacticTermStatus{color:#FF3300;}
+.tq_tacticTermName{cursor:pointer;padding-left:5px;line-height:18px;}
+#tq_tacticTermPhone{cursor:pointer;font-size:12px;margin:4px 5px 5px 5px;border:1px solid #a5a5a5;color:#FF9900;height:25px;padding:6px 2px 2px 0px;background:#FFFFFF;text-align:center;}
+#tq_tacticTermFoot{border:0px solid #d35555;clear:both;margin:5px 1px 5px 1px;color:#00FFFF;height:26px;width:100%;text-align:center;cursor:pointer;height:20px;}
+#tracqfloater img{float:none}
+#tracqfloater1 table{margin:0;padding:0}
+#tracqfloater1 img{float:none;margin:0;padding:0}

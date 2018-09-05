@@ -1,0 +1,88 @@
+JavaScript
+      设置属性
+       对象.HTML属性名称=值
+            
+   - 文本
+     对象.innerHTML
+     对象.innerText
+     对文本的读取
+     对象.innerHTML
+     对象.innerText
+     对文本的写入
+     对象.innerHTML=文本内容
+     对象.innerText=文本内容
+  
+     innerHTML和innerText的区别:
+     innerText不识别HTML标签。建议使用innerHTML。
+     
+        - 样式
+     读：
+     对象.style.css样式属性名称
+     css样式属性名称：若属性名称中间有"-",将“-”去掉，然后下一个单词首字母大写。
+     例如：background-color 
+     改为：backgroundColor
+     写：
+     对象.style.css样式属性
+     
+          Model
+     将整个HTML文档看成一个倒置的树形结构。这个结构就成为模型（Model）
+     在这个模型上，我们称所有的html元素、注释、文本、文档为模型的节点。
+     所有的节点之前都是相互关联的。找到其中的一个节点，就可以找到HTML文档中的任意一个节点。
+   
+     所有的节点都有：节点名称（nodeName） 节点类型(nodeType) 
+     有些节点有：节点值(nodeValue)
+      
+     父节点：parentNode
+  
+     子节点：childNodes firstChild lastChild
+     
+     同胞节点：previousSibling(上一个)  
+                  nextSibling（下一个）
+
+     创建节点
+     document.createElement(HTML Tag)
+     功能：创建节点
+     参数：
+     HTML Tag  要创建的HTML元素的名称
+     返回：
+     节点对象
+
+     添加节点
+     父节点对象.appendChild(要添加的节点对象)
+     
+
+     删除节点
+     父节点对象.removeChild(要删除的节点对象)
+   
+   八、JavaScript事件
+    一、事件源
+        HTML所有元素都可以作为事件源
+    
+    二、事件
+        鼠标事件  click 单击
+                  dblclick 双击
+                  mouseover 划入
+                  mouseout 划出
+                  mouseup  鼠标抬起
+                  mousedown 鼠标按下
+        键盘事件  keypress  键盘按下
+                  keydown   键盘按下
+                  keyup     键盘抬起
+  
+        文档事件  load     文档读取完毕后事件
+                  unload   文档被关闭之前的事件
+
+        表单事件  focus    获取焦点事件
+                  blur     失去焦点事件
+                  change   改变事件
+                  submit   提交事件 
+
+     三、事件的处理程序
+         - <tag on事件名称=事件处理程序>
+           <input type="button" onclick="alert("hello")">
+           事件处理程序：
+            一段JavaScript代码
+            JavaScript自定义函数名称
+
+         - 对象.on事件名称=事件处理程序
+           事件处理程序 匿名函数

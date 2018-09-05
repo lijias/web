@@ -1,0 +1,143 @@
+<html>
+  <head>
+    <title>天天新闻网</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link href="../../css/news.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../../kindeditor/kindeditor.js"></script>
+    <script type="text/javascript" src="../../jquery/jquery-1.4.js"></script>
+    <script type="text/javascript">
+      var editor;
+      KindEditor.ready(function(e){
+          editor = e.create("[name=content]",{
+              "width":"560px",
+              "height":"200px",
+              "items":["undo","redo","|","bold","italic","underline"]
+          });
+      });
+      //利用ajax发表评论
+      function addReviews()
+      {
+    	  if(editor.html() == "")
+   		  {
+    		  alert("请输入评论内容！");
+    		  editor.focus();
+   		  }
+    	  else if(document.frm.userName.value == "")
+   		  {
+    		  alert("请输入评论人的姓名！");
+    		  document.frm.userName.focus();
+   		  }
+    	  else
+   		  {
+    		  //发表评论
+    		  $.ajax({
+    			  type:"post",
+    			  url:"../../plus/addreview.php",
+    			  data:"face="+document.frm.face.value+"&content="+editor.html()+"&userName="+document.frm.userName.value+"&articleId=21",
+    			  dataType:"html",
+    			  success:function(msg){
+    				  $("#reviewSpan").html(msg);
+    				  editor.html("");
+    				  document.frm.userName.value = "";
+    				  document.frm.face[0].checked = true;
+    			  }
+    		  });
+   		  }
+      }
+      //一打开页面就获得所有评论
+      function getReviews()
+      {
+    	  $.ajax({
+			  type:"post",
+			  url:"../../plus/addreview.php",
+			  data:"articleId=21",
+			  dataType:"html",
+			  success:function(msg){
+				  $("#reviewSpan").html(msg);
+			  }
+		  });
+      }
+    </script>
+  </head>
+  <body onload="getReviews()">
+    <!-- 网站头 -->
+    <div class="headDiv">
+  <div class="headDiv1">
+    <div class="headDiv10">www.<b>ttnewS</b>.com</div>
+    <div class="headDiv11"><img src="/news2/images/banner17.gif" width="370" height="50"></div>
+  </div>
+  <div class="headDiv2">天天新闻网</div>
+</div>
+<!-- 导航菜单 -->
+<div class="menuDiv">
+  <a href="/news2/index.html" class="a">首页</a> | 
+  <a href='/news2/html/1/newstype.html' class='a'>国内新闻</a> | <a href='/news2/html/2/newstype.html' class='a'>体育新闻</a> | <a href='/news2/html/3/newstype.html' class='a'>国际新闻</a> | <a href='/news2/html/4/newstype.html' class='a'>科技新闻</a> | <a href='/news2/html/6/newstype.html' class='a'>IT新闻</a> | 
+  <a href="/news2/plus/search.php" class="a">搜索</a>
+</div>
+
+
+
+
+
+
+
+
+	
+	<!-- 正文内容 -->
+	<div class="mainDiv clear">
+	  <!-- 显示的新闻 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">
+	      &nbsp;<a href="../../index.html" class="a">新闻主页</a> &raquo; 科技新闻
+	    </div>
+	  </div>
+	  <div class="newsTitle">中国IT企业的竞争力下降了吗？</div>
+	  <div class="newsTime">2016-10-02 17:00:21</div>
+	  
+	  <div class="newsContent">近日的三条重头新闻让笔者思考了许久。第一条是电子百强的发布；第二条是世界品牌500强联想排名暴跌；第三条是联想与浪潮服务器一季度跌出全球前十。 首先是电子百强的排名，亏损企业首先榜上有名令人费解。难道是我们的百强排名如果不把亏损企业也算在内的话，连百强的数目都凑不够吗？抑或是如果不把这些亏损的企业算在内而用另外企业代替的话，不但是亏损的，就连销售额也会很难看吗？其次，连排名靠前的联想、华为、中兴等企业的利润率也呈下降趋势。总之，亏损企业的上榜、利润率的下降无论从哪个角度讲，都无疑说明我们企业的竞争力正在下降。而且从与创新密切相关的研发投入上，我们的百强仍旧没有达到国际公认的比例，如果企业没有创新，那么何谈竞争力的提高。值得一提的是，就在我们的百强公布之前不久，美国的《商业周刊》发布了50强排名和全球最具创新力25家公司排名，三个排名的对比，无论从企业收入、盈利和创新能力上，无不令我们的百强相形见绌。实际上不仅仅是我们的企业，就连我们百强的排名标准和人家也有很大的差距。 再看世界品牌500强排名，联想排名暴跌。从排名上看，联想的排名从去年的110名，跌至今年的337名，排名竟然下降了227名。之所以重点提及联想的排名，是因为联想是当今中国IT企业国际化的代表并可能是唯一成功的希望。本以为收购IBM PC的联想的品牌影响力应该有所提高，加之联想所谓的体育营销，应该是更上层楼，但没料到的是品牌的大幅缩水。这至少从某种角度说明，联想在并购IBM PC后的两年内，品牌的建设和推广并未达到预期的效果，甚至有可能原IBM PC的品牌也因为联想的收购而缩水。这个结果也同时证明了前不久国外相关公司和人士对于联想不是品牌和品牌命名欠妥的评论不是毫无根据和道理。 第三就是我们始终认为是自主创新最强领域的服务器的排名被挤出前十。尽管联想、浪潮服务器在国内的市场仍在增长，但从全球的角度看，他们的竞争力正在下降。其实这样的结果并不惊奇。首先，服务器对于联想来说，只是边缘性的业务，谁都知道联想的重心是在PC上。再看一直蝉联国内服务器市场首位的浪潮，今年年初的内部管理的变革（服务器部门划归浪潮集团直接管辖）之后，其市场化的运作态势骤减，国企管理的弊端初现，截至到目前为止，浪潮基本上没有什么像样的技术和产品的发布，策略上也没有清晰的思路展现于业内。而与浪潮并行的曙光除了年初有过一次所谓的战略性发布之外，更多地是在自身市场份额极小的情况下（例如刀片服务器，IBM和HP占领了近90%的市场份额，曙光的份额简直可以忽略不计），空洞地呼吁建立中国自己的高性能计算标准（以刀片服务器的标准切入），而实质性的技术和产品的发布与浪潮一样匮乏，浮躁和急于求成的心态溢于言表。在国外服务器厂商不断打压下，国产服务器厂商往昔的辉煌恐怕难以再现。 其实除了上述三条新闻外，我们所谓的骨干企业都面临艰难的处境。2006年，电信设备制造商中兴的收入减少40%，这其实也从另一个侧面映射出其竞争对手华为也面临着类似的困境。而曾经被认为可以超越中国台湾半导体制造对手的中芯国际和上海宏力也都面临着困境。例如中芯国际自2004年首次公募以来，其在芯片制造业中所占份额已经下跌了近54%，在其第一季度财报时，尽管其自己宣称盈利900万美元，但有国外机构称，如果没有之前的财务盈余，中芯国际可能会亏损4000万美元。在手机市场，诺基亚、摩托罗拉和三星在中国市场的强力竞争，使得国内的TCL和波导等在内的手机厂商的市场份额出现缩水。 我们企业的核心竞争力在哪里？我们真的理解它的含义吗？政府支持真的是企业做大做强的保证吗？我们企业所谓的创新究竟是不是创新？我们的心态是否依旧浮躁和务虚？我们的企业真的应该冷静下来好好梳理这些问题了！ </div>
+	  
+	  <!-- 发表评论 -->
+	  <form name="frm" method="post">
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 发表评论</div>
+	  </div>
+	  <div class="newsContent">
+	    <img src="/news2/images/face/em01.gif"><input type="radio" name="face" value="em01.gif" checked>
+	    <img src="/news2/images/face/em02.gif"><input type="radio" name="face" value="em02.gif">
+	    <img src="/news2/images/face/em03.gif"><input type="radio" name="face" value="em03.gif">
+	    <img src="/news2/images/face/em04.gif"><input type="radio" name="face" value="em04.gif">
+	    <img src="/news2/images/face/em05.gif"><input type="radio" name="face" value="em05.gif">
+	    <img src="/news2/images/face/em06.gif"><input type="radio" name="face" value="em06.gif">
+	    <img src="/news2/images/face/em07.gif"><input type="radio" name="face" value="em07.gif">
+	    <img src="/news2/images/face/em08.gif"><input type="radio" name="face" value="em08.gif">
+	    <img src="/news2/images/face/em09.gif"><input type="radio" name="face" value="em09.gif">
+	    <img src="/news2/images/face/em10.gif"><input type="radio" name="face" value="em10.gif">
+	    <img src="/news2/images/face/em11.gif"><input type="radio" name="face" value="em11.gif">
+	  </div>
+	  <div class="newsImg"><textarea name="content"></textarea></div>
+	  <div class="newsContent">
+	    姓名：<input type="text" name="userName" size="20">
+	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	    <input type="button" value="发表" onclick="addReviews()">
+	  </div>
+	  </form>
+	  <!-- 评论内容 -->
+	  <div class="newsTypeDiv" style="border:1px solid #990100;">
+	    <div class="newsTypeDiv1">&nbsp;&raquo; 新闻点评</div>
+	  </div>
+      <span id="reviewSpan"></span>
+	  
+	  <br>
+	</div>
+    
+    
+    <!-- 网页脚 -->
+    <div class="footDiv">
+      网站简介 - 广告服务 - 网站地图 - 帮助信息 - 联系方式<br>
+   Copyrights &copy; 2014 hys.com All Rights Reserved
+</div>
+  </body>
+</html>
+
+
+

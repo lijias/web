@@ -1,0 +1,24 @@
+1登录
+{"username":"rose","password":"123","remember":"1"}
+1sql语句
+select id from user 
+			  where 
+			 username='rose' and password='123' 
+1 \r 登录
+{"username":"rose","password":"123","remember":"1"}
+1 \r sql语句
+select id from user 
+			  where 
+			 username='rose' and password='123' 
+1  登录
+{"username":"rose","password":"123","remember":"1"}
+2  sql语句
+select id from user 
+			  where 
+			 username='rose' and password='123' 
+1  登录
+{"username":"admin","password":"admin","remember":"1"}
+2  sql语句
+select id from user 
+			  where 
+			 username='admin' and password='admin' 

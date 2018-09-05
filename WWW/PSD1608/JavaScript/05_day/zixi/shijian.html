@@ -1,0 +1,149 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<title>JavaScript 事件 TAB切换</title>
+<style>
+#tab{
+	font-size:14px;
+}
+
+#tit{
+	width:300px;
+	height:30px;
+}
+
+#tit h3{
+	width:96px;
+	height:30px;
+	line-height:30px;
+	border:2px solid #fff;
+	background-color:#ccc;
+	float:left;
+	text-align:center;
+	color:#fff;
+	margin:0px;
+}
+
+#content{
+	background-color:#888;
+	width:300px;
+}
+
+#content ul{
+	list-style-type:none;
+}
+
+#content div{
+	display:none;
+}
+
+#content .now{
+	display:block;
+}
+
+#tit .tit_now{
+	background-color:#888;
+}
+</style>
+</head>
+
+
+<body>
+<!-- 最外层div -->
+<div id="tab">
+	<!-- 新闻分类div -->
+	<div id="tit">
+	  <h3 class="tit_now"  onmouseover="change(0)">国际</h3>
+	  <h3 onmouseover="change(1)">国内</h3 >
+	  <h3 onmouseover="change(2)">娱乐</h3>
+	</div>
+	<!-- 新闻分类div -->
+	
+	<!-- 新闻标题div -->
+	<div id="content">	 
+	   <div class="now">
+	      <ul>
+	        <li>国际新闻1</li>
+	        <li>国际新闻2</li>
+	        <li>国际新闻3</li>
+	        <li>国际新闻4</li>
+	        <li>国际新闻5</li>
+	      </ul>
+	   </div>
+	   
+	    <div>
+	      <ul>
+	        <li>国内新闻1</li>
+	        <li>国内新闻2</li>
+	        <li>国内新闻3</li>
+	        <li>国内新闻4</li>
+	        <li>国内新闻5</li>
+	      </ul>
+	   </div>
+	   
+	    <div>
+	      <ul>
+	        <li>娱乐新闻1</li>
+	        <li>娱乐新闻2</li>
+	        <li>娱乐新闻3</li>
+	        <li>娱乐新闻4</li>
+	        <li>娱乐新闻5</li>
+	      </ul>
+	   </div>
+	
+	   
+	</div>	
+	<!-- 新闻标题div -->
+</div>
+<!-- 最外层div -->
+<script>
+//获取对象
+//获取h3对象
+var h3=document.getElementsByTagName("h3");
+//先定点content然后获取div对象
+var div=document.getElementById("content").getElementsByTagName("div");
+//自定义函数
+ function change(id){
+	 //循环获取下标
+	 for(var i=0;i<h3.length;i++){
+		 //判断i是否等于参数id
+		 if(i==id){
+			 //若相等给h3和div添加class样式
+			 h3[i].className="tit_now";
+			 div[i].className="now";
+		 }else{
+			 //若不相等设为空
+			 h3[i].className="";
+			 div[i].className="";
+		 }
+	 }
+ }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

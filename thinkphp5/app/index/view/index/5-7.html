@@ -1,0 +1,73 @@
+{block name="content"}
+<!--switch 判断-->
+{switch name="Think.get.level" }
+{case value="1|2"} <p>1或者2</p>{/case}
+{case value="3"} <p>3</p>{/case}
+{default/} <p>没东西</p>
+{/switch}
+
+<!--range 判断-->
+{range name='Think.get.level' value='1,2,3' type='in'}
+<p>在1,2,3之中</p>
+{else/}
+<p>不在1,2,3之中</p>
+{/range}
+
+{in name='Think.get.level' value='1,2,3'}
+<p>在1,2,3之中</p>
+{else/}
+<p>不在1,2,3之中</p>
+{/in}
+
+{notin name='Think.get.level' value='1,2,3'}
+<p>不在1,2,3之中</p>
+{else/}
+<p>在1,2,3之中</p>
+{/notin}
+
+{range name='Think.get.level' value='1,10' type='between'}
+<p>在1-10之间(包括1和10)</p>
+{else/}
+<p>不在1-10之间</p>
+{/range}
+
+{between name='Think.get.level' value='1,10'}
+<p>在1-10之间(包括1和10)</p>
+{else/}
+<p>不在1-10之间</p>
+{/between}
+
+{notbetween name='Think.get.level' value='1,10'}
+<p>不在1-10之间</p>
+{else/}
+<p>在1-10之间(包括1和10)</p>
+{/notbetween}
+
+<!--defined-->
+{defined name='APP_PATH_NO'}
+<p>已定义</p>
+{else/}
+<p>没定义</p>
+{/defined}
+
+<!--if-->
+{if condition="($Think.get.level==1)"}
+<p>level=1</p>
+{else/}
+<p>level!=1</p>
+{/if}
+
+<!--if and-->
+{if condition="($Think.get.level==1) AND ($Think.get.id==1)"}
+<p>level=1 且 id=1</p>
+{else/}
+<p>level!=1 或 id!=1</p>
+{/if}
+
+<!--if or-->
+{if condition="($Think.get.level==1) OR ($Think.get.id==1)"}
+<p>level=1 或 id=1 或 level=id=1</p>
+{else/}
+<p>level!=1 且 id!=1</p>
+{/if}
+{/block}

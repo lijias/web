@@ -1,0 +1,237 @@
+Yii框架
+
+脚手架的使用
+1、打开命令提示符窗口(Win7以管理方式打开)
+2、切换到项目中framework目录中
+3、输入如下命令
+   yiic webapp ../app
+
+
+项目目录
+app-----------------应用程序
+  assets------------第三方资源包
+  css---------------样式表
+  images------------图片
+  protected---------应用程序
+    components------组件目录(自定类)
+      Controller.php
+    configs---------配置文件
+      main.php
+    controllers-----控制器
+    models----------模型
+    views-----------视图
+      layouts-------布局
+  theme-------------主题目录
+  index.php---------入口文件
+framework-----------yii资源包
+
+
+控制器的命名规则
+1、必须采用大驼峰的命名规则
+2、必须以Controller来结尾
+IndexController.php
+LoginController.php
+
+
+控制器中方法的命名规则
+1、必须采用小驼峰的命名规则
+2、必须以action来开头
+actionIndex()
+actionLogin()
+actoinDelete()
+
+
+定义控制器的语法格式
+class XxxController extends Controller
+{
+  public function actionXxxxxx()
+  {
+    $this->renderPartial("视图");
+  }
+}
+
+
+视图文件的存储位置
+views
+  控制器(全小写)
+    xxxxx.php
+
+
+url路由
+1、url传参
+   http://localhost/项目/app/index.php
+   http://localhost/项目/app/index.php?r=控制器/方法
+   http://localhost/项目/app/index.php?r=控制器/方法/名/值
+   1)超链接
+     <a href="index.php?r=控制器/方法/名/值"></a>
+   2)引入样式
+     <link href="css/xxx.css">
+2、pathinfo
+   http://localhost/项目/app/index.php
+   http://localhost/项目/app/index.php/控制器/方法
+   http://localhost/项目/app/index.php/控制器/方法/名/值
+   1)链接地址
+     <a href="<?php echo APP?>/控制器/方法/名/值"></a>
+   2)引入样式表
+     <link href="<?php echo ROOT?>/css/xxx.css">
+
+
+自定义系统的常量：在入口文件中定义
+define("APP","/项目/app/index.php");
+define("ROOT","/项目/app");
+注意：只有在pathinfo访问方式下才用定义
+
+
+布局文件
+1、在views\layouts目录下新建一个布局文件(xxx.php)
+2、设置布局文件：修改Controller.php文件
+   public $layout = "//layouts/布局文件名";
+3、修改控制器中的代码
+   $this->render("视图名");
+4、设置页面的title标题
+   1)在控制器中添加如下代码
+     $this->setPageTitle("标题");
+   2)在布局文件中添加如下代码
+     <title><?php echo $this->getPageTitle()?></title>
+
+
+配置文件：configs/main.php
+1、设置默认的控制器
+   "defaultController"=>"控制器/方法",
+2、开启pathinfo访问模式
+   /*
+    "urlManager"=>array(
+      ...
+    ),
+   */
+   去掉上边代码的注释
+3、修改数据库的配置信息(yii采用pdo方式操作数据库)
+   /*
+     'db'=>array(
+	'connectionString' => 'mysql:host=localhost;dbname=库名',
+	'emulatePrepare' => true,
+	'username' => '用户名',
+	'password' => '密码',
+	'charset' => 'utf8',
+        'tablePrefix'=>'',//表名的前缀
+     ),
+   */
+   去掉上边代码的注释，并适当的修改
+
+
+
+模型的命名规则
+1、必须采用大驼峰的命名规则
+2、必须以表名来命名
+BbsInfo.php
+Reviews.php
+
+
+路径别名
+application	/项目/app/protected
+system		/项目/framework
+system.web	/项目/framework/web
+zii		/项目/framework/zii
+webroot		/项目/app
+
+
+定义模型的语法格式
+class 表名 extends CActiveRecord
+{
+  //返回当前模型类的对象(可有可无)
+  public static function models()
+  {
+     return new 类名();
+  }
+  //指定表名
+  public function tableName()
+  {
+     return "完整的表名";
+     return "{{省略了前缀的表名}}";
+  }
+}
+
+
+获得模型对象的方法
+$model = new 模型名();
+$model = 模型名::models();
+
+
+
+数据库操作
+1、查询多条记录，返回：二维数组
+   $result = $model->findAll();
+   $result = $model->findAll(条件);
+   $result = $model->findAll(array(
+      "condition"=>"条件",
+      "order"=>"排序",
+      "offset"=>起始值,
+      "limit"=>条数
+   ));
+   $result = $model->findAllBySql("select语句");
+2、删除记录，返回：受影响的行数
+   $result = $model->deleteAll();
+   $result = $model->deleteAll(条件);
+   $result = $model->deleteByPk(主键);
+3、添加记录，返回：受影响的行数
+   $model->字段名 = 值;
+   $model->字段名 = 值;
+   $model->字段名 = 值;
+   $result = $model->save();
+4、查询一条记录，返回：一维关联数组
+   $result = $model->find();
+   $result = $model->find(条件);
+   $result = $model->findByPk(主键);
+   $result = $model->findBySql("select语句");
+5、修改记录，返回：受影响的行数
+   $result = $model->updateAll(关联数组);
+   $result = $model->updateAll(关联数组,条件);
+   $result = $model->updateByPk(主键,关联数组);
+6、执行select语句，返回：二维数组
+   $db = Yii::app()->db;
+   $st = $db->createCommand("select语句");
+   $rs = $st->queryAll();
+7、执行select语句，返回：一维关联数组
+   $db = Yii::app()->db;
+   $st = $db->createCommand("select语句");
+   $rs = $st->queryRow();
+8、执行insert、update、delete语句，返回：受影响的行数
+   $db = Yii::app()->db;
+   $st = $db->createCommand("insert|update|delete语句");
+   $rs = $st->execute();
+9、count查询，返回：数字
+   $result = $model->count();
+   $result = $model->count(条件);
+   $result = $model->countBySql("select语句");
+
+
+
+
+class Yii
+{
+   public $db;
+   public $session;
+   public $cookie;
+   public $cache;
+   public $errorHandler;
+   ...
+
+   public static function app()
+   {
+      return 当前类对象;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>发布留言</title>
+<script src="jquery/jquery-1.4.js"></script>
+<script type="text/javascript">
+ function out(){
+	 if(confirm("是否要退出!!")){
+		 window.location = 'index.php';
+	 }
+ }
+</script>
+</head>
+<body>
+<a href='show.php'>查看信息</a>&nbsp;&nbsp;&nbsp;<a href='#' onclick="out()">退出系统</a>
+<br><br>
+信息发送:
+<br>
+<form action="write.php" method='post'>
+	<table border='1' width=350>
+		<tr>
+			<td>接收人:</td><td><input type='text' name='name'/></td>
+		</tr>
+		<tr>
+			<td>内容信息:</td><td><textarea rows="2px" cols="8px" name='content'></textarea></td>
+		</tr>
+		<tr>
+			<td colspan=2 align='center'>
+				<input type='submit' value='发送'/>&nbsp;&nbsp;&nbsp;
+				<input type='reset' value='复位'/>
+			</td>
+		</tr>
+	</table>
+</form>
+</body>
+</html>

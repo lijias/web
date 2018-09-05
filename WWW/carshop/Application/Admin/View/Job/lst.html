@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="<?PHP echo ADMIN_PUC;?>/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="<?PHP echo ADMIN_PUC;?>/css/main.css"/>
+    <script type="text/javascript" src="<?PHP echo ADMIN_PUC;?>/js/libs/modernizr.min.js"></script>
+    <script type="text/javascript" src="<?PHP echo ADMIN_PUC;?>/js/jquery-1.4.2.min.js"></script>
+</head>
+<body>
+
+<!--头部 -->
+<include file='Public:top'/>
+<!-- /头部 -->
+
+<div class="container clearfix">
+ <div class="sidebar-wrap">
+        <div class="sidebar-title">
+            <h1>菜单</h1>
+        </div>
+    <!--左侧-->
+<include file='Public:left'/>  
+    <!--/左侧-->
+    
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">求职管理</span></div>
+        </div>
+        <div class="search-wrap">
+            <div class="search-content">
+                <form action="" method="post">
+                    <table class="search-tab">
+                        <tr>           
+                            <th width="70">关键字:</th>
+                            <td><input class="common-text" placeholder="关键字" name="kw" value="" id="" type="text"></td>
+                            <td><input class="btn btn-primary btn2" name="sub" value="查询" type="submit"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        
+                        <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i><input form="myform" formaction="__CONTROLLER__/bdelete.html" type="submit" value="批量删除" class="btn btn-primary btn2"/></a>
+                        
+                    </div>
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th class="tc" width="5%"><input class="allChoose" id="check" name="" type="checkbox"></th>
+
+                            <th>ID</th>
+                            <th>应聘职位</th>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>籍贯</th>
+                            <th>学历</th>
+                            <th>操作</th>
+                        </tr>
+                        <foreach name="list" item="v">
+                        <tr>
+                            <td class="tc"><input name="ids[]" value="{$v.id}" class="check" type="checkbox"></td>           
+                            <td>{$v.id}</td>
+                            <td>{$v.title}</td>
+                            <td>{$v.name}</td>
+                            <td>{$v.sex}</td>
+                            <td>{$v.bplace}</td>
+                            <td>{$v.education}</td>
+                            <td>
+                                <a class="link-update" href="__CONTROLLER__/detail/id/{$v.id}.html">查看</a>
+                                <a class="link-del" onclick="return confirm('是否删除该求职吗!');" href="__CONTROLLER__/delete/id/{$v.id}.html">删除</a>
+                            </td>
+                        </tr>  
+                         </foreach>                     
+                    </table>
+                   <div class="list-page"> {$page}</div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>
+<script>
+	$("#check").click(function(){
+		if($(this).attr("checked"))
+		{
+			$(".check").attr("checked","checked")
+		}
+		else
+		{
+			$(".check").removeAttr("checked")
+		}
+	});
+</script>

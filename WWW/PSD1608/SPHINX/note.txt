@@ -1,0 +1,7 @@
+ sphinx
+生成索引
+bin\indexer -c etc\csft_mysql.txt --all
+安装
+bin\searchd --install --config etc/csft_mysql.txt
+启动
+bin\searchd -c etc\csft_mysql.txt

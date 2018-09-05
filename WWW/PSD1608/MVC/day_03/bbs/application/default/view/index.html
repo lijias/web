@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>网站首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="{$ROOT}/public/css/bbs.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+      function delBbs(bbsId)
+      {
+    	  if(confirm("是否删除该记录？")){
+    		  window.location = "{$APP}/Index/delete/bbsId/"+bbsId;
+    	  }
+      }
+      function updateBbs(bbsId)
+      {
+    	  window.location = "{$APP}/Update/index/bbsId/"+bbsId+".html";
+      }
+    </script>
+  </head>
+  <body>
+    {include file="header.html"}
+    
+    <table border="1" align="center" width="600">
+      <tr>
+        <td>编号</td>
+        <td>标题</td>
+        <td>点击次数</td>
+        <td>时间</td>
+        <td>操作</td>
+      </tr>
+      {foreach $bbsInfo as $v}
+      <tr>
+        <td>{$v.bbsId}</td>
+        <td>{$v.title}</td>
+        <td>{$v.clickTimes}</td>
+        <td>{$v.bbsTime}</td>
+        <td>
+          <input type="button" value="修改" onclick="updateBbs({$v.bbsId})">
+          <input type="button" value="删除" onclick="delBbs({$v.bbsId})">
+        </td>
+      </tr>
+      {/foreach}
+    </table>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+

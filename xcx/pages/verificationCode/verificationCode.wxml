@@ -1,0 +1,5 @@
+<!--pages/verificationCode/verificationCode.wxml-->
+<input type="text" class="input-text" name="mobile" bindinput="voteMobile" placeholder="请输入手机号码" /> 
+<button bindtap='sendVerif' disabled='{{disabledStatus}}'>{{buttonName}}</button>
+<input type="text" class="input-text" name="code" bindinput="voteCode" placeholder="请输入验证码" />
+<button bindtap='sub'>绑定手机</button>

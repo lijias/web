@@ -1,0 +1,64 @@
+﻿Memcached 内存管理的软件。
+内存缓存
+
+内存速度快，不怕高频次的读写。
+
+在线人数
+聊天系统
+文章点击数
+.....
+
+购物平台---实时显示每个网名访问的当前页面，及历史记录。
+
+1、安装
+复制memcached.exe到某目录下 D:/memecached.exe
+打开cmd窗口，跳转工作目录到 d:
+运行memcached.exe -d install
+运行memcached.exe -d start
+2、php如何使用memcached
+使用动态链接库 .dll
+使用类文件 memcached
+实例化
+$m=new Memcached(
+	array( 
+               'servers' => array('127.0.0.1:11211'), 
+               'debug'   => false, 
+               'compress_threshold' => 10240, 
+               'persistant' => true)
+);
+方法：
+写
+$m->add($key,$value,$exp=0);
+$value可以是任意类型。
+
+读
+$m->get($key);
+删除
+$m->delete($key,$time=0)
+修改
+$m->replace($key,$value,$exp=0);
+自增
+$m->incr($key,$num=1)
+
+案例：
+实现文章点击数进内存。
+什么时候进
+什么是改
+什么是否读
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

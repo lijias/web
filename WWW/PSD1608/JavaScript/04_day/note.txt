@@ -1,0 +1,67 @@
+九、JavaScript BOM
+    Browser Object Model
+    window
+    window对象在JavaScript中可以省略不写
+
+    属性：
+    location.href
+    功能：页面的跳转，跳转的地址可以是本地地址，也可以是远程地址。
+
+    innerHeight和innerWidth
+    浏览器的宽和高，当前浏览器可以看到的宽和高，单位为像素。
+
+    方法：
+    alert()
+    功能：弹出一个对话框
+
+    confirm()
+    功能：弹出一个有确认功能的对话框
+
+    setInterval(code,interval)
+    功能：每间隔interval毫秒执行代码code
+    参数：
+    code -JavaScript 代码，要求代码以字符串形式写入
+         -自定义函数名称，也要求以字符串形式写入
+         -匿名函数
+    返回：id值
+
+    clearInterval(setInterval  产生的id)
+    功能：停止setInterval  产生的id对应的setInterval
+    
+        setTimeout(code,interval)
+    功能：interval毫秒后执行代码code，代码code仅仅被执行一次
+    返回：id值
+
+    clearTimeout(setTimeout 产生的id)
+    功能：停止setTimeout
+    返回：布尔值
+
+十、JavaScript 表单处理
+    1、document.getElementsByTagName("form");
+       document.getElementsByName("form 的name值"); 
+       document.getElementById("form 的id值"); 
+
+       document.form 的name值
+   
+    2、表单提交方式
+       - setTimeout
+       - click事件提交
+       - submit 事件提交
+
+    3、属性
+       - action
+       - method
+       - enctype
+
+    4、方法
+       submit()
+
+    5、事件
+       focus 获取焦点
+       blur  失去焦点
+       change 改变事件
+       submit 提交事件
+
+    6、form 值的获取
+       对象.value
+    

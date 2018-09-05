@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type='checkbox' name='box[]'/>噢噢1<br/>
+<input type='checkbox' name='box[]'/>噢噢2<br/>
+<input type='checkbox' name='box[]'/>噢噢3<br/>
+<input type='checkbox' name='box[]'/>噢噢4<br/>
+<input type='checkbox' name='box[]'/>噢噢5<br/>
+<input type='checkbox' name='box[]'/>噢噢6<br/>
+<input type='checkbox' name='box[]'/>噢噢7<br/>
+<script >
+var box=document.getElementsByName("box[]");
+function all(){
+	for(var i=0;i<box.length;i++){
+	box[i].checked=true;
+	}
+}
+function fx(){
+	for(var i=0;i<box.length;i++){
+		if(box[i].checked==true){
+			box[i].checked=false;
+		}else{
+			box[i].checked=true;
+		}
+	}
+}
+function allNot(){
+	for(var i=0;i<box.length;i++){
+	box[i].checked=false;
+	}
+}
+</script>
+<a href='javascript:all();'>全选</a> | <a href='javascript:fx();'>反选</a> | <a href='javascript:allNot();'>不选</a>  
+</body>
+</html>

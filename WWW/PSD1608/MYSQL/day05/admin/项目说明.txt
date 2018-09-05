@@ -1,0 +1,122 @@
+一、添加新闻
+         1、将新闻分类从数据库表(newtype) 中取出来，添加到新闻添加页面的下拉列表中。
+          2、将addnew.html改成 addnew.php文件。同时修改menu.html，将此文件中的addnew.html改成 addnew.php文件。
+二、新闻列表
+        1、从数据库表中将数据读取出来（article）
+              - 注意读取数据联合查询
+              - 分页
+                  limit offset,length
+                  offset=(当前页-1)*每页显示记录数5
+                  当前页 从url的参数中获取,例如：?p=5，那么此时当前页就为5.
+                   5从何而来：
+                    $_GET['p']
+
+                  总页数：ceil(总记录数/每页显示记录数5)
+
+三、新闻的更新
+          1、将静态页面改为动态页面。
+                将 addnew.php    进行复制 后 更名为 ：                 updatenew.php
+          2、在新闻列表页面中，将更新的地址进行更改:
+ <a href='updatenew.php?id=<?php echo $row['id'];?>'>
+               更新图片
+</a>
+          3、修改新闻更新页面内容
+                 - 删除掉文件中的php代码部分
+                 - 改变form表单中的action提交地址。将action改为updatenew.php或者空。
+                 - 将 “新闻发布”改为“新闻更新”
+         4、从数据库中读取出新闻，并将新闻的内容放入到更新页面中。
+         5、修改数据
+                  - get 若form表单里面添加了地址updatenew.php
+则必须加上参数 updatenew.php?id=<?php echo $row['id']?>
+                 - post 
+<input type="hidden" name="id" value="<?php echo $row['id']; ?>">    
+                   另外 还要在用户提交post时，获取id值
+                 si $_POST['id']
+
+四、应用分页类
+1、将分页类引入commmon目录。
+2、在admin/listnew.php文件中引入
+   include "../common/Page.class.php"
+3、获取总记录数
+4、定义每页显示记录数
+5、实例化类
+6、用类对象获取当前页，计算limit的偏移量。
+7、从数据库获取数据。
+8、输出数据
+9、应用Page类对象，调用出口程序，输出分页内容。
+
+新闻列表删除
+1、删除逻辑删除。
+   在article数据库表中添加新的字段deleted,设默认值为0
+   所有article表中字段deleted为0记录，可以在前台显示。为
+   1，则不能再前台显示。也就被视为逻辑删除。
+2、在article表中添加字段deleted
+   alter table article add deleted tinyint(1) not null 
+   default 0 after aid
+3、执行逻辑删除，将新闻deleted字段置为1.
+4、建立执行逻辑删除的文件recycle.php.
+5、在新闻列表页中listnew.php，添加逻辑删除文件recycle.php的链接地址。
+6、编辑recycle.php
+7、编辑listnew.php文件。
+   给sql语句添加where条件.
+
+回收站列表
+1、复制新闻列表页(listnew.php)为回收站列表页(recyclelist.php)
+2、修改recyclelist.php文件
+    - 将“新闻列表”改为“回收站列表”
+    - 将操作改为 删除（delete.php） 
+3、在menu.php文件中修改链接
+
+回收站列表
+1、删除
+   真正意义上的删除。
+2、创建文件 delete.php
+
+回收站列表
+1、恢复
+   - 增加新文件restore.php
+   - recyclelist.php中添加地址 restore.php
+   - 编辑restore.php
+ 
+回收站列表
+1、删除新闻(PDO)
+   - 创建pdo.inc.php文件
+   - 在 pdo.inc.php文件 实例化PDO类。
+   - 将 pdo.inc.php文件 放到./common 目录下
+   - 创建新的删除功能文件delete_pdo.php 
+   - 更改recyclelist.php文件，将删除地址改为：delete_pdo.php
+   - 编辑 delete_pdo.php 文件 
+
+2、恢复新闻（PDO）
+   - 创建新的恢复功能文件restore_pdo.php。
+   - 更改recyclelist.php文件，将恢复的地址改为：     restore_pdo.php
+   - 编辑 restore_pdo.php
+
+3、批量删除
+   - 添加JavaScript 全选和全不选功能
+   - 页面添加删除按钮
+     将分页的 colspan="6" 改为 colspan="4"
+     在后面添加td，里面添加内容
+     <input type="submit" value="批量回收" /> 
+   - 创建 pdel.php 文件
+   - 在复选框 selectbox中添加 
+     value=<?php echo $row['id']; ?>
+     
+  
+   
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+

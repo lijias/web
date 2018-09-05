@@ -1,0 +1,190 @@
+2016/11/23 10:56:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "site".' in E:\php\bbs\framework\web\CWebApplication.php:332
+Stack trace:
+#0 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('')
+#1 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 E:\php\bbs\app\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/bbs/app/index.php
+2016/11/23 11:39:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:48:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:50:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:50:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:50:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:50:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:50:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:51:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('index/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/index/css/bbs.css
+2016/11/23 11:51:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:51:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('index/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/index/css/bbs.css
+2016/11/23 11:51:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:51:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('index/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/index/css/bbs.css
+2016/11/23 11:51:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:51:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('index/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/index/css/bbs.css
+2016/11/23 11:51:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:51:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('index/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/index/css/bbs.css
+2016/11/23 11:51:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:51:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('index/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/index/css/bbs.css
+2016/11/23 11:51:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:51:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('index/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/index/css/bbs.css
+2016/11/23 11:51:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css
+2016/11/23 11:51:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('index/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/index/css/bbs.css
+2016/11/23 11:51:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "css".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('css')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('css')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('login/css/bbs.c...')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(17): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php/login/css/bbs.css

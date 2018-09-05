@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script src='jquery-1.8.0.js'></script>
+<script >
+ $(function(){
+	 $("ul").parent().prepend('div')
+ });
+</script>
+</head>
+<body>
+<!--7、有如下html文档
+   <div> 
+      <ul>
+        <li>li0<li>
+        <li>li1<li>
+        <li>li2<li>
+      </ul>
+   </div>
+    找到ul的上一级父节点，在上一级父节点中追加文字div1. 
+      -->
+   <div> hh
+      <ul>
+        <li>li0<li>
+        <li>li1<li>
+        <li>li2<li>
+      </ul>
+   </div> 
+</body>
+</html>

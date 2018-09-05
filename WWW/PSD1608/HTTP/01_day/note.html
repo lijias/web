@@ -1,0 +1,68 @@
+会话
+HTTP(HyperText Transfer Protocol)
+           超文本传输协议.
+           用来规定浏览器和服务器之间进行数据交换的方式和格式
+           方式:请求 答应 方式
+           格式:见图(HTTP)
+    HTTP协议是无状态
+ 
+COOKIE
+cookie是保存在客户端段.
+
+PHP对于COOKIE的应用
+1.cookie保存
+  setcookie(string $name, string $value , int $expire)
+      功能:设置cookie
+      参数:
+  name cookie的名称
+  value cookie的值
+  expire cookie存活时间,单位是秒
+                           当前时间往后计算的时间.例如:time()+3600
+  cookie的存活时间是1个小时.
+2.cookie读取
+  $_COOKIE[string $name]
+3.cookie的删除
+  setcookie(string $name, string $value , int $expire)
+     功能:设置cookie
+
+
+安全
+1.用户
+2.网站
+cookie保存不敏感的信息.例如:浏览记录
+
+session 会话
+session文件保存在服务器端.
+
+php对于session的应用
+1.生成session
+  session_start();
+  - 分配给用户sessionid
+  - 保存session文件在服务器端.
+           注意: session_start()
+                        前面不能输出内容
+  $_SESSION["username"]="tom"       
+     
+2.读取session内容
+  session_start()
+  - 将sessionid与session文件建立联系
+  $_SESSION["username"]    
+     
+3.删除session
+  session_start()
+  - 将sessionid与session文件建立联系
+  unset($_SESSION["username"])     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     

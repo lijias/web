@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>发表留言</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript">
+      function logout()
+      {
+    	  if(confirm("是否退出登陆？")){
+    		  window.location = "success.php?act=logout";
+    	  }
+      }
+      function checkAdd()
+      {
+    	  if(document.frm.accpter.value == ""){
+    		  alert("请输入接收人的姓名！");
+    		  document.frm.accpter.focus();
+    		  return false;
+    	  }
+    	  else if(document.frm.content.value == ""){
+    		  alert("请输入留言内容！");
+    		  document.frm.content.focus();
+    		  return false;
+    	  }
+      }
+    </script>
+  </head>
+  <body>
+    <a href="show.php">查看留言</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="#" onclick="logout()">退出登陆</a>
+    <br><br>
+    <form name="frm" method="post" action="writer.php" onsubmit="return checkAdd()">
+    <table border="1" align="left" bordercolor="blue">
+      <tr>
+        <td>接收人：</td>
+        <td><input type="text" name="accpter" size="30"></td>
+      </tr>
+      <tr>
+        <td>内容：</td>
+        <td><textarea name="content" cols="30" rows="5"></textarea></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="发表留言">
+          &nbsp;&nbsp;&nbsp;
+          <input type="reset" value="全部重写">
+        </td>
+      </tr>
+    </table>
+    </form>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+

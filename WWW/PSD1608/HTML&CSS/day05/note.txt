@@ -1,0 +1,183 @@
+一.盒模型(BoxModel)
+ 1.width 宽度
+ 2.height 高度
+  说明: 块元素和有宽高属性的标记(img,input)
+            能设置宽度和高度，而行元素不能设置宽高
+ 3.padding ：内边距,内容到边框的距离 
+   
+   padding-top:上内边距
+   padding-right:右内边距
+   padding-bottom:下内边距
+   padding-left:左内边距
+  缩写形式:
+   padding:value; 四个方位相同值
+   padding:value value; 上下值  左右值
+   padding:value value value;  
+                        上值  左右值  下值
+   padding:value value value value;
+                       上值  右值  下值  左值
+    说明: padding只有正值， 并且设置padding
+              可以撑大背景盒子
+    
+ 4.margin ：外边距,盒子外围的距离
+   margin-top:上外边距
+   margin-right:右外边距
+   margin-bottom:下外边距
+   margin-left:左外边距
+  缩写形式:
+   margin:value; 四个方位相同值
+   margin:value value; 上下值  左右值
+   margin:value value value;  
+                        上值  左右值  下值
+   margin:value value value value;
+                       上值  右值  下值  左值
+   说明: 
+    a.margin有  正值，负值,auto
+    b.margin:0 auto;盒子的水平居中
+    c.清除块元素空隙(全局样式)
+      margin:0;
+      padding:0;
+    d.margin冲突,上下取大值，左右相加
+    e.嵌套元素，给子元素添加上下margin
+             会将上下margin值传递给父元素
+             
+  5.border 边框
+    
+    border-top-width:上边框宽度
+    border-top-style:上边框样式
+      (值:solid 实线,dashed虚线
+         dotted 点线,double双线)
+    border-top-color:上边框颜色
+    
+    border-right-width:右边框宽度
+    border-right-style:右边框样式
+    border-right-color:右边框颜色
+    
+    border-bottom-width:下边框宽度
+    border-bottom-style:下边框样式
+    border-bottom-color:下边框颜色
+    
+    border-left-width:左边框宽度
+    border-left-style:左边框样式
+    border-left-color:左边框颜色
+    
+   缩写形式1
+    border-top:width style color;
+    border-right:width style color;
+    border-bottom:width style color;
+    border-left:width style color;
+ 缩写形式2
+    border-width:value;四个方向宽度
+       border-width:value value;
+              上下值  左右值
+       border-width:value value value; 
+               上值  左右值 下值
+       border-width:value value value value; 
+               上值  右值  下值  左值  
+    border-style:value;四个方向样式
+    border-color:value;四个方向颜色
+   
+      缩写形式3
+    border:width style color;
+        例如: border:1px solid #00f;
+        
+  6.盒模型总宽度计算:
+    总宽度=左margin +左border+左padding
+       + 盒子宽度 + 右padding +右border
+       + 右margin
+       
+二.布局(Layout)
+  (1)文档流布局(默认)
+  (2)浮动布局
+  (3)定位布局
+三.浮动布局(Float)
+  1.格式  float:left左浮动|
+              right右浮动|
+              none不浮动             
+  2.浮动布局特性
+    (1)浮动元素脱离文档流(不占位)
+    (2)原理:无论是左浮动还是右浮动
+       会靠在有边界的边框或会靠在另一个
+       浮动盒子的后面才停止编辑。
+    (3)浮动的块元素，如果没设置宽高,
+            那跟文本一致的宽高（文档流块元
+            素宽是父级的100%）
+    (4)浮动的行元素能设置宽高(文档流行
+           元素不能设置宽高)
+    (5)浮动的元素对后面元素的影响是实现
+               文本环绕
+               
+四.清除浮动（Clear）
+  1. 格式: clear:both清除两边浮动|
+                left清除左边浮动|
+                right清除右边浮动
+  2.高度塌陷
+    (1)原理:子元素都浮动，而父元素没有设置高度
+              那父元素的高度是零
+    (2)解决方法
+      a. 
+       .clear1{ clear:both;}
+    
+      b.万能清除(写在父元素上)
+       .clear{
+          zoom:1;  
+       }
+       .clear:after{
+         content:".";
+         display:block;
+         clear:both;
+         height:0;
+         visiiblity:hidden;
+       }
+           说明: 
+        a.万能清除写在父元素上
+        b.解决高度塌陷
+        c.让版块间划分界限
+      
+   3.布局显示
+      (1) display:none|
+                  block块|
+                  inline内联|
+                  inline-block内联块
+              说明:
+          a. inline-block内联块:是块元素(能设宽高)
+                             但是有行元素不折行的特性
+          b.display:none 不占位隐藏
+      (2) visibility:visible默认值|
+                     hidden 隐藏 
+                  说明: visibility:hidden 占位隐藏
+  
+  
+  
+
+
+
+
+
+
+
+       
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+   
+   
+  
+  

@@ -1,0 +1,2 @@
+<!--pages/orders/orders.wxml-->
+<web-view src="http://localhost/pro2/ci/index.php/file/xcxfile/kf"></web-view>

@@ -1,0 +1,168 @@
+<html>
+  <head>
+    <title>天天新闻网</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link href="css/news.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript">
+      //验证码的看不清换一张
+      function changeImage()
+      {
+          document.getElementById("myImg").src = "plus/image.php?id="+new Date();
+      }
+      //登陆表单验证
+      function checkLogin()
+      {
+          if(document.frm.userName.value == "")
+          {
+              alert("请输入用户名！");
+              document.frm.userName.focus();
+              return false;
+          }
+          else if(document.frm.password.value == "")
+          {
+              alert("请输入密码！");
+              document.frm.password.focus();
+              return false;
+          }
+          else if(document.frm.checkCode.value == "")
+          {
+              alert("请输入验证码！");
+              document.frm.checkCode.focus();
+              return false;
+          }
+      }
+    </script>
+  </head>
+  <body>
+    <!-- 网站头 -->
+    <div class="headDiv">
+  <div class="headDiv1">
+    <div class="headDiv10">www.<b>ttnewS</b>.com</div>
+    <div class="headDiv11"><img src="/news2/images/banner17.gif" width="370" height="50"></div>
+  </div>
+  <div class="headDiv2">天天新闻网</div>
+</div>
+<!-- 导航菜单 -->
+<div class="menuDiv">
+  <a href="/news2/index.html" class="a">首页</a> | 
+  <a href='/news2/html/1/newstype.html' class='a'>国内新闻</a> | <a href='/news2/html/2/newstype.html' class='a'>体育新闻</a> | <a href='/news2/html/3/newstype.html' class='a'>国际新闻</a> | <a href='/news2/html/4/newstype.html' class='a'>科技新闻</a> | <a href='/news2/html/6/newstype.html' class='a'>IT新闻</a> | 
+  <a href="/news2/plus/search.php" class="a">搜索</a>
+</div>
+
+
+
+
+
+
+
+
+	
+	<!-- 正文内容 -->
+	<div class="mainDiv clear">
+	  <!-- 左侧 -->
+	  <div class="leftDiv">
+	    <!-- 登陆 -->
+	    <form name="frm" method="post" action="plus/login.php" onsubmit="return checkLogin()">
+	    <div class="loginDiv">
+	      <div class="loginDiv1">会员登陆</div>
+	      <div class="loginDiv2 clear">
+	        <div class="loginDiv20">用户名</div>
+	        <div class="loginDiv21"><input type="text" name="userName" value="admin" class="txt1">*</div>
+	      </div>
+	      <div class="loginDiv2 clear">
+	        <div class="loginDiv20">密码</div>
+	        <div class="loginDiv21"><input type="password" name="password" value="123" class="txt1">*</div>
+	      </div>
+	      <div class="loginDiv2 clear">
+	        <div class="loginDiv20">验证码</div>
+	        <div class="loginDiv21"><input type="text" name="checkCode" size="8" maxlength="4"><img id="myImg" src="plus/image.php" onclick="changeImage()" style="cursor:pointer;" title="看不清换一张" alt="看不清换一张" align="absmiddle"></div>
+	      </div>
+	      <div class="loginDiv2 clear">
+	        <div class="loginDiv20">&nbsp;</div>
+	        <div class="loginDiv21"><input type="submit" value="登陆"></div>
+	      </div>
+	    </div>
+	    </form>
+	    <!-- 一个分类带两条新闻 -->
+	    <div class='twoNews'>
+  							<div class='twoNews1'>&nbsp;<a href='/news2/html/1/newstype.html' class='a'>国内新闻</a></div>
+  							<div class='twoNews2'><a href='/news2/html/1/newstype.html' class='a'>更多</a>&nbsp;</div>
+						 </div><div class='twoNews3'><img src='images/makealltop.gif'><a href='/news2/html/1/20.html'>北京IT小企业离职率高的原因 </a></div><div class='twoNews3'><img src='images/makealltop.gif'><a href='/news2/html/1/15.html'>王致和商标遭抢注案德国开庭 老...</a></div><div class='twoNews'>
+  							<div class='twoNews1'>&nbsp;<a href='/news2/html/2/newstype.html' class='a'>体育新闻</a></div>
+  							<div class='twoNews2'><a href='/news2/html/2/newstype.html' class='a'>更多</a>&nbsp;</div>
+						 </div><div class='twoNews3'><img src='images/makealltop.gif'><a href='/news2/html/2/22.html'>NBA史上最强阵容:邓肯最佳大...</a></div><div class='twoNews3'><img src='images/makealltop.gif'><a href='/news2/html/2/12.html'>太空旅馆计划开始实施 入住3天...</a></div><div class='twoNews'>
+  							<div class='twoNews1'>&nbsp;<a href='/news2/html/3/newstype.html' class='a'>国际新闻</a></div>
+  							<div class='twoNews2'><a href='/news2/html/3/newstype.html' class='a'>更多</a>&nbsp;</div>
+						 </div><div class='twoNews3'><img src='images/makealltop.gif'><a href='/news2/html/3/25.html'>海地地震</a></div><div class='twoNews3'><img src='images/makealltop.gif'><a href='/news2/html/3/13.html'>美法院裁定Unix版权归属 扫...</a></div><div class='twoNews'>
+  							<div class='twoNews1'>&nbsp;<a href='/news2/html/4/newstype.html' class='a'>科技新闻</a></div>
+  							<div class='twoNews2'><a href='/news2/html/4/newstype.html' class='a'>更多</a>&nbsp;</div>
+						 </div><div class='twoNews3'><img src='images/makealltop.gif'><a href='/news2/html/4/23.html'>网络经济，谁主沉浮？</a></div><div class='twoNews3'><img src='images/makealltop.gif'><a href='/news2/html/4/24.html'>避开攒机误区 本周四款CPU不...</a></div><div class='twoNews'>
+  							<div class='twoNews1'>&nbsp;<a href='/news2/html/6/newstype.html' class='a'>IT新闻</a></div>
+  							<div class='twoNews2'><a href='/news2/html/6/newstype.html' class='a'>更多</a>&nbsp;</div>
+						 </div><div class='twoNews3'><img src='images/makealltop.gif'><a href='/news2/html/6/27.html'>辽宁舰内部大量设施公开 超市运...</a></div><div class='twoNews3'><img src='images/makealltop.gif'><a href='/news2/html/6/26.html'>纪念红军长征胜利80周年大会在...</a></div>
+	    
+	  </div>
+	  <!-- 右侧 -->
+	  <div class="rightDiv">
+	    <!-- 热点要闻 -->
+	    <div class="hotNews">热点要闻</div>
+        <div class='hotNews1'>
+	      				  [<a href='/news2/html/4/newstype.html'>科技新闻</a>] <a href='/news2/html/4/9.html'>戴尔为笔记本召回辩解 问题电池责任推给索尼</a> 2016-10-02 17:00:17 <img src='images/new1.gif'>
+	    				 </div><div class='hotNews1'>
+	      				  [<a href='/news2/html/3/newstype.html'>国际新闻</a>] <a href='/news2/html/3/3.html'>美国加州南部发生里氏4.5级地震</a> 2016-10-02 17:00:16 <img src='images/new1.gif'>
+	    				 </div><div class='hotNews1'>
+	      				  [<a href='/news2/html/4/newstype.html'>科技新闻</a>] <a href='/news2/html/4/8.html'>RC1测试意见匮乏 微软呼吁的Vista测试者</a> 2016-10-02 17:00:17 <img src='images/new1.gif'>
+	    				 </div><div class='hotNews1'>
+	      				  [<a href='/news2/html/1/newstype.html'>国内新闻</a>] <a href='/news2/html/1/5.html'>天安门广场见证伟大时刻 罗格现场发出奥运邀请函</a> 2016-10-02 17:00:16 <img src='images/new1.gif'>
+	    				 </div><div class='hotNews1'>
+	      				  [<a href='/news2/html/2/newstype.html'>体育新闻</a>] <a href='/news2/html/2/12.html'>太空旅馆计划开始实施 入住3天需400万美元</a> 2016-10-02 17:00:18 <img src='images/new1.gif'>
+	    				 </div><div class='hotNews1'>
+	      				  [<a href='/news2/html/2/newstype.html'>体育新闻</a>] <a href='/news2/html/2/22.html'>NBA史上最强阵容:邓肯最佳大前 奥尼尔挤掉张伯伦</a> 2016-10-02 17:00:22 <img src='images/new1.gif'>
+	    				 </div>
+	    
+	    <!-- 新闻分类导航 -->
+	    <div class="hotNews">新闻分类导航</div>
+	    <div class="newsDh">
+	      <div class="newsDh1"><span class="newsCount">新闻总数：</span></div>
+	      <div class="newsDh2">27</div>
+	      <div class="newsDh3">&nbsp;</div>
+	    </div>
+	    <div class='newsDh'>
+	      					<div class='newsDh1'><a href='/news2/html/1/newstype.html'>国内新闻：</a></div>
+	      					<div class='newsDh2'>7</div>
+	      					<div class='newsDh3'><a href='/news2/html/1/newstype.html'><img src='images/sch.gif' border='0' class='goImg'></a></div>
+	    				 </div><div class='newsDh'>
+	      					<div class='newsDh1'><a href='/news2/html/2/newstype.html'>体育新闻：</a></div>
+	      					<div class='newsDh2'>6</div>
+	      					<div class='newsDh3'><a href='/news2/html/2/newstype.html'><img src='images/sch.gif' border='0' class='goImg'></a></div>
+	    				 </div><div class='newsDh'>
+	      					<div class='newsDh1'><a href='/news2/html/3/newstype.html'>国际新闻：</a></div>
+	      					<div class='newsDh2'>3</div>
+	      					<div class='newsDh3'><a href='/news2/html/3/newstype.html'><img src='images/sch.gif' border='0' class='goImg'></a></div>
+	    				 </div><div class='newsDh'>
+	      					<div class='newsDh1'><a href='/news2/html/4/newstype.html'>科技新闻：</a></div>
+	      					<div class='newsDh2'>9</div>
+	      					<div class='newsDh3'><a href='/news2/html/4/newstype.html'><img src='images/sch.gif' border='0' class='goImg'></a></div>
+	    				 </div><div class='newsDh'>
+	      					<div class='newsDh1'><a href='/news2/html/6/newstype.html'>IT新闻：</a></div>
+	      					<div class='newsDh2'>2</div>
+	      					<div class='newsDh3'><a href='/news2/html/6/newstype.html'><img src='images/sch.gif' border='0' class='goImg'></a></div>
+	    				 </div>
+	  </div>
+	</div>
+    
+    
+    <!-- 网页脚 -->
+    <div class="footDiv">
+      网站简介 - 广告服务 - 网站地图 - 帮助信息 - 联系方式<br>
+   Copyrights &copy; 2014 hys.com All Rights Reserved
+</div>
+  </body>
+</html>
+
+
+
+
+
+
+

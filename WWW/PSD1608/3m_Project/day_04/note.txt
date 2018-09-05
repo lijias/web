@@ -1,0 +1,81 @@
+HTML编辑器
+
+下载KindEditor资源包：kindeditor/kindeditor.js
+
+var editor;
+//加载编辑器
+KindEditor.ready(function(e){
+   //创建编辑器
+   editor = e.create("jquery选择器",{
+      "width":"宽度",
+      "height":"高度",
+      "items":[设置工具栏]
+   });
+});
+
+编辑器的方法
+1、设置编辑器里的内容
+   editor.html("内容");
+2、获得编辑器里的内容
+   var 变量 = editor.html();
+3、让编辑器获得焦点
+   editor.focus();
+
+
+获得表单元素
+1、通过表单元素的id来获得(给表单元素起个id名)
+   document.getElementById("标签id").value;
+2、通过表单元素的name来获得(给表单元素起个name名)
+   document.表单名.表单元素名.value;
+
+
+php的错误级别：php提示错误信息的级别(修改php.ini配置文件)
+error_reporting = E_ALL
+改为
+error_reporting = E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED
+
+
+js代码与jquery代码不能混用
+1、利用js对象，调用jquery里的方法
+2、利用jquery对象，调用js里的方法
+
+
+js里的跳转页面
+window.location.href = "页面地址";
+window.location = "页面地址";
+
+
+php内存垃圾回收机制：计数器
+
+$a = 10;
+asdfjas
+asdfkasd
+asdfajsdf
+asdf
+$a++;
+echo $a;
+asdfasdfsad
+asdfasdf
+asdfasdfasd
+
+
+
+js的插件：树状列表(dtree.js)
+
+
+
+后台管理页面
+首页、添加分类、添加用户、修改分类
+
+
+
+
+
+
+
+
+
+
+
+
+

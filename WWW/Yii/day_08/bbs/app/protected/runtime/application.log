@@ -1,0 +1,108 @@
+2016/11/24 10:48:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2002] 由于目标机器积极拒绝，无法连接。
+' in E:\php\bbs\framework\db\CDbConnection.php:348
+Stack trace:
+#0 E:\php\bbs\framework\db\CDbConnection.php(297): CDbConnection->open()
+#1 E:\php\bbs\framework\db\CDbConnection.php(275): CDbConnection->setActive(true)
+#2 E:\php\bbs\framework\base\CModule.php(372): CDbConnection->init()
+#3 E:\php\bbs\framework\base\CApplication.php(426): CModule->getComponent('db')
+#4 E:\php\bbs\framework\db\ar\CActiveRecord.php(607): CApplication->getDb()
+#5 E:\php\bbs\framework\db\ar\CActiveRecord.php(2236): CActiveRecord->getDbConnection()
+#6 E:\php\bbs\framework\db\ar\CActiveRecord.php(371): CActiveRecordMetaData->__construct(Object(BbsInfo))
+#7 E:\php\bbs\framework\db\ar\CActiveRecord.php(386): CActiveRecord::model('BbsInfo')
+#8 E:\php\bbs\framework\db\ar\CActiveRecord.php(62): CActiveRecord->getMetaData()
+#9 E:\php\bbs\app\protected\controllers\IndexController.php(9): CActiveRecord->__construct()
+#10 E:\php\bbs\framework\web\actions\CInlineAction.php(50): IndexController->actionIndex()
+#11 E:\php\bbs\framework\web\CController.php(300): CInlineAction->runWithParams(Array)
+#12 E:\php\bbs\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#13 E:\php\bbs\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('index')
+#15 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('')
+#16 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#17 E:\php\bbs\app\index.php(13): CApplication->run()
+#18 {main} REQUEST_URI=/bbs/app/index.php
+2016/11/24 14:18:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in E:\php\bbs\framework\web\CController.php:328
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(301): CController->invalidActionParams(Object(CInlineAction))
+#1 E:\php\bbs\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#2 E:\php\bbs\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('index')
+#4 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('success/index')
+#5 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#6 E:\php\bbs\app\index.php(13): CApplication->run()
+#7 {main} REQUEST_URI=/bbs/app/index.php?r=success/index
+2016/11/24 14:24:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "add/index".' in E:\php\bbs\framework\web\CWebApplication.php:332
+Stack trace:
+#0 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('add/index')
+#1 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 E:\php\bbs\app\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/bbs/app/index.php?r=add/index
+2016/11/24 14:27:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "add".' in E:\php\bbs\framework\web\CController.php:477
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(262): CController->missingAction('add')
+#1 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('add')
+#2 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('add/add')
+#3 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#4 E:\php\bbs\app\index.php(13): CApplication->run()
+#5 {main} REQUEST_URI=/bbs/app/index.php?r=add/add
+2016/11/24 14:38:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "update/index/bbsId/3".' in E:\php\bbs\framework\web\CWebApplication.php:332
+Stack trace:
+#0 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('update/index/bb...')
+#1 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 E:\php\bbs\app\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/bbs/app/index.php?r=update/index/bbsId/3
+2016/11/24 15:18:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "sql/index".' in E:\php\bbs\framework\web\CWebApplication.php:332
+Stack trace:
+#0 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('sql/index')
+#1 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 E:\php\bbs\app\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/bbs/app/index.php?r=sql/index
+2016/11/24 15:20:17 [error] [php] Invalid argument supplied for foreach() (E:\php\bbs\app\protected\views\sql\index.php:19)
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(866): SqlController->renderFile()
+#1 E:\php\bbs\framework\web\CController.php(779): SqlController->renderPartial()
+#2 E:\php\bbs\app\protected\controllers\SqlController.php(9): SqlController->render()
+#3 E:\php\bbs\framework\web\actions\CInlineAction.php(50): SqlController->actionIndex()
+#4 E:\php\bbs\framework\web\CController.php(300): CInlineAction->runWithParams()
+#5 E:\php\bbs\framework\web\CController.php(278): SqlController->runAction()
+#6 E:\php\bbs\framework\web\CController.php(257): SqlController->runActionWithFilters()
+#7 E:\php\bbs\framework\web\CWebApplication.php(328): SqlController->run()
+#8 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController()
+#9 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#10 E:\php\bbs\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/bbs/app/index.php?r=sql/index
+in E:\php\bbs\app\protected\views\sql\index.php (19)
+in E:\php\bbs\app\protected\controllers\SqlController.php (9)
+in E:\php\bbs\app\index.php (13)
+2016/11/24 15:36:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "page1/index".' in E:\php\bbs\framework\web\CWebApplication.php:332
+Stack trace:
+#0 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('page1/index')
+#1 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#2 E:\php\bbs\app\index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/bbs/app/index.php?r=page1/index
+2016/11/24 15:38:19 [error] [php] Invalid argument supplied for foreach() (E:\php\bbs\app\protected\views\page1\index.php:9)
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(866): Page1Controller->renderFile()
+#1 E:\php\bbs\framework\web\CController.php(779): Page1Controller->renderPartial()
+#2 E:\php\bbs\app\protected\controllers\Page1Controller.php(9): Page1Controller->render()
+#3 E:\php\bbs\framework\web\actions\CInlineAction.php(50): Page1Controller->actionIndex()
+#4 E:\php\bbs\framework\web\CController.php(300): CInlineAction->runWithParams()
+#5 E:\php\bbs\framework\web\CController.php(278): Page1Controller->runAction()
+#6 E:\php\bbs\framework\web\CController.php(257): Page1Controller->runActionWithFilters()
+#7 E:\php\bbs\framework\web\CWebApplication.php(328): Page1Controller->run()
+#8 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController()
+#9 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#10 E:\php\bbs\app\index.php(13): CWebApplication->run()
+REQUEST_URI=/bbs/app/index.php?r=page1/index
+in E:\php\bbs\app\protected\views\page1\index.php (9)
+in E:\php\bbs\app\protected\controllers\Page1Controller.php (9)
+in E:\php\bbs\app\index.php (13)
+2016/11/24 15:41:50 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in E:\php\bbs\framework\web\CController.php:328
+Stack trace:
+#0 E:\php\bbs\framework\web\CController.php(301): CController->invalidActionParams(Object(CInlineAction))
+#1 E:\php\bbs\framework\web\CController.php(278): CController->runAction(Object(CInlineAction))
+#2 E:\php\bbs\framework\web\CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 E:\php\bbs\framework\web\CWebApplication.php(328): CController->run('index')
+#4 E:\php\bbs\framework\web\CWebApplication.php(121): CWebApplication->runController('page1/index')
+#5 E:\php\bbs\framework\base\CApplication.php(155): CWebApplication->processRequest()
+#6 E:\php\bbs\app\index.php(13): CApplication->run()
+#7 {main} REQUEST_URI=/bbs/app/index.php?r=page1/index
