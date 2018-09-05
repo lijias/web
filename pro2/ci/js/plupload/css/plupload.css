@@ -1,0 +1,133 @@
+a {
+    cursor: pointer;
+}
+
+body {
+    background: #fff none repeat scroll 0 0;
+    color: #333;
+    font: 12px/1.5 "Microsoft YaHei", "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+    background-position: left top;
+    background-repeat: repeat;
+    background-attachment: scroll;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0
+}
+
+*:first-child + html .clearfix {
+    zoom: 1
+}
+
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+/**********上传样式***********/
+
+.photo_upload_box {
+    padding: 16px 0 10px 16px;
+    width: 468px;
+    margin: 100px auto 0;
+    background-color: #FFF;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, 0.2);
+    position: relative
+}
+
+.photo_upload_box h1 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.photo_upload_box .upload_num {
+    margin: 10px 0
+}
+
+.ul_pics li {
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin: 0 8px 8px 0;
+    position: relative
+}
+
+.ul_pics li img {
+    width: 100%;
+    height: 100%
+}
+
+.progress {
+    position: relative;
+    padding: 1px;
+    border-radius: 3px;
+    margin: 30px 0 0 0;
+}
+
+.bar {
+    background-color: green;
+    display: block;
+    width: 0%;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.percent {
+    position: absolute;
+    height: 20px;
+    display: inline-block;
+    top: 3px;
+    left: 2%;
+    color: #fff
+}
+
+.pic_close {
+    background: url("../images/ico_layer.png") no-repeat scroll -25px -25px;
+    display: none;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 990
+}
+
+.ul_pics li:hover .pic_close {
+    display: block
+}
+
+.uploading-tip {
+    background: rgba(0, 0, 0, 0.8) none repeat scroll 0 0;
+    bottom: 0;
+    box-sizing: border-box;
+    height: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+    text-align: left;
+    line-height: 20px
+}
+
+.uploading-tip > span, .uploading-tip > i {
+    color: green;
+    cursor: pointer;
+    font-family: "宋体";
+    font-size: 18px;
+    font-style: normal;
+    margin: 0 0 0 12px;
+
+}
+
+.uploading-tip > i {
+    color: red;
+    font-family: "微软雅黑";
+}

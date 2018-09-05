@@ -1,0 +1,490 @@
+# 亿邦动力网用户中心SDK说明文档
+> 作者: **魏伟**  版本: [V4.0.0](#version)   最后更新时间:**2018-01-09 11:28**
+
+## 1. 接入说明
+
+* 亿邦动力网用户中心的服务地址:
+```shell
+https://sso.ebrun.com/v4/ (生产环境)
+http://sso.test.ebrun.com/v4/ (测试环境)
+
+连接测试接口需要在运行SDK的环境设置hosts
+192.168.2.244  sso.test.ebrun.com
+```
+
+* 您应该已经明确了自己的接入地址以及接入账号
+```shell
+EBRUN_USER_CENTER_SERVER_URL        //亿邦动力网用户中心的服务地址
+SSO_BROKER_ID                       //调用方的编号
+SSO_BROKER_SECRET                   //调用方的secret
+```
+
+* 使用方法样例
+```php
+//---------------------------------------------------------------------------
+
+$mySSOBroker = MySSOBroker::getMyInstance(array(
+'ebrun_user_center_server_url' => 'EBRUN_USER_CENTER_SERVER_URL',
+'broker' => 'SSO_BROKER_ID',
+'secret' => 'SSO_BROKER_SECRET',
+));
+$result = $mySSOBroker->getUserInfo();
+if (isset($result['error'])) {
+var_dump($result['error']);
+} elseif (isset($result['userInfo'])) {
+var_dump($result['userInfo']);
+} else {
+throw new \Exception("通讯异常");
+}
+
+//---------------------------------------------------------------------------
+
+$myClient = MyClient::getMyInstance(array(
+'ebrun_user_center_server_url' => 'EBRUN_USER_CENTER_SERVER_URL',
+'broker' => 'SSO_BROKER_ID',
+'secret' => 'SSO_BROKER_SECRET',
+));
+$result = $myClient->register('', 13587654321, 'nickname', '123qwe');
+if (isset($result['error'])) {
+var_dump($result['error']);
+} elseif (isset($result['userInfo'])) {
+var_dump($result['userInfo']);
+} else {
+throw new \Exception("通讯异常");
+}
+
+```
+
+>
+> PS: 建议参照 /tests 里给出的样例程序, 自行继承SDK里的抽象类, 实现自己的 logger方法.
+>
+
+---
+
+## 2、<a name="list"> 接口列表(PS: 接口列表的注解并没有覆盖所有接口, 慢慢补足中) </a>
+
+| 接口名称                              | 接口说明 |
+| --------------------------------- | ---- |
+| [尝试获取当前SSO登录用户的用户信息](#getUserInfo) | 无 |
+| [刷新当前SSO登录用户的用户信息缓存](# flushUserInfo)| 无 |
+| [给已注册手机号发送验证码](#sendSMSCaptchaToMember) | 无 |
+| [已经手机注册的用户使用手机接收到的短信验证码SSO登录](#loginViaSMSCaptcha)| 无 |
+| [通过 手机号/邮箱 SSO登录](#login)| 无 |
+| [强制SSO登录UID指定的用户](# loginViaUID)| 无 |
+| [通过社交账户SSO登录](#loginViaSocialAccount)| 无 |
+| [修改当前SSO登录用户的用户信息(除了`手机号`和`密码`之外的字段)](# setUserInfo)| 无 |
+| [修改当前SSO登录用户的密码](# changePassword)| 无 |
+| [修改当前SSO登录用户的绑定手机号](# changeMobile)| 无 |
+| [退出SSO登录](# logout)| 无 |
+| [检查当前SSO登录用户收到的消息的概况](# getNotificationInfo)| 无 |
+| [查看当前SSO登录用户收到的私信, 支持分页](# getPrivateLetter)| 无 |
+| [查看当前SSO登录用户收到的通知, 支持分页](# getSystemMessage)| 无 |
+| [设置某些属于当前SSO登录用户的通知为已读状态](# markNotificationAsRead)| 无 |
+| [设置属于当前SSO登录用户的所有评论通知为已读状态](# markCommentNotificationAsRead)| 无 |
+| [清理掉某些属于当前SSO登录用户的通知](# clearNotification)| 无 |
+| --------------------------------- | ---- |
+| [注册新用户](# register)| 无 |
+| [向指定的未注册手机号发送短信验证码](#sendSMSCaptchaForUnregistered) | 无 |
+| [使用 手机号 + 短信验证码 注册新用户](# registerViaMobileAndSMSCaptcha)| 无 |
+| [使用 手机号 + 短信验证码 + 昵称 + 密码 注册新用户](# registerViaMobileAndSMSCaptchaWithNicknameAndPassword)| 无 |
+| [通过社交账户注册新用户](#registerViaSocialAccount)| 无 |
+| [通过社交账户获取用户信息](#getUserInfoViaSocialAccount)| 无 |
+| [通过社交账户更新用户信息(除了`手机号`和`密码`之外的字段)](#setUserInfoViaSocialAccount)| 无 |
+| [修改指定用户的密码](# changePassword)| 无 |
+| [刷新指定用户的用户信息的缓存](# flushUserInfo)| 无 |
+| [检查 社交账户(QQ/sina_weibo/wechat) 是否已经绑定了系统内的某手机用户](# checkBindToMobile)| 无 |
+| [获取某用户的评论,支持分页(已废弃)](# getMyComments)| 无 |
+| [验证指定的未注册手机号是否接到了指定的验证码](# verifySMSCaptchaForUnregistered)| 无 |
+| [给 某待绑定手机号(不区分是否已绑定 && 不区分是否已注册) 发送短信验证码](# sendSMSCaptchaForBinding)| 无 |
+| [验证 给待绑定手机号(不区分是否已绑定 && 不区分是否已注册) 发送的短信验证码是否正确(只返回验证结果)](# verifySMSCaptchaForBinding)| 无 |
+| [向指定用户发送私信通知](# sendPrivateLetterNotification)| 无 |
+| [向指定用户发送系统通知](# sendSystemMessageNotification)| 无 |
+| [向指定用户发送评论通知](# sendCommentNotification)| 无 |
+
+---
+
+## 3、<a name="example-result"> 标准操作结果的结构示例 </a>
+
+```php
+//标准错误结果的样例
+array(
+'error' => array(
+'code' => 200400,
+'message' => 'ba la ba la ba la ...',
+)
+)
+
+//标准正确的样例
+array(
+'success' => array(
+'code' => 200200,
+'message' => 'OK',
+)
+)
+
+//标准用户信息结果的样例
+array(
+'id' => 1523202,
+'nickname' => 'weiweiebrun',
+'real_name' => '真实姓名',
+'verified' => 1,
+'sex' => '0',
+'country' => '',
+'province' => '北京',
+'city' => '西城',
+'avatar' => 'http://dev.ebrun.com/2009/uc/data/avatar/001/52/32/02_real_avatar_big.jpg',
+'status' => 1,
+'email' => 'weiwei@ebrun.com',
+'mobile' => '',
+'introduction' => '个人简介',
+'expansion_type' => 0,
+'type' => "normal",
+'type_name' => "普通用户",
+'last_login_at' => '2016-11-16 10:10:54',
+'created_at' => '-0001-11-30 00:00:00',
+'updated_at' => '2016-11-16 10:23:43',
+'avatars' => array (
+'big' => 'http://dev.ebrun.com/2009/uc/data/avatar/001/52/32/02_real_avatar_big.jpg',
+'middle' => 'http://dev.ebrun.com/2009/uc/data/avatar/001/52/32/02_real_avatar_middle.jpg',
+'small' => 'http://dev.ebrun.com/2009/uc/data/avatar/001/52/32/02_real_avatar_small.jpg',
+)
+)
+```
+
+> PS: 也就是说标准的操作结果 要么有 error 要么有 success.
+
+---
+
+## 4、EbrunSSOSDK 接口详情
+
+### <a name="getUserInfo"> 尝试获取当前SSO登录用户的用户信息 </a>
+
+* 隶属于方法包 `Ebrun\SSO\EbrunSSOSDK\Broker`
+
+* 返回数据格式 `array`
+
+* 返回数据内容
+
+标准用户信息结果 or 空数组 or 标准错误结果
+
+* 可能返回的[错误码](#code_msg)
+
+| 返回码 | 返回码附带的信息  |   解释    |
+| :-------- | :-------- | :--------- |
+| 2004036  |              |              |
+| 2004037  |              |              |
+| 2004038  |              |              |
+| 2004039  |              |              |
+
+[返回接口列表](#list)
+
+---
+
+### <a name="sendSMSCaptchaToMember"> 给已注册手机号发送验证码 </a>
+
+* 隶属于方法包 `Ebrun\SSO\EbrunSSOSDK\Broker`
+
+* 返回数据格式 `array`
+
+* 返回数据内容
+
+标准正确结果 or 标准错误结果
+
+* 可能返回的[错误码](#code_msg)
+
+| 返回码 | 返回码附带的信息  |   解释    |
+| :-------- | :-------- | :--------- |
+| 200400   | mobile.required | 缺少手机号参数 |
+| 200400   | mobile.myc_zh_mobile | 手机号格式错误 |
+| 200400   | mobile.exists | 手机号未注册 |
+| 2004036  |              |              |
+| 2004037  |              |              |
+| 2004038  |              |              |
+| 2004039  |              |              |
+| 2005000  |              |              |
+| 2005002  |              |              |
+| 2005003  |              |              |
+| 2005004  |              |              |
+| 2005005  |              |              |
+| 2005006  |              |              |
+| 2005007  |              |              |
+| 200200   | send_sms_code.success | 短信验证码发送成功 |
+
+[返回接口列表](#list)
+
+---
+
+### <a name="loginViaSMSCaptcha"> 已经手机注册的用户使用手机接收到的短信验证码登录 </a>
+
+* 隶属于方法包 `Ebrun\SSO\EbrunSSOSDK\Broker`
+
+* 返回数据格式 `array`
+
+* 返回数据内容
+
+标准用户信息结果 or 标准错误结果
+
+* 可能返回的[错误码](#code_msg)
+
+| 返回码 | 返回码附带的信息  |   解释    |
+| :-------- | :-------- | :--------- |
+| 200400   | mobile.required | 缺少手机号参数 |
+| 200400   | mobile.myc_zh_mobile | 手机号格式错误 |
+| 200400   | mobile.exists | 手机号未注册 |
+| 2004036  |              |              |
+| 2004037  |              |              |
+| 2004038  |              |              |
+| 2004039  |              |              |
+| 20050010 |              |              |
+| 2004001  |              |              |
+| 2004002  |              |              |
+| 2004003  |              |              |
+| 2004004  |              |              |
+
+[返回接口列表](#list)
+
+---
+
+### <a name="login"> 通过 手机号/邮箱 SSO登录 </a>
+
+* 隶属于方法包 `Ebrun\SSO\EbrunSSOSDK\Broker`
+
+* 返回数据格式 `array`
+
+* 返回数据内容
+
+标准用户信息结果 or 标准错误结果
+
+* 可能返回的[错误码](#code_msg)
+
+| 返回码 | 返回码附带的信息  |   解释    |
+| :-------- | :-------- | :--------- |
+|
+
+[返回接口列表](#list)
+
+---
+
+### <a name="loginViaSocialAccount"> 通过社交账户SSO登录 </a>
+
+* 隶属于方法包 `Ebrun\SSO\EbrunSSOSDK\Broker`
+
+* 返回数据格式 `array`
+
+* 返回数据内容
+
+标准用户信息结果 or 标准错误结果
+
+* 可能返回的[错误码](#code_msg)
+
+| 返回码 | 返回码附带的信息  |   解释    |
+| :-------- | :-------- | :--------- |
+| 200400   |              | 传入的参数错误 |
+| 2004036  |              |              |
+| 2004037  |              |              |
+| 2004038  |              |              |
+| 2004039  |              |              |
+| 2004033  |              |              |
+| 2004034  |              |              |
+| 2004035  |              |              |
+| 20040311 |              |              |
+| 20050010 |              |              |
+
+[返回接口列表](#list)
+
+---
+
+
+## 5、EbrunUserCenterSDK 接口详情
+
+
+### <a name="sendSMSCaptchaForUnregistered"> 给未注册手机号发送验证码 </a>
+
+* 隶属于方法包 `Ebrun\UserCenter\EbrunUserCenterSDK\Client`
+
+* 返回数据格式 `array`
+
+* 返回数据内容
+
+标准正确结果 or 标准错误结果
+
+* 可能返回的[错误码](#code_msg)
+
+| 返回码 | 返回码附带的信息  |   解释    |
+| :-------- | :-------- | :--------- |
+| 200400   | mobile.required | 缺少手机号参数 |
+| 200400   | mobile.myc_zh_mobile | 手机号格式错误 |
+| 200400   | mobile.unique | 手机号已经被注册 |
+| 2004032  |              |              |
+| 2004033  |              |              |
+| 2004034  |              |              |
+| 2004035  |              |              |
+| 2005000  |              |              |
+| 2005002  |              |              |
+| 2005003  |              |              |
+| 2005004  |              |              |
+| 2005005  |              |              |
+| 2005006  |              |              |
+| 2005007  |              |              |
+| 200200   | send_sms_code.success | 短信验证码发送成功 |
+
+[返回接口列表](#list)
+
+---
+
+### <a name="registerViaSocialAccount"> 通过社交账户注册新用户 </a>
+
+* 隶属于方法包 `Ebrun\UserCenter\EbrunUserCenterSDK\Client`
+
+* 返回数据格式 `array`
+
+* 返回数据内容
+
+标准用户信息结果 or 标准错误结果
+
+* 可能返回的[错误码](#code_msg)
+
+| 返回码 | 返回码附带的信息  |   解释    |
+| :-------- | :-------- | :--------- |
+| 200400   |              | 传入的参数错误 |
+| 2004032  |              |              |
+| 2004033  |              |              |
+| 2004034  |              |              |
+| 2004035  |              |              |
+| 20050010 |              |              |
+
+[返回接口列表](#list)
+
+---
+
+### <a name="getUserInfoViaSocialAccount"> 通过社交账户获取用户信息 </a>
+
+* 隶属于方法包 `Ebrun\UserCenter\EbrunUserCenterSDK\Client`
+
+* 返回数据格式 `array`
+
+* 返回数据内容
+
+标准用户信息结果 or 标准错误结果
+
+* 可能返回的[错误码](#code_msg)
+
+| 返回码 | 返回码附带的信息  |   解释    |
+| :-------- | :-------- | :--------- |
+| 200400   |              | 传入的参数错误 |
+| 2004032  |              |              |
+| 2004033  |              |              |
+| 2004034  |              |              |
+| 2004035  |              |              |
+| 20050010 |              |              |
+| 20040311 |              |              |
+
+[返回接口列表](#list)
+
+---
+
+### <a name="setUserInfoViaSocialAccount"> 通过社交账户更新用户信息(除了`手机号`和`密码`之外的字段) </a>
+
+* 隶属于方法包 `Ebrun\UserCenter\EbrunUserCenterSDK\Client`
+
+* 返回数据格式 `array`
+
+* 返回数据内容
+
+标准正确结果 or 标准错误结果
+
+* 可能返回的[错误码](#code_msg)
+
+| 返回码 | 返回码附带的信息  |   解释    |
+| :-------- | :-------- | :--------- |
+| 200400   |              | 传入的参数错误 |
+| 2004032  |              |              |
+| 2004033  |              |              |
+| 2004034  |              |              |
+| 2004035  |              |              |
+| 20050010 |              |              |
+| 20040311 |              |              |
+| 200200   | set_userinfo.success | 用户信息修改成功 |
+| 200500   | set_userinfo.failure | 用户信息修改失败 |
+
+[返回接口列表](#list)
+
+---
+
+
+## 6. <a name="code_msg"> 返回码列表 </a>
+
+| 返回码     | 返回码附带的信息  |   解释    |
+| :-------- | :--------       | :-------- |
+| 200200   | OK               | 操作成功 |
+| 200500   | 很多种,不能一一列举 | 操作失败 |
+| 200204   | OK               | 执行成功,但是没有返回数据 |
+| 200400   | 很多种,不能一一列举 | 参数错误 |
+| 2004001  | sms_code.please_request_send_sms_code | 该用户没有被发送过短信验证码, 请用户点击发送验证码 |
+| 2004002  | sms_code.has_expired | 短信验证码已经过了有效期 |
+| 2004003  | sms_code.invalid | 验证码已经失效,请重新获取 |
+| 2004004  | sms_code.validated_does_not_pass | 验证码不正确 |
+| 200403   | 很多种,不能一一列举 | 权限错误 |
+| 20040311 | invalid_credentials_user | 查无此人 |
+| 20040312 | invalid_credentials_password | 密码错误 |
+| 2004032  | broker_did_not_send_a_signature_key | 调用方没有发送签名 |
+| 2004033  | invalid_signature.{SIGNATURE} | 调用方的签名{SIGNATURE}格式错误 |
+| 2004034  | invalid_time.client_time_is_{CLIENT_TIME},now_server_time_is_{SERVER_TIME} | 时间参数误差太大,调用方的时间跟标准时间误差要在60秒内 |
+| 2004035  | validate_broker_signature_failed | 调用方的签名验证不通过 |
+| 2004036  | broker_did_not_send_a_session_key | 调用方没有发送会话编号 |
+| 2004037  | the_broker_session_id_is_not_attached_to_a_user_session | 调用方发送的会话编号并没有注册过, 服务端不认可 |
+| 2004038  | invalid_session_id.{SESSION_ID} | 无效的会话编号 |
+| 2004039  | checksum_failed.client_ip_address_may_have_changed | 会话编号验证失败,客户端可能在此期间更换了IP地址 |
+| 20050010 | server.user_not_found | 极低概率发生的查无此用户错误 |
+| 2005000  | server.sms_configuration_error | 服务器短信服务配置错误 |
+| 2005001  | 容联云返回的拒绝发送的原因 | 云通讯短信服务商拒绝发送, v4以下版本的接口使用 |
+| 2005002  | mobile.request_too_fast | 请求过于频繁 |
+| 2005003  | mobile.send_sms_code_too_fast | 短信发送过于频繁 |
+| 2005004  | mobile.max_send_sms_limit_daily_for_same_mobile | 今日短信请求次数已达上限 |
+| 2005005  | server.aliyun_sms_api_error | 阿里云短信服务接口报错 |
+| 2005006  | server.yuntongxun_sms_api_error | 容联云短信服务接口报错 |
+| 2005007  | server.yuntongxun_sms_send_rejected | 云通讯短信服务商拒绝发送 |
+
+---
+
+## 7. <a name="readme"> 应用场景描述 </a>
+
+`EbrunSDK` 分为 `EbrunSSOSDK` 和 `EbrunUserCenterSDK` 两部分, 其中 `EbrunSSOSDK` 用于SSO登录 并对当前SSO登录的用户进行操作, 而 `EbrunUserCenterSDK` 用于操作任意指定用户.
+
+### 通过社交账户操作绑定的亿邦用户:
+
+可以 通过社交账户注册 亿邦账户, 服务侧接收到参数后, 会确保该社交账户被绑定到某个亿邦账户 (如果参数里有 mobile , 会先进行账户融合之后再绑定);
+
+可以 通过社交账户SSO登录, 这要求调用方的站点代码 在任意请求的处理之前挂一个全局钩子, 在这个钩子里 `尝试获取当前SSO登录的用户信息`,
+如果此时的浏览器已经登录了亿邦SSO体系的任意站点, 都能获取到用户的信息 (如果没有人登陆得到的会是空数组).
+
+可以 通过社交账户获取用户信息, 如果是获取当前SSO登录用户的信息建议使用 EbrunSSOSDK->getUserInfo() , 如果是后台操作建议使用 EbrunSSOSDK->getUserInfoViaSocialAccount() ;
+
+可以 通过社交账户修改用户信息, 如果是修改当前SSO登录用户的信息建议使用 EbrunSSOSDK->setUserInfo() , 如果是后台操作建议使用 EbrunSSOSDK->setUserInfoViaSocialAccount() ;
+
+---
+
+## 8. <a name="sign"> 生成签名 </a>
+
+签名方法已经集成在 SDK 包里, 不需要自行编写
+
+---
+
+## 9. <a name="version"> 历史版本 </a>
+
+| 版本名称  | 更新时间 | 更新说明 |
+| :---: | :--------------- | :------------------- |
+| 4.0.0 | 2018-01-09 11:28 | 新增了 通过社交账号 注册+SSO登录+获取用户信息+设置用户信息 一系列接口 |
+| 3.0.0 | 2017-10-18 17:01 | 新增 给待绑定手机号(不区分是否已绑定 && 不区分是否已注册) 发送验证码接口及其验证接口
+| 3.0.0 | 2017-01-24 17:01 | 新增 消息系统接口
+| 2.1.0 | 2017-01-23 10:34 | 新增 loginViaUID 接口
+| 2.0.3 | 2016-12-09 18:20 | 优化 单例模式降低资源消耗
+| 2.0.2 | 2016-12-08 15:49 | 优化 支持访问HTTPS服务器; 新增 网络代理支持; @deprecated标记一些废弃的方法
+| 2.0.1 | 2016-12-01 10:25 | 优化 对于EbrunSSOSDK返回的 need attach 错误结果, EbrunSSOSDK自动清理无效token并执行attach
+| 2.0.0 | 2016-11-21 16:37 | 新增 EbrunUserCenterSDK & 优化 EbrunSSOSDK
+| 1.0.0 | 2016-11-16 12:29 | 新增 EbrunSSOSDK
+| 1.0.0 | 2017-08-09 16:39 | 第一版最终定稿 |
+
+---
+
+# END

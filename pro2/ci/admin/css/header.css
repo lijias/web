@@ -1,0 +1,40 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav {
+    height: 50px;
+    background-color: darkred;
+}
+
+.nav ul {
+    width: 100%; /*设置元素宽度为100%*/
+    margin: 0px auto 0px auto; /*也可以简写为margin:0 auto*/
+}
+
+.nav ul li {
+    float: left; /*让li元素左浮动*/
+}
+
+.nav ul li a {
+    width: 80px; /*设置元素宽为80px*/
+    height: 48px; /*设置高度为28px*/
+    line-height: 50px; /*设置行距为28px，让文字在每行的中间位置*/
+    background: #800000; /*设置元素的背景为红色*/
+    color: #FFF; /*文字颜色是白色*/
+    margin: 0px 10px;
+    font-size: 12px; /*用12号字*/
+    display: block; /*这个比较关键，因为a本身就是联级元素，本身不具有宽高，用这个把它变成块级元素，这样前面设置的宽和高就能起作用了*/
+    text-align: center; /*让文本居中*/
+    text-decoration: none; /*去掉下划线*/
+}
+
+/*.nav ul li a:hover { !*这个大概的意思就是当鼠标放到这个a元素的上面时，这个a元素的样式就按下面的代码执行*!*/
+    /*width: 80px;*/
+    /*height: 48px;*/
+    /*line-height: 50px;*/
+    /*border: 1px solid #800000;*/
+    /*color: darkred;*/
+    /*background: #FFF;*/
+/*}*/
